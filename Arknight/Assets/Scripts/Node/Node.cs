@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Node : MonoBehaviour
 {
+    public int m_TileNumber;
+
     // Start is called before the first frame update
     void Start()
     {

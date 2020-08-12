@@ -15,6 +15,8 @@ public class NodeManager : MonoBehaviour
 
     public TILESTATE[,] m_State;            // 타일 상태 담은 배열
 
+    public Node[] m_NodeList;
+
     int MaxTileX = 10;                      // 타일 가로 갯수
     int MaxTileY = 9;                       // 타일 세로 갯수
 
@@ -24,7 +26,7 @@ public class NodeManager : MonoBehaviour
         m_State = new TILESTATE[MaxTileY, MaxTileX];
 
         // 우선 NONE으로 초기화
-        for(int i = 0; i < MaxTileY; ++i)
+        for (int i = 0; i < MaxTileY; ++i)
         {
             for(int j = 0; j < MaxTileX; ++j)
             {
@@ -33,6 +35,14 @@ public class NodeManager : MonoBehaviour
                 //Debug.Log(m_State.Length); // 80;
             }
         }
+
+        m_NodeList = gameObject.GetComponentsInChildren<Node>();
+
+        for(int i = 0; i < MaxTileX * MaxTileY; ++i)
+        {
+            m_NodeList[i].m_TileNumber = i;
+        }
+
     }
 
     // Update is called once per frame
@@ -47,11 +57,9 @@ public class NodeManager : MonoBehaviour
             {
                 if (hit.transform.gameObject.layer == LayerMask.NameToLayer("Ground"))
                 {
-                    GameObject obj = Instantiate(Resources.Load("RedCube")) as GameObject;
+                    GameObject obj = Instantiate(Resources.Load("SwordChan")) as GameObject;
 
                     Vector3 pos = hit.transform.position;
-                    pos.y = obj.transform.localScale.y / 2;
-
                     obj.transform.position = pos;
                 }
                 else if (hit.transform.gameObject.layer == LayerMask.NameToLayer("Tower"))

@@ -58,5 +58,6 @@ sysinfo.txt
 # Crashlytics generated file
 crashlytics-build.properties
 
-# Unity Chan
+# 리소스 제외
 Assets/Model
+Assets/Resources
