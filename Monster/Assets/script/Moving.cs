@@ -54,28 +54,18 @@ public class Moving : MonoBehaviour
         switch (m_STATE)
         {
             case STATE.TARGET1:
-
                 m_Navi.SetDestination(obj.transform.position);
-
-
-
                 break;
             case STATE.TAGET2:
                 m_Navi.SetDestination(obj2.transform.position);
-
                 break;
-
             case STATE.ATTACK:
-                
-
-
                 break;
 
         }
     }
     void StateProcess()
     {
-
         switch (m_STATE)
         {
             case STATE.TARGET1:
@@ -83,10 +73,8 @@ public class Moving : MonoBehaviour
 
                 if (!m_Navi.pathPending)
                 {
-
                     if (m_Navi.remainingDistance <= m_Navi.stoppingDistance)
                     {
-
                         // if (!m_Navi.hasPath || m_Navi.velocity.sqrMagnitude == 0.0f)
                         if (!m_Navi.hasPath || m_Navi.velocity.sqrMagnitude == 0.0f)
                         {
@@ -95,15 +83,9 @@ public class Moving : MonoBehaviour
                             ChangeSTATE(STATE.TAGET2);
                         }
                     }
-                    
-
                 }
-
                 break;
-
-
             case STATE.TAGET2:
-               
                     break;
 
         }
@@ -113,15 +95,10 @@ public class Moving : MonoBehaviour
 
 
     private void OnCollisionStay(Collision collision)
-
     {
 
 
      //   Debug.Log("충돌 중!");
 
     }
-
-
-
-
 }
