@@ -4,17 +4,12 @@ using UnityEngine;
 
 public class Enemy : EnemyManager
 
-    /* 생성할 적 클래스
-     * 
-     * EnemyManager를 상속받아 스텟과 상태를 조정
-     * 유닛의 종류별로 클래스를 생성
-     * 종류별로 만든 클래스를 유닛에 맞게 설정
-     */
+    /* 생성할 적 클래스 */
 {
     // Start is called before the first frame update
     void Start()
     {
-        
+        m_State = STATE.MOVE;
     }
 
     // Update is called once per frame

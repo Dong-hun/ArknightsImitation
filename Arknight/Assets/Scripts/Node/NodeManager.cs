@@ -57,9 +57,10 @@ public class NodeManager : MonoBehaviour
             {
                 if (hit.transform.gameObject.layer == LayerMask.NameToLayer("Ground"))
                 {
-                    GameObject obj = Instantiate(Resources.Load("SwordChan")) as GameObject;
+                    GameObject obj = Instantiate(Resources.Load("Obstacle")) as GameObject;
 
                     Vector3 pos = hit.transform.position;
+                    pos.y = 2.5f;
                     obj.transform.position = pos;
                 }
                 else if (hit.transform.gameObject.layer == LayerMask.NameToLayer("Tower"))
