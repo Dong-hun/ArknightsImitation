@@ -1,0 +1,2453 @@
+fileFormatVersion: 2
+guid: 6346b7530c2033c4da54738ac8a6b316
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -878007275784867969
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_0
+  - first:
+      213: -3697194131262216025
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_1
+  - first:
+      213: 8586728316206648311
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_2
+  - first:
+      213: 5394875122728801667
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_3
+  - first:
+      213: 3551988883983085475
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_4
+  - first:
+      213: -3643426936735711431
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_5
+  - first:
+      213: 3967208128244597437
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_6
+  - first:
+      213: -7809451846487882738
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_7
+  - first:
+      213: -7620238214587496275
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_8
+  - first:
+      213: 1697576709895111366
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_9
+  - first:
+      213: -394207085150412664
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_10
+  - first:
+      213: -7842936597264551602
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_11
+  - first:
+      213: 6312244855493416996
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_12
+  - first:
+      213: 3238681048548563107
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_13
+  - first:
+      213: -8933773390180080563
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_14
+  - first:
+      213: 1619712291558298550
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_15
+  - first:
+      213: -754656866813094607
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_16
+  - first:
+      213: 9076814547484034374
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_17
+  - first:
+      213: -7518277088053978513
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_18
+  - first:
+      213: 315826172621528424
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_19
+  - first:
+      213: 5720280076619989950
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_20
+  - first:
+      213: 1119555128005670872
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_21
+  - first:
+      213: 822278270596509338
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_22
+  - first:
+      213: -2025235576067221132
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_23
+  - first:
+      213: 4879446125266955502
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_24
+  - first:
+      213: -668723993206760882
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_25
+  - first:
+      213: 6224318001344895183
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_26
+  - first:
+      213: 2062945637836499754
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_27
+  - first:
+      213: -6427259045402946488
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_28
+  - first:
+      213: 2212067151921969842
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_29
+  - first:
+      213: -298979450773442099
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_30
+  - first:
+      213: 8632092265707045749
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_31
+  - first:
+      213: 7899730190879170874
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_32
+  - first:
+      213: 78098330670071501
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_33
+  - first:
+      213: 8689924615846965989
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_34
+  - first:
+      213: -1786411700898238341
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_35
+  - first:
+      213: -7102941297204559881
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_36
+  - first:
+      213: -8646641745965997511
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_37
+  - first:
+      213: -8225005302911330453
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_38
+  - first:
+      213: 7000671248897998681
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_39
+  - first:
+      213: -2786935576674688816
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_40
+  - first:
+      213: -7282356716879389768
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_41
+  - first:
+      213: -3657100098733274725
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_42
+  - first:
+      213: 25307433091961957
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_43
+  - first:
+      213: 7511255068736841675
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_44
+  - first:
+      213: 8990666504095070821
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_45
+  - first:
+      213: -3009743196845865064
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_46
+  - first:
+      213: 7295614550272246751
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_47
+  - first:
+      213: -7941676767986640283
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_48
+  - first:
+      213: 5125965479259514720
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_49
+  - first:
+      213: 1236005336731950446
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_50
+  - first:
+      213: -1683422756732201798
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_51
+  - first:
+      213: 1732899949645659088
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_52
+  - first:
+      213: -6204250895701790398
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_53
+  - first:
+      213: 7892030907747176025
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_54
+  - first:
+      213: -5575909847738592015
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_55
+  - first:
+      213: 7061518480590358551
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_56
+  - first:
+      213: -6463231038225031921
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_57
+  - first:
+      213: -375057796701734043
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_58
+  - first:
+      213: -8157329480652016069
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_59
+  - first:
+      213: -6515056817477863237
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_60
+  - first:
+      213: 4697238710251410228
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_61
+  - first:
+      213: 7652387444456888782
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_62
+  - first:
+      213: 379140831439835976
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_63
+  - first:
+      213: 3993421007407760110
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_64
+  - first:
+      213: 2967844984928867302
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_65
+  - first:
+      213: 7475578260411202784
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_66
+  - first:
+      213: -2068140883143366775
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_67
+  - first:
+      213: -6828464319748510320
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_68
+  - first:
+      213: -2960668530661976279
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_69
+  - first:
+      213: 1771213842906662581
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_70
+  - first:
+      213: 2930613364685784835
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_71
+  - first:
+      213: -6982253348675599116
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_72
+  - first:
+      213: 5921668244932324955
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_73
+  - first:
+      213: -5120705674904141153
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_74
+  - first:
+      213: 3155959582526529452
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_75
+  - first:
+      213: -778141171278520019
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_76
+  - first:
+      213: -1010767749218537330
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_77
+  - first:
+      213: 7752788775067322005
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_78
+  - first:
+      213: 5263264246243612104
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_79
+  - first:
+      213: 703843945090612799
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_80
+  - first:
+      213: -129582868645843254
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_81
+  - first:
+      213: 5693211801905470038
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_82
+  - first:
+      213: 4995755369816895060
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_83
+  - first:
+      213: 9002948686393956816
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_84
+  - first:
+      213: 2061138576446101257
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_85
+  - first:
+      213: -3890337990438351659
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_86
+  - first:
+      213: -813649448260039544
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_0
+  - first:
+      213: 7891625417670353501
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_1
+  - first:
+      213: -3162820459197602289
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_2
+  - first:
+      213: 6251086398564664669
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_3
+  - first:
+      213: -2325480028719976363
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_4
+  - first:
+      213: 8506616043944684159
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_5
+  - first:
+      213: 5709731616075641407
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_6
+  - first:
+      213: 8602670274624218612
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_7
+  - first:
+      213: -4927905959960573762
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_8
+  - first:
+      213: 4516968778536092124
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_9
+  - first:
+      213: 6773607145011854700
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_10
+  - first:
+      213: 2665119077431870276
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_11
+  - first:
+      213: 3884020646401565374
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_12
+  - first:
+      213: -2959555296313266943
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_13
+  - first:
+      213: -6754080364761593935
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_14
+  - first:
+      213: 7990038350766829759
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_15
+  - first:
+      213: 3733675269214976809
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_16
+  - first:
+      213: 6819682578455602432
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_17
+  - first:
+      213: -71860480007634565
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_18
+  - first:
+      213: 786050853479167092
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_19
+  - first:
+      213: -7132496382088135353
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_20
+  - first:
+      213: -3467574552579793462
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_21
+  - first:
+      213: 4861958081566603034
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_22
+  - first:
+      213: 7570390630643172979
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_23
+  - first:
+      213: -1701582937154807597
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_24
+  - first:
+      213: -3752682268553987872
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_25
+  - first:
+      213: -3310893167261416937
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_26
+  - first:
+      213: -3226599091684663742
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_27
+  - first:
+      213: -7104674118539938182
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_28
+  - first:
+      213: 8582314295578918278
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_29
+  - first:
+      213: 7463183548729602882
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_30
+  - first:
+      213: 6988119638012698909
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_31
+  - first:
+      213: 6672570252433600403
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_32
+  - first:
+      213: -313612255423241149
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_33
+  - first:
+      213: -2978142440714494991
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_34
+  - first:
+      213: 4406436259805118507
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_35
+  - first:
+      213: -8260528702296160678
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_36
+  - first:
+      213: -5474897064823448559
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_37
+  - first:
+      213: 8589001364312768553
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_38
+  - first:
+      213: 4548308189609870699
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_39
+  - first:
+      213: 3345871223327470437
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_40
+  - first:
+      213: 4778234130747543811
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_41
+  - first:
+      213: 8786660171424550837
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_42
+  - first:
+      213: -2210623177870897156
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_43
+  - first:
+      213: -4648634681695981473
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_44
+  - first:
+      213: 5223668225608216659
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_45
+  - first:
+      213: -5431195273155076355
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_46
+  - first:
+      213: -5585641203532508766
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_47
+  - first:
+      213: 3380798452114616807
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_48
+  - first:
+      213: 6868542490791714214
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_49
+  - first:
+      213: 7953116926888006919
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_50
+  - first:
+      213: -5111888000571699241
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_51
+  - first:
+      213: 1767054353852178799
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_52
+  - first:
+      213: -8683470140049260184
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_53
+  - first:
+      213: 8075785102343041944
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_54
+  - first:
+      213: 3873700575593468640
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_55
+  - first:
+      213: 411083755932911173
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_56
+  - first:
+      213: -4342395122149025285
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_57
+  - first:
+      213: 5194913621442182000
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_58
+  - first:
+      213: 7260830161329654759
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_59
+  - first:
+      213: -5329697343691595153
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_60
+  - first:
+      213: -7982043570145656113
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_61
+  - first:
+      213: -7576639437336205102
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_62
+  - first:
+      213: -3382981489209484677
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_63
+  - first:
+      213: -3641603537806605768
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_64
+  - first:
+      213: -7919305163377015802
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_65
+  - first:
+      213: 7585903992131310311
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_66
+  - first:
+      213: -7069180791403970873
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_67
+  - first:
+      213: -8115123702174228308
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_68
+  - first:
+      213: 6960685110137922491
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_69
+  - first:
+      213: 6708152331777763376
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_70
+  - first:
+      213: 8320644469622979678
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_71
+  - first:
+      213: -6099060688889635131
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_72
+  - first:
+      213: 289137773561850428
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_73
+  - first:
+      213: -7005535021786226110
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_74
+  - first:
+      213: 8601547079209099317
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_75
+  - first:
+      213: 6867512075471430335
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_76
+  - first:
+      213: 1689735341168845365
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_77
+  - first:
+      213: -3581394467804502851
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_78
+  - first:
+      213: 2915496028495657458
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_79
+  - first:
+      213: -2990332242692642481
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_80
+  - first:
+      213: 301758312411728336
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_81
+  - first:
+      213: -7134023839396368397
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_82
+  - first:
+      213: 5544169142232294374
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_83
+  - first:
+      213: 7775651946349215763
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_84
+  - first:
+      213: 1845676550119539592
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_85
+  - first:
+      213: 1509806233321967152
+    second: Amiga Amiga CD32 - Gods - Stage 1 Boss_86
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Amiga Amiga CD32 - Gods - Stage 1 Boss_0
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 233
+        width: 44
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88c84c0432655b4f0800000000000000
+      internalID: -813649448260039544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Amiga Amiga CD32 - Gods - Stage 1 Boss_1
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 233
+        width: 45
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d526fa8718fa48d60800000000000000
+      internalID: 7891625417670353501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Amiga Amiga CD32 - Gods - Stage 1 Boss_2
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 233
+        width: 47
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f066039bc876b14d0800000000000000
+      internalID: -3162820459197602289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Amiga Amiga CD32 - Gods - Stage 1 Boss_3
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 233
+        width: 44
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5509b6b5f150c650800000000000000
+      internalID: 6251086398564664669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Amiga Amiga CD32 - Gods - Stage 1 Boss_4
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 233
+        width: 59
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55071eb1c3c3abfd0800000000000000
+      internalID: -2325480028719976363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Amiga Amiga CD32 - Gods - Stage 1 Boss_5
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 233
+        width: 44
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7a26f3d8329d0670800000000000000
+      internalID: 8506616043944684159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Amiga Amiga CD32 - Gods - Stage 1 Boss_6
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 133
+        width: 47
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f32710347aa0d3f40800000000000000
+      internalID: 5709731616075641407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Amiga Amiga CD32 - Gods - Stage 1 Boss_7
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 133
+        width: 45
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f5e9ce2903d26770800000000000000
+      internalID: 8602670274624218612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Amiga Amiga CD32 - Gods - Stage 1 Boss_8
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 133
+        width: 44
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb8050a73af8c9bb0800000000000000
+      internalID: -4927905959960573762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Amiga Amiga CD32 - Gods - Stage 1 Boss_9
+      rect:
+        serializedVersion: 2
+        x: 187
+        y: 133
+        width: 47
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd18c221c2f7fae30800000000000000
+      internalID: 4516968778536092124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Amiga Amiga CD32 - Gods - Stage 1 Boss_10
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 133
+        width: 43
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6dba7e6fcfa00e50800000000000000
+      internalID: 6773607145011854700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Amiga Amiga CD32 - Gods - Stage 1 Boss_11
+      rect:
+        serializedVersion: 2
+        x: 301
+        y: 133
+        width: 41
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44381763ea76cf420800000000000000
+      internalID: 2665119077431870276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Amiga Amiga CD32 - Gods - Stage 1 Boss_12
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 33
+        width: 48
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb26c011330d6e530800000000000000
+      internalID: 3884020646401565374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Amiga Amiga CD32 - Gods - Stage 1 Boss_13
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 33
+        width: 45
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10d2f1e632c8de6d0800000000000000
+      internalID: -2959555296313266943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Amiga Amiga CD32 - Gods - Stage 1 Boss_14
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 33
+        width: 44
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b7c1f161bfa442a0800000000000000
+      internalID: -6754080364761593935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Amiga Amiga CD32 - Gods - Stage 1 Boss_15
+      rect:
+        serializedVersion: 2
+        x: 183
+        y: 33
+        width: 54
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb074370c8152ee60800000000000000
+      internalID: 7990038350766829759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Amiga Amiga CD32 - Gods - Stage 1 Boss_16
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 33
+        width: 62
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92b383020eda0d330800000000000000
+      internalID: 3733675269214976809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Amiga Amiga CD32 - Gods - Stage 1 Boss_17
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 33
+        width: 46
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00524c14c2164ae50800000000000000
+      internalID: 6819682578455602432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Amiga Amiga CD32 - Gods - Stage 1 Boss_18
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 19
+        width: 5
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7181cf2643b00ff0800000000000000
+      internalID: -71860480007634565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Amiga Amiga CD32 - Gods - Stage 1 Boss_19
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 19
+        width: 4
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 474b409261d98ea00800000000000000
+      internalID: 786050853479167092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Amiga Amiga CD32 - Gods - Stage 1 Boss_20
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 19
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74db0ef7458440d90800000000000000
+      internalID: -7132496382088135353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Amiga Amiga CD32 - Gods - Stage 1 Boss_21
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 17
+        width: 4
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: acd1c410153b0efc0800000000000000
+      internalID: -3467574552579793462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Amiga Amiga CD32 - Gods - Stage 1 Boss_22
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 19
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a17fd9c8d15297340800000000000000
+      internalID: 4861958081566603034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Amiga Amiga CD32 - Gods - Stage 1 Boss_23
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 8
+        width: 9
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3768e6e3b2e6f0960800000000000000
+      internalID: 7570390630643172979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Amiga Amiga CD32 - Gods - Stage 1 Boss_24
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 19
+        width: 5
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d895038553c268e0800000000000000
+      internalID: -1701582937154807597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Amiga Amiga CD32 - Gods - Stage 1 Boss_25
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 19
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e8beebfb5bcbebc0800000000000000
+      internalID: -3752682268553987872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Amiga Amiga CD32 - Gods - Stage 1 Boss_26
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 19
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7128d1cc4385d02d0800000000000000
+      internalID: -3310893167261416937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Amiga Amiga CD32 - Gods - Stage 1 Boss_27
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 19
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24e998ba831d833d0800000000000000
+      internalID: -3226599091684663742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Amiga Amiga CD32 - Gods - Stage 1 Boss_28
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 19
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a76f3870880276d90800000000000000
+      internalID: -7104674118539938182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Amiga Amiga CD32 - Gods - Stage 1 Boss_29
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 19
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68dfcba71618a1770800000000000000
+      internalID: 8582314295578918278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Amiga Amiga CD32 - Gods - Stage 1 Boss_30
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 19
+        width: 7
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 243319b55ed829760800000000000000
+      internalID: 7463183548729602882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Amiga Amiga CD32 - Gods - Stage 1 Boss_31
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 19
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d11adaf39c9caf060800000000000000
+      internalID: 6988119638012698909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Amiga Amiga CD32 - Gods - Stage 1 Boss_32
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 19
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39fa423ba4bb99c50800000000000000
+      internalID: 6672570252433600403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Amiga Amiga CD32 - Gods - Stage 1 Boss_33
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 19
+        width: 4
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 344e946b053d5abf0800000000000000
+      internalID: -313612255423241149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Amiga Amiga CD32 - Gods - Stage 1 Boss_34
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 19
+        width: 12
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1fb92b2aa338ba6d0800000000000000
+      internalID: -2978142440714494991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Amiga Amiga CD32 - Gods - Stage 1 Boss_35
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 19
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b20c5179e6ec62d30800000000000000
+      internalID: 4406436259805118507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Amiga Amiga CD32 - Gods - Stage 1 Boss_36
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 17
+        width: 4
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5608b259e4bc5d80800000000000000
+      internalID: -8260528702296160678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Amiga Amiga CD32 - Gods - Stage 1 Boss_37
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 17
+        width: 4
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11c9e5570224504b0800000000000000
+      internalID: -5474897064823448559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Amiga Amiga CD32 - Gods - Stage 1 Boss_38
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 19
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 920453ffb33423770800000000000000
+      internalID: 8589001364312768553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Amiga Amiga CD32 - Gods - Stage 1 Boss_39
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 19
+        width: 4
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6542b25336de1f30800000000000000
+      internalID: 4548308189609870699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Amiga Amiga CD32 - Gods - Stage 1 Boss_40
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 19
+        width: 4
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 563b2a2862cee6e20800000000000000
+      internalID: 3345871223327470437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Amiga Amiga CD32 - Gods - Stage 1 Boss_41
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 17
+        width: 4
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 301dad030a2bf4240800000000000000
+      internalID: 4778234130747543811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Amiga Amiga CD32 - Gods - Stage 1 Boss_42
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 19
+        width: 7
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5bf45d74fdc70f970800000000000000
+      internalID: 8786660171424550837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Amiga Amiga CD32 - Gods - Stage 1 Boss_43
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 18
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cff82ce9ee94251e0800000000000000
+      internalID: -2210623177870897156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Amiga Amiga CD32 - Gods - Stage 1 Boss_44
+      rect:
+        serializedVersion: 2
+        x: 249
+        y: 19
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5033f2f26bbc7fb0800000000000000
+      internalID: -4648634681695981473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Amiga Amiga CD32 - Gods - Stage 1 Boss_45
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 19
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3507fd333923e7840800000000000000
+      internalID: 5223668225608216659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Amiga Amiga CD32 - Gods - Stage 1 Boss_46
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 17
+        width: 4
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dfe9fcdbca480a4b0800000000000000
+      internalID: -5431195273155076355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Amiga Amiga CD32 - Gods - Stage 1 Boss_47
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 19
+        width: 7
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a1d8ac5be0db72b0800000000000000
+      internalID: -5585641203532508766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Amiga Amiga CD32 - Gods - Stage 1 Boss_48
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 19
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e17b7ba7420bee20800000000000000
+      internalID: 3380798452114616807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Amiga Amiga CD32 - Gods - Stage 1 Boss_49
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 19
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ad11581107f15f50800000000000000
+      internalID: 6868542490791714214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Amiga Amiga CD32 - Gods - Stage 1 Boss_50
+      rect:
+        serializedVersion: 2
+        x: 297
+        y: 19
+        width: 10
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7055e4425b52f5e60800000000000000
+      internalID: 7953116926888006919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Amiga Amiga CD32 - Gods - Stage 1 Boss_51
+      rect:
+        serializedVersion: 2
+        x: 309
+        y: 6
+        width: 9
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7df875a82fcee09b0800000000000000
+      internalID: -5111888000571699241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Amiga Amiga CD32 - Gods - Stage 1 Boss_52
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 8
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f61aa249296d58810800000000000000
+      internalID: 1767054353852178799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Amiga Amiga CD32 - Gods - Stage 1 Boss_53
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 8
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86107a42aed1e7780800000000000000
+      internalID: -8683470140049260184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Amiga Amiga CD32 - Gods - Stage 1 Boss_54
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 6
+        width: 4
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8937c8363c3f21070800000000000000
+      internalID: 8075785102343041944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Amiga Amiga CD32 - Gods - Stage 1 Boss_55
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 6
+        width: 4
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e29976562622c530800000000000000
+      internalID: 3873700575593468640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Amiga Amiga CD32 - Gods - Stage 1 Boss_56
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 6
+        width: 11
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 546805d7f7674b500800000000000000
+      internalID: 411083755932911173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Amiga Amiga CD32 - Gods - Stage 1 Boss_57
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 8
+        width: 4
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf91be5b4a6bcb3c0800000000000000
+      internalID: -4342395122149025285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Amiga Amiga CD32 - Gods - Stage 1 Boss_58
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 8
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07b36e43a6a081840800000000000000
+      internalID: 5194913621442182000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Amiga Amiga CD32 - Gods - Stage 1 Boss_59
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 8
+        width: 4
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7eb0f7cef86a3c460800000000000000
+      internalID: 7260830161329654759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Amiga Amiga CD32 - Gods - Stage 1 Boss_60
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 8
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f626becf08c1906b0800000000000000
+      internalID: -5329697343691595153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Amiga Amiga CD32 - Gods - Stage 1 Boss_61
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 8
+        width: 5
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc207c3e9a51a3190800000000000000
+      internalID: -7982043570145656113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Amiga Amiga CD32 - Gods - Stage 1 Boss_62
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 8
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d82c52139e5ad690800000000000000
+      internalID: -7576639437336205102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Amiga Amiga CD32 - Gods - Stage 1 Boss_63
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 8
+        width: 7
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7a52f5624c3d01d0800000000000000
+      internalID: -3382981489209484677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Amiga Amiga CD32 - Gods - Stage 1 Boss_64
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 8
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8324b3c50ec667dc0800000000000000
+      internalID: -3641603537806605768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Amiga Amiga CD32 - Gods - Stage 1 Boss_65
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 6
+        width: 4
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6040ff489e9f81290800000000000000
+      internalID: -7919305163377015802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Amiga Amiga CD32 - Gods - Stage 1 Boss_66
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 8
+        width: 5
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e2543f2d7b864960800000000000000
+      internalID: 7585903992131310311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Amiga Amiga CD32 - Gods - Stage 1 Boss_67
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 8
+        width: 8
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7cef95b368935ed90800000000000000
+      internalID: -7069180791403970873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Amiga Amiga CD32 - Gods - Stage 1 Boss_68
+      rect:
+        serializedVersion: 2
+        x: 171
+        y: 8
+        width: 4
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca06d871df9416f80800000000000000
+      internalID: -8115123702174228308
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Amiga Amiga CD32 - Gods - Stage 1 Boss_69
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 8
+        width: 4
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb32f177a32599060800000000000000
+      internalID: 6960685110137922491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Amiga Amiga CD32 - Gods - Stage 1 Boss_70
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 8
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03862d22105281d50800000000000000
+      internalID: 6708152331777763376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Amiga Amiga CD32 - Gods - Stage 1 Boss_71
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 8
+        width: 16
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5c323a7f0ed87370800000000000000
+      internalID: 8320644469622979678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Amiga Amiga CD32 - Gods - Stage 1 Boss_72
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 8
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ce1f2f1e98cb5ba0800000000000000
+      internalID: -6099060688889635131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Amiga Amiga CD32 - Gods - Stage 1 Boss_73
+      rect:
+        serializedVersion: 2
+        x: 217
+        y: 8
+        width: 8
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3a2d4ce549330400800000000000000
+      internalID: 289137773561850428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Amiga Amiga CD32 - Gods - Stage 1 Boss_74
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 8
+        width: 4
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 242afdcb30757ce90800000000000000
+      internalID: -7005535021786226110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Amiga Amiga CD32 - Gods - Stage 1 Boss_75
+      rect:
+        serializedVersion: 2
+        x: 233
+        y: 8
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 530ae0fde75de5770800000000000000
+      internalID: 8601547079209099317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Amiga Amiga CD32 - Gods - Stage 1 Boss_76
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 8
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb22e25d8dd4e4f50800000000000000
+      internalID: 6867512075471430335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Amiga Amiga CD32 - Gods - Stage 1 Boss_77
+      rect:
+        serializedVersion: 2
+        x: 249
+        y: 8
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 532eac61755237710800000000000000
+      internalID: 1689735341168845365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Amiga Amiga CD32 - Gods - Stage 1 Boss_78
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 8
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db4a6f1e4b45c4ec0800000000000000
+      internalID: -3581394467804502851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Amiga Amiga CD32 - Gods - Stage 1 Boss_79
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 8
+        width: 4
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f9bb82e03ce57820800000000000000
+      internalID: 2915496028495657458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Amiga Amiga CD32 - Gods - Stage 1 Boss_80
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 8
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4968e13ba43086d0800000000000000
+      internalID: -2990332242692642481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Amiga Amiga CD32 - Gods - Stage 1 Boss_81
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 8
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d9825b169f003400800000000000000
+      internalID: 301758312411728336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Amiga Amiga CD32 - Gods - Stage 1 Boss_82
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 8
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ff6c91ad1bdefc90800000000000000
+      internalID: -7134023839396368397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Amiga Amiga CD32 - Gods - Stage 1 Boss_83
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 8
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e32079e578d0fc40800000000000000
+      internalID: 5544169142232294374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Amiga Amiga CD32 - Gods - Stage 1 Boss_84
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 8
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 310483f7f3aa8eb60800000000000000
+      internalID: 7775651946349215763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Amiga Amiga CD32 - Gods - Stage 1 Boss_85
+      rect:
+        serializedVersion: 2
+        x: 298
+        y: 8
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 883c4242b092d9910800000000000000
+      internalID: 1845676550119539592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Amiga Amiga CD32 - Gods - Stage 1 Boss_86
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 8
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03e83d815c8e3f410800000000000000
+      internalID: 1509806233321967152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 968a034f607ef794fb8af54008257215
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
