@@ -26,7 +26,7 @@ public class Button : MonoBehaviour
 
     public void OnOption()
     {
-        m_OptionButton.SetActive(false);
+        //m_OptionButton.SetActive(false);
         m_Option.SetActive(true);
     }
 
