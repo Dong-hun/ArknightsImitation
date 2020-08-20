@@ -5,11 +5,16 @@ using UnityEngine;
 public class Cube : MonoBehaviour
 {
     public int co;
+    public MonsterStat CUBESTAT;
+    public GameObject obj;
+    public Moving STAT;
     // Start is called before the first frame update
     void Start()
     {
-        
+         obj = GameObject.Find("Cube");
+        CUBESTAT = GetComponent<MonsterStat>();
     }
+    //해당 몬스터가 있는데 그 몬스터의 몬스터 스텟.
 
     // Update is called once per frame
     void Update()
@@ -21,7 +26,7 @@ public class Cube : MonoBehaviour
 
     {
 
-     //   Debug.Log("충돌 시작!");
+        //   Debug.Log("충돌 시작!");
 
     }
 
@@ -33,8 +38,8 @@ public class Cube : MonoBehaviour
 
     {
 
-        
-       // Debug.Log("충돌 중!");
+
+        // Debug.Log("충돌 중!");
 
     }
 
@@ -45,10 +50,16 @@ public class Cube : MonoBehaviour
     private void OnCollisionExit(Collision collision)
 
     {
-       // Debug.Log("충돌 끝!");
+        // Debug.Log("충돌 끝!");
 
     }
 
+    //생성할 변수를 다루는 함수에 추가
+    public void OnDamage(int dmg)
+    {
+        Debug.Log("인식");
 
-
+        STAT.OnDamage(CUBESTAT.BossAttack);
+    }
 }
+

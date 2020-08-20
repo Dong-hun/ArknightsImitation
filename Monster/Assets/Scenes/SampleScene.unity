@@ -246,7 +246,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameOver: 0
-  MaxMonster: 7
+  MaxMonster: 3
   TotalMonster: 0
 --- !u!4 &203156357
 Transform:
@@ -499,6 +499,7 @@ MonoBehaviour:
   obj2: {fileID: 0}
   Goal: {fileID: 0}
   m_STATE: 0
+  path: 0
 --- !u!195 &1166204024
 NavMeshAgent:
   m_ObjectHideFlags: 0
