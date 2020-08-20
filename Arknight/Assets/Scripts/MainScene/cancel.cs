@@ -7,6 +7,6 @@ public class cancel : MonoBehaviour
 {
     public void PlayBtn()
     {
-        SceneManager.LoadScene("StartScene");
+        SceneManager.LoadScene("Start Scene");
     }
 }
