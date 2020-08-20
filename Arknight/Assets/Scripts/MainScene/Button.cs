@@ -6,6 +6,7 @@ public class Button : MonoBehaviour
 {
     public GameObject m_Option;
     public GameObject m_OptionButton;
+    public GameObject m_OptionClick;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,5 +28,10 @@ public class Button : MonoBehaviour
     {
         m_OptionButton.SetActive(false);
         m_Option.SetActive(true);
+    }
+
+    public void OnClick()
+    {
+        m_Option.SetActive(false);
     }
 }
