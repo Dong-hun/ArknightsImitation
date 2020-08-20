@@ -20,8 +20,11 @@ public abstract class TowerManager : MonoBehaviour
     protected int m_TileX;              // 타워 X좌표
     protected int m_TileY;              // 타워 Y좌표
 
-    protected List<Enemy> m_EnemyList;
-    protected DelVoid m_Attack;
+    protected Animator m_Anim;          // 애니메이터 (protected로 상속중이여서 인스팩터창 링크불가능 
+                                        // 이름으로 호출 or public으로 바꿔서 링크걸기)
+
+    protected List<Enemy> m_EnemyList;  // 적 리스트
+    //protected DelVoid m_Attack;         // 공격 담는 딜리게이트 (딜리게이트로 한번 해볼까해서 넣어봤어여)
 
     // Start is called before the first frame update
     void Start()
@@ -43,7 +46,10 @@ public abstract class TowerManager : MonoBehaviour
 
     // 프레임 마다 업데이트 할 함수
     protected abstract void StateProcess();
-    
+
+    // 대기
+    protected abstract void Idle();
+
     // 공격
     protected abstract void Attack();
 

@@ -35,6 +35,8 @@ class Tower : TowerManager
     void Start()
     {
         base.Init(50, 50, 5.0f);
+        
+        StartCoroutine(CheckEnemy());
     }
 
     // Update is called once per frame
@@ -59,10 +61,13 @@ class Tower : TowerManager
         switch (m_State)
         {
             case STATE.IDLE:
+                //m_Anim.SetBool("Idle", true);
                 break;
             case STATE.BATTLE:
+                //m_Anim.SetBool("Attack", true);
                 break;
             case STATE.DIE:
+                //m_Anim.SetBool("Die", true);
                 break;
         }
     }
@@ -80,23 +85,51 @@ class Tower : TowerManager
                 break;
         }
     }
+
+    // 대기
+    protected override void Idle()
+    {
+
+    }
+
+    // 회전
+    void Rotation(Enemy enemy)
+    {
+        // 적과의 방향 구함
+        Vector3 dir = enemy.transform.position -
+            this.transform.position;
+
+        // 해당 방향으로 회전
+        this.transform.rotation = Quaternion.Slerp(this.transform.rotation,
+            Quaternion.LookRotation(dir), Time.smoothDeltaTime * 360.0f);
+    }
     
     // 공격
     protected override void Attack()
     {
-        
+        // 가장 가까운 적 방향으로 회전
+        Rotation(GetNearestEnemy());
+
+    }
+
+    public void OnDamage()
+    {
+
     }
 
     // 사망
     protected override void Die()
     {
-
+        
     }
 
     // 적 추가
     protected override void AddEnemy(Enemy enemy)
     {
+        // 매개변수가 null이면 리턴
         if (enemy == null) return;
+
+        // 리스트에 채워줌
         m_EnemyList.Add(enemy);
 
     }
@@ -104,24 +137,34 @@ class Tower : TowerManager
     // 가장 가까운 적 받아오기
     protected override Enemy GetNearestEnemy()
     {
+        // 리스트가 비었으면 리턴
         if (m_EnemyList.Count == 0) return null;
 
+        // 첫 거리는 아주크게 설정
         float dist = 999f;
+
+        // 가장 가까운 인덱스 저장용
         int sel = -1;
 
+        // 있는 적 다 검사
         for(int i = 0; i < m_EnemyList.Count; ++i)
         {
             // 거리 계산
             float temp = Vector3.Distance(this.transform.position, 
                 m_EnemyList[i].transform.position);
 
+            // 계산된 거리가 이전의 가장 가까운거리보다 작다면
             if(temp < dist)
             {
+                // 계산된 거리를 가장 가까운 거리로 바꿔주고
                 dist = temp;
+
+                // 해당 인덱스 번호 저장
                 sel = i;
             }
         }
 
+        // 해당 인덱스 번호의 적 리턴
         return m_EnemyList[sel];
     }
 
@@ -157,14 +200,14 @@ class Tower : TowerManager
     private void OnTriggerStay(Collider other)
     {
         // 적 방향으로 바라보기
-        if (other.gameObject.layer == LayerMask.NameToLayer("Enemy"))
-        {
-            Vector3 dir = other.transform.position - transform.position;
-            dir.Normalize();
-
-            this.transform.rotation = Quaternion.Slerp(this.transform.rotation,
-                Quaternion.LookRotation(dir), Time.smoothDeltaTime * 360.0f);
-        }
+        //if (other.gameObject.layer == LayerMask.NameToLayer("Enemy"))
+        //{
+        //    Vector3 dir = other.transform.position - transform.position;
+        //    dir.Normalize();
+        //
+        //    this.transform.rotation = Quaternion.Slerp(this.transform.rotation,
+        //        Quaternion.LookRotation(dir), Time.smoothDeltaTime * 360.0f);
+        //}
     }
 
     private void OnTriggerExit(Collider other)
@@ -173,6 +216,22 @@ class Tower : TowerManager
         if (other.gameObject.layer == LayerMask.NameToLayer("Enemy"))
         {
             RemoveEnemy(other.gameObject.GetComponent<Enemy>());
+        }
+    }
+
+    IEnumerator CheckEnemy()
+    {
+        while(true)
+        {
+            // 리스트에 적이 있으면 배틀상태로 변경
+            if (m_EnemyList.Count > 0)
+                ChangeState(STATE.BATTLE);
+
+            // 리스트에 적이 없으면 대기상태로 변경
+            else if (m_EnemyList.Count < 1)
+                ChangeState(STATE.IDLE);
+
+            yield return null;
         }
     }
 }

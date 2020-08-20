@@ -8,7 +8,6 @@ public class NodeManager : MonoBehaviour
 {
     // 타일맵 관리 클래스
     // 해당 타일의 상태 (타워의 설치유무, 일반땅, 지형, 생성지나 도착지 등) 관리
-
     private enum TILEINFO                           // 타일 상태
     {
         NONE, TOWER, OBSTACLE, STRUCTURE            // 기본, 타워, 장애물, 구조물(지형)
@@ -18,6 +17,8 @@ public class NodeManager : MonoBehaviour
 
     int MaxTileX = 10;                              // 타일 총 가로 갯수
     int MaxTileY = 9;                               // 타일 총 세로 갯수
+
+    public GameObject m_Tower;
 
     void Start()
     {
