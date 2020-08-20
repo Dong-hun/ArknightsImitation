@@ -4,22 +4,25 @@ using UnityEngine;
 
 public class Enemy : EnemyManager
 
-    /* 생성할 적 클래스
-     * 
-     * EnemyManager를 상속받아 스텟과 상태를 조정
-     * 유닛의 종류별로 클래스를 생성
-     * 종류별로 만든 클래스를 유닛에 맞게 설정
-     */
+    /* 생성할 적 클래스 */
 {
+
     // Start is called before the first frame update
-    void Start()
+    new void Start()
     {
-        
+        base.Start();
+        //m_StartPos = GameObject.Find("Plane").transform.position;
     }
 
     // Update is called once per frame
-    void Update()
+    new void Update()
     {
-        
+        base.Update();
+        //if (m_State == STATE.IDLE)
+        //{
+        //    m_Dest = GameObject.Find("Plane (89)").transform.position;
+        //    m_Navi.SetDestination(m_Dest);
+        //    ChangeState(STATE.MOVE);
+        //}
     }
 }
