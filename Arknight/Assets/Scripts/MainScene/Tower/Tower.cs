@@ -8,29 +8,6 @@ class Tower : TowerManager
     // 나중에 스크립트 이름을 타워이름으로 바꿀것 (현재 임시, 바꾸면 이 주석 지울것)
     // 기본 공격 하는 타워
 
-    public int TileX
-    {
-        set
-        {
-            m_TileX = value;
-        }
-        get
-        {
-            return m_TileX;
-        }
-    }
-    public int TileY
-    {
-        set
-        {
-            m_TileY = value;
-        }
-        get
-        {
-            return m_TileY;
-        }
-    }
-
     // Start is called before the first frame update
     void Start()
     {

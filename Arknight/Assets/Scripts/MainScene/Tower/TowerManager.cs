@@ -16,9 +16,11 @@ public abstract class TowerManager : MonoBehaviour
     protected STATE m_State;            // 상태 받는 변수
     protected int m_HP;                 // 체력
     protected int m_MP;                 // 마력
+
     protected int m_TileX;              // 타워 X좌표
     protected int m_TileY;              // 타워 Y좌표
-    protected float m_AttackDelay;        // 공격 딜레이
+
+    protected float m_AttackDelay;      // 공격 딜레이
     protected float m_Dist;             // 사거리
 
     protected Animator m_Anim;          // 애니메이터 (protected로 상속중이여서 인스팩터창 링크불가능 

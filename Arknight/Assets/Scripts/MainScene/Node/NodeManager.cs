@@ -41,6 +41,9 @@ public class NodeManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
+
+
         // 마우스 좌클릭 시
         if(Input.GetMouseButtonDown(0))
         {
@@ -65,7 +68,8 @@ public class NodeManager : MonoBehaviour
                     {
                         // 타워 생성
                         GameObject obj = Instantiate(Resources.Load("SwordChan")) as GameObject;
-                        obj.GetComponent<Tower>().SetTileNumber(tileX, tileY);
+                        //obj.GetComponent<TowerManager>().TileX = tileX;
+                        //obj.GetComponent<TowerManager>().TileY = tileY;
 
                         // 해당 타일에 배치
                         Vector3 pos = hit.transform.position;
@@ -83,14 +87,14 @@ public class NodeManager : MonoBehaviour
                 else if (hit.transform.gameObject.layer == LayerMask.NameToLayer("Tower"))
                 {
                     // 해당 타워가 설치된 타일넘버 가져옴
-                    int tileX = hit.transform.gameObject.GetComponent<Tower>().TileX;
-                    int tileY = hit.transform.gameObject.GetComponent<Tower>().TileY;
+                    //int tileX = hit.transform.gameObject.GetComponent<TowerManager>().TileX;
+                    //int tileY = hit.transform.gameObject.GetComponent<TowerManager>().TileY;
 
                     // 타워 삭제
                     Destroy(hit.transform.gameObject);
 
                     // 해당 타일을 NONE로 변경
-                    m_TileState[tileY, tileX] = TILEINFO.NONE;
+                    //m_TileState[tileY, tileX] = TILEINFO.NONE;
                 }
             }
         }
