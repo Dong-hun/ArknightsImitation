@@ -10,8 +10,8 @@ public class MonsterCreater : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GameObject obj = Instantiate(Resources.Load("Temp Target")) as GameObject;
-      //  GameObject obj2 = Instantiate(Resources.Load("Temp Target2")) as GameObject;
+        //GameObject obj = Instantiate(Resources.Load("Temp Target")) as GameObject;
+        //GameObject obj2 = Instantiate(Resources.Load("Temp Target2")) as GameObject;
 
         StartCoroutine(Monster());
         StartCoroutine(Boss());

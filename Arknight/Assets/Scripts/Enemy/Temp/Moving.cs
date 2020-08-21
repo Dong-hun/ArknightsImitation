@@ -53,10 +53,11 @@ public class Moving : MonoBehaviour
                 m_Navi.SetDestination(hit.point);
         }
         StateProcess();
+
     }
 
-    
-    
+
+
 
     void ChangeSTATE(STATE s)
     {
@@ -77,6 +78,10 @@ public class Moving : MonoBehaviour
                 break;
 
             case STATE.ATTACK:
+<<<<<<< .merge_file_a05148
+                m_Enemy = GameObject.FindObjectOfType<Cube>();
+=======
+>>>>>>> .merge_file_a07916
                 m_Navi.SetDestination(m_Navi.destination);
                 break;
 
@@ -130,6 +135,8 @@ public class Moving : MonoBehaviour
 
     private void OnCollisionStay(Collision collision)
 
+<<<<<<< .merge_file_a05148
+=======
     {
 
 
@@ -140,6 +147,43 @@ public class Moving : MonoBehaviour
     
     protected void OnBattle(Cube enemy)
     {
+        if (enemy == null) return;
+        m_Enemy = enemy;
+        ChangeSTATE(STATE.ATTACK);
+        Debug.Log("공격1");
+
+
+    }
+
+    protected void OnBattle(Transform enemy)
+>>>>>>> .merge_file_a07916
+    {
+        m_Enemy = enemy.gameObject.GetComponentInChildren<Cube>();
+        if (m_Enemy == null) return;
+        ChangeSTATE(STATE.ATTACK);
+        Debug.Log("공격2");
+
+    }
+
+<<<<<<< .merge_file_a05148
+        //   Debug.Log("충돌 중!");
+=======
+>>>>>>> .merge_file_a07916
+
+    void Onattack()
+    {
+        //아 이런. 이걸 
+        m_Enemy.OnDamage(m_Monsterinfo.MonsterAttack);
+        //큐프
+        Debug.Log("공격3");
+     //   Debug.Log(m_Monsterinfo.MonsterAttack);
+    }
+<<<<<<< .merge_file_a05148
+
+    
+    protected void OnBattle(Cube enemy)
+    {
+
         if (enemy == null) return;
         m_Enemy = enemy;
         ChangeSTATE(STATE.ATTACK);
@@ -166,13 +210,19 @@ public class Moving : MonoBehaviour
         Debug.Log("공격3");
      //   Debug.Log(m_Monsterinfo.MonsterAttack);
     }
+=======
+>>>>>>> .merge_file_a07916
     public void OnDamage(int dmg)
     {
 
         if (!m_Monsterinfo.UpdateHP(-dmg))
         {
             
+<<<<<<< .merge_file_a05148
+             //   Destroy(m_Enemy.gameObject);
+=======
               //  Destroy(m_Enemy.gameObject);
+>>>>>>> .merge_file_a07916
             Debug.Log("사망");
         }
 
