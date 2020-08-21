@@ -27,12 +27,13 @@ public class Moving : MonoBehaviour
     public STATE m_STATE;
     public NavMeshPath m_Path;
     public MonsterStat m_Monsterinfo;
+    Vector3 objpos;
     //public Cube m_Enemy;
     // Start is called before the first frame update
     //애니메이션 이벤트 추가할것
     void Start()
     {
-        Vector3 objpos=  obj.transform.position;
+        objpos = GameObject.Find("Plane (89)").GetComponent<Transform>().position;
         Vector3 DESTPOS = m_Navi.destination;
         m_Navi = GetComponent<NavMeshAgent>();
         m_STATE = STATE.CREATE;
@@ -67,13 +68,13 @@ public class Moving : MonoBehaviour
         {
             case STATE.TARGET1:
 
-                m_Navi.SetDestination(obj.transform.position);
+                m_Navi.SetDestination(objpos);
 
 
 
                 break;
             case STATE.TAGET2:
-                m_Navi.SetDestination(obj2.transform.position);
+                //m_Navi.SetDestination(obj2.transform.position);
 
                 break;
 
@@ -91,7 +92,7 @@ public class Moving : MonoBehaviour
             case STATE.TARGET1:
                 //   NavMesh.CalculatePath(transform.position, obj.transform.position,NavMesh.AllAreas ,m_Path);
                 //  if (path == true)
-                float T = Vector3.Distance(this.transform.position, obj.transform.position);
+                float T = Vector3.Distance(this.transform.position, objpos);
                 float s = Vector3.Distance(this.transform.position, m_Navi.destination);
                 if (!m_Navi.pathPending) //계산완료 후 이동
                 {
@@ -171,7 +172,6 @@ public class Moving : MonoBehaviour
     //
     //}
 
-<<<<<<< HEAD
     void Onattack()
     {
         //아 이런. 이걸 
@@ -180,8 +180,6 @@ public class Moving : MonoBehaviour
         Debug.Log("공격3");
      //   Debug.Log(m_Monsterinfo.MonsterAttack);
     }
-=======
->>>>>>> f2b93de5dff5d8b01a3b9288a750ce1c743391bf
     public void OnDamage(int dmg)
     {
 
