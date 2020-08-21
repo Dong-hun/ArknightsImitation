@@ -34,7 +34,7 @@ public class MonsterCreater : MonoBehaviour
             if (MonsterCount<MaxMonster){
                 yield return new WaitForSeconds(2.0f);
 
-                GameObject obj = Instantiate(Resources.Load("Temp Monster(Moving)")) as GameObject;
+                GameObject obj = Instantiate(Resources.Load("GreenCube")) as GameObject;
                 MonsterCount++;
                 TotalMonster++;
             }
@@ -55,7 +55,7 @@ public class MonsterCreater : MonoBehaviour
             {
                 yield return new WaitForSeconds(3.0f);
 
-                GameObject obj = Instantiate(Resources.Load("3DBOSS")) as GameObject;
+                //GameObject obj = Instantiate(Resources.Load("3DBOSS")) as GameObject;
             }
             else
             {
