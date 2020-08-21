@@ -27,12 +27,12 @@ public class Moving : MonoBehaviour
     public STATE m_STATE;
     public NavMeshPath m_Path;
     public MonsterStat m_Monsterinfo;
-     public Cube m_Enemy;
+    //public Cube m_Enemy;
     // Start is called before the first frame update
     //애니메이션 이벤트 추가할것
     void Start()
     {
-       Vector3 objpos=  obj.transform.position;
+        Vector3 objpos=  obj.transform.position;
         Vector3 DESTPOS = m_Navi.destination;
         m_Navi = GetComponent<NavMeshAgent>();
         m_STATE = STATE.CREATE;
@@ -53,10 +53,11 @@ public class Moving : MonoBehaviour
                 m_Navi.SetDestination(hit.point);
         }
         StateProcess();
+
     }
 
-    
-    
+
+
 
     void ChangeSTATE(STATE s)
     {
@@ -120,7 +121,7 @@ public class Moving : MonoBehaviour
                
                     break;
             case STATE.ATTACK:
-                Onattack();
+                //Onattack();
                 break;
         }
 
@@ -130,6 +131,7 @@ public class Moving : MonoBehaviour
 
     private void OnCollisionStay(Collision collision)
 
+
     {
 
 
@@ -137,27 +139,39 @@ public class Moving : MonoBehaviour
 
     }
 
+
+    //void Onattack()
+    //{
+    //    //아 이런. 이걸 
+    //    m_Enemy.OnDamage(m_Monsterinfo.MonsterAttack);
+    //    //큐프
+    //    Debug.Log("공격3");
+    // //   Debug.Log(m_Monsterinfo.MonsterAttack);
+    //}
+
+
     
-    protected void OnBattle(Cube enemy)
-    {
-        if (enemy == null) return;
-        m_Enemy = enemy;
-        ChangeSTATE(STATE.ATTACK);
-        Debug.Log("공격1");
+    //protected void OnBattle(Cube enemy)
+    //{
+    //
+    //    if (enemy == null) return;
+    //    m_Enemy = enemy;
+    //    ChangeSTATE(STATE.ATTACK);
+    //    Debug.Log("공격1");
+    //
+    //
+    //}
+    //
+    //protected void OnBattle(Transform enemy)
+    //{
+    //    m_Enemy = enemy.gameObject.GetComponentInChildren<Cube>();
+    //    if (m_Enemy == null) return;
+    //    ChangeSTATE(STATE.ATTACK);
+    //    Debug.Log("공격2");
+    //
+    //}
 
-
-    }
-
-    protected void OnBattle(Transform enemy)
-    {
-        m_Enemy = enemy.gameObject.GetComponentInChildren<Cube>();
-        if (m_Enemy == null) return;
-        ChangeSTATE(STATE.ATTACK);
-        Debug.Log("공격2");
-
-    }
-
-
+<<<<<<< HEAD
     void Onattack()
     {
         //아 이런. 이걸 
@@ -166,13 +180,14 @@ public class Moving : MonoBehaviour
         Debug.Log("공격3");
      //   Debug.Log(m_Monsterinfo.MonsterAttack);
     }
+=======
+>>>>>>> f2b93de5dff5d8b01a3b9288a750ce1c743391bf
     public void OnDamage(int dmg)
     {
 
         if (!m_Monsterinfo.UpdateHP(-dmg))
         {
-            
-              //  Destroy(m_Enemy.gameObject);
+          
             Debug.Log("사망");
         }
 
