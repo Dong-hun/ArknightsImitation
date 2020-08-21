@@ -18,8 +18,6 @@ public class NodeManager : MonoBehaviour
     int MaxTileX = 10;                              // 타일 총 가로 갯수
     int MaxTileY = 9;                               // 타일 총 세로 갯수
 
-    public GameObject m_Tower;
-
     void Start()
     {
         // 배열에 노드 싹다 담아줌

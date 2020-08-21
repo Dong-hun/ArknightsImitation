@@ -34,9 +34,7 @@ class Tower : TowerManager
     // Start is called before the first frame update
     void Start()
     {
-        base.Init(50, 50, 5.0f);
-        
-        StartCoroutine(CheckEnemy());
+        base.Init(50, 50, 5.0f, 2.0f);
     }
 
     // Update is called once per frame
@@ -80,6 +78,7 @@ class Tower : TowerManager
             case STATE.IDLE:
                 break;
             case STATE.BATTLE:
+                Attack();
                 break;
             case STATE.DIE:
                 break;
@@ -110,11 +109,34 @@ class Tower : TowerManager
         // 가장 가까운 적 방향으로 회전
         Rotation(GetNearestEnemy());
 
+        // 딜레이가 0이하가 된다면
+        if (m_AttackDelay <= Mathf.Epsilon)                                         
+        {
+            // 제일 가까운 적이 살아있다면
+            if (GetNearestEnemy() != null)                                          
+            {
+                // Attack 트리거 발동
+                m_Anim.SetTrigger("Attack");
+
+                // 다시 딜레이 설정
+                m_AttackDelay = 3.0f;                                               
+            }
+            // 적이 죽었다면
+            else
+            {
+                // IDLE상태로 바꿈
+                ChangeState(STATE.IDLE);
+            }
+        }
+
+        // 딜레이 감소
+        m_AttackDelay -= Time.deltaTime;
     }
 
-    public void OnDamage()
+    // 적에게 데미지 줌
+    public void OnDamage(Enemy enemy)
     {
-
+        // PlayAnimationEvent에서 공격 모션일때 이 함수 호출
     }
 
     // 사망
@@ -180,12 +202,9 @@ class Tower : TowerManager
                 m_EnemyList.Remove(m_EnemyList[i]);
             }
         }
-    }
-    
-    // 적 탐색
-    void FindEnemy()
-    {
-        
+
+        if (m_EnemyList.Count == 0)
+            ChangeState(STATE.IDLE);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -194,6 +213,7 @@ class Tower : TowerManager
         if(other.gameObject.layer == LayerMask.NameToLayer("Enemy"))
         {
             AddEnemy(other.gameObject.GetComponent<Enemy>());
+            ChangeState(STATE.BATTLE);
         }
     }
 
@@ -216,22 +236,6 @@ class Tower : TowerManager
         if (other.gameObject.layer == LayerMask.NameToLayer("Enemy"))
         {
             RemoveEnemy(other.gameObject.GetComponent<Enemy>());
-        }
-    }
-
-    IEnumerator CheckEnemy()
-    {
-        while(true)
-        {
-            // 리스트에 적이 있으면 배틀상태로 변경
-            if (m_EnemyList.Count > 0)
-                ChangeState(STATE.BATTLE);
-
-            // 리스트에 적이 없으면 대기상태로 변경
-            else if (m_EnemyList.Count < 1)
-                ChangeState(STATE.IDLE);
-
-            yield return null;
         }
     }
 }
