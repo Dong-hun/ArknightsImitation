@@ -161,7 +161,7 @@ public class Moving : MonoBehaviour
     void Onattack()
     {
         //아 이런. 이걸 
-        m_Enemy.OnDamage(m_Monsterinfo.MonsterAttack);
+        //m_Enemy.OnDamage(m_Monsterinfo.MonsterAttack);
         //큐프
         Debug.Log("공격3");
      //   Debug.Log(m_Monsterinfo.MonsterAttack);
