@@ -134,7 +134,7 @@ public class BuildManager : MonoBehaviour
         Debug.LogError(m_NodeMng.NTileY + "::" + m_NodeMng.NTileX);
         
         //타워가 삭제되면 노드 m_TileState를 NONE으로 변경
-        m_NodeMng.m_TileState[m_NodeMng.NTileY, m_NodeMng.NTileX] = NodeManager.TILEINFO.NONE;
+        m_NodeMng.m_TileState[m_NodeMng.TileY, m_NodeMng.TileX] = NodeManager.TILEINFO.NONE;
         
         //타워 업그레이드,삭제 UI비활성화
         m_Button.TowerOffBtn();
