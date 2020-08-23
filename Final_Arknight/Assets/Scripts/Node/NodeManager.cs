@@ -188,7 +188,7 @@ public class NodeManager : MonoBehaviour
                 //이건 혹시몰라서 만들어 놨어요
                 else if (m_TileState[TileY, TileX] == TILEINFO.NONE)
                 {
-
+                    m_Button.BuildOnButton();
                 }
 
 
