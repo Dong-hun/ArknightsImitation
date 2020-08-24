@@ -10,13 +10,13 @@ public class Moving : MonoBehaviour
  //3.  haspath,pathPending 이용하고
  //4. 상태기계 상태로 전환해
  // 5.적 생성... (코루틴으로 생성..시간 몇초마다..) 몇 마리가 죽었으면 나온다. ㅇㅋ.
- 
- //6. 보스 패턴 (1. 5초동안 기모아서 한방(무조건한방에 다죽임),2.체력이 낮고 빠른 보스3.체력이 5배이고 3바퀴 더돌고 들어가는 보스4.광역공격)
- //7. 장애물 부시기  경로..재계산 여까지 대충
- //8.레인지 시스템
-   public enum STATE
+
+    //6. 보스 패턴 (1. 5초동안 기모아서 한방(무조건한방에 다죽임),2.체력이 낮고 빠른 보스3.체력이 5배이고 3바퀴 더돌고 들어가는 보스4.광역공격)
+    //7. 장애물 부시기  경로..재계산 여까지 대충
+    //8.레인지 시스템
+    public enum STATE
     {
-        CREATE,TARGET1,TAGET2,ATTACK,DEAD,GOAL
+        CREATE, TARGET1, TAGET2, ATTACK, DEAD, GOAL
 
     }
     public NavMeshAgent m_Navi;
@@ -27,14 +27,17 @@ public class Moving : MonoBehaviour
     public STATE m_STATE;
     public NavMeshPath m_Path;
     public MonsterStat m_Monsterinfo;
-    Vector3 objpos;
+
+    public Vector3 objpos;
     //public Cube m_Enemy;
     // Start is called before the first frame update
     //애니메이션 이벤트 추가할것
     void Start()
     {
-        objpos = GameObject.Find("Plane (89)").GetComponent<Transform>().position;
-        Vector3 DESTPOS = m_Navi.destination;
+        this.transform.position = GameObject.Find("Start").GetComponent<Transform>().position;
+        objpos = GameObject.Find("End").GetComponent<Transform>().position;
+        m_Navi.SetDestination(objpos);
+
         m_Navi = GetComponent<NavMeshAgent>();
         m_STATE = STATE.CREATE;
         ChangeSTATE(STATE.TARGET1);
@@ -46,13 +49,13 @@ public class Moving : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        RaycastHit hit;
-        if (Input.GetMouseButtonDown(0))
-        {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            if (Physics.Raycast(ray, out hit))
-                m_Navi.SetDestination(hit.point);
-        }
+        //RaycastHit hit;
+        //if (Input.GetMouseButtonDown(0))
+        //{
+        //    Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        //    if (Physics.Raycast(ray, out hit))
+        //        m_Navi.SetDestination(hit.point);
+        //}
         StateProcess();
 
     }
@@ -67,19 +70,12 @@ public class Moving : MonoBehaviour
         switch (m_STATE)
         {
             case STATE.TARGET1:
-
                 m_Navi.SetDestination(objpos);
-
-
-
                 break;
             case STATE.TAGET2:
-                //m_Navi.SetDestination(obj2.transform.position);
-
                 break;
-
             case STATE.ATTACK:
-                m_Navi.SetDestination(m_Navi.destination);
+                //m_Navi.SetDestination(m_Navi.destination);
                 break;
 
         }
@@ -94,33 +90,30 @@ public class Moving : MonoBehaviour
                 //  if (path == true)
                 float T = Vector3.Distance(this.transform.position, objpos);
                 float s = Vector3.Distance(this.transform.position, m_Navi.destination);
-                if (!m_Navi.pathPending) //계산완료 후 이동
+
+                if (m_Navi.remainingDistance <= m_Navi.stoppingDistance)
                 {
-                    if (m_Navi.remainingDistance <= m_Navi.stoppingDistance)
-                    {
-                        if (!m_Navi.hasPath || m_Navi.velocity.sqrMagnitude == 0.0f)
-                        {
-                            //상태를 멈춤상태로 만들거나 2번째 상태로 만드는게 나을듯. ㅇㅇ 맞어
-                            ChangeSTATE(STATE.TAGET2);
-                        }
-                    }
-                    else if (T-s>1.5f)
-                    {
-                        ChangeSTATE(STATE.ATTACK);
-                    }
-
+                    Destroy(this.gameObject);
                 }
-                
-
-
-
-
+                //if (!m_Navi.pathPending) //계산완료 후 이동
+                //{
+                //    if (m_Navi.remainingDistance <= m_Navi.stoppingDistance)
+                //    {
+                //        if (!m_Navi.hasPath || m_Navi.velocity.sqrMagnitude == 0.0f)
+                //        {
+                //            //상태를 멈춤상태로 만들거나 2번째 상태로 만드는게 나을듯. ㅇㅇ 맞어
+                //            //ChangeSTATE(STATE.TAGET2);
+                //        }
+                //    }
+                //    else if (T-s>1.5f)
+                //    {
+                //        ChangeSTATE(STATE.ATTACK);
+                //    }
+                //
+                //}
                 break;
-
-
             case STATE.TAGET2:
-               
-                    break;
+                break;
             case STATE.ATTACK:
                 //Onattack();
                 break;
@@ -131,8 +124,6 @@ public class Moving : MonoBehaviour
 
 
     private void OnCollisionStay(Collision collision)
-
-
     {
 
 
@@ -151,7 +142,7 @@ public class Moving : MonoBehaviour
     //}
 
 
-    
+
     //protected void OnBattle(Cube enemy)
     //{
     //
@@ -178,19 +169,18 @@ public class Moving : MonoBehaviour
         //m_Enemy.OnDamage(m_Monsterinfo.MonsterAttack);
         //큐프
         Debug.Log("공격3");
-     //   Debug.Log(m_Monsterinfo.MonsterAttack);
+        //   Debug.Log(m_Monsterinfo.MonsterAttack);
     }
     public void OnDamage(int dmg)
     {
 
         if (!m_Monsterinfo.UpdateHP(-dmg))
         {
-          
             Debug.Log("사망");
         }
 
     }
-    
+
     //레인지 시스템으로 찾고 다시 합시다.
     //문제점 1. 공격을 해도 체력이 줄지 않는다.
     //문제점 2. 삭제가 되지 않는다.
