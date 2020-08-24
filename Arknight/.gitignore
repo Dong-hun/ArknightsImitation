@@ -60,7 +60,6 @@ crashlytics-build.properties
 
 # 리소스 제외
 Assets/Graphics
-Assets/Resources
 Assets/BGM
-Assets/UI
 Assets/TextMesh Pro
+Assets/UI
