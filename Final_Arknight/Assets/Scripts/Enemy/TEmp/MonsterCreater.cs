@@ -57,7 +57,7 @@ public class MonsterCreater : MonoBehaviour
             {
                 yield return new WaitForSeconds(3.0f);
 
-                //GameObject obj = Instantiate(Resources.Load("3DBOSS")) as GameObject;
+                GameObject obj = Instantiate(Resources.Load("3DBOSS")) as GameObject;
             }
             else
             {
