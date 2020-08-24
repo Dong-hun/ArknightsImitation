@@ -33,14 +33,14 @@ public class EnemyManager : MonoBehaviour
     // Start is called before the first frame update
     protected void Start()
     {
-        m_Navi.speed = 10.0f;               // 이동 속도
-        m_Navi.angularSpeed = 360.0f;       // 회전 속도 (디그리)
-        m_Navi.stoppingDistance = 0.5f;     // 제동 거리 (이 거리부터 제동 시작)
-        m_Navi.autoBraking = true;          // 도착 직전 감속을 true로 설정
-                                            // -> (false로 하면 도착해서 감속하기 때문에 속도를 주체못하고 도착지보다 더 벗어남)
+        m_Navi.speed = 10.0f;           // 이동 속도
+        m_Navi.angularSpeed = 360.0f;   // 회전 속도 (디그리)
+        m_Navi.stoppingDistance = 0.5f; // 제동 거리 (이 거리부터 제동 시작)
+        m_Navi.autoBraking = true;      // 도착 직전 감속을 true로 설정
+                                        // -> (false로 하면 도착해서 감속하기 때문에 속도를 주체못하고 도착지보다 더 벗어남)
         
-        m_Navi.SetDestination(m_Dest);      // 네비게이션에서도 도착지 설정
-        m_State = STATE.IDLE;               // 상태를 움직임으로 설정해서 바로 이동하게 함
+        m_Navi.SetDestination(m_Dest);  // 네비게이션에서도 도착지 설정
+        m_State = STATE.IDLE;           // 상태를 움직임으로 설정해서 바로 이동하게 함
     }
 
     // Update is called once per frame

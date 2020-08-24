@@ -2,11 +2,41 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-class Tower : TowerManager
+class BasicTower : TowerManager
+
 {
+
     /* 타워매니저를 상속받아서 만들어지는 각 타워들의 스크립트 */
     // 나중에 스크립트 이름을 타워이름으로 바꿀것 (현재 임시, 바꾸면 이 주석 지울것)
     // 기본 공격 하는 타워
+    public int TileX
+    {
+        set
+        {
+            m_TileX = value;
+        }
+        get
+        {
+            return m_TileX;
+        }
+    }
+    public int TileY
+    {
+        set
+        {
+            m_TileY = value;
+        }
+        get
+        {
+            return m_TileY;
+        }
+    }
+
+    public void GetTileData()
+    {
+        TileX = 0;
+        int test = TileY;
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -79,7 +109,7 @@ class Tower : TowerManager
         this.transform.rotation = Quaternion.Slerp(this.transform.rotation,
             Quaternion.LookRotation(dir), Time.smoothDeltaTime * 360.0f);
     }
-    
+
     // 공격
     protected override void Attack()
     {
@@ -87,16 +117,16 @@ class Tower : TowerManager
         Rotation(GetNearestEnemy());
 
         // 딜레이가 0이하가 된다면
-        if (m_AttackDelay <= Mathf.Epsilon)                                         
+        if (m_AttackDelay <= Mathf.Epsilon)
         {
             // 제일 가까운 적이 살아있다면
-            if (GetNearestEnemy() != null)                                          
+            if (GetNearestEnemy() != null)
             {
                 // Attack 트리거 발동
                 m_Anim.SetTrigger("Attack");
 
                 // 다시 딜레이 설정
-                m_AttackDelay = 3.0f;                                               
+                m_AttackDelay = 3.0f;
             }
             // 적이 죽었다면
             else
@@ -119,7 +149,7 @@ class Tower : TowerManager
     // 사망
     protected override void Die()
     {
-        
+
     }
 
     // 적 추가
@@ -146,14 +176,14 @@ class Tower : TowerManager
         int sel = -1;
 
         // 있는 적 다 검사
-        for(int i = 0; i < m_EnemyList.Count; ++i)
+        for (int i = 0; i < m_EnemyList.Count; ++i)
         {
             // 거리 계산
-            float temp = Vector3.Distance(this.transform.position, 
+            float temp = Vector3.Distance(this.transform.position,
                 m_EnemyList[i].transform.position);
 
             // 계산된 거리가 이전의 가장 가까운거리보다 작다면
-            if(temp < dist)
+            if (temp < dist)
             {
                 // 계산된 거리를 가장 가까운 거리로 바꿔주고
                 dist = temp;
@@ -172,9 +202,9 @@ class Tower : TowerManager
     {
         if (enemy == null) return;
 
-        for(int i = 0; i < m_EnemyList.Count; ++i)
+        for (int i = 0; i < m_EnemyList.Count; ++i)
         {
-            if(m_EnemyList[i].transform == enemy.transform)
+            if (m_EnemyList[i].transform == enemy.transform)
             {
                 m_EnemyList.Remove(m_EnemyList[i]);
             }
@@ -187,7 +217,7 @@ class Tower : TowerManager
     private void OnTriggerEnter(Collider other)
     {
         // 사정거리에 들어온 적 추가
-        if(other.gameObject.layer == LayerMask.NameToLayer("Enemy"))
+        if (other.gameObject.layer == LayerMask.NameToLayer("Enemy"))
         {
             AddEnemy(other.gameObject.GetComponent<Enemy>());
             ChangeState(STATE.BATTLE);

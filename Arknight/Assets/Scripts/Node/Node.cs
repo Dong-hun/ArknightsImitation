@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Node : NodeManager
 {
-    public int m_TileX;
+    int m_TileX;
     public int TileX
     {
         set
@@ -17,7 +17,7 @@ public class Node : NodeManager
         }
     }
 
-    public int m_TileY;
+    int m_TileY;
     public int TileY
     {
         set
@@ -39,6 +39,6 @@ public class Node : NodeManager
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }
