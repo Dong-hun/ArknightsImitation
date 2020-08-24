@@ -29,8 +29,9 @@ public class NodeManager : MonoBehaviour
 
     void Start()
     {
-        // 배열에 노드 싹다 담아줌
+        // 배열에 노드 싹다 담아줌\
         m_NodeArr = gameObject.GetComponentsInChildren<Node>();
+\
 
         // 타일 배열로 저장
         m_TileState = new TILEINFO[MaxTileY, MaxTileX];
@@ -54,6 +55,7 @@ public class NodeManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
 
         // 마우스 좌클릭 시
         if (Input.GetMouseButtonDown(0))
@@ -155,7 +157,6 @@ public class NodeManager : MonoBehaviour
     {
         return m_NodeArr[(y * 10) + x];
     }
-
 }
 
 
