@@ -131,12 +131,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navi: {fileID: -8832068159377579472}
-  obj: {fileID: 0}
-  obj2: {fileID: 0}
-  Goal: {fileID: 0}
-  Cube: {fileID: 0}
+  Cube: {fileID: 206271468822378592, guid: 3ab338a4d020468479072770c0ca5d8c, type: 3}
   m_STATE: 0
   m_Monsterinfo: {fileID: 0}
+  m_Enemy: {fileID: 0}
 --- !u!114 &-4650162242365244405
 MonoBehaviour:
   m_ObjectHideFlags: 0
