@@ -70,7 +70,7 @@ public class MonsterCreater : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            obj = Instantiate(Resources.Load("Cube")) as GameObject;
+            obj = Instantiate(Resources.Load("Enemy/Cube")) as GameObject;
         }
         if (Input.GetKeyDown(KeyCode.F1))
         {
