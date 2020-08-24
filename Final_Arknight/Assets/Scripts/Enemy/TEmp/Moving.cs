@@ -20,20 +20,24 @@ public class Moving : MonoBehaviour
 
     }
     public NavMeshAgent m_Navi;
-    public GameObject obj;
-    public GameObject obj2;
-    public GameObject Goal;
-    public GameObject Cube;
+     public GameObject Cube;
     public STATE m_STATE;
     public NavMeshPath m_Path;
     public MonsterStat m_Monsterinfo;
+    public Cube m_Enemy;
+    float attackdelay = 3.0f;
+
     Vector3 objpos;
+    Vector3 objpos2;
+    Vector3 Goalpos;
     //public Cube m_Enemy;
     // Start is called before the first frame update
     //애니메이션 이벤트 추가할것
     void Start()
     {
         objpos = GameObject.Find("Plane (89)").GetComponent<Transform>().position;
+        objpos2 = GameObject.Find("Plane (1)").GetComponent<Transform>().position;
+
         Vector3 DESTPOS = m_Navi.destination;
         m_Navi = GetComponent<NavMeshAgent>();
         m_STATE = STATE.CREATE;
@@ -75,10 +79,13 @@ public class Moving : MonoBehaviour
                 break;
             case STATE.TAGET2:
                 //m_Navi.SetDestination(obj2.transform.position);
+                m_Navi.SetDestination(objpos2);
 
                 break;
 
             case STATE.ATTACK:
+                m_Enemy = GameObject.FindObjectOfType<Cube>();
+
                 m_Navi.SetDestination(m_Navi.destination);
                 break;
 
@@ -122,8 +129,17 @@ public class Moving : MonoBehaviour
                
                     break;
             case STATE.ATTACK:
-                //Onattack();
-                break;
+                if (attackdelay <= Mathf.Epsilon)
+                {
+                    attackdelay = 2.0f;
+                    Onattack();
+                    if (m_Enemy == null)
+                    {
+                        ChangeSTATE(STATE.TAGET2);
+                    }
+                }
+                attackdelay -= Time.smoothDeltaTime; break;
+
         }
 
     }
@@ -141,44 +157,47 @@ public class Moving : MonoBehaviour
     }
 
 
-    //void Onattack()
-    //{
-    //    //아 이런. 이걸 
-    //    m_Enemy.OnDamage(m_Monsterinfo.MonsterAttack);
+    void Onattack(Cube enemy)
+    {
+        //아 이런. 이걸 
+        m_Enemy.OnDamage(m_Monsterinfo.MonsterAttack);
     //    //큐프
-    //    Debug.Log("공격3");
+        Debug.Log("공격3");
     // //   Debug.Log(m_Monsterinfo.MonsterAttack);
-    //}
+    }
 
 
     
-    //protected void OnBattle(Cube enemy)
-    //{
-    //
-    //    if (enemy == null) return;
-    //    m_Enemy = enemy;
-    //    ChangeSTATE(STATE.ATTACK);
+    protected void OnBattle(Cube enemy)
+    {
+    
+        if (enemy == null) return;
+        m_Enemy = enemy;
+        ChangeSTATE(STATE.ATTACK);
     //    Debug.Log("공격1");
     //
     //
-    //}
+    }
     //
-    //protected void OnBattle(Transform enemy)
-    //{
-    //    m_Enemy = enemy.gameObject.GetComponentInChildren<Cube>();
-    //    if (m_Enemy == null) return;
-    //    ChangeSTATE(STATE.ATTACK);
-    //    Debug.Log("공격2");
+    protected void OnBattle(Transform enemy)
+    {
+        m_Enemy = enemy.gameObject.GetComponentInChildren<Cube>();
+        if (m_Enemy == null) return;
+        ChangeSTATE(STATE.ATTACK);
+        Debug.Log("공격2");
     //
-    //}
+    }
 
     void Onattack()
     {
         //아 이런. 이걸 
-        //m_Enemy.OnDamage(m_Monsterinfo.MonsterAttack);
-        //큐프
-        Debug.Log("공격3");
-     //   Debug.Log(m_Monsterinfo.MonsterAttack);
+        if (m_Enemy != null)
+        {
+            m_Enemy.OnDamage(m_Monsterinfo.MonsterAttack);
+
+            //큐프
+            Debug.Log("공격3");
+        }//   Debug.Log(m_Monsterinfo.MonsterAttack);
     }
     public void OnDamage(int dmg)
     {

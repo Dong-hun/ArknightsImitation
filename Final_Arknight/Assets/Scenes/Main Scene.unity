@@ -4449,7 +4449,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_TileX: 0
   m_TileY: 0
-  TowerOn: 0
   obj1: {fileID: 0}
   obj2: {fileID: 0}
   obj3: {fileID: 0}
@@ -7646,6 +7645,7 @@ MonoBehaviour:
   GameOver: 0
   MaxMonster: 3
   TotalMonster: 0
+  obj: {fileID: 0}
 --- !u!4 &1361680911
 Transform:
   m_ObjectHideFlags: 0
@@ -11483,7 +11483,6 @@ MonoBehaviour:
   BuildTowerBtn3: {fileID: 4171391979049861363}
   TowerUpgrade: {fileID: 4171391979064091297}
   TowerDelete: {fileID: 4171391977726889753}
-  TowerOn: 0
 --- !u!1 &4171391977969280479
 GameObject:
   m_ObjectHideFlags: 0
