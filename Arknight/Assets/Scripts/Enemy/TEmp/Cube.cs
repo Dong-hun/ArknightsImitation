@@ -5,13 +5,13 @@ using UnityEngine;
 public class Cube : MonoBehaviour
 {
     public int co;
-    //public MonsterStat CUBESTAT;
-    //public MonsterStat m_Obinfo;
+    public MonsterStat CUBESTAT;
+    public MonsterStat m_Obinfo;
     // Start is called before the first frame update
     void Start()
     {
-         //obj = GameObject.Find("Cube(Clone)");
-        //CUBESTAT = GetComponent<MonsterStat>();
+        //obj = GameObject.Find("Cube(Clone)");
+        CUBESTAT = GetComponent<MonsterStat>();
     }
     //해당 몬스터가 있는데 그 몬스터의 몬스터 스텟.
 
@@ -56,21 +56,21 @@ public class Cube : MonoBehaviour
     //생성할 변수를 다루는 함수에 추가
     public void OnDamage(int dmg)
     {
-        
 
-            Debug.Log("인식");
-        //CUBESTAT.BossAttack =dmg ;
-        //
-        //    if (!m_Obinfo.UpdateHP(-dmg))
-        //    {
-        //
-        //        Destroy(this.gameObject);
-        //        Debug.Log("사망");
-        //    }
-        //
-        //    //        if (this.gameObject != null)
-        //
-        ////   CUBESTAT.OnDamage(dmg);
+
+        Debug.Log("인식");
+        CUBESTAT.BossAttack = dmg;
+
+        if (!m_Obinfo.UpdateHP(-dmg))
+        {
+
+            Destroy(this.gameObject);
+            Debug.Log("사망");
+        }
+
+        //        if (this.gameObject != null)
+
+        //   CUBESTAT.OnDamage(dmg);
 
 
 
