@@ -10,7 +10,6 @@ public class NodeManager : MonoBehaviour
 {
     // 타일맵 관리 클래스
     // 해당 타일의 상태 (타워의 설치유무, 일반땅, 지형, 생성지나 도착지 등) 관리
-<<<<<<< HEAD:Arknight/Assets/Scripts/Node/NodeManager.cs
     public enum TILEINFO                           // 타일 상태
     {
         NONE, TOWER, OBSTACLE, STRUCTURE            // 기본, 타워, 장애물, 구조물(지형)
@@ -27,26 +26,12 @@ public class NodeManager : MonoBehaviour
     int MaxTileY = 9;                               // 타일 총 세로 갯수
 
     public GameObject m_SelectObject;               // 마우스 클릭시 오브젝트 담는 변수
-=======
-    private enum TILEINFO                           // 타일 상태
-    {
-        NONE, TOWER, OBSTACLE, STRUCTURE            // 기본, 타워, 장애물, 구조물(지형)
-    }
-    private TILEINFO[,] m_TileState;                // 타일 상태 담은 배열
-    public Node[] m_NodeArr;                        // 노드 담길 배열
-
-    int MaxTileX = 10;                              // 타일 총 가로 갯수
-    int MaxTileY = 9;                               // 타일 총 세로 갯수
->>>>>>> DongHun:Arknight/Assets/Scripts/MainScene/Node/NodeManager.cs
 
     void Start()
     {
-        // 배열에 노드 싹다 담아줌
-<<<<<<< HEAD:Arknight/Assets/Scripts/Node/NodeManager.cs
+        // 배열에 노드 싹다 담아줌\
         m_NodeArr = gameObject.GetComponentsInChildren<Node>();
-=======
-        m_NodeArr = gameObject.GetComponentsInChildren<Node>();                        
->>>>>>> DongHun:Arknight/Assets/Scripts/MainScene/Node/NodeManager.cs
+\
 
         // 타일 배열로 저장
         m_TileState = new TILEINFO[MaxTileY, MaxTileX];
@@ -70,11 +55,7 @@ public class NodeManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-<<<<<<< HEAD:Arknight/Assets/Scripts/Node/NodeManager.cs
-=======
-        
 
->>>>>>> DongHun:Arknight/Assets/Scripts/MainScene/Node/NodeManager.cs
 
         // 마우스 좌클릭 시
         if (Input.GetMouseButtonDown(0))
@@ -128,7 +109,6 @@ public class NodeManager : MonoBehaviour
                 // 가져온 번호의 타일 상태가 NONE이라면
                 if (m_TileState[TileY, TileX] == TILEINFO.NONE)
                 {
-<<<<<<< HEAD:Arknight/Assets/Scripts/Node/NodeManager.cs
                     Debug.Log(TileX + ", " + TileY);
                     //업그레이드, 삭제 UI비활성화
                     m_Button.TowerOffBtn();
@@ -168,44 +148,6 @@ public class NodeManager : MonoBehaviour
                 else if (m_TileState[TileY, TileX] == TILEINFO.NONE)
                 {
                     return;
-=======
-                    // 해당 노드의 타일 번호 가져옴
-                    int tileX = hit.transform.GetComponent<Node>().TileX;
-                    int tileY = hit.transform.GetComponent<Node>().TileY;
-
-                    // 가져온 번호의 타일 상태가 NONE이라면
-                    if (m_TileState[tileY, tileX] == TILEINFO.NONE)
-                    {
-                        // 타워 생성
-                        GameObject obj = Instantiate(Resources.Load("SwordChan")) as GameObject;
-                        //obj.GetComponent<TowerManager>().TileX = tileX;
-                        //obj.GetComponent<TowerManager>().TileY = tileY;
-
-                        // 해당 타일에 배치
-                        Vector3 pos = hit.transform.position;
-                        //pos.y = 2.5f;
-                        obj.transform.position = pos;
-
-                        // 해당 타일을 TOWER상태로 변경
-                        m_TileState[tileY, tileX] = TILEINFO.TOWER;
-                    }
-                    // 그외면 리턴
-                    else
-                        return;
-                }
-                // 맞은 오브젝트의 레이어가 "Tower"라면
-                else if (hit.transform.gameObject.layer == LayerMask.NameToLayer("Tower"))
-                {
-                    // 해당 타워가 설치된 타일넘버 가져옴
-                    //int tileX = hit.transform.gameObject.GetComponent<TowerManager>().TileX;
-                    //int tileY = hit.transform.gameObject.GetComponent<TowerManager>().TileY;
-
-                    // 타워 삭제
-                    Destroy(hit.transform.gameObject);
-
-                    // 해당 타일을 NONE로 변경
-                    //m_TileState[tileY, tileX] = TILEINFO.NONE;
->>>>>>> DongHun:Arknight/Assets/Scripts/MainScene/Node/NodeManager.cs
                 }
             }
         }
@@ -215,10 +157,6 @@ public class NodeManager : MonoBehaviour
     {
         return m_NodeArr[(y * 10) + x];
     }
-<<<<<<< HEAD:Arknight/Assets/Scripts/Node/NodeManager.cs
-
-=======
->>>>>>> DongHun:Arknight/Assets/Scripts/MainScene/Node/NodeManager.cs
 }
 
 
