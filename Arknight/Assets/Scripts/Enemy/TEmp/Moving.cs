@@ -23,7 +23,7 @@ public class Moving : MonoBehaviour
      public GameObject Cube;
     public STATE m_STATE;
     public NavMeshPath m_Path;
-    public MonsterStat m_Monsterinfo;
+    //public MonsterStat m_Monsterinfo;
     public Cube m_Enemy;
     float attackdelay = 3.0f;
 
@@ -160,7 +160,7 @@ public class Moving : MonoBehaviour
     void Onattack(Cube enemy)
     {
         //아 이런. 이걸 
-        m_Enemy.OnDamage(m_Monsterinfo.MonsterAttack);
+        //m_Enemy.OnDamage(m_Monsterinfo.MonsterAttack);
     //    //큐프
         Debug.Log("공격3");
     // //   Debug.Log(m_Monsterinfo.MonsterAttack);
@@ -193,7 +193,7 @@ public class Moving : MonoBehaviour
         //아 이런. 이걸 
         if (m_Enemy != null)
         {
-            m_Enemy.OnDamage(m_Monsterinfo.MonsterAttack);
+            //m_Enemy.OnDamage(m_Monsterinfo.MonsterAttack);
 
             //큐프
             Debug.Log("공격3");
@@ -202,11 +202,11 @@ public class Moving : MonoBehaviour
     public void OnDamage(int dmg)
     {
 
-        if (!m_Monsterinfo.UpdateHP(-dmg))
-        {
-          
-            Debug.Log("사망");
-        }
+        //if (!m_Monsterinfo.UpdateHP(-dmg))
+        //{
+        //  
+        //    Debug.Log("사망");
+        //}
 
     }
     
