@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Button : MonoBehaviour
+public class StartButton : MonoBehaviour
 {
     public GameObject m_Option;
     public GameObject m_OptionButton;

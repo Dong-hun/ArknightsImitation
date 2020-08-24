@@ -2,26 +2,43 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Node : MonoBehaviour
+public class Node : NodeManager
 {
-    public int m_TileX;
-    public int m_TileY;
+    int m_TileX;
+    public int TileX
+    {
+        set
+        {
+            m_TileX = value;
+        }
+        get
+        {
+            return m_TileX;
+        }
+    }
+
+    int m_TileY;
+    public int TileY
+    {
+        set
+        {
+            m_TileY = value;
+        }
+        get
+        {
+            return m_TileY;
+        }
+    }
 
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
-    }
 
-    public void SetTileNumber(int x, int y)
-    {
-        m_TileX = x;
-        m_TileY = y;
     }
 }
