@@ -12,26 +12,35 @@ public class NodeManager : MonoBehaviour
     // 해당 타일의 상태 (타워의 설치유무, 일반땅, 지형, 생성지나 도착지 등) 관리
     public enum TILEINFO                           // 타일 상태
     {
-        NONE, TOWER, OBSTACLE, STRUCTURE            // 기본, 타워, 장애물, 구조물(지형)
+        NONE, TOWER, OBSTACLE, STRUCTURE           // 기본, 타워, 장애물, 구조물(지형)
     }
     public TILEINFO[,] m_TileState;                // 타일 상태 담은 배열
-    public Node[] m_NodeArr;                        // 노드 담길 배열
+    public Node[] m_NodeArr;                       // 노드 담길 배열
 
     public Vector3 Hit;                            //BuildManager 스크립트에서 타워위치보내기위해 사용
     public ButtonUI m_Button;                      //ButtonUI 스크립트에서 UI On,Off함수 호출위해 사용
 
-    public GameObject m_Tower;                     //타워 delete하기위해 선택된object를 m_Tower에 넣어준다.
+    int MaxTileX = 10;                             // 타일 총 가로 갯수
+    int MaxTileY = 9;                              // 타일 총 세로 갯수
 
-    int MaxTileX = 10;                              // 타일 총 가로 갯수
-    int MaxTileY = 9;                               // 타일 총 세로 갯수
+    GameObject m_SelectObject;              // 마우스 클릭시 오브젝트 담는 변수
+    public GameObject SelectObject
+    {
+        set
+        {
+            m_SelectObject = value;
+        }
+        get
+        {
+            return m_SelectObject;
+        }
+    }
 
-    public GameObject m_SelectObject;               // 마우스 클릭시 오브젝트 담는 변수
 
     void Start()
     {
         // 배열에 노드 싹다 담아줌\
         m_NodeArr = gameObject.GetComponentsInChildren<Node>();
-
 
         // 타일 배열로 저장
         m_TileState = new TILEINFO[MaxTileY, MaxTileX];
@@ -132,8 +141,8 @@ public class NodeManager : MonoBehaviour
             else if (hit.transform.gameObject.layer == LayerMask.NameToLayer("Tower")) // 나중에 이 레이어를 각 타워별로 elseif 만들어야됨
             {
                 //충돌한 타워의 번호를 가져온다.(담는다)
-                int TileX = hit.transform.gameObject.GetComponent<BasicTower>().m_TileX;
-                int TileY = hit.transform.gameObject.GetComponent<BasicTower>().m_TileY;
+                int TileX = hit.transform.gameObject.GetComponent<BasicTower>().TileX;
+                int TileY = hit.transform.gameObject.GetComponent<BasicTower>().TileY;
 
                 if (m_TileState[TileY, TileX] == TILEINFO.TOWER)
                 {
