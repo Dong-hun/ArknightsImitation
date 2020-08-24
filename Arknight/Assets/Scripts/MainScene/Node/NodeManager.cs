@@ -31,7 +31,7 @@ public class NodeManager : MonoBehaviour
     {
         // 배열에 노드 싹다 담아줌\
         m_NodeArr = gameObject.GetComponentsInChildren<Node>();
-\
+
 
         // 타일 배열로 저장
         m_TileState = new TILEINFO[MaxTileY, MaxTileX];
