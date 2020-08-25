@@ -12,9 +12,6 @@ public class MonsterCreater : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //GameObject obj = Instantiate(Resources.Load("Temp Target")) as GameObject;
-        //GameObject obj2 = Instantiate(Resources.Load("Temp Target2")) as GameObject;
-
         StartCoroutine(Monster());
         StartCoroutine(Boss());
     }
@@ -36,7 +33,8 @@ public class MonsterCreater : MonoBehaviour
             if (MonsterCount<MaxMonster){
                 yield return new WaitForSeconds(2.0f);
 
-                GameObject obj = Instantiate(Resources.Load("Enemy/Temp Monster(Moving)")) as GameObject;
+                //GameObject obj = Instantiate(Resources.Load("Enemy/Temp Monster(Moving)")) as GameObject;
+                GameObject obj = Instantiate(Resources.Load("GreenCube")) as GameObject;
                 MonsterCount++;
                 TotalMonster++;
             }
@@ -45,10 +43,8 @@ public class MonsterCreater : MonoBehaviour
                 yield return null;
 
             }
-
-
         }
-        }
+    }
     IEnumerator Boss()
     {
         while (!GameOver)

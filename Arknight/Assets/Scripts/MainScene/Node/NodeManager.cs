@@ -23,7 +23,7 @@ public class NodeManager : MonoBehaviour
     int MaxTileX = 10;                             // 타일 총 가로 갯수
     int MaxTileY = 9;                              // 타일 총 세로 갯수
 
-    GameObject m_SelectObject;              // 마우스 클릭시 오브젝트 담는 변수
+    public GameObject m_SelectObject;              // 마우스 클릭시 오브젝트 담는 변수
     public GameObject SelectObject
     {
         set
