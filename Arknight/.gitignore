@@ -59,5 +59,6 @@ sysinfo.txt
 crashlytics-build.properties
 
 # 리소스 제외
-Assets/Model
+Assets/Graphics
 Assets/Resources
+Assets/RPG Monster Duo PBR Polyart
