@@ -5,7 +5,7 @@ using UnityEngine;
 public class MonsterCreater : MonoBehaviour
 {
     public bool GameOver = false;
-    public int MaxMonster = 3;
+    public int MaxMonster = 5;
     public int TotalMonster = 0;
     public GameObject obj;
 
@@ -37,6 +37,7 @@ public class MonsterCreater : MonoBehaviour
                 yield return new WaitForSeconds(2.0f);
 
                 GameObject obj = Instantiate(Resources.Load("Enemy/Temp Monster(Moving)")) as GameObject;
+                GameObject obj2 = Instantiate(Resources.Load("Enemy/TURTLES")) as GameObject;
                 MonsterCount++;
                 TotalMonster++;
             }
@@ -49,6 +50,33 @@ public class MonsterCreater : MonoBehaviour
 
         }
         }
+
+    IEnumerator Monster2()
+    {//while 문 밖에다가 설정할 것.
+        int MonsterCount = 0;
+
+        while (!GameOver)
+        {
+
+            if (MonsterCount < MaxMonster)
+            {
+                yield return new WaitForSeconds(2.3f);
+
+                GameObject obj2 = Instantiate(Resources.Load("Enemy/TURTLES")) as GameObject;
+                MonsterCount++;
+                TotalMonster++;
+            }
+            else
+            {
+                yield return null;
+
+            }
+
+
+        }
+    }
+
+
     IEnumerator Boss()
     {
         while (!GameOver)
