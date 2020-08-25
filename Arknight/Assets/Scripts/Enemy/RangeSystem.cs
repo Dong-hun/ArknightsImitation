@@ -11,7 +11,7 @@ using UnityEngine.AI;
 
 public class RangeSystem : MonoBehaviour
 {
-    public List<Main> m_EmenyList;
+    //public List<Main> m_EmenyList;
     public NavMeshAgent m_Navi;
 
     // Start is called before the first frame update

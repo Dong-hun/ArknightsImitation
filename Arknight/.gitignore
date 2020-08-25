@@ -60,8 +60,8 @@ crashlytics-build.properties
 
 # 리소스 제외
 Assets/Graphics
-Assets/Resources
-Assets/Resources
 Assets/BGM
 Assets/TextMesh Pro
 Assets/UI
+Assets/RPG Monster Duo PBR Polyart
+Assets/Resources/Enemy

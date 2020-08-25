@@ -7,6 +7,8 @@ public class MonsterCreater : MonoBehaviour
     public bool GameOver = false;
     public int MaxMonster = 3;
     public int TotalMonster = 0;
+    public GameObject obj;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,7 +22,7 @@ public class MonsterCreater : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        MakingD();
     }
 
 
@@ -34,7 +36,7 @@ public class MonsterCreater : MonoBehaviour
             if (MonsterCount<MaxMonster){
                 yield return new WaitForSeconds(2.0f);
 
-                GameObject obj = Instantiate(Resources.Load("GreenCube")) as GameObject;
+                GameObject obj = Instantiate(Resources.Load("Enemy/Temp Monster(Moving)")) as GameObject;
                 MonsterCount++;
                 TotalMonster++;
             }
@@ -55,7 +57,7 @@ public class MonsterCreater : MonoBehaviour
             {
                 yield return new WaitForSeconds(3.0f);
 
-                //GameObject obj = Instantiate(Resources.Load("3DBOSS")) as GameObject;
+                GameObject obj = Instantiate(Resources.Load("Enemy/3DBOSS")) as GameObject;
             }
             else
             {
@@ -64,6 +66,17 @@ public class MonsterCreater : MonoBehaviour
             }
         }
     }
+    void MakingD()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            obj = Instantiate(Resources.Load("Enemy/Cube")) as GameObject;
+        }
+        if (Input.GetKeyDown(KeyCode.F1))
+        {
 
+            Destroy(obj.gameObject);
+        }
+    }
 
 }
