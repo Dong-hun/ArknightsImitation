@@ -98,12 +98,12 @@ public class BuildManager : MonoBehaviour
         int TileY = m_NodeMng.m_SelectObject.gameObject.GetComponent<Node>().TileY;
 
         // 타워 생성 후 타일정보 저장
-        obj3 = Instantiate(Resources.Load("Obstacle")) as GameObject;
+        obj3 = Instantiate(Resources.Load("DaggerTower")) as GameObject;
         obj3.transform.position = m_NodeMng.m_SelectObject.transform.position;
         obj3.gameObject.GetComponent<BasicTower>().SetTileNumber(TileX, TileY);
 
         // 해당 좌표 타워로 변경
-        m_NodeMng.m_TileState[TileY, TileX] = NodeManager.TILEINFO.OBSTACLE;
+        m_NodeMng.m_TileState[TileY, TileX] = NodeManager.TILEINFO.TOWER;
 
         // 설치가 끝나면 선택된 오브젝트 null로 초기화
         m_NodeMng.m_SelectObject = null;
