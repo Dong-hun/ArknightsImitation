@@ -94,15 +94,19 @@ public class BuildManager : MonoBehaviour
     }
 
     //장애물타워생성함수 (UI클릭이 일어날때 Onclick 에서발생)
-    public void BuildToTower3()
+    public void BuildToObstacle()
     {
         // 노드 좌표값 노드에서 가져옴
         int TileX = m_NodeMng.SelectObject.gameObject.GetComponent<Node>().TileX;
         int TileY = m_NodeMng.SelectObject.gameObject.GetComponent<Node>().TileY;
 
-        // 타워 생성 후 타일정보 저장
+        // 선택된 타일에 깔고 타워가 묻히지 않게 하기 위해 타일 포지션값 가져온 뒤에 보정함
+        Vector3 pos = m_NodeMng.SelectObject.transform.position;
+        pos.y = 1.5f;
+
+        // 보정된 위치에 타워 생성 후 타일정보 저장
         obj3 = Instantiate(Resources.Load("Obstacle")) as GameObject;
-        obj3.transform.position = m_NodeMng.SelectObject.transform.position;
+        obj3.transform.position = pos;
         obj3.gameObject.GetComponent<Obstacle>().TileX = TileX;
         obj3.gameObject.GetComponent<Obstacle>().TileY = TileY;
 

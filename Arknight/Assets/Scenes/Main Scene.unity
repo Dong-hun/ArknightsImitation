@@ -231,7 +231,6 @@ MonoBehaviour:
   m_NodeArr: []
   Hit: {x: 0, y: 0, z: 0}
   m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
   m_SelectObject: {fileID: 0}
 --- !u!1 &29555984
 GameObject:
@@ -343,7 +342,6 @@ MonoBehaviour:
   m_NodeArr: []
   Hit: {x: 0, y: 0, z: 0}
   m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
   m_SelectObject: {fileID: 0}
 --- !u!1 &33409500
 GameObject:
@@ -455,7 +453,6 @@ MonoBehaviour:
   m_NodeArr: []
   Hit: {x: 0, y: 0, z: 0}
   m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
   m_SelectObject: {fileID: 0}
 --- !u!1 &47551608
 GameObject:
@@ -597,7 +594,6 @@ MonoBehaviour:
   m_NodeArr: []
   Hit: {x: 0, y: 0, z: 0}
   m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
   m_SelectObject: {fileID: 0}
 --- !u!1 &113598865
 GameObject:
@@ -709,7 +705,6 @@ MonoBehaviour:
   m_NodeArr: []
   Hit: {x: 0, y: 0, z: 0}
   m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
   m_SelectObject: {fileID: 0}
 --- !u!1 &130709093
 GameObject:
@@ -821,7 +816,6 @@ MonoBehaviour:
   m_NodeArr: []
   Hit: {x: 0, y: 0, z: 0}
   m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
   m_SelectObject: {fileID: 0}
 --- !u!1 &195441348
 GameObject:
@@ -999,7 +993,6 @@ MonoBehaviour:
   m_NodeArr: []
   Hit: {x: 0, y: 0, z: 0}
   m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
   m_SelectObject: {fileID: 0}
 --- !u!1 &203078395
 GameObject:
@@ -1111,7 +1104,6 @@ MonoBehaviour:
   m_NodeArr: []
   Hit: {x: 0, y: 0, z: 0}
   m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
   m_SelectObject: {fileID: 0}
 --- !u!1 &243375494
 GameObject:
@@ -1223,7 +1215,6 @@ MonoBehaviour:
   m_NodeArr: []
   Hit: {x: 0, y: 0, z: 0}
   m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
   m_SelectObject: {fileID: 0}
 --- !u!1 &333014240
 GameObject:
@@ -1335,7 +1326,6 @@ MonoBehaviour:
   m_NodeArr: []
   Hit: {x: 0, y: 0, z: 0}
   m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
   m_SelectObject: {fileID: 0}
 --- !u!1 &340031016
 GameObject:
@@ -1447,7 +1437,6 @@ MonoBehaviour:
   m_NodeArr: []
   Hit: {x: 0, y: 0, z: 0}
   m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
   m_SelectObject: {fileID: 0}
 --- !u!1 &353943666
 GameObject:
@@ -1559,7 +1548,6 @@ MonoBehaviour:
   m_NodeArr: []
   Hit: {x: 0, y: 0, z: 0}
   m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
   m_SelectObject: {fileID: 0}
 --- !u!1 &357854103
 GameObject:
@@ -1671,7 +1659,6 @@ MonoBehaviour:
   m_NodeArr: []
   Hit: {x: 0, y: 0, z: 0}
   m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
   m_SelectObject: {fileID: 0}
 --- !u!1 &362303757
 GameObject:
@@ -1783,7 +1770,6 @@ MonoBehaviour:
   m_NodeArr: []
   Hit: {x: 0, y: 0, z: 0}
   m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
   m_SelectObject: {fileID: 0}
 --- !u!1 &390248975
 GameObject:
@@ -1895,7 +1881,6 @@ MonoBehaviour:
   m_NodeArr: []
   Hit: {x: 0, y: 0, z: 0}
   m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
   m_SelectObject: {fileID: 0}
 --- !u!1 &400796512
 GameObject:
@@ -2007,7 +1992,6 @@ MonoBehaviour:
   m_NodeArr: []
   Hit: {x: 0, y: 0, z: 0}
   m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
   m_SelectObject: {fileID: 0}
 --- !u!1 &404467761
 GameObject:
@@ -2119,7 +2103,6 @@ MonoBehaviour:
   m_NodeArr: []
   Hit: {x: 0, y: 0, z: 0}
   m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
   m_SelectObject: {fileID: 0}
 --- !u!1 &442250669
 GameObject:
@@ -2231,7 +2214,6 @@ MonoBehaviour:
   m_NodeArr: []
   Hit: {x: 0, y: 0, z: 0}
   m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
   m_SelectObject: {fileID: 0}
 --- !u!1 &444210783
 GameObject:
@@ -2343,7 +2325,6 @@ MonoBehaviour:
   m_NodeArr: []
   Hit: {x: 0, y: 0, z: 0}
   m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
   m_SelectObject: {fileID: 0}
 --- !u!1 &465750253
 GameObject:
@@ -2554,7 +2535,6 @@ MonoBehaviour:
   m_NodeArr: []
   Hit: {x: 0, y: 0, z: 0}
   m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
   m_SelectObject: {fileID: 0}
 --- !u!1 &561032008
 GameObject:
@@ -2666,7 +2646,6 @@ MonoBehaviour:
   m_NodeArr: []
   Hit: {x: 0, y: 0, z: 0}
   m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
   m_SelectObject: {fileID: 0}
 --- !u!1 &563800755
 GameObject:
@@ -2778,7 +2757,6 @@ MonoBehaviour:
   m_NodeArr: []
   Hit: {x: 0, y: 0, z: 0}
   m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
   m_SelectObject: {fileID: 0}
 --- !u!1 &568342050
 GameObject:
@@ -2890,7 +2868,6 @@ MonoBehaviour:
   m_NodeArr: []
   Hit: {x: 0, y: 0, z: 0}
   m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
   m_SelectObject: {fileID: 0}
 --- !u!1 &571537500
 GameObject:
@@ -3002,7 +2979,6 @@ MonoBehaviour:
   m_NodeArr: []
   Hit: {x: 0, y: 0, z: 0}
   m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
   m_SelectObject: {fileID: 0}
 --- !u!1 &631550370
 GameObject:
@@ -3114,7 +3090,6 @@ MonoBehaviour:
   m_NodeArr: []
   Hit: {x: 0, y: 0, z: 0}
   m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
   m_SelectObject: {fileID: 0}
 --- !u!1 &656512573
 GameObject:
@@ -3318,7 +3293,6 @@ MonoBehaviour:
   m_NodeArr: []
   Hit: {x: 0, y: 0, z: 0}
   m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
   m_SelectObject: {fileID: 0}
 --- !u!1 &712111893
 GameObject:
@@ -3430,7 +3404,6 @@ MonoBehaviour:
   m_NodeArr: []
   Hit: {x: 0, y: 0, z: 0}
   m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
   m_SelectObject: {fileID: 0}
 --- !u!1 &716446967
 GameObject:
@@ -3542,7 +3515,6 @@ MonoBehaviour:
   m_NodeArr: []
   Hit: {x: 0, y: 0, z: 0}
   m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
   m_SelectObject: {fileID: 0}
 --- !u!1 &723280211
 GameObject:
@@ -3654,7 +3626,6 @@ MonoBehaviour:
   m_NodeArr: []
   Hit: {x: 0, y: 0, z: 0}
   m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
   m_SelectObject: {fileID: 0}
 --- !u!1 &761310427
 GameObject:
@@ -3766,7 +3737,6 @@ MonoBehaviour:
   m_NodeArr: []
   Hit: {x: 0, y: 0, z: 0}
   m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
   m_SelectObject: {fileID: 0}
 --- !u!1 &762160048
 GameObject:
@@ -3804,6 +3774,7 @@ MonoBehaviour:
   obj3: {fileID: 0}
   m_NodeMng: {fileID: 1682406227}
   m_Button: {fileID: 3510947691625213479}
+  m_ObstacleList: []
 --- !u!4 &762160050
 Transform:
   m_ObjectHideFlags: 0
@@ -3928,7 +3899,6 @@ MonoBehaviour:
   m_NodeArr: []
   Hit: {x: 0, y: 0, z: 0}
   m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
   m_SelectObject: {fileID: 0}
 --- !u!1 &819848187
 GameObject:
@@ -4040,7 +4010,6 @@ MonoBehaviour:
   m_NodeArr: []
   Hit: {x: 0, y: 0, z: 0}
   m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
   m_SelectObject: {fileID: 0}
 --- !u!1 &838521529
 GameObject:
@@ -4152,7 +4121,6 @@ MonoBehaviour:
   m_NodeArr: []
   Hit: {x: 0, y: 0, z: 0}
   m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
   m_SelectObject: {fileID: 0}
 --- !u!1 &857390566
 GameObject:
@@ -4264,7 +4232,6 @@ MonoBehaviour:
   m_NodeArr: []
   Hit: {x: 0, y: 0, z: 0}
   m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
   m_SelectObject: {fileID: 0}
 --- !u!1 &867078302
 GameObject:
@@ -4376,7 +4343,6 @@ MonoBehaviour:
   m_NodeArr: []
   Hit: {x: 0, y: 0, z: 0}
   m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
   m_SelectObject: {fileID: 0}
 --- !u!1 &905272631
 GameObject:
@@ -4488,7 +4454,6 @@ MonoBehaviour:
   m_NodeArr: []
   Hit: {x: 0, y: 0, z: 0}
   m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
   m_SelectObject: {fileID: 0}
 --- !u!1 &914589121
 GameObject:
@@ -4600,7 +4565,6 @@ MonoBehaviour:
   m_NodeArr: []
   Hit: {x: 0, y: 0, z: 0}
   m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
   m_SelectObject: {fileID: 0}
 --- !u!1 &931871997
 GameObject:
@@ -4712,7 +4676,6 @@ MonoBehaviour:
   m_NodeArr: []
   Hit: {x: 0, y: 0, z: 0}
   m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
   m_SelectObject: {fileID: 0}
 --- !u!1 &944909708
 GameObject:
@@ -4824,7 +4787,6 @@ MonoBehaviour:
   m_NodeArr: []
   Hit: {x: 0, y: 0, z: 0}
   m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
   m_SelectObject: {fileID: 0}
 --- !u!1 &953539250
 GameObject:
@@ -4936,7 +4898,6 @@ MonoBehaviour:
   m_NodeArr: []
   Hit: {x: 0, y: 0, z: 0}
   m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
   m_SelectObject: {fileID: 0}
 --- !u!1 &959473294
 GameObject:
@@ -5048,7 +5009,6 @@ MonoBehaviour:
   m_NodeArr: []
   Hit: {x: 0, y: 0, z: 0}
   m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
   m_SelectObject: {fileID: 0}
 --- !u!1 &962365521
 GameObject:
@@ -5160,7 +5120,6 @@ MonoBehaviour:
   m_NodeArr: []
   Hit: {x: 0, y: 0, z: 0}
   m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
   m_SelectObject: {fileID: 0}
 --- !u!1 &1031037967
 GameObject:
@@ -5272,7 +5231,6 @@ MonoBehaviour:
   m_NodeArr: []
   Hit: {x: 0, y: 0, z: 0}
   m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
   m_SelectObject: {fileID: 0}
 --- !u!1 &1066293842
 GameObject:
@@ -5384,7 +5342,6 @@ MonoBehaviour:
   m_NodeArr: []
   Hit: {x: 0, y: 0, z: 0}
   m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
   m_SelectObject: {fileID: 0}
 --- !u!1 &1067110883
 GameObject:
@@ -5496,7 +5453,6 @@ MonoBehaviour:
   m_NodeArr: []
   Hit: {x: 0, y: 0, z: 0}
   m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
   m_SelectObject: {fileID: 0}
 --- !u!1 &1071080323
 GameObject:
@@ -5608,7 +5564,6 @@ MonoBehaviour:
   m_NodeArr: []
   Hit: {x: 0, y: 0, z: 0}
   m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
   m_SelectObject: {fileID: 0}
 --- !u!1 &1094581586
 GameObject:
@@ -5720,7 +5675,6 @@ MonoBehaviour:
   m_NodeArr: []
   Hit: {x: 0, y: 0, z: 0}
   m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
   m_SelectObject: {fileID: 0}
 --- !u!1 &1106428848
 GameObject:
@@ -5832,7 +5786,6 @@ MonoBehaviour:
   m_NodeArr: []
   Hit: {x: 0, y: 0, z: 0}
   m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
   m_SelectObject: {fileID: 0}
 --- !u!1 &1113331784
 GameObject:
@@ -5944,7 +5897,6 @@ MonoBehaviour:
   m_NodeArr: []
   Hit: {x: 0, y: 0, z: 0}
   m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
   m_SelectObject: {fileID: 0}
 --- !u!1 &1114017710
 GameObject:
@@ -6056,7 +6008,6 @@ MonoBehaviour:
   m_NodeArr: []
   Hit: {x: 0, y: 0, z: 0}
   m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
   m_SelectObject: {fileID: 0}
 --- !u!1 &1115670448
 GameObject:
@@ -6168,7 +6119,6 @@ MonoBehaviour:
   m_NodeArr: []
   Hit: {x: 0, y: 0, z: 0}
   m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
   m_SelectObject: {fileID: 0}
 --- !u!1 &1140716948
 GameObject:
@@ -6280,7 +6230,6 @@ MonoBehaviour:
   m_NodeArr: []
   Hit: {x: 0, y: 0, z: 0}
   m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
   m_SelectObject: {fileID: 0}
 --- !u!1 &1153013227
 GameObject:
@@ -6392,7 +6341,6 @@ MonoBehaviour:
   m_NodeArr: []
   Hit: {x: 0, y: 0, z: 0}
   m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
   m_SelectObject: {fileID: 0}
 --- !u!1 &1166212135
 GameObject:
@@ -6504,7 +6452,6 @@ MonoBehaviour:
   m_NodeArr: []
   Hit: {x: 0, y: 0, z: 0}
   m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
   m_SelectObject: {fileID: 0}
 --- !u!1 &1172241016
 GameObject:
@@ -6616,7 +6563,6 @@ MonoBehaviour:
   m_NodeArr: []
   Hit: {x: 0, y: 0, z: 0}
   m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
   m_SelectObject: {fileID: 0}
 --- !u!1 &1215955358
 GameObject:
@@ -6728,7 +6674,6 @@ MonoBehaviour:
   m_NodeArr: []
   Hit: {x: 0, y: 0, z: 0}
   m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
   m_SelectObject: {fileID: 0}
 --- !u!1 &1257249640
 GameObject:
@@ -6840,7 +6785,6 @@ MonoBehaviour:
   m_NodeArr: []
   Hit: {x: 0, y: 0, z: 0}
   m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
   m_SelectObject: {fileID: 0}
 --- !u!1 &1294411317
 GameObject:
@@ -6952,7 +6896,6 @@ MonoBehaviour:
   m_NodeArr: []
   Hit: {x: 0, y: 0, z: 0}
   m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
   m_SelectObject: {fileID: 0}
 --- !u!1 &1301542487
 GameObject:
@@ -7064,7 +7007,6 @@ MonoBehaviour:
   m_NodeArr: []
   Hit: {x: 0, y: 0, z: 0}
   m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
   m_SelectObject: {fileID: 0}
 --- !u!1 &1316269850
 GameObject:
@@ -7176,7 +7118,6 @@ MonoBehaviour:
   m_NodeArr: []
   Hit: {x: 0, y: 0, z: 0}
   m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
   m_SelectObject: {fileID: 0}
 --- !u!1 &1320680834
 GameObject:
@@ -7288,7 +7229,6 @@ MonoBehaviour:
   m_NodeArr: []
   Hit: {x: 0, y: 0, z: 0}
   m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
   m_SelectObject: {fileID: 0}
 --- !u!1 &1322886589
 GameObject:
@@ -7400,7 +7340,6 @@ MonoBehaviour:
   m_NodeArr: []
   Hit: {x: 0, y: 0, z: 0}
   m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
   m_SelectObject: {fileID: 0}
 --- !u!1 &1361680909
 GameObject:
@@ -7559,7 +7498,6 @@ MonoBehaviour:
   m_NodeArr: []
   Hit: {x: 0, y: 0, z: 0}
   m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
   m_SelectObject: {fileID: 0}
 --- !u!1 &1424589646
 GameObject:
@@ -7671,7 +7609,6 @@ MonoBehaviour:
   m_NodeArr: []
   Hit: {x: 0, y: 0, z: 0}
   m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
   m_SelectObject: {fileID: 0}
 --- !u!1 &1438951157
 GameObject:
@@ -7783,7 +7720,6 @@ MonoBehaviour:
   m_NodeArr: []
   Hit: {x: 0, y: 0, z: 0}
   m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
   m_SelectObject: {fileID: 0}
 --- !u!1 &1454629979
 GameObject:
@@ -7895,7 +7831,6 @@ MonoBehaviour:
   m_NodeArr: []
   Hit: {x: 0, y: 0, z: 0}
   m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
   m_SelectObject: {fileID: 0}
 --- !u!1 &1516857250
 GameObject:
@@ -8007,7 +7942,6 @@ MonoBehaviour:
   m_NodeArr: []
   Hit: {x: 0, y: 0, z: 0}
   m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
   m_SelectObject: {fileID: 0}
 --- !u!1 &1568501085
 GameObject:
@@ -8119,7 +8053,6 @@ MonoBehaviour:
   m_NodeArr: []
   Hit: {x: 0, y: 0, z: 0}
   m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
   m_SelectObject: {fileID: 0}
 --- !u!1 &1581098819
 GameObject:
@@ -8231,7 +8164,6 @@ MonoBehaviour:
   m_NodeArr: []
   Hit: {x: 0, y: 0, z: 0}
   m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
   m_SelectObject: {fileID: 0}
 --- !u!1 &1598449096
 GameObject:
@@ -8343,7 +8275,6 @@ MonoBehaviour:
   m_NodeArr: []
   Hit: {x: 0, y: 0, z: 0}
   m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
   m_SelectObject: {fileID: 0}
 --- !u!1 &1654520120
 GameObject:
@@ -8487,7 +8418,6 @@ MonoBehaviour:
   m_NodeArr: []
   Hit: {x: 0, y: 0, z: 0}
   m_Button: {fileID: 3510947691625213479}
-  m_Tower: {fileID: 0}
   m_SelectObject: {fileID: 0}
 --- !u!4 &1682406228
 Transform:
@@ -8703,7 +8633,6 @@ MonoBehaviour:
   m_NodeArr: []
   Hit: {x: 0, y: 0, z: 0}
   m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
   m_SelectObject: {fileID: 0}
 --- !u!1 &1723438764
 GameObject:
@@ -8815,7 +8744,6 @@ MonoBehaviour:
   m_NodeArr: []
   Hit: {x: 0, y: 0, z: 0}
   m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
   m_SelectObject: {fileID: 0}
 --- !u!1 &1731229123
 GameObject:
@@ -8927,7 +8855,6 @@ MonoBehaviour:
   m_NodeArr: []
   Hit: {x: 0, y: 0, z: 0}
   m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
   m_SelectObject: {fileID: 0}
 --- !u!1 &1744661770
 GameObject:
@@ -9039,7 +8966,6 @@ MonoBehaviour:
   m_NodeArr: []
   Hit: {x: 0, y: 0, z: 0}
   m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
   m_SelectObject: {fileID: 0}
 --- !u!1 &1765693154
 GameObject:
@@ -9151,7 +9077,6 @@ MonoBehaviour:
   m_NodeArr: []
   Hit: {x: 0, y: 0, z: 0}
   m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
   m_SelectObject: {fileID: 0}
 --- !u!1 &1780704622
 GameObject:
@@ -9263,7 +9188,6 @@ MonoBehaviour:
   m_NodeArr: []
   Hit: {x: 0, y: 0, z: 0}
   m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
   m_SelectObject: {fileID: 0}
 --- !u!1 &1874107115
 GameObject:
@@ -9375,7 +9299,6 @@ MonoBehaviour:
   m_NodeArr: []
   Hit: {x: 0, y: 0, z: 0}
   m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
   m_SelectObject: {fileID: 0}
 --- !u!1 &1878131125
 GameObject:
@@ -9487,7 +9410,6 @@ MonoBehaviour:
   m_NodeArr: []
   Hit: {x: 0, y: 0, z: 0}
   m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
   m_SelectObject: {fileID: 0}
 --- !u!1 &1946356421
 GameObject:
@@ -9599,7 +9521,6 @@ MonoBehaviour:
   m_NodeArr: []
   Hit: {x: 0, y: 0, z: 0}
   m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
   m_SelectObject: {fileID: 0}
 --- !u!1 &1961767615
 GameObject:
@@ -9711,7 +9632,6 @@ MonoBehaviour:
   m_NodeArr: []
   Hit: {x: 0, y: 0, z: 0}
   m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
   m_SelectObject: {fileID: 0}
 --- !u!1 &1996558221
 GameObject:
@@ -9823,7 +9743,6 @@ MonoBehaviour:
   m_NodeArr: []
   Hit: {x: 0, y: 0, z: 0}
   m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
   m_SelectObject: {fileID: 0}
 --- !u!1 &2024132246
 GameObject:
@@ -9935,7 +9854,6 @@ MonoBehaviour:
   m_NodeArr: []
   Hit: {x: 0, y: 0, z: 0}
   m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
   m_SelectObject: {fileID: 0}
 --- !u!1 &2028035807
 GameObject:
@@ -10047,7 +9965,6 @@ MonoBehaviour:
   m_NodeArr: []
   Hit: {x: 0, y: 0, z: 0}
   m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
   m_SelectObject: {fileID: 0}
 --- !u!1 &2058319139
 GameObject:
@@ -10159,7 +10076,6 @@ MonoBehaviour:
   m_NodeArr: []
   Hit: {x: 0, y: 0, z: 0}
   m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
   m_SelectObject: {fileID: 0}
 --- !u!1 &2066828790
 GameObject:
@@ -10271,7 +10187,6 @@ MonoBehaviour:
   m_NodeArr: []
   Hit: {x: 0, y: 0, z: 0}
   m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
   m_SelectObject: {fileID: 0}
 --- !u!1 &2086917844
 GameObject:
@@ -10383,7 +10298,6 @@ MonoBehaviour:
   m_NodeArr: []
   Hit: {x: 0, y: 0, z: 0}
   m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
   m_SelectObject: {fileID: 0}
 --- !u!1 &2091409992
 GameObject:
@@ -10495,7 +10409,6 @@ MonoBehaviour:
   m_NodeArr: []
   Hit: {x: 0, y: 0, z: 0}
   m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
   m_SelectObject: {fileID: 0}
 --- !u!1 &2098474683
 GameObject:
@@ -10607,7 +10520,6 @@ MonoBehaviour:
   m_NodeArr: []
   Hit: {x: 0, y: 0, z: 0}
   m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
   m_SelectObject: {fileID: 0}
 --- !u!1 &2103283934
 GameObject:
@@ -10719,7 +10631,6 @@ MonoBehaviour:
   m_NodeArr: []
   Hit: {x: 0, y: 0, z: 0}
   m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
   m_SelectObject: {fileID: 0}
 --- !u!1 &2125835543
 GameObject:
@@ -10831,7 +10742,6 @@ MonoBehaviour:
   m_NodeArr: []
   Hit: {x: 0, y: 0, z: 0}
   m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
   m_SelectObject: {fileID: 0}
 --- !u!222 &3510947690291347100
 CanvasRenderer:
@@ -11200,7 +11110,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 762160049}
-        m_MethodName: BuildToTower3
+        m_MethodName: BuildToObstacle
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
