@@ -15,6 +15,7 @@ TagManager:
   - 
   - Ground
   - Tower
+  - Obstacle
   - Structure
   - Obstacle
   - Enemy

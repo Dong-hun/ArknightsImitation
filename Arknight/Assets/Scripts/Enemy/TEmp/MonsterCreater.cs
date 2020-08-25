@@ -5,20 +5,15 @@ using UnityEngine;
 public class MonsterCreater : MonoBehaviour
 {
     public bool GameOver = false;
-    public int MaxMonster = 10;
+    public int MaxMonster = 3;
     public int TotalMonster = 0;
-    int MonsterCount = 0;
     public GameObject obj;
 
     // Start is called before the first frame update
     void Start()
     {
-        //GameObject obj = Instantiate(Resources.Load("Temp Target")) as GameObject;
-        //GameObject obj2 = Instantiate(Resources.Load("Temp Target2")) as GameObject;
-
         StartCoroutine(Monster());
         StartCoroutine(Boss());
-        StartCoroutine(Monster2());
     }
 
     // Update is called once per frame
@@ -30,6 +25,7 @@ public class MonsterCreater : MonoBehaviour
 
     IEnumerator Monster()
     {//while 문 밖에다가 설정할 것.
+        int MonsterCount = 0;
 
         while (!GameOver)
         {
@@ -37,13 +33,7 @@ public class MonsterCreater : MonoBehaviour
             if (MonsterCount<MaxMonster){
                 yield return new WaitForSeconds(2.0f);
 
-<<<<<<< HEAD:Arknight/Assets/Scripts/Enemy/TEmp/MonsterCreater.cs
                 GameObject obj = Instantiate(Resources.Load("Enemy/Temp Monster(Moving)")) as GameObject;
-               // GameObject obj2 = Instantiate(Resources.Load("Enemy/TURTLES")) as GameObject;
-=======
-                //GameObject obj = Instantiate(Resources.Load("Enemy/Temp Monster(Moving)")) as GameObject;
-                GameObject obj = Instantiate(Resources.Load("GreenCube")) as GameObject;
->>>>>>> DongHun:Arknight/Assets/Scripts/Enemy/MonsterCreater.cs
                 MonsterCount++;
                 TotalMonster++;
             }
@@ -53,41 +43,12 @@ public class MonsterCreater : MonoBehaviour
 
             }
         }
-<<<<<<< HEAD:Arknight/Assets/Scripts/Enemy/TEmp/MonsterCreater.cs
-
-    IEnumerator Monster2()
-    {//while 문 밖에다가 설정할 것.
-
-        while (!GameOver)
-        {
-
-            if (MonsterCount < MaxMonster)
-            {
-                yield return new WaitForSeconds(3.5f);
-
-                GameObject obj2 = Instantiate(Resources.Load("Enemy/TURTLES")) as GameObject;
-                MonsterCount++;
-                TotalMonster++;
-            }
-            else
-            {
-                yield return null;
-
-            }
-
-
-        }
     }
-
-
-=======
-    }
->>>>>>> DongHun:Arknight/Assets/Scripts/Enemy/MonsterCreater.cs
     IEnumerator Boss()
     {
         while (!GameOver)
         {
-            if (TotalMonster == 4)
+            if (TotalMonster == 1)
             {
                 yield return new WaitForSeconds(3.0f);
 
