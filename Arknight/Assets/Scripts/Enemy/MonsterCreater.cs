@@ -5,7 +5,7 @@ using UnityEngine;
 public class MonsterCreater : MonoBehaviour
 {
     public bool GameOver = false;
-    public int MaxMonster = 5;
+    public int MaxMonster = 10;
     public int TotalMonster = 0;
     int MonsterCount = 0;
     public GameObject obj;
@@ -60,7 +60,7 @@ public class MonsterCreater : MonoBehaviour
 
             if (MonsterCount < MaxMonster)
             {
-                yield return new WaitForSeconds(2.3f);
+                yield return new WaitForSeconds(3.5f);
 
                 GameObject obj2 = Instantiate(Resources.Load("Enemy/TURTLES")) as GameObject;
                 MonsterCount++;
@@ -81,7 +81,7 @@ public class MonsterCreater : MonoBehaviour
     {
         while (!GameOver)
         {
-            if (TotalMonster == 3)
+            if (TotalMonster == 4)
             {
                 yield return new WaitForSeconds(3.0f);
 
