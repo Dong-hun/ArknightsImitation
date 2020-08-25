@@ -112,7 +112,7 @@ public class Enemy : MonoBehaviour
                             ChangeSTATE(STATE.TAGET2);
                         }
                     }
-                    else if (T - s > 1.5f)
+                    else if (T - s > 1.2f)
                     {
                         ChangeSTATE(STATE.ATTACK);
                     }
@@ -127,7 +127,24 @@ public class Enemy : MonoBehaviour
 
 
             case STATE.TAGET2:
+                float T2 = Vector3.Distance(this.transform.position, objpos2);
+                float s2 = Vector3.Distance(this.transform.position, m_Navi.destination);
+                if (!m_Navi.pathPending) //계산완료 후 이동
+                {
+                    if (m_Navi.remainingDistance <= m_Navi.stoppingDistance)
+                    {
+                        if (!m_Navi.hasPath || m_Navi.velocity.sqrMagnitude == 0.0f)
+                        {
+                            //상태를 멈춤상태로 만들거나 2번째 상태로 만드는게 나을듯. ㅇㅇ 맞어
+                            ChangeSTATE(STATE.TAGET2);
+                        }
+                    }
+                    else if (T2 - s2 > 1.2f)
+                    {
+                        ChangeSTATE(STATE.ATTACK);
+                    }
 
+                }
                 break;
             case STATE.ATTACK:
                 if (attackdelay <= Mathf.Epsilon)
