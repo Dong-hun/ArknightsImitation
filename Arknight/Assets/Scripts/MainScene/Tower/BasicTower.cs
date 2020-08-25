@@ -30,16 +30,10 @@ class BasicTower : TowerManager
         }
     }
 
-    public void GetTileData()
-    {
-        TileX = 0;
-        int test = TileY;
-    }
-
     // Start is called before the first frame update
     void Start()
     {
-        base.Init(50, 50, 5.0f, 2.0f);
+        base.Init(50, 50, 5, 5.0f, 2.0f);
     }
 
     // Update is called once per frame
@@ -49,11 +43,11 @@ class BasicTower : TowerManager
     }
 
     // 타일 위치 세팅
-    public void SetTileNumber(int x, int y)
-    {
-        m_TileX = x;
-        m_TileY = y;
-    }
+    //public void SetTileNumber(int x, int y)
+    //{
+    //    m_TileX = x;
+    //    m_TileY = y;
+    //}
 
     // 상태 변경시 한번 호출될 함수
     protected override void ChangeState(STATE s)
