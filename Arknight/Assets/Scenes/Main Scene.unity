@@ -2193,7 +2193,7 @@ GameObject:
   - component: {fileID: 444210785}
   - component: {fileID: 444210788}
   m_Layer: 8
-  m_Name: Plane
+  m_Name: Start
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2318,9 +2318,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameOver: 0
-  MaxMonster: 3
+  MaxMonster: 7
   TotalMonster: 0
-  obj: {fileID: 0}
+  m_EnemyList: []
 --- !u!4 &450451916
 Transform:
   m_ObjectHideFlags: 0
@@ -9116,7 +9116,7 @@ GameObject:
   - component: {fileID: 1946356423}
   - component: {fileID: 1946356426}
   m_Layer: 8
-  m_Name: Plane (89)
+  m_Name: End
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
