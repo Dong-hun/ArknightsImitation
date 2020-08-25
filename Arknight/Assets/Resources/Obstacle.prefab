@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7262028329724184756}
   - component: {fileID: 4553643425700196686}
   - component: {fileID: 2159779934951600715}
-  m_Layer: 9
+  m_Layer: 11
   m_Name: Obstacle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -60,7 +60,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 00b91e7d29a1d314eb7fb5d2406f7268, type: 2}
+  - {fileID: 2100000, guid: 7a9b9d4635d1ad04890337f5e9384570, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -104,7 +104,7 @@ NavMeshObstacle:
   m_Enabled: 1
   serializedVersion: 3
   m_Shape: 1
-  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_Extents: {x: 0.625, y: 0.5, z: 0.625}
   m_MoveThreshold: 0.1
   m_Carve: 1
   m_CarveOnlyStationary: 0
