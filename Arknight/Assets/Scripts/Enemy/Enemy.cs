@@ -10,8 +10,22 @@ public class Enemy : EnemyManager
     // Start is called before the first frame update
     new void Start()
     {
+<<<<<<< HEAD
         base.Start();
         //m_StartPos = GameObject.Find("Plane").transform.position;
+=======
+        this.transform.position = GameObject.Find("Start").GetComponent<Transform>().position;
+        objpos = GameObject.Find("End").GetComponent<Transform>().position;
+        objpos2 = GameObject.Find("Plane (80)").GetComponent<Transform>().position;
+
+        //Vector3 DESTPOS = m_Navi.destination;
+        m_Navi = GetComponent<NavMeshAgent>();
+        m_STATE = STATE.CREATE;
+        ChangeSTATE(STATE.TARGET1);
+        m_Path = new NavMeshPath();
+
+        //   m_Monsterinfo = GetComponent<MonsterStat>();
+>>>>>>> DongHun
     }
 
     // Update is called once per frame

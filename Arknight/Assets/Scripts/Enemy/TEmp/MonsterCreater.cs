@@ -37,8 +37,13 @@ public class MonsterCreater : MonoBehaviour
             if (MonsterCount<MaxMonster){
                 yield return new WaitForSeconds(2.0f);
 
+<<<<<<< HEAD:Arknight/Assets/Scripts/Enemy/TEmp/MonsterCreater.cs
                 GameObject obj = Instantiate(Resources.Load("Enemy/Temp Monster(Moving)")) as GameObject;
                // GameObject obj2 = Instantiate(Resources.Load("Enemy/TURTLES")) as GameObject;
+=======
+                //GameObject obj = Instantiate(Resources.Load("Enemy/Temp Monster(Moving)")) as GameObject;
+                GameObject obj = Instantiate(Resources.Load("GreenCube")) as GameObject;
+>>>>>>> DongHun:Arknight/Assets/Scripts/Enemy/MonsterCreater.cs
                 MonsterCount++;
                 TotalMonster++;
             }
@@ -47,10 +52,8 @@ public class MonsterCreater : MonoBehaviour
                 yield return null;
 
             }
-
-
         }
-        }
+<<<<<<< HEAD:Arknight/Assets/Scripts/Enemy/TEmp/MonsterCreater.cs
 
     IEnumerator Monster2()
     {//while 문 밖에다가 설정할 것.
@@ -77,6 +80,9 @@ public class MonsterCreater : MonoBehaviour
     }
 
 
+=======
+    }
+>>>>>>> DongHun:Arknight/Assets/Scripts/Enemy/MonsterCreater.cs
     IEnumerator Boss()
     {
         while (!GameOver)
