@@ -228,11 +228,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de085770a7d5e424d97359572733187d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_NodeArr: []
-  Hit: {x: 0, y: 0, z: 0}
-  m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
-  m_SelectObject: {fileID: 0}
+  m_TileX: 0
+  m_TileY: 0
 --- !u!1 &29555984
 GameObject:
   m_ObjectHideFlags: 0
@@ -340,11 +337,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de085770a7d5e424d97359572733187d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_NodeArr: []
-  Hit: {x: 0, y: 0, z: 0}
-  m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
-  m_SelectObject: {fileID: 0}
+  m_TileX: 0
+  m_TileY: 0
 --- !u!1 &33409500
 GameObject:
   m_ObjectHideFlags: 0
@@ -452,11 +446,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de085770a7d5e424d97359572733187d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_NodeArr: []
-  Hit: {x: 0, y: 0, z: 0}
-  m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
-  m_SelectObject: {fileID: 0}
+  m_TileX: 0
+  m_TileY: 0
 --- !u!1 &47551608
 GameObject:
   m_ObjectHideFlags: 0
@@ -594,11 +585,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de085770a7d5e424d97359572733187d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_NodeArr: []
-  Hit: {x: 0, y: 0, z: 0}
-  m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
-  m_SelectObject: {fileID: 0}
+  m_TileX: 0
+  m_TileY: 0
 --- !u!1 &113598865
 GameObject:
   m_ObjectHideFlags: 0
@@ -706,11 +694,115 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de085770a7d5e424d97359572733187d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   m_NodeArr: []
   Hit: {x: 0, y: 0, z: 0}
   m_Button: {fileID: 0}
   m_Tower: {fileID: 0}
   m_SelectObject: {fileID: 0}
+=======
+  m_TileX: 0
+  m_TileY: 0
+--- !u!1 &121656689
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 121656693}
+  - component: {fileID: 121656692}
+  - component: {fileID: 121656691}
+  - component: {fileID: 121656690}
+  m_Layer: 5
+  m_Name: Canvas
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &121656690
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 121656689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+--- !u!114 &121656691
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 121656689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UiScaleMode: 0
+  m_ReferencePixelsPerUnit: 100
+  m_ScaleFactor: 1
+  m_ReferenceResolution: {x: 800, y: 600}
+  m_ScreenMatchMode: 0
+  m_MatchWidthOrHeight: 0
+  m_PhysicalUnit: 3
+  m_FallbackScreenDPI: 96
+  m_DefaultSpriteDPI: 96
+  m_DynamicPixelsPerUnit: 1
+--- !u!223 &121656692
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 121656689}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 0
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 25
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_TargetDisplay: 0
+--- !u!224 &121656693
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 121656689}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_Children:
+  - {fileID: 1612663647}
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0, y: 0}
+>>>>>>> parent of 90d66e5... 풀 받기위한 커밋
 --- !u!1 &130709093
 GameObject:
   m_ObjectHideFlags: 0
@@ -818,11 +910,172 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de085770a7d5e424d97359572733187d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   m_NodeArr: []
   Hit: {x: 0, y: 0, z: 0}
   m_Button: {fileID: 0}
   m_Tower: {fileID: 0}
   m_SelectObject: {fileID: 0}
+=======
+  m_TileX: 0
+  m_TileY: 0
+--- !u!1 &134435131
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 134435132}
+  - component: {fileID: 134435134}
+  - component: {fileID: 134435133}
+  m_Layer: 0
+  m_Name: Text (TMP)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &134435132
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 134435131}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1569325067}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 166, y: 135}
+  m_SizeDelta: {x: 200, y: 50}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &134435133
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 134435131}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: Enemy
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_outlineColor:
+    serializedVersion: 2
+    rgba: 4278190080
+  m_fontSize: 28
+  m_fontSizeBase: 28
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_textAlignment: 257
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_firstOverflowCharacterIndex: -1
+  m_linkedTextComponent: {fileID: 0}
+  m_isLinkedTextComponent: 0
+  m_isTextTruncated: 0
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_ignoreRectMaskCulling: 0
+  m_ignoreCulling: 1
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_VertexBufferAutoSizeReduction: 1
+  m_firstVisibleCharacter: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_textInfo:
+    textComponent: {fileID: 134435133}
+    characterCount: 5
+    spriteCount: 0
+    spaceCount: 0
+    wordCount: 1
+    linkCount: 0
+    lineCount: 1
+    pageCount: 1
+    materialCount: 1
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_spriteAnimator: {fileID: 0}
+  m_hasFontAssetChanged: 0
+  m_subTextObjects:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &134435134
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 134435131}
+  m_CullTransparentMesh: 0
+>>>>>>> parent of 90d66e5... 풀 받기위한 커밋
 --- !u!1 &195441348
 GameObject:
   m_ObjectHideFlags: 0
@@ -996,11 +1249,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de085770a7d5e424d97359572733187d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_NodeArr: []
-  Hit: {x: 0, y: 0, z: 0}
-  m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
-  m_SelectObject: {fileID: 0}
+  m_TileX: 0
+  m_TileY: 0
 --- !u!1 &203078395
 GameObject:
   m_ObjectHideFlags: 0
@@ -1108,11 +1358,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de085770a7d5e424d97359572733187d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_NodeArr: []
-  Hit: {x: 0, y: 0, z: 0}
-  m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
-  m_SelectObject: {fileID: 0}
+  m_TileX: 0
+  m_TileY: 0
 --- !u!1 &243375494
 GameObject:
   m_ObjectHideFlags: 0
@@ -1220,11 +1467,172 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de085770a7d5e424d97359572733187d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   m_NodeArr: []
   Hit: {x: 0, y: 0, z: 0}
   m_Button: {fileID: 0}
   m_Tower: {fileID: 0}
   m_SelectObject: {fileID: 0}
+=======
+  m_TileX: 0
+  m_TileY: 0
+--- !u!1 &258949723
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 258949724}
+  - component: {fileID: 258949726}
+  - component: {fileID: 258949725}
+  m_Layer: 0
+  m_Name: Text (TMP)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &258949724
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 258949723}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1193099015}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 38, y: 135}
+  m_SizeDelta: {x: 198.249, y: 48.24823}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &258949725
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 258949723}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: Life
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_outlineColor:
+    serializedVersion: 2
+    rgba: 4278190080
+  m_fontSize: 28
+  m_fontSizeBase: 28
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_textAlignment: 257
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_firstOverflowCharacterIndex: -1
+  m_linkedTextComponent: {fileID: 0}
+  m_isLinkedTextComponent: 0
+  m_isTextTruncated: 0
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_ignoreRectMaskCulling: 0
+  m_ignoreCulling: 1
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_VertexBufferAutoSizeReduction: 1
+  m_firstVisibleCharacter: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 71.79071, w: 0}
+  m_textInfo:
+    textComponent: {fileID: 258949725}
+    characterCount: 4
+    spriteCount: 0
+    spaceCount: 0
+    wordCount: 1
+    linkCount: 0
+    lineCount: 1
+    pageCount: 1
+    materialCount: 1
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_spriteAnimator: {fileID: 0}
+  m_hasFontAssetChanged: 0
+  m_subTextObjects:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &258949726
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 258949723}
+  m_CullTransparentMesh: 0
+>>>>>>> parent of 90d66e5... 풀 받기위한 커밋
 --- !u!1 &333014240
 GameObject:
   m_ObjectHideFlags: 0
@@ -1332,11 +1740,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de085770a7d5e424d97359572733187d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_NodeArr: []
-  Hit: {x: 0, y: 0, z: 0}
-  m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
-  m_SelectObject: {fileID: 0}
+  m_TileX: 0
+  m_TileY: 0
 --- !u!1 &340031016
 GameObject:
   m_ObjectHideFlags: 0
@@ -1444,11 +1849,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de085770a7d5e424d97359572733187d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_NodeArr: []
-  Hit: {x: 0, y: 0, z: 0}
-  m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
-  m_SelectObject: {fileID: 0}
+  m_TileX: 0
+  m_TileY: 0
 --- !u!1 &353943666
 GameObject:
   m_ObjectHideFlags: 0
@@ -1556,11 +1958,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de085770a7d5e424d97359572733187d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_NodeArr: []
-  Hit: {x: 0, y: 0, z: 0}
-  m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
-  m_SelectObject: {fileID: 0}
+  m_TileX: 0
+  m_TileY: 0
 --- !u!1 &357854103
 GameObject:
   m_ObjectHideFlags: 0
@@ -1668,11 +2067,172 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de085770a7d5e424d97359572733187d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   m_NodeArr: []
   Hit: {x: 0, y: 0, z: 0}
   m_Button: {fileID: 0}
   m_Tower: {fileID: 0}
   m_SelectObject: {fileID: 0}
+=======
+  m_TileX: 0
+  m_TileY: 0
+--- !u!1 &358077314
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 358077315}
+  - component: {fileID: 358077317}
+  - component: {fileID: 358077316}
+  m_Layer: 0
+  m_Name: Text (TMP)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &358077315
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 358077314}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 645612733}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -96, y: 135}
+  m_SizeDelta: {x: 200, y: 50}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &358077316
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 358077314}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: Round
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_outlineColor:
+    serializedVersion: 2
+    rgba: 4278190080
+  m_fontSize: 28
+  m_fontSizeBase: 28
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_textAlignment: 257
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_firstOverflowCharacterIndex: -1
+  m_linkedTextComponent: {fileID: 0}
+  m_isLinkedTextComponent: 0
+  m_isTextTruncated: 0
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_ignoreRectMaskCulling: 0
+  m_ignoreCulling: 1
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_VertexBufferAutoSizeReduction: 1
+  m_firstVisibleCharacter: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_textInfo:
+    textComponent: {fileID: 358077316}
+    characterCount: 5
+    spriteCount: 0
+    spaceCount: 0
+    wordCount: 1
+    linkCount: 0
+    lineCount: 1
+    pageCount: 1
+    materialCount: 1
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_spriteAnimator: {fileID: 0}
+  m_hasFontAssetChanged: 0
+  m_subTextObjects:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &358077317
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 358077314}
+  m_CullTransparentMesh: 0
+>>>>>>> parent of 90d66e5... 풀 받기위한 커밋
 --- !u!1 &362303757
 GameObject:
   m_ObjectHideFlags: 0
@@ -1780,11 +2340,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de085770a7d5e424d97359572733187d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_NodeArr: []
-  Hit: {x: 0, y: 0, z: 0}
-  m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
-  m_SelectObject: {fileID: 0}
+  m_TileX: 0
+  m_TileY: 0
 --- !u!1 &390248975
 GameObject:
   m_ObjectHideFlags: 0
@@ -1892,11 +2449,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de085770a7d5e424d97359572733187d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_NodeArr: []
-  Hit: {x: 0, y: 0, z: 0}
-  m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
-  m_SelectObject: {fileID: 0}
+  m_TileX: 0
+  m_TileY: 0
 --- !u!1 &400796512
 GameObject:
   m_ObjectHideFlags: 0
@@ -2004,11 +2558,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de085770a7d5e424d97359572733187d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_NodeArr: []
-  Hit: {x: 0, y: 0, z: 0}
-  m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
-  m_SelectObject: {fileID: 0}
+  m_TileX: 0
+  m_TileY: 0
 --- !u!1 &404467761
 GameObject:
   m_ObjectHideFlags: 0
@@ -2116,11 +2667,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de085770a7d5e424d97359572733187d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_NodeArr: []
-  Hit: {x: 0, y: 0, z: 0}
-  m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
-  m_SelectObject: {fileID: 0}
+  m_TileX: 0
+  m_TileY: 0
 --- !u!1 &442250669
 GameObject:
   m_ObjectHideFlags: 0
@@ -2228,11 +2776,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de085770a7d5e424d97359572733187d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_NodeArr: []
-  Hit: {x: 0, y: 0, z: 0}
-  m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
-  m_SelectObject: {fileID: 0}
+  m_TileX: 0
+  m_TileY: 0
 --- !u!1 &444210783
 GameObject:
   m_ObjectHideFlags: 0
@@ -2340,12 +2885,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de085770a7d5e424d97359572733187d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   m_NodeArr: []
   Hit: {x: 0, y: 0, z: 0}
   m_Button: {fileID: 0}
   m_Tower: {fileID: 0}
   m_SelectObject: {fileID: 0}
 --- !u!1 &465750253
+=======
+  m_TileX: 0
+  m_TileY: 0
+--- !u!1 &520330654
+>>>>>>> parent of 90d66e5... 풀 받기위한 커밋
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2551,11 +3102,109 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de085770a7d5e424d97359572733187d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   m_NodeArr: []
   Hit: {x: 0, y: 0, z: 0}
   m_Button: {fileID: 0}
   m_Tower: {fileID: 0}
   m_SelectObject: {fileID: 0}
+=======
+  m_TileX: 0
+  m_TileY: 0
+--- !u!1 &537343723
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 537343724}
+  - component: {fileID: 537343726}
+  - component: {fileID: 537343725}
+  - component: {fileID: 537343727}
+  m_Layer: 5
+  m_Name: Panel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &537343724
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 537343723}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 26.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 645612733}
+  - {fileID: 1193099015}
+  - {fileID: 1569325067}
+  m_Father: {fileID: 1612663647}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 10.439209, y: 141.25824}
+  m_SizeDelta: {x: 501.4662, y: 59.148376}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &537343725
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 537343723}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 054411784c3fdf74d9db120b4a792a71, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &537343726
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 537343723}
+  m_CullTransparentMesh: 0
+--- !u!114 &537343727
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 537343723}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05d2ad8c4efa43046826058828e5ab6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Round: {fileID: 0}
+  m_Life: {fileID: 0}
+  m_Enemy: {fileID: 0}
+>>>>>>> parent of 90d66e5... 풀 받기위한 커밋
 --- !u!1 &561032008
 GameObject:
   m_ObjectHideFlags: 0
@@ -2663,11 +3312,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de085770a7d5e424d97359572733187d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_NodeArr: []
-  Hit: {x: 0, y: 0, z: 0}
-  m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
-  m_SelectObject: {fileID: 0}
+  m_TileX: 0
+  m_TileY: 0
 --- !u!1 &563800755
 GameObject:
   m_ObjectHideFlags: 0
@@ -2775,11 +3421,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de085770a7d5e424d97359572733187d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_NodeArr: []
-  Hit: {x: 0, y: 0, z: 0}
-  m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
-  m_SelectObject: {fileID: 0}
+  m_TileX: 0
+  m_TileY: 0
 --- !u!1 &568342050
 GameObject:
   m_ObjectHideFlags: 0
@@ -2887,11 +3530,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de085770a7d5e424d97359572733187d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_NodeArr: []
-  Hit: {x: 0, y: 0, z: 0}
-  m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
-  m_SelectObject: {fileID: 0}
+  m_TileX: 0
+  m_TileY: 0
 --- !u!1 &571537500
 GameObject:
   m_ObjectHideFlags: 0
@@ -2999,11 +3639,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de085770a7d5e424d97359572733187d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_NodeArr: []
-  Hit: {x: 0, y: 0, z: 0}
-  m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
-  m_SelectObject: {fileID: 0}
+  m_TileX: 0
+  m_TileY: 0
 --- !u!1 &631550370
 GameObject:
   m_ObjectHideFlags: 0
@@ -3111,11 +3748,47 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de085770a7d5e424d97359572733187d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   m_NodeArr: []
   Hit: {x: 0, y: 0, z: 0}
   m_Button: {fileID: 0}
   m_Tower: {fileID: 0}
   m_SelectObject: {fileID: 0}
+=======
+  m_TileX: 0
+  m_TileY: 0
+--- !u!1 &645612732
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 645612733}
+  m_Layer: 0
+  m_Name: Round
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &645612733
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 645612732}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -10.439209, y: -141.25824, z: -26.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 358077315}
+  m_Father: {fileID: 537343724}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+>>>>>>> parent of 90d66e5... 풀 받기위한 커밋
 --- !u!1 &656512573
 GameObject:
   m_ObjectHideFlags: 0
@@ -3315,11 +3988,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de085770a7d5e424d97359572733187d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_NodeArr: []
-  Hit: {x: 0, y: 0, z: 0}
-  m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
-  m_SelectObject: {fileID: 0}
+  m_TileX: 0
+  m_TileY: 0
 --- !u!1 &712111893
 GameObject:
   m_ObjectHideFlags: 0
@@ -3427,11 +4097,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de085770a7d5e424d97359572733187d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_NodeArr: []
-  Hit: {x: 0, y: 0, z: 0}
-  m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
-  m_SelectObject: {fileID: 0}
+  m_TileX: 0
+  m_TileY: 0
 --- !u!1 &716446967
 GameObject:
   m_ObjectHideFlags: 0
@@ -3539,11 +4206,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de085770a7d5e424d97359572733187d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_NodeArr: []
-  Hit: {x: 0, y: 0, z: 0}
-  m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
-  m_SelectObject: {fileID: 0}
+  m_TileX: 0
+  m_TileY: 0
 --- !u!1 &723280211
 GameObject:
   m_ObjectHideFlags: 0
@@ -3651,11 +4315,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de085770a7d5e424d97359572733187d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_NodeArr: []
-  Hit: {x: 0, y: 0, z: 0}
-  m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
-  m_SelectObject: {fileID: 0}
+  m_TileX: 0
+  m_TileY: 0
 --- !u!1 &761310427
 GameObject:
   m_ObjectHideFlags: 0
@@ -3763,6 +4424,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de085770a7d5e424d97359572733187d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   m_NodeArr: []
   Hit: {x: 0, y: 0, z: 0}
   m_Button: {fileID: 0}
@@ -3818,6 +4480,10 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+=======
+  m_TileX: 0
+  m_TileY: 0
+>>>>>>> parent of 90d66e5... 풀 받기위한 커밋
 --- !u!1 &763843825
 GameObject:
   m_ObjectHideFlags: 0
@@ -3925,11 +4591,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de085770a7d5e424d97359572733187d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_NodeArr: []
-  Hit: {x: 0, y: 0, z: 0}
-  m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
-  m_SelectObject: {fileID: 0}
+  m_TileX: 0
+  m_TileY: 0
 --- !u!1 &819848187
 GameObject:
   m_ObjectHideFlags: 0
@@ -4037,11 +4700,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de085770a7d5e424d97359572733187d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_NodeArr: []
-  Hit: {x: 0, y: 0, z: 0}
-  m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
-  m_SelectObject: {fileID: 0}
+  m_TileX: 0
+  m_TileY: 0
 --- !u!1 &838521529
 GameObject:
   m_ObjectHideFlags: 0
@@ -4149,11 +4809,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de085770a7d5e424d97359572733187d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_NodeArr: []
-  Hit: {x: 0, y: 0, z: 0}
-  m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
-  m_SelectObject: {fileID: 0}
+  m_TileX: 0
+  m_TileY: 0
 --- !u!1 &857390566
 GameObject:
   m_ObjectHideFlags: 0
@@ -4261,11 +4918,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de085770a7d5e424d97359572733187d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_NodeArr: []
-  Hit: {x: 0, y: 0, z: 0}
-  m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
-  m_SelectObject: {fileID: 0}
+  m_TileX: 0
+  m_TileY: 0
 --- !u!1 &867078302
 GameObject:
   m_ObjectHideFlags: 0
@@ -4373,11 +5027,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de085770a7d5e424d97359572733187d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_NodeArr: []
-  Hit: {x: 0, y: 0, z: 0}
-  m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
-  m_SelectObject: {fileID: 0}
+  m_TileX: 0
+  m_TileY: 0
 --- !u!1 &905272631
 GameObject:
   m_ObjectHideFlags: 0
@@ -4485,11 +5136,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de085770a7d5e424d97359572733187d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_NodeArr: []
-  Hit: {x: 0, y: 0, z: 0}
-  m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
-  m_SelectObject: {fileID: 0}
+  m_TileX: 0
+  m_TileY: 0
 --- !u!1 &914589121
 GameObject:
   m_ObjectHideFlags: 0
@@ -4597,11 +5245,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de085770a7d5e424d97359572733187d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_NodeArr: []
-  Hit: {x: 0, y: 0, z: 0}
-  m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
-  m_SelectObject: {fileID: 0}
+  m_TileX: 0
+  m_TileY: 0
 --- !u!1 &931871997
 GameObject:
   m_ObjectHideFlags: 0
@@ -4709,11 +5354,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de085770a7d5e424d97359572733187d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_NodeArr: []
-  Hit: {x: 0, y: 0, z: 0}
-  m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
-  m_SelectObject: {fileID: 0}
+  m_TileX: 0
+  m_TileY: 0
 --- !u!1 &944909708
 GameObject:
   m_ObjectHideFlags: 0
@@ -4821,11 +5463,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de085770a7d5e424d97359572733187d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_NodeArr: []
-  Hit: {x: 0, y: 0, z: 0}
-  m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
-  m_SelectObject: {fileID: 0}
+  m_TileX: 0
+  m_TileY: 0
 --- !u!1 &953539250
 GameObject:
   m_ObjectHideFlags: 0
@@ -4933,11 +5572,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de085770a7d5e424d97359572733187d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_NodeArr: []
-  Hit: {x: 0, y: 0, z: 0}
-  m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
-  m_SelectObject: {fileID: 0}
+  m_TileX: 0
+  m_TileY: 0
 --- !u!1 &959473294
 GameObject:
   m_ObjectHideFlags: 0
@@ -5045,11 +5681,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de085770a7d5e424d97359572733187d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_NodeArr: []
-  Hit: {x: 0, y: 0, z: 0}
-  m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
-  m_SelectObject: {fileID: 0}
+  m_TileX: 0
+  m_TileY: 0
 --- !u!1 &962365521
 GameObject:
   m_ObjectHideFlags: 0
@@ -5157,11 +5790,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de085770a7d5e424d97359572733187d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_NodeArr: []
-  Hit: {x: 0, y: 0, z: 0}
-  m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
-  m_SelectObject: {fileID: 0}
+  m_TileX: 0
+  m_TileY: 0
 --- !u!1 &1031037967
 GameObject:
   m_ObjectHideFlags: 0
@@ -5269,11 +5899,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de085770a7d5e424d97359572733187d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_NodeArr: []
-  Hit: {x: 0, y: 0, z: 0}
-  m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
-  m_SelectObject: {fileID: 0}
+  m_TileX: 0
+  m_TileY: 0
 --- !u!1 &1066293842
 GameObject:
   m_ObjectHideFlags: 0
@@ -5381,11 +6008,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de085770a7d5e424d97359572733187d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_NodeArr: []
-  Hit: {x: 0, y: 0, z: 0}
-  m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
-  m_SelectObject: {fileID: 0}
+  m_TileX: 0
+  m_TileY: 0
 --- !u!1 &1067110883
 GameObject:
   m_ObjectHideFlags: 0
@@ -5493,11 +6117,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de085770a7d5e424d97359572733187d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_NodeArr: []
-  Hit: {x: 0, y: 0, z: 0}
-  m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
-  m_SelectObject: {fileID: 0}
+  m_TileX: 0
+  m_TileY: 0
 --- !u!1 &1071080323
 GameObject:
   m_ObjectHideFlags: 0
@@ -5605,11 +6226,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de085770a7d5e424d97359572733187d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_NodeArr: []
-  Hit: {x: 0, y: 0, z: 0}
-  m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
-  m_SelectObject: {fileID: 0}
+  m_TileX: 0
+  m_TileY: 0
 --- !u!1 &1094581586
 GameObject:
   m_ObjectHideFlags: 0
@@ -5717,11 +6335,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de085770a7d5e424d97359572733187d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_NodeArr: []
-  Hit: {x: 0, y: 0, z: 0}
-  m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
-  m_SelectObject: {fileID: 0}
+  m_TileX: 0
+  m_TileY: 0
 --- !u!1 &1106428848
 GameObject:
   m_ObjectHideFlags: 0
@@ -5829,11 +6444,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de085770a7d5e424d97359572733187d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_NodeArr: []
-  Hit: {x: 0, y: 0, z: 0}
-  m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
-  m_SelectObject: {fileID: 0}
+  m_TileX: 0
+  m_TileY: 0
 --- !u!1 &1113331784
 GameObject:
   m_ObjectHideFlags: 0
@@ -5941,11 +6553,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de085770a7d5e424d97359572733187d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_NodeArr: []
-  Hit: {x: 0, y: 0, z: 0}
-  m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
-  m_SelectObject: {fileID: 0}
+  m_TileX: 0
+  m_TileY: 0
 --- !u!1 &1114017710
 GameObject:
   m_ObjectHideFlags: 0
@@ -6053,11 +6662,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de085770a7d5e424d97359572733187d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_NodeArr: []
-  Hit: {x: 0, y: 0, z: 0}
-  m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
-  m_SelectObject: {fileID: 0}
+  m_TileX: 0
+  m_TileY: 0
 --- !u!1 &1115670448
 GameObject:
   m_ObjectHideFlags: 0
@@ -6165,11 +6771,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de085770a7d5e424d97359572733187d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_NodeArr: []
-  Hit: {x: 0, y: 0, z: 0}
-  m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
-  m_SelectObject: {fileID: 0}
+  m_TileX: 0
+  m_TileY: 0
 --- !u!1 &1140716948
 GameObject:
   m_ObjectHideFlags: 0
@@ -6277,11 +6880,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de085770a7d5e424d97359572733187d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_NodeArr: []
-  Hit: {x: 0, y: 0, z: 0}
-  m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
-  m_SelectObject: {fileID: 0}
+  m_TileX: 0
+  m_TileY: 0
 --- !u!1 &1153013227
 GameObject:
   m_ObjectHideFlags: 0
@@ -6389,11 +6989,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de085770a7d5e424d97359572733187d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_NodeArr: []
-  Hit: {x: 0, y: 0, z: 0}
-  m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
-  m_SelectObject: {fileID: 0}
+  m_TileX: 0
+  m_TileY: 0
 --- !u!1 &1166212135
 GameObject:
   m_ObjectHideFlags: 0
@@ -6501,11 +7098,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de085770a7d5e424d97359572733187d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_NodeArr: []
-  Hit: {x: 0, y: 0, z: 0}
-  m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
-  m_SelectObject: {fileID: 0}
+  m_TileX: 0
+  m_TileY: 0
 --- !u!1 &1172241016
 GameObject:
   m_ObjectHideFlags: 0
@@ -6613,11 +7207,47 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de085770a7d5e424d97359572733187d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   m_NodeArr: []
   Hit: {x: 0, y: 0, z: 0}
   m_Button: {fileID: 0}
   m_Tower: {fileID: 0}
   m_SelectObject: {fileID: 0}
+=======
+  m_TileX: 0
+  m_TileY: 0
+--- !u!1 &1193099014
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1193099015}
+  m_Layer: 0
+  m_Name: Life
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1193099015
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1193099014}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -10.439209, y: -141.25824, z: -26.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 258949724}
+  m_Father: {fileID: 537343724}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+>>>>>>> parent of 90d66e5... 풀 받기위한 커밋
 --- !u!1 &1215955358
 GameObject:
   m_ObjectHideFlags: 0
@@ -6725,11 +7355,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de085770a7d5e424d97359572733187d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_NodeArr: []
-  Hit: {x: 0, y: 0, z: 0}
-  m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
-  m_SelectObject: {fileID: 0}
+  m_TileX: 0
+  m_TileY: 0
 --- !u!1 &1257249640
 GameObject:
   m_ObjectHideFlags: 0
@@ -6837,11 +7464,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de085770a7d5e424d97359572733187d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_NodeArr: []
-  Hit: {x: 0, y: 0, z: 0}
-  m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
-  m_SelectObject: {fileID: 0}
+  m_TileX: 0
+  m_TileY: 0
 --- !u!1 &1294411317
 GameObject:
   m_ObjectHideFlags: 0
@@ -6949,11 +7573,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de085770a7d5e424d97359572733187d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_NodeArr: []
-  Hit: {x: 0, y: 0, z: 0}
-  m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
-  m_SelectObject: {fileID: 0}
+  m_TileX: 0
+  m_TileY: 0
 --- !u!1 &1301542487
 GameObject:
   m_ObjectHideFlags: 0
@@ -7061,11 +7682,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de085770a7d5e424d97359572733187d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_NodeArr: []
-  Hit: {x: 0, y: 0, z: 0}
-  m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
-  m_SelectObject: {fileID: 0}
+  m_TileX: 0
+  m_TileY: 0
 --- !u!1 &1316269850
 GameObject:
   m_ObjectHideFlags: 0
@@ -7173,11 +7791,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de085770a7d5e424d97359572733187d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_NodeArr: []
-  Hit: {x: 0, y: 0, z: 0}
-  m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
-  m_SelectObject: {fileID: 0}
+  m_TileX: 0
+  m_TileY: 0
 --- !u!1 &1320680834
 GameObject:
   m_ObjectHideFlags: 0
@@ -7285,11 +7900,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de085770a7d5e424d97359572733187d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_NodeArr: []
-  Hit: {x: 0, y: 0, z: 0}
-  m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
-  m_SelectObject: {fileID: 0}
+  m_TileX: 0
+  m_TileY: 0
 --- !u!1 &1322886589
 GameObject:
   m_ObjectHideFlags: 0
@@ -7397,11 +8009,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de085770a7d5e424d97359572733187d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_NodeArr: []
-  Hit: {x: 0, y: 0, z: 0}
-  m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
-  m_SelectObject: {fileID: 0}
+  m_TileX: 0
+  m_TileY: 0
 --- !u!1 &1361680909
 GameObject:
   m_ObjectHideFlags: 0
@@ -7556,11 +8165,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de085770a7d5e424d97359572733187d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_NodeArr: []
-  Hit: {x: 0, y: 0, z: 0}
-  m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
-  m_SelectObject: {fileID: 0}
+  m_TileX: 0
+  m_TileY: 0
 --- !u!1 &1424589646
 GameObject:
   m_ObjectHideFlags: 0
@@ -7668,11 +8274,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de085770a7d5e424d97359572733187d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_NodeArr: []
-  Hit: {x: 0, y: 0, z: 0}
-  m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
-  m_SelectObject: {fileID: 0}
+  m_TileX: 0
+  m_TileY: 0
 --- !u!1 &1438951157
 GameObject:
   m_ObjectHideFlags: 0
@@ -7780,11 +8383,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de085770a7d5e424d97359572733187d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_NodeArr: []
-  Hit: {x: 0, y: 0, z: 0}
-  m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
-  m_SelectObject: {fileID: 0}
+  m_TileX: 0
+  m_TileY: 0
 --- !u!1 &1454629979
 GameObject:
   m_ObjectHideFlags: 0
@@ -7892,11 +8492,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de085770a7d5e424d97359572733187d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_NodeArr: []
-  Hit: {x: 0, y: 0, z: 0}
-  m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
-  m_SelectObject: {fileID: 0}
+  m_TileX: 0
+  m_TileY: 0
 --- !u!1 &1516857250
 GameObject:
   m_ObjectHideFlags: 0
@@ -8004,11 +8601,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de085770a7d5e424d97359572733187d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_NodeArr: []
-  Hit: {x: 0, y: 0, z: 0}
-  m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
-  m_SelectObject: {fileID: 0}
+  m_TileX: 0
+  m_TileY: 0
 --- !u!1 &1568501085
 GameObject:
   m_ObjectHideFlags: 0
@@ -8116,12 +8710,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de085770a7d5e424d97359572733187d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   m_NodeArr: []
   Hit: {x: 0, y: 0, z: 0}
   m_Button: {fileID: 0}
   m_Tower: {fileID: 0}
   m_SelectObject: {fileID: 0}
 --- !u!1 &1581098819
+=======
+  m_TileX: 0
+  m_TileY: 0
+--- !u!1 &1569325066
+>>>>>>> parent of 90d66e5... 풀 받기위한 커밋
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8228,11 +8828,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de085770a7d5e424d97359572733187d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_NodeArr: []
-  Hit: {x: 0, y: 0, z: 0}
-  m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
-  m_SelectObject: {fileID: 0}
+  m_TileX: 0
+  m_TileY: 0
 --- !u!1 &1598449096
 GameObject:
   m_ObjectHideFlags: 0
@@ -8340,11 +8937,47 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de085770a7d5e424d97359572733187d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   m_NodeArr: []
   Hit: {x: 0, y: 0, z: 0}
   m_Button: {fileID: 0}
   m_Tower: {fileID: 0}
   m_SelectObject: {fileID: 0}
+=======
+  m_TileX: 0
+  m_TileY: 0
+--- !u!1 &1612663646
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1612663647}
+  m_Layer: 0
+  m_Name: Information
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1612663647
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1612663646}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -10.439209, y: 35.671738, z: -26.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 537343724}
+  m_Father: {fileID: 121656693}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+>>>>>>> parent of 90d66e5... 풀 받기위한 커밋
 --- !u!1 &1654520120
 GameObject:
   m_ObjectHideFlags: 0
@@ -8485,10 +9118,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_NodeArr: []
+<<<<<<< HEAD
   Hit: {x: 0, y: 0, z: 0}
   m_Button: {fileID: 3510947691625213479}
   m_Tower: {fileID: 0}
   m_SelectObject: {fileID: 0}
+=======
+>>>>>>> parent of 90d66e5... 풀 받기위한 커밋
 --- !u!4 &1682406228
 Transform:
   m_ObjectHideFlags: 0
@@ -8700,11 +9336,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de085770a7d5e424d97359572733187d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_NodeArr: []
-  Hit: {x: 0, y: 0, z: 0}
-  m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
-  m_SelectObject: {fileID: 0}
+  m_TileX: 0
+  m_TileY: 0
 --- !u!1 &1723438764
 GameObject:
   m_ObjectHideFlags: 0
@@ -8812,11 +9445,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de085770a7d5e424d97359572733187d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_NodeArr: []
-  Hit: {x: 0, y: 0, z: 0}
-  m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
-  m_SelectObject: {fileID: 0}
+  m_TileX: 0
+  m_TileY: 0
 --- !u!1 &1731229123
 GameObject:
   m_ObjectHideFlags: 0
@@ -8924,11 +9554,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de085770a7d5e424d97359572733187d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_NodeArr: []
-  Hit: {x: 0, y: 0, z: 0}
-  m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
-  m_SelectObject: {fileID: 0}
+  m_TileX: 0
+  m_TileY: 0
 --- !u!1 &1744661770
 GameObject:
   m_ObjectHideFlags: 0
@@ -9036,11 +9663,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de085770a7d5e424d97359572733187d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_NodeArr: []
-  Hit: {x: 0, y: 0, z: 0}
-  m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
-  m_SelectObject: {fileID: 0}
+  m_TileX: 0
+  m_TileY: 0
 --- !u!1 &1765693154
 GameObject:
   m_ObjectHideFlags: 0
@@ -9148,11 +9772,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de085770a7d5e424d97359572733187d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_NodeArr: []
-  Hit: {x: 0, y: 0, z: 0}
-  m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
-  m_SelectObject: {fileID: 0}
+  m_TileX: 0
+  m_TileY: 0
 --- !u!1 &1780704622
 GameObject:
   m_ObjectHideFlags: 0
@@ -9260,11 +9881,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de085770a7d5e424d97359572733187d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_NodeArr: []
-  Hit: {x: 0, y: 0, z: 0}
-  m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
-  m_SelectObject: {fileID: 0}
+  m_TileX: 0
+  m_TileY: 0
 --- !u!1 &1874107115
 GameObject:
   m_ObjectHideFlags: 0
@@ -9372,11 +9990,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de085770a7d5e424d97359572733187d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_NodeArr: []
-  Hit: {x: 0, y: 0, z: 0}
-  m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
-  m_SelectObject: {fileID: 0}
+  m_TileX: 0
+  m_TileY: 0
 --- !u!1 &1878131125
 GameObject:
   m_ObjectHideFlags: 0
@@ -9484,11 +10099,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de085770a7d5e424d97359572733187d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_NodeArr: []
-  Hit: {x: 0, y: 0, z: 0}
-  m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
-  m_SelectObject: {fileID: 0}
+  m_TileX: 0
+  m_TileY: 0
 --- !u!1 &1946356421
 GameObject:
   m_ObjectHideFlags: 0
@@ -9596,11 +10208,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de085770a7d5e424d97359572733187d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_NodeArr: []
-  Hit: {x: 0, y: 0, z: 0}
-  m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
-  m_SelectObject: {fileID: 0}
+  m_TileX: 0
+  m_TileY: 0
 --- !u!1 &1961767615
 GameObject:
   m_ObjectHideFlags: 0
@@ -9708,11 +10317,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de085770a7d5e424d97359572733187d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_NodeArr: []
-  Hit: {x: 0, y: 0, z: 0}
-  m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
-  m_SelectObject: {fileID: 0}
+  m_TileX: 0
+  m_TileY: 0
 --- !u!1 &1996558221
 GameObject:
   m_ObjectHideFlags: 0
@@ -9820,11 +10426,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de085770a7d5e424d97359572733187d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_NodeArr: []
-  Hit: {x: 0, y: 0, z: 0}
-  m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
-  m_SelectObject: {fileID: 0}
+  m_TileX: 0
+  m_TileY: 0
 --- !u!1 &2024132246
 GameObject:
   m_ObjectHideFlags: 0
@@ -9932,11 +10535,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de085770a7d5e424d97359572733187d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_NodeArr: []
-  Hit: {x: 0, y: 0, z: 0}
-  m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
-  m_SelectObject: {fileID: 0}
+  m_TileX: 0
+  m_TileY: 0
 --- !u!1 &2028035807
 GameObject:
   m_ObjectHideFlags: 0
@@ -10044,11 +10644,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de085770a7d5e424d97359572733187d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_NodeArr: []
-  Hit: {x: 0, y: 0, z: 0}
-  m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
-  m_SelectObject: {fileID: 0}
+  m_TileX: 0
+  m_TileY: 0
 --- !u!1 &2058319139
 GameObject:
   m_ObjectHideFlags: 0
@@ -10156,11 +10753,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de085770a7d5e424d97359572733187d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_NodeArr: []
-  Hit: {x: 0, y: 0, z: 0}
-  m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
-  m_SelectObject: {fileID: 0}
+  m_TileX: 0
+  m_TileY: 0
 --- !u!1 &2066828790
 GameObject:
   m_ObjectHideFlags: 0
@@ -10268,11 +10862,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de085770a7d5e424d97359572733187d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_NodeArr: []
-  Hit: {x: 0, y: 0, z: 0}
-  m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
-  m_SelectObject: {fileID: 0}
+  m_TileX: 0
+  m_TileY: 0
 --- !u!1 &2086917844
 GameObject:
   m_ObjectHideFlags: 0
@@ -10380,11 +10971,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de085770a7d5e424d97359572733187d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_NodeArr: []
-  Hit: {x: 0, y: 0, z: 0}
-  m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
-  m_SelectObject: {fileID: 0}
+  m_TileX: 0
+  m_TileY: 0
 --- !u!1 &2091409992
 GameObject:
   m_ObjectHideFlags: 0
@@ -10492,11 +11080,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de085770a7d5e424d97359572733187d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_NodeArr: []
-  Hit: {x: 0, y: 0, z: 0}
-  m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
-  m_SelectObject: {fileID: 0}
+  m_TileX: 0
+  m_TileY: 0
 --- !u!1 &2098474683
 GameObject:
   m_ObjectHideFlags: 0
@@ -10604,11 +11189,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de085770a7d5e424d97359572733187d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_NodeArr: []
-  Hit: {x: 0, y: 0, z: 0}
-  m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
-  m_SelectObject: {fileID: 0}
+  m_TileX: 0
+  m_TileY: 0
 --- !u!1 &2103283934
 GameObject:
   m_ObjectHideFlags: 0
@@ -10716,11 +11298,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de085770a7d5e424d97359572733187d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_NodeArr: []
-  Hit: {x: 0, y: 0, z: 0}
-  m_Button: {fileID: 0}
-  m_Tower: {fileID: 0}
-  m_SelectObject: {fileID: 0}
+  m_TileX: 0
+  m_TileY: 0
 --- !u!1 &2125835543
 GameObject:
   m_ObjectHideFlags: 0
@@ -10828,6 +11407,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de085770a7d5e424d97359572733187d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   m_NodeArr: []
   Hit: {x: 0, y: 0, z: 0}
   m_Button: {fileID: 0}
@@ -11926,3 +12506,7 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+=======
+  m_TileX: 0
+  m_TileY: 0
+>>>>>>> parent of 90d66e5... 풀 받기위한 커밋
