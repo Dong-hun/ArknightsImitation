@@ -35,8 +35,9 @@ public class Moving : MonoBehaviour
     //애니메이션 이벤트 추가할것
     void Start()
     {
-        objpos = GameObject.Find("Plane (89)").GetComponent<Transform>().position;
-        objpos2 = GameObject.Find("Plane (1)").GetComponent<Transform>().position;
+        this.transform.position=GameObject.Find("Start").transform.position;
+        objpos = GameObject.Find("Plane (80)").GetComponent<Transform>().position;
+        objpos2 = GameObject.Find("End").GetComponent<Transform>().position;
 
         Vector3 DESTPOS = m_Navi.destination;
         m_Navi = GetComponent<NavMeshAgent>();
