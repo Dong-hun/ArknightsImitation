@@ -7413,7 +7413,7 @@ GameObject:
   - component: {fileID: 1361680911}
   - component: {fileID: 1361680910}
   m_Layer: 0
-  m_Name: TEST
+  m_Name: MonsterCreater
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7428,7 +7428,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1361680909}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 06d2bc0c9ae3e1b41a376e755e71b52f, type: 3}
+  m_Script: {fileID: 11500000, guid: 12abd3a265f72c04abbd567065599e33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   GameOver: 0
