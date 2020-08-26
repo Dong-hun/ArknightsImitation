@@ -59,5 +59,9 @@ sysinfo.txt
 crashlytics-build.properties
 
 # 리소스 제외
-Assets/Model
-Assets/Resources
+Assets/Graphics
+Assets/BGM
+Assets/TextMesh Pro
+Assets/UI
+Assets/RPG Monster Duo PBR Polyart
+Assets/Resources/Enemy

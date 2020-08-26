@@ -3,24 +3,24 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class Enemy : MonoBehaviour
-{
-    //만들어야 하는것
-    //1. 몬스터가 자동으로 목적지로 이동한다.
-    //2. 몬스터가 이동하다가 장애물을 만나면 어떠한 이동 패턴을 보인다.
-    //3.  haspath,pathPending 이용하고
-    //4. 상태기계 상태로 전환해
-    // 5.적 생성... (코루틴으로 생성..시간 몇초마다..) 몇 마리가 죽었으면 나온다. ㅇㅋ.
-
-    //6. 보스 패턴 (1. 5초동안 기모아서 한방(무조건한방에 다죽임),2.체력이 낮고 빠른 보스3.체력이 5배이고 3바퀴 더돌고 들어가는 보스4.광역공격)
-    //7. 장애물 부시기  경로..재계산 여까지 대충
-    //8.레인지 시스템
-    public enum STATE
+public class Moving : MonoBehaviour
+{//만들어야 하는것
+ //1. 몬스터가 자동으로 목적지로 이동한다.
+ //2. 몬스터가 이동하다가 장애물을 만나면 어떠한 이동 패턴을 보인다.
+ //3.  haspath,pathPending 이용하고
+ //4. 상태기계 상태로 전환해
+ // 5.적 생성... (코루틴으로 생성..시간 몇초마다..) 몇 마리가 죽었으면 나온다. ㅇㅋ.
+ 
+ //6. 보스 패턴 (1. 5초동안 기모아서 한방(무조건한방에 다죽임),2.체력이 낮고 빠른 보스3.체력이 5배이고 3바퀴 더돌고 들어가는 보스4.광역공격)
+ //7. 장애물 부시기  경로..재계산 여까지 대충
+ //8.레인지 시스템
+   public enum STATE
     {
-        CREATE, TARGET1, TAGET2, ATTACK, DEAD, GOAL
+        CREATE,TARGET1,TAGET2,ATTACK,DEAD,GOAL
+
     }
     public NavMeshAgent m_Navi;
-    public GameObject Cube;
+     public GameObject Cube;
     public STATE m_STATE;
     public NavMeshPath m_Path;
     public MonsterStat m_Monsterinfo;
@@ -35,9 +35,8 @@ public class Enemy : MonoBehaviour
     //애니메이션 이벤트 추가할것
     void Start()
     {
-        this.transform.position = GameObject.Find("Start").GetComponent<Transform>().position;
-        objpos = GameObject.Find("End").GetComponent<Transform>().position;
-        objpos2 = GameObject.Find("Plane (80)").GetComponent<Transform>().position;
+        objpos = GameObject.Find("Plane (89)").GetComponent<Transform>().position;
+        objpos2 = GameObject.Find("Plane (1)").GetComponent<Transform>().position;
 
         Vector3 DESTPOS = m_Navi.destination;
         m_Navi = GetComponent<NavMeshAgent>();
@@ -51,7 +50,7 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //   RaycastHit hit;
+    //   RaycastHit hit;
         //if (Input.GetMouseButtonDown(0))
         //{
         //    Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -112,13 +111,13 @@ public class Enemy : MonoBehaviour
                             ChangeSTATE(STATE.TAGET2);
                         }
                     }
-                    else if (T - s > 1.5f)
+                    else if (T-s>1.5f)
                     {
                         ChangeSTATE(STATE.ATTACK);
                     }
 
                 }
-
+                
 
 
 
@@ -127,8 +126,8 @@ public class Enemy : MonoBehaviour
 
 
             case STATE.TAGET2:
-
-                break;
+               
+                    break;
             case STATE.ATTACK:
                 if (attackdelay <= Mathf.Epsilon)
                 {
@@ -162,22 +161,22 @@ public class Enemy : MonoBehaviour
     {
         //아 이런. 이걸 
         m_Enemy.OnDamage(m_Monsterinfo.MonsterAttack);
-        //    //큐프
+    //    //큐프
         Debug.Log("공격3");
-        // //   Debug.Log(m_Monsterinfo.MonsterAttack);
+    // //   Debug.Log(m_Monsterinfo.MonsterAttack);
     }
 
 
-
+    
     protected void OnBattle(Cube enemy)
     {
-
+    
         if (enemy == null) return;
         m_Enemy = enemy;
         ChangeSTATE(STATE.ATTACK);
-        //    Debug.Log("공격1");
-        //
-        //
+    //    Debug.Log("공격1");
+    //
+    //
     }
     //
     protected void OnBattle(Transform enemy)
@@ -186,7 +185,7 @@ public class Enemy : MonoBehaviour
         if (m_Enemy == null) return;
         ChangeSTATE(STATE.ATTACK);
         Debug.Log("공격2");
-        //
+    //
     }
 
     void Onattack()
@@ -205,9 +204,13 @@ public class Enemy : MonoBehaviour
 
         if (!m_Monsterinfo.UpdateHP(-dmg))
         {
-
+          
             Debug.Log("사망");
         }
 
     }
+    
+    //레인지 시스템으로 찾고 다시 합시다.
+    //문제점 1. 공격을 해도 체력이 줄지 않는다.
+    //문제점 2. 삭제가 되지 않는다.
 }
