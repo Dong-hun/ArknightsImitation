@@ -3,9 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 class BasicTower : TowerManager
-
 {
-
     /* 타워매니저를 상속받아서 만들어지는 각 타워들의 스크립트 */
     // 나중에 스크립트 이름을 타워이름으로 바꿀것 (현재 임시, 바꾸면 이 주석 지울것)
     // 기본 공격 하는 타워
@@ -32,16 +30,10 @@ class BasicTower : TowerManager
         }
     }
 
-    public void GetTileData()
-    {
-        TileX = 0;
-        int test = TileY;
-    }
-
     // Start is called before the first frame update
     void Start()
     {
-        base.Init(50, 50, 5.0f, 2.0f);
+        base.Init(50, 50, 5, 5.0f, 2.0f);
     }
 
     // Update is called once per frame
@@ -51,11 +43,11 @@ class BasicTower : TowerManager
     }
 
     // 타일 위치 세팅
-    public void SetTileNumber(int x, int y)
-    {
-        m_TileX = x;
-        m_TileY = y;
-    }
+    //public void SetTileNumber(int x, int y)
+    //{
+    //    m_TileX = x;
+    //    m_TileY = y;
+    //}
 
     // 상태 변경시 한번 호출될 함수
     protected override void ChangeState(STATE s)
@@ -212,6 +204,8 @@ class BasicTower : TowerManager
 
         if (m_EnemyList.Count == 0)
             ChangeState(STATE.IDLE);
+
+        
     }
 
     private void OnTriggerEnter(Collider other)
@@ -220,6 +214,7 @@ class BasicTower : TowerManager
         if (other.gameObject.layer == LayerMask.NameToLayer("Enemy"))
         {
             AddEnemy(other.gameObject.GetComponent<Enemy>());
+            Debug.Log("적들어옴 적 개수 : " + m_EnemyList.Count);
             ChangeState(STATE.BATTLE);
         }
     }
@@ -243,6 +238,7 @@ class BasicTower : TowerManager
         if (other.gameObject.layer == LayerMask.NameToLayer("Enemy"))
         {
             RemoveEnemy(other.gameObject.GetComponent<Enemy>());
+            Debug.Log("적나감 적 개수 : " + m_EnemyList.Count);
         }
     }
 }

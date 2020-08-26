@@ -65,3 +65,6 @@ Assets/TextMesh Pro
 Assets/UI
 Assets/RPG Monster Duo PBR Polyart
 Assets/Resources/Enemy
+*.meta
+Assets/Character
+Assets/Tile

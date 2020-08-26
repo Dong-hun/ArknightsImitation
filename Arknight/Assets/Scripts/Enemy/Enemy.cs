@@ -39,7 +39,7 @@ public class Enemy : MonoBehaviour
         objpos = GameObject.Find("End").GetComponent<Transform>().position;
         objpos2 = GameObject.Find("Plane (80)").GetComponent<Transform>().position;
 
-        Vector3 DESTPOS = m_Navi.destination;
+        //Vector3 DESTPOS = m_Navi.destination;
         m_Navi = GetComponent<NavMeshAgent>();
         m_STATE = STATE.CREATE;
         ChangeSTATE(STATE.TARGET1);
