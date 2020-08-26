@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4553643425700196686}
   - component: {fileID: 2159779934951600715}
   - component: {fileID: 4745016318321875571}
-  m_Layer: 10
+  m_Layer: 12
   m_Name: Obstacle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -124,3 +124,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Anim: {fileID: 0}
+  m_NodeManager: {fileID: 0}
