@@ -84,7 +84,8 @@ public class MonsterCreater : MonoBehaviour
 
                 GameObject obj = Instantiate(Resources.Load("Enemy/3DBOSS")) as GameObject;
                 m_EnemyList.Add(obj.GetComponent<Enemy>());
-
+                MonsterCount++;
+                TotalMonster++;
             }
             else
             {
