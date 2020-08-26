@@ -28,7 +28,6 @@ public class MonsterCreater : MonoBehaviour
 
     IEnumerator Monster()
     {//while 문 밖에다가 설정할 것.
-        int MonsterCount = 0;
 
         while (!GameOver)
         {

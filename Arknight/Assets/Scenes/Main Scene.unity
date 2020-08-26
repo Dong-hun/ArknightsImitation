@@ -7371,9 +7371,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameOver: 0
-  MaxMonster: 3
+  MaxMonster: 5
   TotalMonster: 0
-  obj: {fileID: 0}
+  m_EnemyList: []
 --- !u!4 &1361680911
 Transform:
   m_ObjectHideFlags: 0
