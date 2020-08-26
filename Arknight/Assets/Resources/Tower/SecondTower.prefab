@@ -871,7 +871,11 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
+<<<<<<< HEAD:Arknight/Assets/Resources/SecondTower.prefab
   m_Size: {x: 1, y: 1, z: 1}
+=======
+  m_Size: {x: 1.25, y: 1, z: 1.25}
+>>>>>>> 4844031314735be349b26d7e454cc4710e0cca0b:Arknight/Assets/Resources/Tower/SecondTower.prefab
   m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!114 &7040747244976082836
 MonoBehaviour:
