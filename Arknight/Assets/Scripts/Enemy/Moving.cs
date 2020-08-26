@@ -25,6 +25,7 @@ public class Moving : MonoBehaviour
     public NavMeshPath m_Path;
     public MonsterStat m_Monsterinfo;
     public Cube m_Enemy;
+    
     float attackdelay = 3.0f;
 
     Vector3 objpos;

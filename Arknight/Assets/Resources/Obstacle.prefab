@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 4553643425700196686}
   - component: {fileID: 2159779934951600715}
   - component: {fileID: 4837188748859570879}
+  - component: {fileID: 8421888009274642296}
+  - component: {fileID: 8501825662708095563}
   m_Layer: 11
   m_Name: Obstacle
   m_TagString: Untagged
@@ -124,3 +126,35 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Anim: {fileID: 0}
+--- !u!114 &8421888009274642296
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1256783539153813486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a0a8f28751b19543b50c9db06d27b77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  co: 0
+  CUBESTAT: {fileID: 8501825662708095563}
+  m_Obinfo: {fileID: 8501825662708095563}
+--- !u!114 &8501825662708095563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1256783539153813486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33595f17bc9a7c44cacb9d52e00c7d17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MonsterAttack: 70
+  BossAttack: 10
+  AttackDelay: 2
+  MaxHp: 233
+  CurrentHP: 0
