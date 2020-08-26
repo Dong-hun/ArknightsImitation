@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class BuildManager : MonoBehaviour
 {
-
     public int m_TileX;
     public int m_TileY;
     
@@ -23,11 +22,10 @@ public class BuildManager : MonoBehaviour
 
     public List<Obstacle> m_ObstacleList;
 
-
     // Start is called before the first frame update
     void Start()
     {
-        
+
 
     }
 
@@ -51,7 +49,7 @@ public class BuildManager : MonoBehaviour
         int TileY = m_NodeMng.SelectObject.gameObject.GetComponent<Node>().TileY;
 
         // 타워 생성 후 타일정보 저장
-        obj1 = Instantiate(Resources.Load("BasicTower")) as GameObject;
+        obj1 = Instantiate(Resources.Load("Tower/BasicTower")) as GameObject;
         obj1.transform.position = m_NodeMng.SelectObject.transform.position;
         obj1.gameObject.GetComponent<BasicTower>().TileX = TileX;
         obj1.gameObject.GetComponent<BasicTower>().TileY = TileY;
@@ -59,7 +57,11 @@ public class BuildManager : MonoBehaviour
         // 해당 좌표 타워로 변경
         m_NodeMng.m_TileState[TileY, TileX] = NodeManager.TILEINFO.TOWER;
 
+        // 색깔 되돌리기
+        m_NodeMng.GetNode(TileX, TileY).GetComponent<MeshRenderer>().material = Resources.Load("Tower/Grass") as Material;
+
         // 설치가 끝나면 선택된 오브젝트 null로 초기화
+        m_NodeMng.m_PrevNode = null;
         m_NodeMng.SelectObject = null;
 
         m_Button.BuildOffButton();
@@ -76,7 +78,7 @@ public class BuildManager : MonoBehaviour
         int TileY = m_NodeMng.SelectObject.gameObject.GetComponent<Node>().TileY;
 
         // 타워 생성 후 타일정보 저장
-        obj2 = Instantiate(Resources.Load("SecondTower")) as GameObject;
+        obj2 = Instantiate(Resources.Load("Tower/SecondTower")) as GameObject;
         obj2.transform.position = m_NodeMng.SelectObject.transform.position;
         obj2.gameObject.GetComponent<BasicTower>().TileX = TileX;
         obj2.gameObject.GetComponent<BasicTower>().TileY = TileY;
@@ -84,7 +86,11 @@ public class BuildManager : MonoBehaviour
         // 해당 좌표 타워로 변경
         m_NodeMng.m_TileState[TileY, TileX] = NodeManager.TILEINFO.TOWER;
 
+        // 색깔 되돌리기
+        m_NodeMng.GetNode(TileX, TileY).GetComponent<MeshRenderer>().material = Resources.Load("Tower/Grass") as Material;
+
         // 설치가 끝나면 선택된 오브젝트 null로 초기화
+        m_NodeMng.m_PrevNode = null;
         m_NodeMng.SelectObject = null;
 
         m_Button.BuildOffButton();
@@ -105,7 +111,7 @@ public class BuildManager : MonoBehaviour
         pos.y = 1.5f;
 
         // 보정된 위치에 타워 생성 후 타일정보 저장
-        obj3 = Instantiate(Resources.Load("Obstacle")) as GameObject;
+        obj3 = Instantiate(Resources.Load("Tower/Obstacle")) as GameObject;
         obj3.transform.position = pos;
         obj3.gameObject.GetComponent<Obstacle>().TileX = TileX;
         obj3.gameObject.GetComponent<Obstacle>().TileY = TileY;
@@ -116,7 +122,11 @@ public class BuildManager : MonoBehaviour
         // 해당 좌표 타워로 변경
         m_NodeMng.m_TileState[TileY, TileX] = NodeManager.TILEINFO.OBSTACLE;
 
+        // 색깔 되돌리기
+        m_NodeMng.GetNode(TileX, TileY).GetComponent<MeshRenderer>().material = Resources.Load("Tower/Grass") as Material;
+
         // 설치가 끝나면 선택된 오브젝트 null로 초기화
+        m_NodeMng.m_PrevNode = null;
         m_NodeMng.SelectObject = null;
 
         m_Button.BuildOffButton();
@@ -173,6 +183,8 @@ public class BuildManager : MonoBehaviour
         Destroy(m_NodeMng.SelectObject);
 
         //설치가 끝나면 선택된 오브젝트 null로 초기화
+        m_NodeMng.GetNode(TileX, TileY).GetComponent<MeshRenderer>().material = Resources.Load("Tower/Grass") as Material;
+        m_NodeMng.m_PrevNode = null;
         m_NodeMng.SelectObject = null;
     }
 }

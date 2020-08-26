@@ -24,6 +24,7 @@ public class NodeManager : MonoBehaviour
     int MaxTileY = 9;                              // 타일 총 세로 갯수
 
     public GameObject m_SelectObject;              // 마우스 클릭시 오브젝트 담는 변수 (확인용으로 public으로함 확인 다되면 private로 변경할것)
+    public Node m_PrevNode = null;
     public GameObject SelectObject
     {
         set
@@ -95,16 +96,33 @@ public class NodeManager : MonoBehaviour
             // 맞은 오브젝트 담아줌
             m_SelectObject = hit.transform.gameObject;
 
+            // 가져올 타일 좌표
+            int TileX = 0;
+            int TileY = 0;
+
             // 맞은 오브젝트의 레이어가 "Ground"라면 (노드라면)
             if (hit.transform.gameObject.layer == LayerMask.NameToLayer("Ground"))
             {
-                int TileX = hit.transform.gameObject.GetComponent<Node>().TileX;
-                int TileY = hit.transform.gameObject.GetComponent<Node>().TileY;
+                // 타일 정보 가져옴
+                TileX = hit.transform.gameObject.GetComponent<Node>().TileX;
+                TileY = hit.transform.gameObject.GetComponent<Node>().TileY;
+
+                // 타일 색 변경
+                if (m_PrevNode == null)
+                {
+                    GetNode(TileX, TileY).GetComponent<MeshRenderer>().material = Resources.Load("Tower/Blue") as Material;
+                    m_PrevNode = m_SelectObject.GetComponent<Node>();
+                }
+                else if(m_PrevNode != m_SelectObject)
+                {
+                    GetNode(TileX, TileY).GetComponent<MeshRenderer>().material = Resources.Load("Tower/Blue") as Material;
+                    m_PrevNode.GetComponent<MeshRenderer>().material = Resources.Load("Tower/Grass") as Material;
+                    m_PrevNode = m_SelectObject.GetComponent<Node>();
+                }
 
                 // 가져온 번호의 타일 상태가 NONE이라면
                 if (m_TileState[TileY, TileX] == TILEINFO.NONE)
                 {
-                    Debug.Log(TileX + ", " + TileY);
                     //업그레이드, 삭제 UI비활성화
                     m_Button.TowerOffBtn();
 
@@ -125,9 +143,22 @@ public class NodeManager : MonoBehaviour
             }
             else if (hit.transform.gameObject.layer == LayerMask.NameToLayer("Tower")) // 나중에 이 레이어를 각 타워별로 elseif 만들어야됨
             {
-                //충돌한 타워의 번호를 가져온다.(담는다)
-                int TileX = hit.transform.gameObject.GetComponent<BasicTower>().TileX;
-                int TileY = hit.transform.gameObject.GetComponent<BasicTower>().TileY;
+                //충돌한 타워의 번호를 가져온다.
+                TileX = hit.transform.gameObject.GetComponent<BasicTower>().TileX;
+                TileY = hit.transform.gameObject.GetComponent<BasicTower>().TileY;
+
+                // 타일 색 변경
+                if (m_PrevNode == null)
+                {
+                    GetNode(TileX, TileY).GetComponent<MeshRenderer>().material = Resources.Load("Tower/Red") as Material;
+                    m_PrevNode = GetNode(TileX, TileY);
+                }
+                else if (m_PrevNode != GetNode(TileX, TileY))
+                {
+                    GetNode(TileX, TileY).GetComponent<MeshRenderer>().material = Resources.Load("Tower/Red") as Material;
+                    m_PrevNode.GetComponent<MeshRenderer>().material = Resources.Load("Tower/Grass") as Material;
+                    m_PrevNode = GetNode(TileX, TileY);
+                }
 
                 if (m_TileState[TileY, TileX] == TILEINFO.TOWER)
                 {
@@ -146,9 +177,9 @@ public class NodeManager : MonoBehaviour
             }
             else if (hit.transform.gameObject.layer == LayerMask.NameToLayer("Obstacle"))
             {
-                //충돌한 타워의 번호를 가져온다.(담는다)
-                int TileX = hit.transform.gameObject.GetComponent<Obstacle>().TileX;
-                int TileY = hit.transform.gameObject.GetComponent<Obstacle>().TileY;
+                //충돌한 장애물의 번호를 가져온다.
+                TileX = hit.transform.gameObject.GetComponent<Obstacle>().TileX;
+                TileY = hit.transform.gameObject.GetComponent<Obstacle>().TileY;
 
                 if (m_TileState[TileY, TileX] == TILEINFO.OBSTACLE)
                 {
@@ -168,7 +199,7 @@ public class NodeManager : MonoBehaviour
         }
     }
 
-    Node GetNode(int x, int y)
+    public Node GetNode(int x, int y)
     {
         return m_NodeArr[(y * 10) + x];
     }
