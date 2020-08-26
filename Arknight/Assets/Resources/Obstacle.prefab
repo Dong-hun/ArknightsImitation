@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 7262028329724184756}
   - component: {fileID: 4553643425700196686}
   - component: {fileID: 2159779934951600715}
-  - component: {fileID: 4745016318321875571}
-  m_Layer: 10
+  - component: {fileID: 4837188748859570879}
+  m_Layer: 11
   m_Name: Obstacle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 1256783539153813486}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1.5, z: 0}
-  m_LocalScale: {x: 5, y: 3, z: 5}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -61,7 +61,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 8643530118d2996479d736a73014966d, type: 2}
+  - {fileID: 2100000, guid: 7a9b9d4635d1ad04890337f5e9384570, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -105,13 +105,13 @@ NavMeshObstacle:
   m_Enabled: 1
   serializedVersion: 3
   m_Shape: 1
-  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_Extents: {x: 0.625, y: 0.5, z: 0.625}
   m_MoveThreshold: 0.1
   m_Carve: 1
   m_CarveOnlyStationary: 0
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
---- !u!114 &4745016318321875571
+--- !u!114 &4837188748859570879
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -120,7 +120,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1256783539153813486}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7875110a7f1c8b94db90f906df33e64d, type: 3}
+  m_Script: {fileID: 11500000, guid: 26053ceff4a34574399a359695874b14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Anim: {fileID: 0}
