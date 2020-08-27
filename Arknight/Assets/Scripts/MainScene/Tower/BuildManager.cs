@@ -58,7 +58,7 @@ public class BuildManager : MonoBehaviour
         m_NodeMng.m_TileState[TileY, TileX] = NodeManager.TILEINFO.TOWER;
 
         // 색깔 되돌리기
-        m_NodeMng.GetNode(TileX, TileY).GetComponent<MeshRenderer>().material = Resources.Load("Tower/Grass") as Material;
+        m_NodeMng.GetNode(TileX, TileY).GetComponent<MeshRenderer>().material = Resources.Load("Tower/Material/Grass") as Material;
 
         // 설치가 끝나면 선택된 오브젝트 null로 초기화
         m_NodeMng.m_PrevNode = null;
@@ -87,7 +87,7 @@ public class BuildManager : MonoBehaviour
         m_NodeMng.m_TileState[TileY, TileX] = NodeManager.TILEINFO.TOWER;
 
         // 색깔 되돌리기
-        m_NodeMng.GetNode(TileX, TileY).GetComponent<MeshRenderer>().material = Resources.Load("Tower/Grass") as Material;
+        m_NodeMng.GetNode(TileX, TileY).GetComponent<MeshRenderer>().material = Resources.Load("Tower/Material/Grass") as Material;
 
         // 설치가 끝나면 선택된 오브젝트 null로 초기화
         m_NodeMng.m_PrevNode = null;
@@ -123,7 +123,7 @@ public class BuildManager : MonoBehaviour
         m_NodeMng.m_TileState[TileY, TileX] = NodeManager.TILEINFO.OBSTACLE;
 
         // 색깔 되돌리기
-        m_NodeMng.GetNode(TileX, TileY).GetComponent<MeshRenderer>().material = Resources.Load("Tower/Grass") as Material;
+        m_NodeMng.GetNode(TileX, TileY).GetComponent<MeshRenderer>().material = Resources.Load("Tower/Material/Grass") as Material;
 
         // 설치가 끝나면 선택된 오브젝트 null로 초기화
         m_NodeMng.m_PrevNode = null;
@@ -183,7 +183,7 @@ public class BuildManager : MonoBehaviour
         Destroy(m_NodeMng.SelectObject);
 
         //설치가 끝나면 선택된 오브젝트 null로 초기화
-        m_NodeMng.GetNode(TileX, TileY).GetComponent<MeshRenderer>().material = Resources.Load("Tower/Grass") as Material;
+        m_NodeMng.GetNode(TileX, TileY).GetComponent<MeshRenderer>().material = Resources.Load("Tower/Material/Grass") as Material;
         m_NodeMng.m_PrevNode = null;
         m_NodeMng.SelectObject = null;
     }

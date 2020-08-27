@@ -110,13 +110,13 @@ public class NodeManager : MonoBehaviour
                 // 타일 색 변경
                 if (m_PrevNode == null)
                 {
-                    GetNode(TileX, TileY).GetComponent<MeshRenderer>().material = Resources.Load("Tower/Blue") as Material;
+                    GetNode(TileX, TileY).GetComponent<MeshRenderer>().material = Resources.Load("Tower/Material/Blue") as Material;
                     m_PrevNode = m_SelectObject.GetComponent<Node>();
                 }
                 else if(m_PrevNode != m_SelectObject)
                 {
-                    GetNode(TileX, TileY).GetComponent<MeshRenderer>().material = Resources.Load("Tower/Blue") as Material;
-                    m_PrevNode.GetComponent<MeshRenderer>().material = Resources.Load("Tower/Grass") as Material;
+                    GetNode(TileX, TileY).GetComponent<MeshRenderer>().material = Resources.Load("Tower/Material/Blue") as Material;
+                    m_PrevNode.GetComponent<MeshRenderer>().material = Resources.Load("Tower/Material/Grass") as Material;
                     m_PrevNode = m_SelectObject.GetComponent<Node>();
                 }
 
@@ -150,13 +150,13 @@ public class NodeManager : MonoBehaviour
                 // 타일 색 변경
                 if (m_PrevNode == null)
                 {
-                    GetNode(TileX, TileY).GetComponent<MeshRenderer>().material = Resources.Load("Tower/Red") as Material;
+                    GetNode(TileX, TileY).GetComponent<MeshRenderer>().material = Resources.Load("Tower/Material/Red") as Material;
                     m_PrevNode = GetNode(TileX, TileY);
                 }
                 else if (m_PrevNode != GetNode(TileX, TileY))
                 {
-                    GetNode(TileX, TileY).GetComponent<MeshRenderer>().material = Resources.Load("Tower/Red") as Material;
-                    m_PrevNode.GetComponent<MeshRenderer>().material = Resources.Load("Tower/Grass") as Material;
+                    GetNode(TileX, TileY).GetComponent<MeshRenderer>().material = Resources.Load("Tower/Material/Red") as Material;
+                    m_PrevNode.GetComponent<MeshRenderer>().material = Resources.Load("Tower/Material/Grass") as Material;
                     m_PrevNode = GetNode(TileX, TileY);
                 }
 
