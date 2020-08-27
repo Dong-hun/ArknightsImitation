@@ -25,6 +25,7 @@ public class Moving : MonoBehaviour
     public NavMeshPath m_Path;
     public MonsterStat m_Monsterinfo;
     public Cube m_Enemy;
+    
     float attackdelay = 3.0f;
 
     Vector3 objpos;
@@ -129,16 +130,19 @@ public class Moving : MonoBehaviour
                
                     break;
             case STATE.ATTACK:
-                if (attackdelay <= Mathf.Epsilon)
-                {
-                    attackdelay = 2.0f;
-                    Onattack();
-                    if (m_Enemy == null)
+                //dist가 일정거리 이상이면 이동, 이하면 공격 obstle와의 거리 계산.
+                    if (attackdelay <= Mathf.Epsilon)
                     {
-                        ChangeSTATE(STATE.TAGET2);
+                        attackdelay = 2.0f;
+                        Onattack();
+                        if (m_Enemy == null)
+                        {
+                            ChangeSTATE(STATE.TAGET2);
+                        }
                     }
-                }
-                attackdelay -= Time.smoothDeltaTime; break;
+                    attackdelay -= Time.smoothDeltaTime;
+                
+                 break;
 
         }
 

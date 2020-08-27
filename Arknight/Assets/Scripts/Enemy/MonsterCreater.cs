@@ -35,7 +35,7 @@ public class MonsterCreater : MonoBehaviour
             if (MonsterCount<MaxMonster){
                 yield return new WaitForSeconds(2.0f);
 
-                GameObject obj = Instantiate(Resources.Load("Enemy/Temp Monster(Moving)")) as GameObject;
+                GameObject obj = Instantiate(Resources.Load("Enemy/Slime")) as GameObject;
                 MonsterCount++;
                 TotalMonster++;
                 m_EnemyList.Add(obj.GetComponent<Enemy>());
