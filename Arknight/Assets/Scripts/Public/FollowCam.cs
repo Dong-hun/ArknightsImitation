@@ -34,6 +34,8 @@ public class FollowCam : MonoBehaviour
         m_Rotation = transform.rotation.eulerAngles;
     }
 
+
+
     // Update is called once per frame
     void Update()
     {
