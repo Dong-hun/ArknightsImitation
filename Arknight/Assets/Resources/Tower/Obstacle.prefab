@@ -17,10 +17,14 @@ GameObject:
   - component: {fileID: 4837188748859570879}
 =======
   - component: {fileID: 4745016318321875571}
+<<<<<<< HEAD
   - component: {fileID: -2450799203603135233}
   - component: {fileID: 3568654710633684653}
 >>>>>>> d2baa9672ff61d4364912644d54ddb77a8360000:Arknight/Assets/Resources/Tower/Obstacle.prefab
   m_Layer: 10
+=======
+  m_Layer: 12
+>>>>>>> e75fb162fe6720475ec3edaac9fb7ec86d73552c
   m_Name: Obstacle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -134,6 +138,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Anim: {fileID: 0}
+<<<<<<< HEAD
 --- !u!114 &-2450799203603135233
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -166,3 +171,6 @@ MonoBehaviour:
   co: 0
   CUBESTAT: {fileID: -2450799203603135233}
   m_Obinfo: {fileID: -2450799203603135233}
+=======
+  m_NodeManager: {fileID: 0}
+>>>>>>> e75fb162fe6720475ec3edaac9fb7ec86d73552c

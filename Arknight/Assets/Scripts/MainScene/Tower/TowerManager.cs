@@ -14,7 +14,9 @@ public class TowerManager : MonoBehaviour
         IDLE, BATTLE, DIE               // 대기, 전투, 사망
     }
     protected STATE m_State;            // 상태 받는 변수
+    protected int m_MaxHp;              // 최대 체력
     protected int m_HP;                 // 체력
+    protected int m_MaxMp;              // 최대 마력
     protected int m_MP;                 // 마력
     protected int m_TileX;              // 타워 X좌표
     protected int m_TileY;              // 타워 Y좌표
@@ -25,6 +27,8 @@ public class TowerManager : MonoBehaviour
 
     public Animator m_Anim;             // 애니메이터 (protected로 상속중이여서 인스팩터창 링크불가능 
                                         // 이름으로 호출 or public으로 바꿔서 링크걸기)
+
+    public NodeManager m_NodeManager;
 
     protected List<Enemy> m_EnemyList;  // 적 리스트
     //protected DelVoid m_Attack;       // 공격 담는 딜리게이트 (딜리게이트로 한번 해볼까해서 넣어봤어여)
@@ -77,9 +81,11 @@ public class TowerManager : MonoBehaviour
     }
 
     // 적 추가
-    protected virtual void AddEnemy(Enemy enemy)
+    protected virtual void AddEnemy(GameObject enemy)
     {
-        
+        if (enemy == null) return;
+
+        m_EnemyList.Add(enemy.GetComponent<Enemy>());
     }
 
     // 가장 가까운 적 받아오기
