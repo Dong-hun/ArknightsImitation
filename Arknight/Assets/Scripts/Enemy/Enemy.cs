@@ -17,7 +17,7 @@ public class Enemy : MonoBehaviour
     //8.레인지 시스템
     public enum STATE
     {
-        CREATE, TARGET1, TAGET2, ATTACK, DEAD, GOAL
+        CREATE, TARGET1, TAGET2, ATTACK,BATTLE ,DEAD, GOAL
     }
     public NavMeshAgent m_Navi;
     public GameObject Cube;
@@ -87,7 +87,6 @@ public class Enemy : MonoBehaviour
             case STATE.ATTACK:
                 m_Enemy = GameObject.FindObjectOfType<Obstacles>();
 
-                m_Navi.SetDestination(m_Navi.destination);
                 break;
 
         }
@@ -127,19 +126,60 @@ public class Enemy : MonoBehaviour
 
 
             case STATE.TAGET2:
+                float T2 = Vector3.Distance(this.transform.position, objpos);
+                float s2 = Vector3.Distance(this.transform.position, m_Navi.destination);
+                if (!m_Navi.pathPending) //계산완료 후 이동
+                {
+                    if (m_Navi.remainingDistance <= m_Navi.stoppingDistance)
+                    {
+                        if (!m_Navi.hasPath || m_Navi.velocity.sqrMagnitude == 0.0f)
+                        {
+                            //상태를 멈춤상태로 만들거나 2번째 상태로 만드는게 나을듯. ㅇㅇ 맞어
+                            ChangeSTATE(STATE.TAGET2);
+                        }
+                    }
+                    else if (T2 - s2 > 1.5f)
+                    {
+                        ChangeSTATE(STATE.ATTACK);
+                    }
 
+                }
                 break;
             case STATE.ATTACK:
-                if (attackdelay <= Mathf.Epsilon)
+                if (m_Enemy != null)
                 {
-                    attackdelay = 2.0f;
-                    Onattack();
-                    if (m_Enemy == null)
+                    float dist = Vector3.Distance(this.transform.position, m_Enemy.transform.position);
+
+                    if (dist > 3.5f)
                     {
-                        ChangeSTATE(STATE.TAGET2);
+                        m_Navi.SetDestination(m_Enemy.transform.position);
                     }
+                    else if (dist < 3.5f)
+                    {
+                        ChangeSTATE(STATE.BATTLE);
+                    }
+                    // Debug.Log(dist);
                 }
-                attackdelay -= Time.smoothDeltaTime; break;
+                else if (m_Enemy == null)
+                {
+                    ChangeSTATE(STATE.TAGET2);
+                }
+                break;
+            case STATE.BATTLE:
+                
+                    if (attackdelay <= Mathf.Epsilon)
+                    {
+                        attackdelay = 2.0f;
+                        Onattack();
+                        if (m_Enemy == null)
+                        {
+                            ChangeSTATE(STATE.TAGET2);
+                        }
+                    }
+                    attackdelay -= Time.smoothDeltaTime;
+                
+               
+                    break;
 
         }
 
