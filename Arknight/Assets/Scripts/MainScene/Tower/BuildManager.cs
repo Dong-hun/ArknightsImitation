@@ -175,6 +175,8 @@ public class BuildManager : MonoBehaviour
                     break;
                 }
             }
+
+            
         }
         // 선택된 오브젝트가 힐타워일때
         else if (m_NodeMng.SelectObject.layer == LayerMask.NameToLayer("HealTower"))
@@ -214,6 +216,18 @@ public class BuildManager : MonoBehaviour
                 }
             }
         }
+
+        for(int i = 0; i < m_TowerList.Count; ++i)
+        {
+            if(m_TowerList[i].layer == LayerMask.NameToLayer("HealTower"))
+            {
+                //m_TowerList[i].GetComponent<HealTower>().RemoveTower(m_NodeMng.SelectObject);
+                m_TowerList[i].GetComponent<HealTower>().m_DelDeleteTower?.Invoke(m_NodeMng.SelectObject.GetComponent<TowerManager>());
+            }
+        }
+
+
+
         // 타워가 삭제되면 노드 m_TileState를 NONE으로 변경
         m_NodeMng.m_TileState[TileY, TileX] = NodeManager.TILEINFO.NONE;
 

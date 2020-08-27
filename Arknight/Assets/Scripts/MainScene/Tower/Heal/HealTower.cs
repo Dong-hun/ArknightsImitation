@@ -29,6 +29,7 @@ public class HealTower : TowerManager
     public List<GameObject> m_AroundTowerList;
 
     public DelAdd m_DelAddTower;
+    public DelDelete m_DelDeleteTower;
 
     // Start is called before the first frame update
     void Start()
@@ -37,9 +38,12 @@ public class HealTower : TowerManager
         m_NodeManager = GameObject.Find("NodeList").GetComponent<NodeManager>();
         m_BuildManager = GameObject.Find("BuildManager").GetComponent<BuildManager>();
 
-
+        // Add함수 딜리게이트 추가
         m_DelAddTower = new DelAdd(AddTower);
         m_DelAddTower?.Invoke();
+
+        // delete함수 딜리게이트 추가
+        m_DelDeleteTower = new DelDelete(RemoveTower);
     }
     // Update is called once per frame
     void Update()
@@ -80,9 +84,15 @@ public class HealTower : TowerManager
 
     protected override void Idle()
     {
+        if (m_AroundTowerList.Count == 0) return;
+        
+        for(int i = 0; i < m_AroundTowerList.Count; ++i)
+        {
 
+        }
     }
 
+    // 주변에 타워가 있으면 리스트에 추가해주는 함수
     void AddTower()
     {
         // Y축 좌표 검사
@@ -99,63 +109,72 @@ public class HealTower : TowerManager
                 {
                     // 해당 좌표의 타워를 저장
                     GameObject temp = m_BuildManager.GetTowerCoordinates(j, i);
+
+                    // 리스트가 비어있으면
                     if (m_AroundTowerList.Count == 0)
                     {
+                        // 바로 담아준다
                         m_AroundTowerList.Add(temp);
                     }
+                    // 비어있지 않으면
                     else
                     {
+                        // 해당 리스트 조사해서
                         for (int k = 0; k < m_AroundTowerList.Count; ++k)
                         {
+                            // 해당 리스트의 원소와 같으면
                             if (m_AroundTowerList[k] == temp)
                             {
+                                // 넘어감
                                 continue;
                             }
+                            // 해당 리스트의 원소와 다르면
                             else
                             {
+                                // 리스트에 담아줌
                                 m_AroundTowerList.Add(temp);
                                 break;
                             }
                         }
                     }   
                 }
-                else
-                {
-                    continue;
-                }
             }
         }
 
+        // 리스트를 돌아서 중복검사 해줌
         for(int i = 0; i < m_AroundTowerList.Count; ++i)
         {
             for(int j = i + 1; j < m_AroundTowerList.Count; ++j)
             {
+                // 검사하려는 타워가 또 있다면
                 if(m_AroundTowerList[i] == m_AroundTowerList[j])
                 {
+                    // 뒤쪽의 타워를 제거해줌
                     m_AroundTowerList.Remove(m_AroundTowerList[j]);
+
+                    // 사이즈가 1줄었으므로 해당 원소를 다시 조사하기 위해 -1해줌
                     --j;
                 }
-
             }
         }
-
-
-
-
     }
 
-    void RemoveListTower(GameObject tower)
+    // 타워 제거 함수
+    public void RemoveTower(TowerManager tower)
     {
+        // 리스트가 비어있으면 리턴
         if (m_AroundTowerList.Count == 0) return;
 
+        // 리스트 돌아서
         for(int i = 0; i < m_AroundTowerList.Count; ++i)
         {
+            // 해당 리스트에 해당타워가 있으면
             if(m_AroundTowerList[i].transform == tower.transform)
             {
+                // 리스트에서 제거 후 빠져나옴 (더이상 검사할 필요 x)
                 m_AroundTowerList.Remove(m_AroundTowerList[i]);
                 break;
             }
         }
     }
-
 }
