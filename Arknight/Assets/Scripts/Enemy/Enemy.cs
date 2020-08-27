@@ -24,7 +24,7 @@ public class Enemy : MonoBehaviour
     public STATE m_STATE;
     public NavMeshPath m_Path;
     public MonsterStat m_Monsterinfo;
-    public Cube m_Enemy;
+    public Obstacles m_Enemy;
     float attackdelay = 3.0f;
 
     Vector3 objpos;
@@ -85,7 +85,7 @@ public class Enemy : MonoBehaviour
                 break;
 
             case STATE.ATTACK:
-                m_Enemy = GameObject.FindObjectOfType<Cube>();
+                m_Enemy = GameObject.FindObjectOfType<Obstacles>();
 
                 m_Navi.SetDestination(m_Navi.destination);
                 break;
@@ -158,7 +158,7 @@ public class Enemy : MonoBehaviour
     }
 
 
-    void Onattack(Cube enemy)
+    void Onattack(Obstacles enemy)
     {
         //아 이런. 이걸 
         m_Enemy.OnDamage(m_Monsterinfo.MonsterAttack);
@@ -169,7 +169,7 @@ public class Enemy : MonoBehaviour
 
 
 
-    protected void OnBattle(Cube enemy)
+    protected void OnBattle(Obstacles enemy)
     {
 
         if (enemy == null) return;
@@ -182,7 +182,7 @@ public class Enemy : MonoBehaviour
     //
     protected void OnBattle(Transform enemy)
     {
-        m_Enemy = enemy.gameObject.GetComponentInChildren<Cube>();
+        m_Enemy = enemy.gameObject.GetComponentInChildren<Obstacles>();
         if (m_Enemy == null) return;
         ChangeSTATE(STATE.ATTACK);
         Debug.Log("공격2");

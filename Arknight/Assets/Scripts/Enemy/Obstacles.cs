@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Cube : MonoBehaviour
+public class Obstacles : MonoBehaviour
 {
     public int co;
     public MonsterStat CUBESTAT;
