@@ -26,7 +26,7 @@ public class HealTower : TowerManager
             return m_TileY;
         }
     }
-    List<GameObject> m_AroundTowerList;
+    public List<GameObject> m_AroundTowerList;
 
     DelVoid m_DelAddTower;
 
@@ -34,6 +34,7 @@ public class HealTower : TowerManager
     void Start()
     {
         m_NodeManager = GameObject.Find("NodeList").GetComponent<NodeManager>();
+        m_BuildManager = GameObject.Find("BuildManager").GetComponent<BuildManager>();
         m_DelAddTower += AddTower;
     }
 
@@ -88,7 +89,10 @@ public class HealTower : TowerManager
                 if (m_NodeManager.GetNode(j, i) == null) continue;
                 if (m_NodeManager.GetNode(j, i) == m_NodeManager.GetNode(TileX, TileY)) continue;
 
-
+                if(m_NodeManager.m_TileState[i, j] == NodeManager.TILEINFO.TOWER)
+                {
+                    
+                }
 
             }
         }

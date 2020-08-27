@@ -227,4 +227,32 @@ public class BuildManager : MonoBehaviour
         m_NodeMng.m_PrevNode = null;
         m_NodeMng.SelectObject = null;
     }
+
+    GameObject GetTowerCoordinates(int x, int y)
+    {
+        if (m_TowerList.Count == 0) return null;
+
+        for(int i = 0; i < m_TowerList.Count; ++i)
+        {
+            int TileX = 0;
+            int TileY = 0;
+
+            if(m_TowerList[i].layer == LayerMask.NameToLayer("BasicTower"))
+            {
+                TileX = m_TowerList[i].GetComponent<BasicTower>().TileX;
+                TileY = m_TowerList[i].GetComponent<BasicTower>().TileY;
+            }
+            else if (m_TowerList[i].layer == LayerMask.NameToLayer("HealTower"))
+            {
+                TileX = m_TowerList[i].GetComponent<HealTower>().TileX;
+                TileY = m_TowerList[i].GetComponent<HealTower>().TileY;
+            }
+
+            if(TileX == x && TileY == y)
+            {
+                return m_TowerList[i];
+            }
+        }
+        return null;
+    }
 }
