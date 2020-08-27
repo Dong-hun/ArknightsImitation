@@ -20,7 +20,6 @@ public class Enemy : MonoBehaviour
         CREATE, TARGET1, TAGET2, ATTACK,BATTLE ,DEAD, GOAL
     }
     public NavMeshAgent m_Navi;
-    public GameObject Cube;
     public STATE m_STATE;
     public NavMeshPath m_Path;
     public MonsterStat m_Monsterinfo;
