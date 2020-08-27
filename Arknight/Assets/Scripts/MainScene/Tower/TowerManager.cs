@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public delegate void DelVoid();
+public delegate void DelAdd();
 
 public class TowerManager : MonoBehaviour
 {

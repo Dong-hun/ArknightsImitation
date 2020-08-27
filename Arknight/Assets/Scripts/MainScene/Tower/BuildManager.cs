@@ -21,7 +21,6 @@ public class BuildManager : MonoBehaviour
     public ButtonUI m_Button;
 
     public List<Obstacle> m_ObstacleList;
-
     public List<GameObject> m_TowerList;
 
     // Start is called before the first frame update
@@ -61,6 +60,8 @@ public class BuildManager : MonoBehaviour
         // 해당 좌표 타워로 변경
         m_NodeMng.m_TileState[TileY, TileX] = NodeManager.TILEINFO.TOWER;
 
+        CheckAroundHealTower();
+
         // 현재 노드의 머터리얼을 다시 Grass로 변경
         m_NodeMng.GetNode(TileX, TileY).GetComponent<MeshRenderer>().material = Resources.Load("Tower/Material/Grass") as Material;
 
@@ -91,6 +92,8 @@ public class BuildManager : MonoBehaviour
 
         // 해당 좌표 타워로 변경
         m_NodeMng.m_TileState[TileY, TileX] = NodeManager.TILEINFO.TOWER;
+
+        CheckAroundHealTower();
 
         // 현재 노드의 머터리얼을 다시 Grass로 변경
         m_NodeMng.GetNode(TileX, TileY).GetComponent<MeshRenderer>().material = Resources.Load("Tower/Material/Grass") as Material;
@@ -228,15 +231,20 @@ public class BuildManager : MonoBehaviour
         m_NodeMng.SelectObject = null;
     }
 
-    GameObject GetTowerCoordinates(int x, int y)
+    // 좌표로 타워 가져오기
+    public GameObject GetTowerCoordinates(int x, int y)
     {
+        // 타워리스트가 비었다면 리턴
         if (m_TowerList.Count == 0) return null;
 
+        // 타워 전부 조사
         for(int i = 0; i < m_TowerList.Count; ++i)
         {
+            // 타일 넘버
             int TileX = 0;
             int TileY = 0;
 
+            // 해당 타워의 레이어별로 스크립트에서 좌표 가져오기
             if(m_TowerList[i].layer == LayerMask.NameToLayer("BasicTower"))
             {
                 TileX = m_TowerList[i].GetComponent<BasicTower>().TileX;
@@ -248,11 +256,24 @@ public class BuildManager : MonoBehaviour
                 TileY = m_TowerList[i].GetComponent<HealTower>().TileY;
             }
 
+            // 가져온 타워의 좌표와 얻으려는 타일좌표가 일치하면
             if(TileX == x && TileY == y)
             {
+                // 해당 좌표의 타워 리턴
                 return m_TowerList[i];
             }
         }
         return null;
+    }
+
+    void CheckAroundHealTower()
+    {
+        if (m_TowerList.Count == 0) return;
+
+        for(int i = 0; i < m_TowerList.Count; ++i)
+        {
+            if (m_TowerList[i].layer == LayerMask.NameToLayer("HealTower"))
+                m_TowerList[i].GetComponent<HealTower>().m_DelAddTower?.Invoke();
+        }
     }
 }

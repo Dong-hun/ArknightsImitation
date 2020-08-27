@@ -34,6 +34,7 @@ public class MonsterCreater : MonoBehaviour
                 yield return new WaitForSeconds(2.0f);
 
                 GameObject obj = Instantiate(Resources.Load("Enemy/Slime")) as GameObject;
+                obj.transform.SetParent(this.transform);
                 MonsterCount++;
                 TotalMonster++;
             }
@@ -53,6 +54,7 @@ public class MonsterCreater : MonoBehaviour
                 yield return new WaitForSeconds(3.0f);
 
                 GameObject obj = Instantiate(Resources.Load("Enemy/3DBOSS")) as GameObject;
+                obj.transform.SetParent(this.transform);
             }
             else
             {

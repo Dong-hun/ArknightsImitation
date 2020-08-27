@@ -265,5 +265,3 @@ public class NodeManager : MonoBehaviour
         return m_NodeArr[(y * 10) + x];
     }
 }
-
-
