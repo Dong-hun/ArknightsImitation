@@ -1,17 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.AI;
 
-public class Enemy : MonoBehaviour
-{
-    //만들어야 하는것
-    //1. 몬스터가 자동으로 목적지로 이동한다.
-    //2. 몬스터가 이동하다가 장애물을 만나면 어떠한 이동 패턴을 보인다.
-    //3.  haspath,pathPending 이용하고
-    //4. 상태기계 상태로 전환해
-    // 5.적 생성... (코루틴으로 생성..시간 몇초마다..) 몇 마리가 죽었으면 나온다. ㅇㅋ.
+public class Enemy : EnemyManager
 
+<<<<<<< HEAD:Arknight/Assets/Scripts/MainScene/Enemy/Enemy.cs
     //6. 보스 패턴 (1. 5초동안 기모아서 한방(무조건한방에 다죽임),2.체력이 낮고 빠른 보스3.체력이 5배이고 3바퀴 더돌고 들어가는 보스4.광역공격)
     //7. 장애물 부시기  경로..재계산 여까지 대충
     //8.레인지 시스템
@@ -32,10 +25,15 @@ public class Enemy : MonoBehaviour
     Vector3 objpos2;
     Vector3 Goalpos;
     //public Cube m_Enemy;
+=======
+    /* 생성할 적 클래스 */
+{
+
+>>>>>>> e8fd898eee8f41673716ee97de14823cd2db1fda:Arknight/Assets/Scripts/Enemy/Enemy.cs
     // Start is called before the first frame update
-    //애니메이션 이벤트 추가할것
-    void Start()
+    new void Start()
     {
+<<<<<<< HEAD:Arknight/Assets/Scripts/MainScene/Enemy/Enemy.cs
         this.transform.position = GameObject.Find("Start").GetComponent<Transform>().position;
         objpos = GameObject.Find("End").GetComponent<Transform>().position;
         objpos2 = GameObject.Find("Plane (80)").GetComponent<Transform>().position;
@@ -49,18 +47,23 @@ public class Enemy : MonoBehaviour
         m_Path = new NavMeshPath();
 
         //   m_Monsterinfo = GetComponent<MonsterStat>();
+=======
+        base.Start();
+        //m_StartPos = GameObject.Find("Plane").transform.position;
+>>>>>>> e8fd898eee8f41673716ee97de14823cd2db1fda:Arknight/Assets/Scripts/Enemy/Enemy.cs
     }
 
     // Update is called once per frame
-    void Update()
+    new void Update()
     {
-        //   RaycastHit hit;
-        //if (Input.GetMouseButtonDown(0))
+        base.Update();
+        //if (m_State == STATE.IDLE)
         //{
-        //    Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        //    if (Physics.Raycast(ray, out hit))
-        //        m_Navi.SetDestination(hit.point);
+        //    m_Dest = GameObject.Find("Plane (89)").transform.position;
+        //    m_Navi.SetDestination(m_Dest);
+        //    ChangeState(STATE.MOVE);
         //}
+<<<<<<< HEAD:Arknight/Assets/Scripts/MainScene/Enemy/Enemy.cs
         StateProcess();
 
     }
@@ -267,5 +270,7 @@ public class Enemy : MonoBehaviour
             Debug.Log("사망");
         }
 
+=======
+>>>>>>> e8fd898eee8f41673716ee97de14823cd2db1fda:Arknight/Assets/Scripts/Enemy/Enemy.cs
     }
 }
