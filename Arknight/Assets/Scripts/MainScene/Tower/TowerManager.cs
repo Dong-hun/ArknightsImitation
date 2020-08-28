@@ -18,7 +18,7 @@ public class TowerManager : MonoBehaviour
     protected int m_MaxHp;              // 최대 체력
     protected int m_HP;                 // 체력
     protected int m_MaxMp;              // 최대 마력
-    protected int m_MP;                 // 마력
+    protected int m_MP;                 // 마력   
     protected int m_TileX;              // 타워 X좌표
     protected int m_TileY;              // 타워 Y좌표
     protected int m_Damage;             // 공격력
@@ -42,7 +42,7 @@ public class TowerManager : MonoBehaviour
     }
 
     // 타워 세팅
-    protected void Init(int hp = 50, int mp = 0, int dmg = 0, float dist = 1.0f, float delay = 5.0f)
+    protected void Init(int hp = 50, int mp = 0, int dmg = 0, float dist = 1.0f, float delay = 0.0f)
     {
         m_State = STATE.IDLE;
         m_HP = hp;
@@ -82,13 +82,6 @@ public class TowerManager : MonoBehaviour
 
     }
 
-    // 적 추가
-    protected virtual void AddEnemy(GameObject enemy)
-    {
-        if (enemy == null) return;
-
-        m_EnemyList.Add(enemy.GetComponent<Enemy>());
-    }
 
     // 가장 가까운 적 받아오기
     protected virtual Enemy GetNearestEnemy()
