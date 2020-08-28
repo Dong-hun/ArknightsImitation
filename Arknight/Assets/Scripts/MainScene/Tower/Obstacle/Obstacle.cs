@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Obstacle : TowerManager
 {
+    public MonsterStat Monsterstatinfo;
     public int TileX
     {
         set
@@ -54,6 +55,18 @@ public class Obstacle : TowerManager
                 break;
             case STATE.DIE:
                 break;
+        }
+    }
+    public void OnDamage(int dmg)
+    {
+        Debug.Log("인식");
+        Monsterstatinfo.BossAttack = dmg;
+
+        if (!Monsterstatinfo.UpdateHP(-dmg))
+        {
+
+            Destroy(this.gameObject);
+            Debug.Log("사망");
         }
     }
 }

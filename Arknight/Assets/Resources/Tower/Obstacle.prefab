@@ -127,8 +127,7 @@ MonoBehaviour:
   m_Anim: {fileID: 0}
   m_NodeManager: {fileID: 0}
   m_BuildManager: {fileID: 0}
-  CUBESTAT: {fileID: 63112998013616190}
-  m_Obinfo: {fileID: 63112998013616190}
+  Monsterstatinfo: {fileID: 63112998013616190}
 --- !u!114 &63112998013616190
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -102,7 +102,7 @@ public class Enemy : MonoBehaviour
 
                 break;
             case STATE.GOAL:
-                m_Navi.SetDestination(Goalpos);
+            //    m_Navi.SetDestination(Goalpos);
 
                 break;
         }
@@ -167,11 +167,11 @@ public class Enemy : MonoBehaviour
                 {
                     float dist = Vector3.Distance(this.transform.position, m_Enemy.transform.position);
 
-                    if (dist > 3.5f)
+                    if (dist > 5.5f)
                     {
                         m_Navi.SetDestination(m_Enemy.transform.position);
                     }
-                    else if (dist < 3.5f)
+                    else if (dist < 5.5f)
                     {
                         ChangeSTATE(STATE.BATTLE);
                     }

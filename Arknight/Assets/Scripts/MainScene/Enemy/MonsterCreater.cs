@@ -8,11 +8,14 @@ public class MonsterCreater : MonoBehaviour
     public int MaxMonster = 3;
     public int TotalMonster = 0;
     public GameObject obj;
+    public List<Enemy> m_EnemyList;
+    int MonsterCount = 0;
 
     // Start is called before the first frame update
     void Start()
     {
         StartCoroutine(Monster());
+        StartCoroutine(Monster2());
         StartCoroutine(Boss());
     }
 
@@ -25,7 +28,6 @@ public class MonsterCreater : MonoBehaviour
 
     IEnumerator Monster()
     {//while 문 밖에다가 설정할 것.
-        int MonsterCount = 0;
 
         while (!GameOver)
         {
@@ -37,6 +39,7 @@ public class MonsterCreater : MonoBehaviour
                 obj.transform.SetParent(this.transform);
                 MonsterCount++;
                 TotalMonster++;
+                m_EnemyList.Add(obj.GetComponent<Enemy>());
             }
             else
             {
@@ -55,6 +58,34 @@ public class MonsterCreater : MonoBehaviour
 
                 GameObject obj = Instantiate(Resources.Load("Enemy/3DBOSS")) as GameObject;
                 obj.transform.SetParent(this.transform);
+                m_EnemyList.Add(obj.GetComponent<Enemy>());
+                MonsterCount++;
+                TotalMonster++;
+
+            }
+            else
+            {
+                yield return null;
+
+            }
+        }
+    }
+
+    IEnumerator Monster2()
+    {//while 문 밖에다가 설정할 것.
+
+        while (!GameOver)
+        {
+
+            if (MonsterCount < MaxMonster)
+            {
+                yield return new WaitForSeconds(2.0f);
+
+                GameObject obj = Instantiate(Resources.Load("Enemy/TURTLES")) as GameObject;
+                obj.transform.SetParent(this.transform);
+                m_EnemyList.Add(obj.GetComponent<Enemy>());
+                MonsterCount++;
+                TotalMonster++;
             }
             else
             {

@@ -3795,7 +3795,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 762160048}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f70aadebe16f784b8eb7e1fcc806f29, type: 3}
+  m_Script: {fileID: 11500000, guid: c49da187990f2c64db6499e0cbfae121, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_TileX: 0
@@ -7499,6 +7499,7 @@ MonoBehaviour:
   GameOver: 0
   MaxMonster: 3
   TotalMonster: 0
+  obj: {fileID: 0}
   m_EnemyList: []
 --- !u!4 &1361680911
 Transform:
