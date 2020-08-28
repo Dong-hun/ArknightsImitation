@@ -14,12 +14,12 @@ TagManager:
   - 
   - 
   - Ground
-  - Tower
+  - BasicTower
+  - HealTower
+  - 
   - Obstacle
   - Structure
   - Enemy
-  - 
-  - 
   - 
   - 
   - 

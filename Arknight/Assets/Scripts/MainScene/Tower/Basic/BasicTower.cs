@@ -145,13 +145,13 @@ class BasicTower : TowerManager
     }
 
     // 적 추가
-    protected override void AddEnemy(Enemy enemy)
+    protected override void AddEnemy(GameObject enemy)
     {
         // 매개변수가 null이면 리턴
         if (enemy == null) return;
 
         // 리스트에 채워줌
-        m_EnemyList.Add(enemy);
+        m_EnemyList.Add(enemy.GetComponent<Enemy>());
 
     }
 
@@ -213,7 +213,7 @@ class BasicTower : TowerManager
         // 사정거리에 들어온 적 추가
         if (other.gameObject.layer == LayerMask.NameToLayer("Enemy"))
         {
-            AddEnemy(other.gameObject.GetComponent<Enemy>());
+            AddEnemy(other.gameObject);
             Debug.Log("적들어옴 적 개수 : " + m_EnemyList.Count);
             ChangeState(STATE.BATTLE);
         }

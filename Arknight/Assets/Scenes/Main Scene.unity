@@ -3805,6 +3805,7 @@ MonoBehaviour:
   m_NodeMng: {fileID: 1682406227}
   m_Button: {fileID: 3510947691625213479}
   m_ObstacleList: []
+  m_TowerList: []
 --- !u!4 &762160050
 Transform:
   m_ObjectHideFlags: 0
@@ -11409,7 +11410,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 762160049}
-        m_MethodName: BuildToTower2
+        m_MethodName: BuildToHealTower
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
