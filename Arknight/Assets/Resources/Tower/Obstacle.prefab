@@ -13,8 +13,7 @@ GameObject:
   - component: {fileID: 7262028329724184756}
   - component: {fileID: 4553643425700196686}
   - component: {fileID: 2159779934951600715}
-  - component: {fileID: -2450799203603135233}
-  - component: {fileID: -387529581970905121}
+  - component: {fileID: 5360542732091703024}
   m_Layer: 10
   m_Name: Obstacle
   m_TagString: Untagged
@@ -112,24 +111,7 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 0
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
---- !u!114 &-2450799203603135233
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1256783539153813486}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 33595f17bc9a7c44cacb9d52e00c7d17, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MonsterAttack: 70
-  BossAttack: 10
-  AttackDelay: 2
-  MaxHp: 233
-  CurrentHP: 0
---- !u!114 &-387529581970905121
+--- !u!114 &5360542732091703024
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -142,5 +124,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Anim: {fileID: 0}
-  CUBESTAT: {fileID: -2450799203603135233}
-  m_Obinfo: {fileID: -2450799203603135233}
+  CUBESTAT: {fileID: 0}
+  m_Obinfo: {fileID: 0}

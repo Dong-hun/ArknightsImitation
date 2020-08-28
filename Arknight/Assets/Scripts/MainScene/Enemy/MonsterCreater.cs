@@ -7,14 +7,9 @@ public class MonsterCreater : MonoBehaviour
     public bool GameOver = false;
     public int MaxMonster = 3;
     public int TotalMonster = 0;
-<<<<<<< HEAD:Arknight/Assets/Scripts/MainScene/Enemy/MonsterCreater.cs
      GameObject obj;
     public List<Enemy> m_EnemyList;
     int MonsterCount = 0;
-    
-
-=======
->>>>>>> e8fd898eee8f41673716ee97de14823cd2db1fda:Arknight/Assets/Scripts/Enemy/TEmp/MonsterCreater.cs
     // Start is called before the first frame update
     void Start()
     {
@@ -41,11 +36,7 @@ public class MonsterCreater : MonoBehaviour
             if (MonsterCount<MaxMonster){
                 yield return new WaitForSeconds(2.0f);
 
-<<<<<<< HEAD:Arknight/Assets/Scripts/MainScene/Enemy/MonsterCreater.cs
                 GameObject obj = Instantiate(Resources.Load("Enemy/Slime")) as GameObject;
-=======
-                GameObject obj = Instantiate(Resources.Load("GreenCube")) as GameObject;
->>>>>>> e8fd898eee8f41673716ee97de14823cd2db1fda:Arknight/Assets/Scripts/Enemy/TEmp/MonsterCreater.cs
                 MonsterCount++;
                 TotalMonster++;
                 m_EnemyList.Add(obj.GetComponent<Enemy>());
@@ -92,14 +83,10 @@ public class MonsterCreater : MonoBehaviour
             {
                 yield return new WaitForSeconds(3.0f);
 
-<<<<<<< HEAD:Arknight/Assets/Scripts/MainScene/Enemy/MonsterCreater.cs
                 GameObject obj = Instantiate(Resources.Load("Enemy/3DBOSS")) as GameObject;
                 m_EnemyList.Add(obj.GetComponent<Enemy>());
                 MonsterCount++;
                 TotalMonster++;
-=======
-                //GameObject obj = Instantiate(Resources.Load("3DBOSS")) as GameObject;
->>>>>>> e8fd898eee8f41673716ee97de14823cd2db1fda:Arknight/Assets/Scripts/Enemy/TEmp/MonsterCreater.cs
             }
             else
             {

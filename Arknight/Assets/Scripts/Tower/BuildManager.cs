@@ -49,7 +49,7 @@ public class BuildManager : MonoBehaviour
         int TileY = m_NodeMng.SelectObject.gameObject.GetComponent<Node>().TileY;
 
         // 타워 생성 후 타일정보 저장
-        obj1 = Instantiate(Resources.Load("Tower/BasicTower")) as GameObject;
+        obj1 = Instantiate(Resources.Load("Tower/Basic/BasicTower")) as GameObject;
         obj1.transform.position = m_NodeMng.SelectObject.transform.position;
         obj1.gameObject.GetComponent<BasicTower>().TileX = TileX;
         obj1.gameObject.GetComponent<BasicTower>().TileY = TileY;
@@ -78,7 +78,7 @@ public class BuildManager : MonoBehaviour
         int TileY = m_NodeMng.SelectObject.gameObject.GetComponent<Node>().TileY;
 
         // 타워 생성 후 타일정보 저장
-        obj2 = Instantiate(Resources.Load("Tower/SecondTower")) as GameObject;
+        obj2 = Instantiate(Resources.Load("Tower/Heal/HealTower")) as GameObject;
         obj2.transform.position = m_NodeMng.SelectObject.transform.position;
         obj2.gameObject.GetComponent<BasicTower>().TileX = TileX;
         obj2.gameObject.GetComponent<BasicTower>().TileY = TileY;
@@ -106,7 +106,6 @@ public class BuildManager : MonoBehaviour
         int TileX = m_NodeMng.SelectObject.gameObject.GetComponent<Node>().TileX;
         int TileY = m_NodeMng.SelectObject.gameObject.GetComponent<Node>().TileY;
 
-<<<<<<< HEAD:Arknight/Assets/Scripts/MainScene/Tower/BuildManager.cs
         // 선택된 타일에 깔고 타워가 묻히지 않게 하기 위해 타일 포지션값 가져온 뒤에 보정함
         Vector3 pos = m_NodeMng.SelectObject.transform.position;
         pos.y = 1.5f;
@@ -119,15 +118,9 @@ public class BuildManager : MonoBehaviour
 
         // 리스트에 추가
         m_ObstacleList.Add(obj3.GetComponent<Obstacle>());
-=======
-        // 타워 생성 후 타일정보 저장
-        obj3 = Instantiate(Resources.Load("DaggerTower")) as GameObject;
-        obj3.transform.position = m_NodeMng.m_SelectObject.transform.position;
-        obj3.gameObject.GetComponent<BasicTower>().SetTileNumber(TileX, TileY);
->>>>>>> e8fd898eee8f41673716ee97de14823cd2db1fda:Arknight/Assets/Scripts/Tower/BuildManager.cs
 
         // 해당 좌표 타워로 변경
-        m_NodeMng.m_TileState[TileY, TileX] = NodeManager.TILEINFO.TOWER;
+        m_NodeMng.m_TileState[TileY, TileX] = NodeManager.TILEINFO.OBSTACLE;
 
         // 색깔 되돌리기
         m_NodeMng.GetNode(TileX, TileY).GetComponent<MeshRenderer>().material = Resources.Load("Tower/Material/Grass") as Material;

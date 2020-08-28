@@ -1,16 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
-public class Enemy : EnemyManager
-
-<<<<<<< HEAD:Arknight/Assets/Scripts/MainScene/Enemy/Enemy.cs
+public class Enemy : MonoBehaviour
+{
     //6. 보스 패턴 (1. 5초동안 기모아서 한방(무조건한방에 다죽임),2.체력이 낮고 빠른 보스3.체력이 5배이고 3바퀴 더돌고 들어가는 보스4.광역공격)
     //7. 장애물 부시기  경로..재계산 여까지 대충
     //8.레인지 시스템
     public enum STATE
     {
-        CREATE, TARGET1, TAGET2, ATTACK,BATTLE ,DEAD, GOAL
+        CREATE, TARGET1, TAGET2, ATTACK, BATTLE, DEAD, GOAL
     }
     public NavMeshAgent m_Navi;
     public STATE m_STATE;
@@ -24,16 +24,11 @@ public class Enemy : EnemyManager
     Vector3 objpos;
     Vector3 objpos2;
     Vector3 Goalpos;
-    //public Cube m_Enemy;
-=======
-    /* 생성할 적 클래스 */
-{
 
->>>>>>> e8fd898eee8f41673716ee97de14823cd2db1fda:Arknight/Assets/Scripts/Enemy/Enemy.cs
+    /* 생성할 적 클래스 */
     // Start is called before the first frame update
-    new void Start()
+    void Start()
     {
-<<<<<<< HEAD:Arknight/Assets/Scripts/MainScene/Enemy/Enemy.cs
         this.transform.position = GameObject.Find("Start").GetComponent<Transform>().position;
         objpos = GameObject.Find("End").GetComponent<Transform>().position;
         objpos2 = GameObject.Find("Plane (80)").GetComponent<Transform>().position;
@@ -46,24 +41,17 @@ public class Enemy : EnemyManager
         ChangeSTATE(STATE.TARGET1);
         m_Path = new NavMeshPath();
 
-        //   m_Monsterinfo = GetComponent<MonsterStat>();
-=======
-        base.Start();
-        //m_StartPos = GameObject.Find("Plane").transform.position;
->>>>>>> e8fd898eee8f41673716ee97de14823cd2db1fda:Arknight/Assets/Scripts/Enemy/Enemy.cs
     }
 
     // Update is called once per frame
-    new void Update()
+    void Update()
     {
-        base.Update();
         //if (m_State == STATE.IDLE)
         //{
         //    m_Dest = GameObject.Find("Plane (89)").transform.position;
         //    m_Navi.SetDestination(m_Dest);
         //    ChangeState(STATE.MOVE);
         //}
-<<<<<<< HEAD:Arknight/Assets/Scripts/MainScene/Enemy/Enemy.cs
         StateProcess();
 
     }
@@ -96,7 +84,7 @@ public class Enemy : EnemyManager
                 float tempDist = 999f;
                 int sel = -1;
 
-                for(int i = 0; i < enemyList.Length; ++i)
+                for (int i = 0; i < enemyList.Length; ++i)
                 {
                     float dist = Vector3.Distance(enemyList[i].transform.position, this.transform.position);
 
@@ -187,20 +175,20 @@ public class Enemy : EnemyManager
                 }
                 break;
             case STATE.BATTLE:
-                
-                    if (attackdelay <= Mathf.Epsilon)
+
+                if (attackdelay <= Mathf.Epsilon)
+                {
+                    attackdelay = 2.0f;
+                    Onattack();
+                    if (m_Enemy == null)
                     {
-                        attackdelay = 2.0f;
-                        Onattack();
-                        if (m_Enemy == null)
-                        {
-                            ChangeSTATE(STATE.TAGET2);
-                        }
+                        ChangeSTATE(STATE.TAGET2);
                     }
-                    attackdelay -= Time.smoothDeltaTime;
-                
-               
-                    break;
+                }
+                attackdelay -= Time.smoothDeltaTime;
+
+
+                break;
 
         }
 
@@ -248,6 +236,7 @@ public class Enemy : EnemyManager
         ChangeSTATE(STATE.ATTACK);
         Debug.Log("공격2");
         //
+        //
     }
 
     void Onattack()
@@ -269,8 +258,5 @@ public class Enemy : EnemyManager
 
             Debug.Log("사망");
         }
-
-=======
->>>>>>> e8fd898eee8f41673716ee97de14823cd2db1fda:Arknight/Assets/Scripts/Enemy/Enemy.cs
     }
 }
