@@ -10,6 +10,7 @@ public class MonsterCreater : MonoBehaviour
      GameObject obj;
     public List<Enemy> m_EnemyList;
     int MonsterCount = 0;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -17,6 +18,8 @@ public class MonsterCreater : MonoBehaviour
         StartCoroutine(Monster());
         StartCoroutine(Boss());
         StartCoroutine(Monster2());
+
+        
     }
 
     // Update is called once per frame
