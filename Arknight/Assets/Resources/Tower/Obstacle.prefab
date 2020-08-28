@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4553643425700196686}
   - component: {fileID: 2159779934951600715}
   - component: {fileID: -2450799203603135233}
-  - component: {fileID: -480526912693787516}
+  - component: {fileID: -387529581970905121}
   m_Layer: 10
   m_Name: Obstacle
   m_TagString: Untagged
@@ -129,7 +129,7 @@ MonoBehaviour:
   AttackDelay: 2
   MaxHp: 233
   CurrentHP: 0
---- !u!114 &-480526912693787516
+--- !u!114 &-387529581970905121
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -138,9 +138,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1256783539153813486}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a0a8f28751b19543b50c9db06d27b77, type: 3}
+  m_Script: {fileID: 11500000, guid: 7875110a7f1c8b94db90f906df33e64d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  co: 0
+  m_Anim: {fileID: 0}
   CUBESTAT: {fileID: -2450799203603135233}
   m_Obinfo: {fileID: -2450799203603135233}
