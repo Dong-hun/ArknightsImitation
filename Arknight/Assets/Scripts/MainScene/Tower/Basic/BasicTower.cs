@@ -87,23 +87,25 @@ class BasicTower : TowerManager
     public Enemy m_Target;         // 현재 타겟
 
     // Start is called before the first frame update
-    void Start()
+    new void Start()
     {
+        base.Start();
+
         m_EnemyList = new List<Enemy>();
         base.Init(50, 50, 5, 5.0f);
 
         // 타겟을 null로 초기화
         m_Target = null;
 
-        StartCoroutine(Disappear(1.0f));
+        StartCoroutine(Disappear(2.0f));
+
+
     }
 
     // Update is called once per frame
     void Update()
     {
         StateProcess();
-
-
     }
 
     // 상태 변경시 한번 호출될 함수
@@ -118,8 +120,8 @@ class BasicTower : TowerManager
                 break;
             case STATE.BATTLE:
                 break;
-            case STATE.DIE:
-                StartCoroutine(Disappear(2.0f));
+            case STATE.DEATH:
+                //StartCoroutine(Disappear(1.0f));
                 break;
         }
     }
@@ -134,7 +136,7 @@ class BasicTower : TowerManager
             case STATE.BATTLE:
                 Attack();
                 break;
-            case STATE.DIE:
+            case STATE.DEATH:
                 break;
         }
     }
@@ -246,22 +248,7 @@ class BasicTower : TowerManager
         }
     }
 
-    IEnumerator Disappear(float dist)
-    {
-        yield return new WaitForSeconds(1.0f);
-    
-        while(dist > 0.0f)
-        {
-            float delta = 0.7f * Time.smoothDeltaTime;
-            this.transform.Translate(Vector3.down * delta);
-            dist -= delta;
 
-            yield return null;
-        }
-
-        Destroy(this.gameObject);
-        yield return null;
-    }
 
 
 

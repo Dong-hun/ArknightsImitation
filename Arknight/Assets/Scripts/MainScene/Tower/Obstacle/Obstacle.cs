@@ -28,8 +28,9 @@ public class Obstacle : TowerManager
         }
     }
 
-    private void Start()
+    new void Start()
     {
+        base.Start();
         base.Init();
     }
 
@@ -42,18 +43,9 @@ public class Obstacle : TowerManager
         {
             case STATE.IDLE:
                 break;
-            case STATE.DIE:
-                break;
-        }
-    }
+            case STATE.DEATH:
+                
 
-    protected override void StateProcess()
-    {
-        switch (m_State)
-        {
-            case STATE.IDLE:
-                break;
-            case STATE.DIE:
                 break;
         }
     }
@@ -64,9 +56,20 @@ public class Obstacle : TowerManager
 
         if (!Monsterstatinfo.UpdateHP(-dmg))
         {
-
-            Destroy(this.gameObject);
-            Debug.Log("사망");
+            ChangeState(STATE.DEATH);
         }
+    }
+
+    void Death()
+    {
+        for (int i = 0; i < m_BuildManager.m_ObstacleList.Count; ++i)
+        {
+            if(this.gameObject == m_BuildManager.m_ObstacleList[i])
+            {
+                m_BuildManager.m_ObstacleList.Remove(m_BuildManager.m_ObstacleList[i]);
+            }
+        }
+
+        Destroy(this.gameObject);
     }
 }
