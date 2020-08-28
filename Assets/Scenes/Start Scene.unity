@@ -200,7 +200,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 65738434}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1a733426043931a428e3b7b6cbbc60ec, type: 3}
+  m_Script: {fileID: 11500000, guid: fa4eeff03b00f5a48955f3ebdb9b9271, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Option: {fileID: 137970788}
@@ -594,7 +594,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 236917114}
-  - component: {fileID: 236917115}
+  - component: {fileID: 236917113}
   m_Layer: 0
   m_Name: SoundManager
   m_TagString: Untagged
@@ -602,6 +602,20 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &236917113
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 236917112}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebac2ff3074896b4d8dc39ecd199a4a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  musicsource: {fileID: 1899352974}
+  btnsource: {fileID: 119117251}
 --- !u!4 &236917114
 Transform:
   m_ObjectHideFlags: 0
@@ -618,20 +632,6 @@ Transform:
   m_Father: {fileID: 680770536}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &236917115
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 236917112}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5bfaa66d1cd6a9a45a6d7267d79bbb46, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  musicsource: {fileID: 1899352974}
-  btnsource: {fileID: 119117251}
 --- !u!1 &292613104
 GameObject:
   m_ObjectHideFlags: 0
@@ -1444,7 +1444,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 941302874}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ad5487e4e87ef2f49afce7430603815f, type: 3}
+  m_Script: {fileID: 11500000, guid: 892c8b8d56367df48bdb210258cb9d07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &941302877
@@ -1913,9 +1913,9 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 236917115}
+      - m_Target: {fileID: 236917113}
         m_MethodName: SetButtonVolume
-        m_Mode: 4
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2745,6 +2745,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1894133817}
   - component: {fileID: 1894133818}
+  - component: {fileID: 1894133820}
   m_Layer: 5
   m_Name: Totalbar
   m_TagString: Untagged
@@ -2824,9 +2825,9 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 236917115}
+      - m_Target: {fileID: 236917113}
         m_MethodName: SetMusicVolume
-        m_Mode: 4
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2835,6 +2836,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1894133820
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1894133816}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c4cbf9e7b2b85c4bb8b0dc24248dd0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1899352972
 GameObject:
   m_ObjectHideFlags: 0
