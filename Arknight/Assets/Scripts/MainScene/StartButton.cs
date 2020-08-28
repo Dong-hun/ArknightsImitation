@@ -27,11 +27,12 @@ public class StartButton : MonoBehaviour
     public void OnOption()
     {
         //m_OptionButton.SetActive(false);
-        m_Option.SetActive(true);
-    }
+        m_Option.SetActive(true); // 클락하면 뜨고
+    }   
 
     public void OnClick()
     {
-        m_Option.SetActive(false);
+        m_Option.SetActive(false); //클릭하면 사라짐
     }
+
 }
