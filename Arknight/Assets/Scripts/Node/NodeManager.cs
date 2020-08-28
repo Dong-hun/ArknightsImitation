@@ -12,20 +12,31 @@ public class NodeManager : MonoBehaviour
     // 해당 타일의 상태 (타워의 설치유무, 일반땅, 지형, 생성지나 도착지 등) 관리
     public enum TILEINFO                           // 타일 상태
     {
-        NONE, TOWER, OBSTACLE, STRUCTURE            // 기본, 타워, 장애물, 구조물(지형)
+        NONE, TOWER, OBSTACLE, STRUCTURE           // 기본, 타워, 장애물, 구조물(지형)
     }
     public TILEINFO[,] m_TileState;                // 타일 상태 담은 배열
-    public Node[] m_NodeArr;                        // 노드 담길 배열
+    public Node[] m_NodeArr;                       // 노드 담길 배열
 
     public Vector3 Hit;                            //BuildManager 스크립트에서 타워위치보내기위해 사용
     public ButtonUI m_Button;                      //ButtonUI 스크립트에서 UI On,Off함수 호출위해 사용
 
-    public GameObject m_Tower;                     //타워 delete하기위해 선택된object를 m_Tower에 넣어준다.
+    int MaxTileX = 10;                             // 타일 총 가로 갯수
+    int MaxTileY = 9;                              // 타일 총 세로 갯수
 
-    int MaxTileX = 10;                              // 타일 총 가로 갯수
-    int MaxTileY = 9;                               // 타일 총 세로 갯수
+    public GameObject m_SelectObject;              // 마우스 클릭시 오브젝트 담는 변수 (확인용으로 public으로함 확인 다되면 private로 변경할것)
+    public Node m_PrevNode = null;
+    public GameObject SelectObject
+    {
+        set
+        {
+            m_SelectObject = value;
+        }
+        get
+        {
+            return m_SelectObject;
+        }
+    }
 
-    public GameObject m_SelectObject;               // 마우스 클릭시 오브젝트 담는 변수
 
     void Start()
     {
@@ -84,30 +95,33 @@ public class NodeManager : MonoBehaviour
             // 맞은 오브젝트 담아줌
             m_SelectObject = hit.transform.gameObject;
 
+            // 가져올 타일 좌표
+            int TileX = 0;
+            int TileY = 0;
+
             // 맞은 오브젝트의 레이어가 "Ground"라면 (노드라면)
             if (hit.transform.gameObject.layer == LayerMask.NameToLayer("Ground"))
             {
-                int TileX = hit.transform.gameObject.GetComponent<Node>().TileX;
-                int TileY = hit.transform.gameObject.GetComponent<Node>().TileY;
+                // 타일 정보 가져옴
+                TileX = hit.transform.gameObject.GetComponent<Node>().TileX;
+                TileY = hit.transform.gameObject.GetComponent<Node>().TileY;
 
-                // 해당 노드의 타일 번호 가져옴
-                //int tileX = hit.transform.GetComponent<Node>().TileX;
-                //int tileY = hit.transform.GetComponent<Node>().TileY;
-                //
-                ////해당 노드 타일번호를 console로 보기위해 임의로 넣어놓음(지워도 상관없음)
-                //Debug.Log(m_TileState[tileY, tileX].ToString() + tileY + "" + tileX);
-                //
-                ////노드 tileY값과 tileX값을 NTileY,NTileX 에 넣어줌 (나중에 BuildManager 스크립트에서 m_TileState를 변경하기 위해사용)
-                //NTileY = tileY;
-                //NTileX = tileX;
-                //
-                ////BuildManager 스크립트에서 선택한 타워위치보내기위해 사용
-                //Hit = hit.transform.position;
-                //
+                // 타일 색 변경
+                if (m_PrevNode == null)
+                {
+                    GetNode(TileX, TileY).GetComponent<MeshRenderer>().material = Resources.Load("Tower/Material/Blue") as Material;
+                    m_PrevNode = m_SelectObject.GetComponent<Node>();
+                }
+                else if(m_PrevNode != m_SelectObject)
+                {
+                    GetNode(TileX, TileY).GetComponent<MeshRenderer>().material = Resources.Load("Tower/Material/Blue") as Material;
+                    m_PrevNode.GetComponent<MeshRenderer>().material = Resources.Load("Tower/Material/Grass") as Material;
+                    m_PrevNode = m_SelectObject.GetComponent<Node>();
+                }
+
                 // 가져온 번호의 타일 상태가 NONE이라면
                 if (m_TileState[TileY, TileX] == TILEINFO.NONE)
                 {
-                    Debug.Log(TileX + ", " + TileY);
                     //업그레이드, 삭제 UI비활성화
                     m_Button.TowerOffBtn();
 
@@ -117,7 +131,8 @@ public class NodeManager : MonoBehaviour
                     //버튼 클릭하면 -> BuildManager 스크립트에서  build(생성)함수 실행-> m_TileState를 Tower로 변경
                 }
                 //이건 혹시몰라서 만들어 놨어요
-                else if (m_TileState[TileY, TileX] == TILEINFO.TOWER)
+                else if (m_TileState[TileY, TileX] == TILEINFO.TOWER || 
+                    m_TileState[TileY, TileX] == TILEINFO.OBSTACLE)
                 {
                     m_Button.BuildOffButton();
                 }
@@ -125,15 +140,47 @@ public class NodeManager : MonoBehaviour
                 else
                     return;
             }
-
-
             else if (hit.transform.gameObject.layer == LayerMask.NameToLayer("Tower")) // 나중에 이 레이어를 각 타워별로 elseif 만들어야됨
             {
-                //충돌한 타워의 번호를 가져온다.(담는다)
-                int TileX = hit.transform.gameObject.GetComponent<BasicTower>().m_TileX;
-                int TileY = hit.transform.gameObject.GetComponent<BasicTower>().m_TileY;
+                //충돌한 타워의 번호를 가져온다.
+                TileX = hit.transform.gameObject.GetComponent<BasicTower>().TileX;
+                TileY = hit.transform.gameObject.GetComponent<BasicTower>().TileY;
+
+                // 타일 색 변경
+                if (m_PrevNode == null)
+                {
+                    GetNode(TileX, TileY).GetComponent<MeshRenderer>().material = Resources.Load("Tower/Material/Red") as Material;
+                    m_PrevNode = GetNode(TileX, TileY);
+                }
+                else if (m_PrevNode != GetNode(TileX, TileY))
+                {
+                    GetNode(TileX, TileY).GetComponent<MeshRenderer>().material = Resources.Load("Tower/Material/Red") as Material;
+                    m_PrevNode.GetComponent<MeshRenderer>().material = Resources.Load("Tower/Material/Grass") as Material;
+                    m_PrevNode = GetNode(TileX, TileY);
+                }
 
                 if (m_TileState[TileY, TileX] == TILEINFO.TOWER)
+                {
+                    //업그레이드, 삭제 UI활성화
+                    m_Button.TowerOnBtn();
+
+                    //타워 설치 UI 비활성화
+                    m_Button.BuildOffButton();
+                }
+
+                //이건 혹시몰라서 만들어 놨어요
+                else if (m_TileState[TileY, TileX] == TILEINFO.NONE)
+                {
+                    return;
+                }
+            }
+            else if (hit.transform.gameObject.layer == LayerMask.NameToLayer("Obstacle"))
+            {
+                //충돌한 장애물의 번호를 가져온다.
+                TileX = hit.transform.gameObject.GetComponent<Obstacle>().TileX;
+                TileY = hit.transform.gameObject.GetComponent<Obstacle>().TileY;
+
+                if (m_TileState[TileY, TileX] == TILEINFO.OBSTACLE)
                 {
                     //업그레이드, 삭제 UI활성화
                     m_Button.TowerOnBtn();
@@ -151,7 +198,7 @@ public class NodeManager : MonoBehaviour
         }
     }
 
-    Node GetNode(int x, int y)
+    public Node GetNode(int x, int y)
     {
         return m_NodeArr[(y * 10) + x];
     }
