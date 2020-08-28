@@ -49,7 +49,7 @@ public class BuildManager : MonoBehaviour
         int TileY = m_NodeMng.SelectObject.gameObject.GetComponent<Node>().TileY;
 
         // 타워 생성 후 타일정보 저장
-        obj1 = Instantiate(Resources.Load("Tower/BasicTower")) as GameObject;
+        obj1 = Instantiate(Resources.Load("Tower/Basic/BasicTower")) as GameObject;
         obj1.transform.position = m_NodeMng.SelectObject.transform.position;
         obj1.gameObject.GetComponent<BasicTower>().TileX = TileX;
         obj1.gameObject.GetComponent<BasicTower>().TileY = TileY;
@@ -78,7 +78,7 @@ public class BuildManager : MonoBehaviour
         int TileY = m_NodeMng.SelectObject.gameObject.GetComponent<Node>().TileY;
 
         // 타워 생성 후 타일정보 저장
-        obj2 = Instantiate(Resources.Load("Tower/SecondTower")) as GameObject;
+        obj2 = Instantiate(Resources.Load("Tower/Heal/HealTower")) as GameObject;
         obj2.transform.position = m_NodeMng.SelectObject.transform.position;
         obj2.gameObject.GetComponent<BasicTower>().TileX = TileX;
         obj2.gameObject.GetComponent<BasicTower>().TileY = TileY;

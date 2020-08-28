@@ -5,38 +5,35 @@ using UnityEngine.AI;
 
 public class Enemy : MonoBehaviour
 {
-    //만들어야 하는것
-    //1. 몬스터가 자동으로 목적지로 이동한다.
-    //2. 몬스터가 이동하다가 장애물을 만나면 어떠한 이동 패턴을 보인다.
-    //3.  haspath,pathPending 이용하고
-    //4. 상태기계 상태로 전환해
-    // 5.적 생성... (코루틴으로 생성..시간 몇초마다..) 몇 마리가 죽었으면 나온다. ㅇㅋ.
-
     //6. 보스 패턴 (1. 5초동안 기모아서 한방(무조건한방에 다죽임),2.체력이 낮고 빠른 보스3.체력이 5배이고 3바퀴 더돌고 들어가는 보스4.광역공격)
     //7. 장애물 부시기  경로..재계산 여까지 대충
     //8.레인지 시스템
     public enum STATE
     {
-        CREATE, TARGET1, TAGET2, ATTACK,BATTLE ,DEAD, GOAL
+        CREATE, TARGET1, TAGET2, ATTACK, BATTLE, DEAD, GOAL
     }
     public NavMeshAgent m_Navi;
     public STATE m_STATE;
     public NavMeshPath m_Path;
     public MonsterStat m_Monsterinfo;
-    public Obstacles m_Enemy;
+    public Obstacle m_Enemy;
     float attackdelay = 3.0f;
+
+    public BuildManager m_Buildmanager;
 
     Vector3 objpos;
     Vector3 objpos2;
     Vector3 Goalpos;
-    //public Cube m_Enemy;
+
+    /* 생성할 적 클래스 */
     // Start is called before the first frame update
-    //애니메이션 이벤트 추가할것
     void Start()
     {
         this.transform.position = GameObject.Find("Start").GetComponent<Transform>().position;
         objpos = GameObject.Find("End").GetComponent<Transform>().position;
         objpos2 = GameObject.Find("Plane (80)").GetComponent<Transform>().position;
+
+        m_Buildmanager = GameObject.Find("BuildManager").GetComponent<BuildManager>();
 
         //Vector3 DESTPOS = m_Navi.destination;
         m_Navi = GetComponent<NavMeshAgent>();
@@ -44,18 +41,16 @@ public class Enemy : MonoBehaviour
         ChangeSTATE(STATE.TARGET1);
         m_Path = new NavMeshPath();
 
-        //   m_Monsterinfo = GetComponent<MonsterStat>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        //   RaycastHit hit;
-        //if (Input.GetMouseButtonDown(0))
+        //if (m_State == STATE.IDLE)
         //{
-        //    Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        //    if (Physics.Raycast(ray, out hit))
-        //        m_Navi.SetDestination(hit.point);
+        //    m_Dest = GameObject.Find("Plane (89)").transform.position;
+        //    m_Navi.SetDestination(m_Dest);
+        //    ChangeState(STATE.MOVE);
         //}
         StateProcess();
 
@@ -84,7 +79,22 @@ public class Enemy : MonoBehaviour
                 break;
 
             case STATE.ATTACK:
-                m_Enemy = GameObject.FindObjectOfType<Obstacles>();
+                Obstacle[] enemyList = GameObject.FindObjectsOfType<Obstacle>();
+
+                float tempDist = 999f;
+                int sel = -1;
+
+                for (int i = 0; i < enemyList.Length; ++i)
+                {
+                    float dist = Vector3.Distance(enemyList[i].transform.position, this.transform.position);
+
+                    if (dist < tempDist)
+                    {
+                        tempDist = dist;
+                        sel = i;
+                    }
+                }
+                m_Enemy = enemyList[sel];
 
                 break;
 
@@ -125,7 +135,7 @@ public class Enemy : MonoBehaviour
 
 
             case STATE.TAGET2:
-                float T2 = Vector3.Distance(this.transform.position, objpos);
+                float T2 = Vector3.Distance(this.transform.position, objpos2);
                 float s2 = Vector3.Distance(this.transform.position, m_Navi.destination);
                 if (!m_Navi.pathPending) //계산완료 후 이동
                 {
@@ -165,20 +175,20 @@ public class Enemy : MonoBehaviour
                 }
                 break;
             case STATE.BATTLE:
-                
-                    if (attackdelay <= Mathf.Epsilon)
+
+                if (attackdelay <= Mathf.Epsilon)
+                {
+                    attackdelay = 2.0f;
+                    Onattack();
+                    if (m_Enemy == null)
                     {
-                        attackdelay = 2.0f;
-                        Onattack();
-                        if (m_Enemy == null)
-                        {
-                            ChangeSTATE(STATE.TAGET2);
-                        }
+                        ChangeSTATE(STATE.TAGET2);
                     }
-                    attackdelay -= Time.smoothDeltaTime;
-                
-               
-                    break;
+                }
+                attackdelay -= Time.smoothDeltaTime;
+
+
+                break;
 
         }
 
@@ -197,7 +207,7 @@ public class Enemy : MonoBehaviour
     }
 
 
-    void Onattack(Obstacles enemy)
+    void Onattack(Obstacle enemy)
     {
         //아 이런. 이걸 
         m_Enemy.OnDamage(m_Monsterinfo.MonsterAttack);
@@ -208,7 +218,7 @@ public class Enemy : MonoBehaviour
 
 
 
-    protected void OnBattle(Obstacles enemy)
+    protected void OnBattle(Obstacle enemy)
     {
 
         if (enemy == null) return;
@@ -221,10 +231,11 @@ public class Enemy : MonoBehaviour
     //
     protected void OnBattle(Transform enemy)
     {
-        m_Enemy = enemy.gameObject.GetComponentInChildren<Obstacles>();
+        m_Enemy = enemy.gameObject.GetComponentInChildren<Obstacle>();
         if (m_Enemy == null) return;
         ChangeSTATE(STATE.ATTACK);
         Debug.Log("공격2");
+        //
         //
     }
 
@@ -247,6 +258,7 @@ public class Enemy : MonoBehaviour
 
             Debug.Log("사망");
         }
-
     }
+
+    
 }
