@@ -3760,12 +3760,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 7425015440471025335}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86977810d89b5ee4691af408bf09f7a6, type: 3}
+  m_Script: {fileID: 11500000, guid: 6f621eb965fdfb8468e1a6d50995180b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Anim: {fileID: 0}
-  m_NodeManager: {fileID: 0}
-  m_BuildManager: {fileID: 0}
 --- !u!1 &7432057799324775031
 GameObject:
   m_ObjectHideFlags: 0

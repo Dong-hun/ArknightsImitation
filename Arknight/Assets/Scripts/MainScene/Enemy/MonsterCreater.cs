@@ -10,8 +10,6 @@ public class MonsterCreater : MonoBehaviour
      GameObject obj;
     public List<Enemy> m_EnemyList;
     int MonsterCount = 0;
-    
-
     // Start is called before the first frame update
     void Start()
     {
@@ -25,7 +23,7 @@ public class MonsterCreater : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        MakingD();
+        
     }
 
 
@@ -97,17 +95,6 @@ public class MonsterCreater : MonoBehaviour
             }
         }
     }
-    void MakingD()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            obj = Instantiate(Resources.Load("Enemy/Cube")) as GameObject;
-        }
-        if (Input.GetKeyDown(KeyCode.F1))
-        {
 
-            Destroy(obj.gameObject);
-        }
-    }
 
 }
