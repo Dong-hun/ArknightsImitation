@@ -79,7 +79,8 @@ public class MonsterCreater : MonoBehaviour
 
             if (MonsterCount < MaxMonster)
             {
-                yield return new WaitForSeconds(2.0f);
+            
+                yield return new WaitForSeconds(3.3f);
 
                 GameObject obj = Instantiate(Resources.Load("Enemy/TURTLES")) as GameObject;
                 obj.transform.SetParent(this.transform);
