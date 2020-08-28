@@ -200,9 +200,8 @@ public class NodeManager : MonoBehaviour
 
     public Node GetNode(int x, int y)
     {
-        return m_NodeArr[(y * 10) + x];
+        return m_NodeArr[(y * 10) + x] == null ? null : m_NodeArr[(y * 10) + x];
     }
-
 }
 
 
