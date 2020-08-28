@@ -24,8 +24,10 @@ public class Enemy : MonoBehaviour
     public STATE m_STATE;
     public NavMeshPath m_Path;
     public MonsterStat m_Monsterinfo;
-    public Obstacles m_Enemy;
+    public Obstacle m_Enemy;
     float attackdelay = 3.0f;
+
+    public BuildManager m_Buildmanager;
 
     Vector3 objpos;
     Vector3 objpos2;
@@ -38,6 +40,8 @@ public class Enemy : MonoBehaviour
         this.transform.position = GameObject.Find("Start").GetComponent<Transform>().position;
         objpos = GameObject.Find("End").GetComponent<Transform>().position;
         objpos2 = GameObject.Find("Plane (80)").GetComponent<Transform>().position;
+
+        m_Buildmanager = GameObject.Find("BuildManager").GetComponent<BuildManager>();
 
         //Vector3 DESTPOS = m_Navi.destination;
         m_Navi = GetComponent<NavMeshAgent>();
@@ -85,7 +89,22 @@ public class Enemy : MonoBehaviour
                 break;
 
             case STATE.ATTACK:
-                m_Enemy = GameObject.FindObjectOfType<Obstacles>();
+                Obstacle[] enemyList = GameObject.FindObjectsOfType<Obstacle>();
+
+                float tempDist = 999f;
+                int sel = -1;
+
+                for(int i = 0; i < enemyList.Length; ++i)
+                {
+                    float dist = Vector3.Distance(enemyList[i].transform.position, this.transform.position);
+
+                    if (dist < tempDist)
+                    {
+                        tempDist = dist;
+                        sel = i;
+                    }
+                }
+                m_Enemy = enemyList[sel];
 
                 break;
 
@@ -126,7 +145,7 @@ public class Enemy : MonoBehaviour
 
 
             case STATE.TAGET2:
-                float T2 = Vector3.Distance(this.transform.position, objpos);
+                float T2 = Vector3.Distance(this.transform.position, objpos2);
                 float s2 = Vector3.Distance(this.transform.position, m_Navi.destination);
                 if (!m_Navi.pathPending) //계산완료 후 이동
                 {
@@ -198,7 +217,7 @@ public class Enemy : MonoBehaviour
     }
 
 
-    void Onattack(Obstacles enemy)
+    void Onattack(Obstacle enemy)
     {
         //아 이런. 이걸 
         m_Enemy.OnDamage(m_Monsterinfo.MonsterAttack);
@@ -209,7 +228,7 @@ public class Enemy : MonoBehaviour
 
 
 
-    protected void OnBattle(Obstacles enemy)
+    protected void OnBattle(Obstacle enemy)
     {
 
         if (enemy == null) return;
@@ -222,7 +241,7 @@ public class Enemy : MonoBehaviour
     //
     protected void OnBattle(Transform enemy)
     {
-        m_Enemy = enemy.gameObject.GetComponentInChildren<Obstacles>();
+        m_Enemy = enemy.gameObject.GetComponentInChildren<Obstacle>();
         if (m_Enemy == null) return;
         ChangeSTATE(STATE.ATTACK);
         Debug.Log("공격2");
