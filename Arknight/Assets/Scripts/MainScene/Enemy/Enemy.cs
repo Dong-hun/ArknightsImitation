@@ -10,7 +10,7 @@ public class Enemy : MonoBehaviour
     //8.레인지 시스템
     public enum STATE
     {
-        CREATE, TARGET1, TAGET2, ATTACK, BATTLE, DEAD, GOAL
+         CREATE, TARGET1, TAGET2, ATTACK, BATTLE, DEAD, GOAL
     }
     public NavMeshAgent m_Navi;
     public STATE m_STATE;
@@ -29,16 +29,17 @@ public class Enemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        this.transform.position = GameObject.Find("Start").GetComponent<Transform>().position;
-        objpos = GameObject.Find("End").GetComponent<Transform>().position;
-        objpos2 = GameObject.Find("Plane (80)").GetComponent<Transform>().position;
 
+        this.transform.position = GameObject.Find("Start").GetComponent<Transform>().position;
+        objpos = GameObject.Find("Plane (80)").GetComponent<Transform>().position;
+        objpos2 = GameObject.Find("End").GetComponent<Transform>().position;
+       // Goalpos = GameObject.Find("End").GetComponent<Transform>().position;
+        m_STATE = STATE.CREATE;
+        ChangeSTATE(STATE.TARGET1);
         m_Buildmanager = GameObject.Find("BuildManager").GetComponent<BuildManager>();
 
         //Vector3 DESTPOS = m_Navi.destination;
         m_Navi = GetComponent<NavMeshAgent>();
-        m_STATE = STATE.CREATE;
-        ChangeSTATE(STATE.TARGET1);
         m_Path = new NavMeshPath();
 
     }
@@ -65,10 +66,13 @@ public class Enemy : MonoBehaviour
         m_STATE = s;
         switch (m_STATE)
         {
+            case STATE.CREATE:
+
+                
+                break;
             case STATE.TARGET1:
 
                 m_Navi.SetDestination(objpos);
-
 
 
                 break;
@@ -97,7 +101,10 @@ public class Enemy : MonoBehaviour
                 m_Enemy = enemyList[sel];
 
                 break;
+            case STATE.GOAL:
+                m_Navi.SetDestination(Goalpos);
 
+                break;
         }
     }
     void StateProcess()
@@ -124,6 +131,7 @@ public class Enemy : MonoBehaviour
                     {
                         ChangeSTATE(STATE.ATTACK);
                     }
+
 
                 }
 
@@ -189,12 +197,17 @@ public class Enemy : MonoBehaviour
 
 
                 break;
+            case STATE.GOAL:
 
+               
+                break;
         }
 
     }
     //충돌하면 경로 재계산하고 ATTACK로 바뀌고 적군 제거하고 다시 이동.
 
+
+    
 
     private void OnCollisionStay(Collision collision)
 
