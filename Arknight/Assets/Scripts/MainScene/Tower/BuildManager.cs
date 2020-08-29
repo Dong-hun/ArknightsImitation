@@ -24,7 +24,6 @@ public class BuildManager : MonoBehaviour
     public ButtonUI m_Button;
 
     public List<Obstacle> m_ObstacleList;
-
     public List<GameObject> m_TowerList;
 
     // Start is called before the first frame update
@@ -64,6 +63,8 @@ public class BuildManager : MonoBehaviour
         // 해당 좌표 타워로 변경
         m_NodeMng.m_TileState[TileY, TileX] = NodeManager.TILEINFO.TOWER;
 
+        CheckAroundHealTower();
+
         // 현재 노드의 머터리얼을 다시 Grass로 변경
         m_NodeMng.GetNode(TileX, TileY).GetComponent<MeshRenderer>().material = Resources.Load("Tower/Material/Grass") as Material;
 
@@ -94,6 +95,8 @@ public class BuildManager : MonoBehaviour
 
         // 해당 좌표 타워로 변경
         m_NodeMng.m_TileState[TileY, TileX] = NodeManager.TILEINFO.TOWER;
+
+        CheckAroundHealTower();
 
         // 현재 노드의 머터리얼을 다시 Grass로 변경
         m_NodeMng.GetNode(TileX, TileY).GetComponent<MeshRenderer>().material = Resources.Load("Tower/Material/Grass") as Material;
@@ -204,6 +207,8 @@ public class BuildManager : MonoBehaviour
                     break;
                 }
             }
+
+            
         }
 
 
@@ -246,6 +251,7 @@ public class BuildManager : MonoBehaviour
             }
         }
 
+<<<<<<< HEAD
         if (m_NodeMng.SelectObject.layer == LayerMask.NameToLayer("DaggerTower"))
         {
             // 해당 노드 좌표 타워에서 가져옴
@@ -264,6 +270,19 @@ public class BuildManager : MonoBehaviour
                 }
             }
         }
+=======
+        for(int i = 0; i < m_TowerList.Count; ++i)
+        {
+            if(m_TowerList[i].layer == LayerMask.NameToLayer("HealTower"))
+            {
+                //m_TowerList[i].GetComponent<HealTower>().RemoveTower(m_NodeMng.SelectObject);
+                m_TowerList[i].GetComponent<HealTower>().m_DelDeleteTower?.Invoke(m_NodeMng.SelectObject.GetComponent<TowerManager>());
+            }
+        }
+
+
+
+>>>>>>> dc5db9a8fb8c501f9200bd360cf5d27c103cb43a
         // 타워가 삭제되면 노드 m_TileState를 NONE으로 변경
         m_NodeMng.m_TileState[TileY, TileX] = NodeManager.TILEINFO.NONE;
 
@@ -279,5 +298,51 @@ public class BuildManager : MonoBehaviour
         //설치가 끝나면 선택된 오브젝트와 이전 노드 null로 초기화
         m_NodeMng.m_PrevNode = null;
         m_NodeMng.SelectObject = null;
+    }
+
+    // 좌표로 타워 가져오기
+    public GameObject GetTowerCoordinates(int x, int y)
+    {
+        // 타워리스트가 비었다면 리턴
+        if (m_TowerList.Count == 0) return null;
+
+        // 타워 전부 조사
+        for(int i = 0; i < m_TowerList.Count; ++i)
+        {
+            // 타일 넘버
+            int TileX = 0;
+            int TileY = 0;
+
+            // 해당 타워의 레이어별로 스크립트에서 좌표 가져오기
+            if(m_TowerList[i].layer == LayerMask.NameToLayer("BasicTower"))
+            {
+                TileX = m_TowerList[i].GetComponent<BasicTower>().TileX;
+                TileY = m_TowerList[i].GetComponent<BasicTower>().TileY;
+            }
+            else if (m_TowerList[i].layer == LayerMask.NameToLayer("HealTower"))
+            {
+                TileX = m_TowerList[i].GetComponent<HealTower>().TileX;
+                TileY = m_TowerList[i].GetComponent<HealTower>().TileY;
+            }
+
+            // 가져온 타워의 좌표와 얻으려는 타일좌표가 일치하면
+            if(TileX == x && TileY == y)
+            {
+                // 해당 좌표의 타워 리턴
+                return m_TowerList[i];
+            }
+        }
+        return null;
+    }
+
+    void CheckAroundHealTower()
+    {
+        if (m_TowerList.Count == 0) return;
+
+        for(int i = 0; i < m_TowerList.Count; ++i)
+        {
+            if (m_TowerList[i].layer == LayerMask.NameToLayer("HealTower"))
+                m_TowerList[i].GetComponent<HealTower>().m_DelAddTower?.Invoke();
+        }
     }
 }

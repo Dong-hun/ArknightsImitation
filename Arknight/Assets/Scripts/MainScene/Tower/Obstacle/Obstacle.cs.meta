@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Arknight/Assets/Scripts/MainScene/Tower/Obstacle/Obstacle.cs.meta
 guid: 6e3b5039a7ce5d84d84295d969afff8c
+=======
+guid: 2fb0b4149b2f27d46a3038795508907a
+>>>>>>> dc5db9a8fb8c501f9200bd360cf5d27c103cb43a:Arknight/Assets/Scripts/MainScene/Tower/Obstacle.cs.meta
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2

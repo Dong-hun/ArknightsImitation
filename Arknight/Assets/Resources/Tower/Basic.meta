@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Arknight/Assets/Resources/Tower/Basic.meta
 guid: 57d49812ab89e574fbf9003f37724f3d
+=======
+guid: 7370285fc50c0994ab8ce989f60f7949
+>>>>>>> dc5db9a8fb8c501f9200bd360cf5d27c103cb43a:Arknight/Assets/Character.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public delegate void DelVoid();
+public delegate void DelAdd();
+public delegate void DelDelete(TowerManager obj);
 
 public class TowerManager : MonoBehaviour
 {
@@ -29,6 +30,7 @@ public class TowerManager : MonoBehaviour
                                         // 이름으로 호출 or public으로 바꿔서 링크걸기)
 
     public NodeManager m_NodeManager;
+    public BuildManager m_BuildManager;
 
     protected List<Enemy> m_EnemyList;  // 적 리스트
     //protected DelVoid m_Attack;       // 공격 담는 딜리게이트 (딜리게이트로 한번 해볼까해서 넣어봤어여)
