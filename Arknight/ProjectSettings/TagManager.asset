@@ -16,7 +16,7 @@ TagManager:
   - Ground
   - BasicTower
   - HealTower
-  - 
+  - DaggerTower
   - Obstacle
   - Structure
   - Enemy

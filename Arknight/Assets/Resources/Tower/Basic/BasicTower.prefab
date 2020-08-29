@@ -3688,7 +3688,7 @@ GameObject:
   - component: {fileID: 5859655822707397796}
   - component: {fileID: 4601462954273192414}
   - component: {fileID: 6452365169899011265}
-  - component: {fileID: 6345537364780663193}
+  - component: {fileID: 1322639367084485112}
   m_Layer: 9
   m_Name: BasicTower
   m_TagString: Untagged
@@ -3751,7 +3751,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.25, y: 1, z: 1.25}
   m_Center: {x: 0, y: 0.5, z: 0}
---- !u!114 &6345537364780663193
+--- !u!114 &1322639367084485112
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3760,10 +3760,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 7425015440471025335}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c5878cafe8c1fe247944ae8eee78acf7, type: 3}
+  m_Script: {fileID: 11500000, guid: affbef3891f100c41a7a7ae93ea888ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Anim: {fileID: 0}
+  m_NodeManager: {fileID: 0}
 --- !u!1 &7432057799324775031
 GameObject:
   m_ObjectHideFlags: 0

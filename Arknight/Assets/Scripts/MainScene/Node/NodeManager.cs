@@ -257,6 +257,50 @@ public class NodeManager : MonoBehaviour
                     return;
                 }
             }
+            else if (hit.transform.gameObject.layer == LayerMask.NameToLayer("DaggerTower")) // 나중에 이 레이어를 각 타워별로 elseif 만들어야됨
+            {
+                //충돌한 타워의 번호를 가져온다.
+                TileX = hit.transform.gameObject.GetComponent<DaggerTower>().TileX;
+                TileY = hit.transform.gameObject.GetComponent<DaggerTower>().TileY;
+
+                // 이전 노드가 없다면
+                if (m_PrevNode == null)
+                {
+                    // 해당 타일의 노드의 머터리얼을 Red로 변경
+                    GetNode(TileX, TileY).GetComponent<MeshRenderer>().material = Resources.Load("Tower/Material/Red") as Material;
+
+                    // 이전 노드에 현재 노드 저장
+                    m_PrevNode = GetNode(TileX, TileY);
+                }
+                // 이전 노드와 현재 노드가 다르다면
+                else if (m_PrevNode != GetNode(TileX, TileY))
+                {
+                    // 해당 타일의 노드의 머터리얼을 Red로 변경
+                    GetNode(TileX, TileY).GetComponent<MeshRenderer>().material = Resources.Load("Tower/Material/Red") as Material;
+
+                    // 이전 노드의 머터리얼을 다시 Grass로 변경
+                    m_PrevNode.GetComponent<MeshRenderer>().material = Resources.Load("Tower/Material/Grass") as Material;
+
+                    // 이전 노드에 현재 노드 저장
+                    m_PrevNode = GetNode(TileX, TileY);
+                }
+
+                if (m_TileState[TileY, TileX] == TILEINFO.TOWER)
+                {
+                    //업그레이드, 삭제 UI활성화
+                    m_Button.TowerOnBtn();
+
+                    //타워 설치 UI 비활성화
+                    m_Button.BuildOffButton();
+                }
+
+                //이건 혹시몰라서 만들어 놨어요
+                else if (m_TileState[TileY, TileX] == TILEINFO.NONE)
+                {
+                    return;
+                }
+            }
+
         }
     }
 

@@ -2398,7 +2398,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1289438441041367801}
   - component: {fileID: 1289438441041367800}
-  - component: {fileID: 1678029645491335280}
+  - component: {fileID: 2010246783484955692}
   m_Layer: 10
   m_Name: HealTower
   m_TagString: Untagged
@@ -2434,7 +2434,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0.575, z: 0}
---- !u!114 &1678029645491335280
+--- !u!114 &2010246783484955692
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2443,10 +2443,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1289438441041367807}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76d4dcbd1af1e5b4a921a02222577d80, type: 3}
+  m_Script: {fileID: 11500000, guid: 5ec8fd2d85384c6418e0530f30f1524f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Anim: {fileID: 1289438441184053219}
+  m_Anim: {fileID: 0}
   m_NodeManager: {fileID: 0}
 --- !u!1 &1289438441053429554
 GameObject:
@@ -2913,7 +2913,7 @@ Animator:
   m_GameObject: {fileID: 1289438441184053217}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 9d7f28721c2867142bc592c0f32f038f, type: 3}
-  m_Controller: {fileID: 9100000, guid: 8d07ec2eaddec6a4ea350e864e94e1e7, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
