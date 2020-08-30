@@ -109,43 +109,70 @@ public class NodeManager : MonoBehaviour
                 {
                     // 해당 타일의 노드의 머터리얼을 Blue로 변경
                     GetNode(TileX, TileY).GetComponent<MeshRenderer>().material = Resources.Load("Tower/Material/Blue") as Material;
-
+                
                     // 이전 노드에 현재 노드를 저장
                     m_PrevNode = m_SelectObject.GetComponent<Node>();
+
+                    // 가져온 번호의 타일 상태가 NONE이라면
+                    if (m_TileState[TileY, TileX] == TILEINFO.NONE)
+                    {
+                        //업그레이드, 삭제 UI비활성화
+                        m_Button.TowerOffBtn();
+
+                        //타워생성 버튼 UI활성화O
+                        m_Button.BuildOnButton();
+                    }
+                    else
+                        return;
                 }
-                // 이전 노드와 현재 노드가 다르다면
-                else if (m_PrevNode != m_SelectObject)
-                {
-                    // 해당 타일의 노드의 머터리얼을 Blue로 변경
-                    GetNode(TileX, TileY).GetComponent<MeshRenderer>().material = Resources.Load("Tower/Material/Blue") as Material;
-
-                    // 이전 노드의 머터리얼을 다시 Grass로 변경
-                    m_PrevNode.GetComponent<MeshRenderer>().material = Resources.Load("Tower/Material/Grass") as Material;
-
-                    // 이전 노드에 현재 노드를 저장
-                    m_PrevNode = m_SelectObject.GetComponent<Node>();
-                }
-
-                // 가져온 번호의 타일 상태가 NONE이라면
-                if (m_TileState[TileY, TileX] == TILEINFO.NONE)
-                {
-                    //업그레이드, 삭제 UI비활성화
-                    m_Button.TowerOffBtn();
-
-                    //타워생성 버튼 UI활성화O
-                    m_Button.BuildOnButton();
-
-                    //버튼 클릭하면 -> BuildManager 스크립트에서  build(생성)함수 실행-> m_TileState를 Tower로 변경
-                }
-                //이건 혹시몰라서 만들어 놨어요
-                else if (m_TileState[TileY, TileX] == TILEINFO.TOWER ||
-                    m_TileState[TileY, TileX] == TILEINFO.OBSTACLE)
-                {
-                    m_Button.BuildOffButton();
-                }
-                // 그외면 리턴Hit
+                // 이전 노드가 있을때
                 else
-                    return;
+                {
+                    // 이전 노드와 현재 선택된 노드가 같다면
+                    if (m_PrevNode.transform == m_SelectObject.GetComponent<Node>().transform)
+                    {
+                        // 현재 노드의 머터리얼 초기화
+                        GetNode(TileX, TileY).GetComponent<MeshRenderer>().material = Resources.Load("Tower/Material/Grass") as Material;
+
+                        // 버튼 비활성화
+                        m_Button.BuildOffButton();
+
+                        // 선택된 노드와 이전 노드 null로 초기화
+                        m_SelectObject = null;
+                        m_PrevNode = null;
+                    }
+                    // 이전 노드와 현재 선택된 노드가 다르다면
+                    else
+                    {
+                        // 해당 타일의 노드의 머터리얼을 Blue로 변경
+                        GetNode(TileX, TileY).GetComponent<MeshRenderer>().material = Resources.Load("Tower/Material/Blue") as Material;
+
+                        // 이전 노드의 머터리얼을 다시 Grass로 변경
+                        m_PrevNode.GetComponent<MeshRenderer>().material = Resources.Load("Tower/Material/Grass") as Material;
+
+                        // 이전 노드에 현재 노드를 저장
+                        m_PrevNode = m_SelectObject.GetComponent<Node>();
+
+                        // 가져온 번호의 타일 상태가 NONE이라면
+                        if (m_TileState[TileY, TileX] == TILEINFO.NONE)
+                        {
+                            //업그레이드, 삭제 UI비활성화
+                            m_Button.TowerOffBtn();
+
+                            //타워생성 버튼 UI활성화O
+                            m_Button.BuildOnButton();
+                        }
+                        else if (m_TileState[TileY, TileX] == TILEINFO.OBSTACLE ||
+                            m_TileState[TileY, TileX] == TILEINFO.TOWER)
+                        {
+                            //업그레이드, 삭제 UI비활성화
+                            m_Button.TowerOnBtn();
+
+                            //타워생성 버튼 UI활성화O
+                            m_Button.BuildOffButton();
+                        }
+                    }
+                }
             }
             else if (hit.transform.gameObject.layer == LayerMask.NameToLayer("BasicTower")) // 나중에 이 레이어를 각 타워별로 elseif 만들어야됨
             {
@@ -153,42 +180,90 @@ public class NodeManager : MonoBehaviour
                 TileX = hit.transform.gameObject.GetComponent<BasicTower>().TileX;
                 TileY = hit.transform.gameObject.GetComponent<BasicTower>().TileY;
 
+                // 해당 타일의 노드의 머터리얼을 Red로 변경
+                GetNode(TileX, TileY).GetComponent<MeshRenderer>().material = Resources.Load("Tower/Material/Red") as Material;
+
                 // 이전 노드가 없다면
                 if (m_PrevNode == null)
                 {
-                    // 해당 타일의 노드의 머터리얼을 Red로 변경
-                    GetNode(TileX, TileY).GetComponent<MeshRenderer>().material = Resources.Load("Tower/Material/Red") as Material;
-
                     // 이전 노드에 현재 노드 저장
                     m_PrevNode = GetNode(TileX, TileY);
+
+                    // 해당 노드가 타워일때
+                    if (m_TileState[TileY, TileX] == TILEINFO.TOWER)
+                    {
+                        //업그레이드, 삭제 UI활성화
+                        m_Button.TowerOnBtn();
+
+                        //타워 설치 UI 비활성화
+                        m_Button.BuildOffButton();
+                    }
                 }
-                // 이전 노드와 현재 노드가 다르다면
-                else if (m_PrevNode != GetNode(TileX, TileY))
+                // 이전 노드가 있다면
+                else
                 {
-                    // 해당 타일의 노드의 머터리얼을 Red로 변경
-                    GetNode(TileX, TileY).GetComponent<MeshRenderer>().material = Resources.Load("Tower/Material/Red") as Material;
+                    if(GetNode(TileX, TileY) != m_PrevNode.GetNode(m_PrevNode.TileX, m_PrevNode.TileY))
+                    {
+                        if (m_TileState[TileY, TileX] == TILEINFO.NONE)
+                        {
+                            //업그레이드, 삭제 UI 비활성화
+                            m_Button.TowerOffBtn();
 
-                    // 이전 노드의 머터리얼을 다시 Grass로 변경
-                    m_PrevNode.GetComponent<MeshRenderer>().material = Resources.Load("Tower/Material/Grass") as Material;
+                            //타워 설치 UI 활성화
+                            m_Button.BuildOnButton();
 
-                    // 이전 노드에 현재 노드 저장
-                    m_PrevNode = GetNode(TileX, TileY);
+                            GetNode(TileX, TileY).GetComponent<MeshRenderer>().material = Resources.Load("Tower/Material/Blue") as Material;
+
+                            m_PrevNode.GetComponent<MeshRenderer>().material = Resources.Load("Tower/Material/Grass") as Material;
+
+                            // 이전 노드에 현재 노드 저장
+                            m_PrevNode = GetNode(TileX, TileY);
+                        }
+                        else if (m_TileState[TileY, TileX] == TILEINFO.TOWER || m_TileState[TileY, TileX] == TILEINFO.OBSTACLE)
+                        {
+                            //업그레이드, 삭제 UI 활성화
+                            m_Button.TowerOnBtn();
+
+                            //타워 설치 UI 비활성화
+                            m_Button.BuildOffButton();
+
+                            GetNode(TileX, TileY).GetComponent<MeshRenderer>().material = Resources.Load("Tower/Material/Red") as Material;
+
+                            m_PrevNode.GetComponent<MeshRenderer>().material = Resources.Load("Tower/Material/Grass") as Material;
+
+                            // 이전 노드에 현재 노드 저장
+                            m_PrevNode = GetNode(TileX, TileY);
+                        }
+                        else
+                        {
+                            m_PrevNode.GetComponent<MeshRenderer>().material = Resources.Load("Tower/Material/Grass") as Material;
+                            m_SelectObject = null;
+                            m_PrevNode = null;
+                        }
+                    }
+                    else
+                    {
+                        GetNode(TileX, TileY).GetComponent<MeshRenderer>().material = Resources.Load("Tower/Material/Grass") as Material;
+                        m_Button.TowerOffBtn();
+                        m_SelectObject = null;
+                        m_PrevNode = null;
+                    }
                 }
 
-                if (m_TileState[TileY, TileX] == TILEINFO.TOWER)
-                {
-                    //업그레이드, 삭제 UI활성화
-                    m_Button.TowerOnBtn();
-
-                    //타워 설치 UI 비활성화
-                    m_Button.BuildOffButton();
-                }
-
-                //이건 혹시몰라서 만들어 놨어요
-                else if (m_TileState[TileY, TileX] == TILEINFO.NONE)
-                {
-                    return;
-                }
+                //if (m_TileState[TileY, TileX] == TILEINFO.TOWER)
+                //{
+                //    //업그레이드, 삭제 UI활성화
+                //    m_Button.TowerOnBtn();
+                //
+                //    //타워 설치 UI 비활성화
+                //    m_Button.BuildOffButton();
+                //}
+                //
+                ////이건 혹시몰라서 만들어 놨어요
+                //else if (m_TileState[TileY, TileX] == TILEINFO.NONE)
+                //{
+                //    return;
+                //}
             }
             else if (hit.transform.gameObject.layer == LayerMask.NameToLayer("HealTower")) // 나중에 이 레이어를 각 타워별로 elseif 만들어야됨
             {
