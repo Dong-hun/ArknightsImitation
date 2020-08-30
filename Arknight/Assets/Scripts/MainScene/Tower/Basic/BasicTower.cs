@@ -97,7 +97,7 @@ class BasicTower : TowerManager
         // 타겟을 null로 초기화
         m_Target = null;
 
-        StartCoroutine(Disappear(2.0f));
+        //StartCoroutine(Disappear(2.0f));
 
 
     }
