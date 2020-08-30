@@ -13,9 +13,6 @@ public class BuildManager : MonoBehaviour
     public GameObject obj2;
     //세번째 타워 생성
     public GameObject obj3;
-    //네번쨰 타워 생성
-    public GameObject obj4;
-
 
     //NodeManager스크립트의 함수,변수들 사용하기 위해 선언
     public NodeManager m_NodeMng;
@@ -146,35 +143,6 @@ public class BuildManager : MonoBehaviour
         //삭제되는 타워위치 보기위해 디버그 해놓음(지워도 상관없음)
         Debug.Log("Select : " + TileY + ", " + TileX);
     }
-    public void BuildToDaggerTower()
-    {
-        // 노드 좌표값 노드에서 가져옴
-        int TileX = m_NodeMng.SelectObject.gameObject.GetComponent<Node>().TileX;
-        int TileY = m_NodeMng.SelectObject.gameObject.GetComponent<Node>().TileY;
-
-        // 타워 생성 후 타일정보 저장
-        obj4 = Instantiate(Resources.Load("Tower/DaggerTower")) as GameObject;
-        obj4.transform.position = m_NodeMng.SelectObject.transform.position;
-        obj4.gameObject.GetComponent<DaggerTower>().TileX = TileX;
-        obj4.gameObject.GetComponent<DaggerTower>().TileY = TileY;
-
-        m_TowerList.Add(obj4);
-
-        // 해당 좌표 타워로 변경
-        m_NodeMng.m_TileState[TileY, TileX] = NodeManager.TILEINFO.TOWER;
-
-        // 현재 노드의 머터리얼을 다시 Grass로 변경
-        m_NodeMng.GetNode(TileX, TileY).GetComponent<MeshRenderer>().material = Resources.Load("Tower/Material/Grass") as Material;
-
-        // 설치가 끝나면 선택된 오브젝트 null로 초기화
-        m_NodeMng.m_PrevNode = null;
-        m_NodeMng.SelectObject = null;
-
-        m_Button.BuildOffButton();
-
-        //삭제되는 타워위치 보기위해 디버그 해놓음(지워도 상관없음)
-        Debug.Log("Select : " + TileY + ", " + TileX);
-    }
 
     //타워생성함수
     public void TowerUpgrade()
@@ -210,8 +178,6 @@ public class BuildManager : MonoBehaviour
 
             
         }
-
-
         // 선택된 오브젝트가 힐타워일때
         else if (m_NodeMng.SelectObject.layer == LayerMask.NameToLayer("HealTower"))
         {
@@ -251,26 +217,6 @@ public class BuildManager : MonoBehaviour
             }
         }
 
-<<<<<<< HEAD
-        if (m_NodeMng.SelectObject.layer == LayerMask.NameToLayer("DaggerTower"))
-        {
-            // 해당 노드 좌표 타워에서 가져옴
-            TileX = m_NodeMng.SelectObject.gameObject.GetComponent<DaggerTower>().TileX;
-            TileY = m_NodeMng.SelectObject.gameObject.GetComponent<DaggerTower>().TileY;
-
-            // 리스트 돌아서
-            for (int i = 0; i < m_TowerList.Count; ++i)
-            {
-                // 선택된 오브젝트(타워)가 리스트의 번호와 같으면
-                if (m_TowerList[i].transform == m_NodeMng.SelectObject.transform)
-                {
-                    // 리스트안의 해당 오브젝트 제거
-                    m_TowerList.Remove(m_TowerList[i]);
-                    break;
-                }
-            }
-        }
-=======
         for(int i = 0; i < m_TowerList.Count; ++i)
         {
             if(m_TowerList[i].layer == LayerMask.NameToLayer("HealTower"))
@@ -282,7 +228,6 @@ public class BuildManager : MonoBehaviour
 
 
 
->>>>>>> dc5db9a8fb8c501f9200bd360cf5d27c103cb43a
         // 타워가 삭제되면 노드 m_TileState를 NONE으로 변경
         m_NodeMng.m_TileState[TileY, TileX] = NodeManager.TILEINFO.NONE;
 

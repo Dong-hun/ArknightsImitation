@@ -1,9 +1,5 @@
 fileFormatVersion: 2
-<<<<<<< HEAD:Arknight/Assets/Resources/Tower/Heal/Attack.anim.meta
-guid: 17feeaa1313c95b459cced6da8593ef7
-=======
-guid: d950cbd80902a1f4ca368f99f9ae62a8
->>>>>>> dc5db9a8fb8c501f9200bd360cf5d27c103cb43a:Arknight/Assets/Resources/DaggerTower.prefab.meta~DongHun.meta
+guid: e14a40fa51267e345a43af84f04d79d8
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 0

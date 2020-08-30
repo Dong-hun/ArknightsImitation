@@ -73,8 +73,8 @@ GameObject:
   - component: {fileID: 3994215309837973692}
   - component: {fileID: 6477388376227255750}
   - component: {fileID: -4994462445756036488}
-  - component: {fileID: 1439140402130799438}
-  m_Layer: 11
+  - component: {fileID: 5737283092048680092}
+  m_Layer: 9
   m_Name: DaggerTower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -136,7 +136,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.25, y: 1, z: 1.25}
   m_Center: {x: 0, y: 0.5, z: 0}
---- !u!114 &1439140402130799438
+--- !u!114 &5737283092048680092
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -145,11 +145,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 86998245863541423}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1967d94c82589b24dbb42509cc22464d, type: 3}
+  m_Script: {fileID: 11500000, guid: c5878cafe8c1fe247944ae8eee78acf7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Anim: {fileID: 0}
-  m_NodeManager: {fileID: 0}
 --- !u!1 &90964356486452510
 GameObject:
   m_ObjectHideFlags: 0
