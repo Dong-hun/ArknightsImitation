@@ -94,10 +94,12 @@ public class MonsterCreater : MonoBehaviour
             }
         }
     }
+
+    //이거질문
     void MakingD()
     {
         if (Input.GetKeyDown(KeyCode.Space))
-        {
+        { 
             obj = Instantiate(Resources.Load("Enemy/Cube")) as GameObject;
         }
         if (Input.GetKeyDown(KeyCode.F1))

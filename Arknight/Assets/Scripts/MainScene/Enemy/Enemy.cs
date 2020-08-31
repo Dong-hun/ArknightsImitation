@@ -12,30 +12,34 @@ public class Enemy : MonoBehaviour
     {
          CREATE, TARGET1, TAGET2, ATTACK, BATTLE, DEAD, GOAL
     }
-    public NavMeshAgent m_Navi;
-    public STATE m_STATE;
-    public NavMeshPath m_Path;
-    public MonsterStat m_Monsterinfo;
-    public Obstacle m_Enemy;
-    float attackdelay = 3.0f;
+    
+    public NavMeshAgent m_Navi; //도착치
+    public STATE m_STATE; 
+    public NavMeshPath m_Path; 
+    public MonsterStat m_Monsterinfo; //Stat정보
+    public Obstacle m_Enemy; //하이라키에 있는 장애물
+    float attackdelay = 3.0f; 
 
     public BuildManager m_Buildmanager;
 
-    Vector3 objpos;
-    Vector3 objpos2;
-    Vector3 Goalpos;
+    Vector3 objpos; //Plane80
+    Vector3 objpos2; //End노드
+    Vector3 Goalpos; 
 
     /* 생성할 적 클래스 */
     // Start is called before the first frame update
     void Start()
     {
-
+        // 적생성위치= Start노드 위치
         this.transform.position = GameObject.Find("Start").GetComponent<Transform>().position;
+        
         objpos = GameObject.Find("Plane (80)").GetComponent<Transform>().position;
         objpos2 = GameObject.Find("End").GetComponent<Transform>().position;
        // Goalpos = GameObject.Find("End").GetComponent<Transform>().position;
         m_STATE = STATE.CREATE;
+        //시작하자마자 상태 Target1으로 변경
         ChangeSTATE(STATE.TARGET1);
+        
         m_Buildmanager = GameObject.Find("BuildManager").GetComponent<BuildManager>();
 
         //Vector3 DESTPOS = m_Navi.destination;
@@ -71,34 +75,45 @@ public class Enemy : MonoBehaviour
                 
                 break;
             case STATE.TARGET1:
-
+                
+                //Plane80을 도착지로
                 m_Navi.SetDestination(objpos);
 
 
                 break;
+
             case STATE.TAGET2:
                 //m_Navi.SetDestination(obj2.transform.position);
                 m_Navi.SetDestination(objpos2);
 
                 break;
-
+                
+                
             case STATE.ATTACK:
+                //하이에라키 에서 Obstacle장애물들을 enemyList에 넣는다.
                 Obstacle[] enemyList = GameObject.FindObjectsOfType<Obstacle>();
 
-                float tempDist = 999f;
-                int sel = -1;
+                //해당 장애물과 자기의 가장 짧은 거리
+                float tempDist = 999f; //999f는 뭘의미????????????????
+                int sel = -1; //[-1]은 없으니까 stateprocess에서null로 만들기 위해서 sel=-1로 해준것?????????????
 
+                //enemyLisht갯수만큼 반복문(0개면 실행X)
                 for (int i = 0; i < enemyList.Length; ++i)
                 {
+                    //dist =장애물위치-적위치
                     float dist = Vector3.Distance(enemyList[i].transform.position, this.transform.position);
-
+                    
+                    //tempDist보다 더 짧은거리(dist)가 있다
                     if (dist < tempDist)
                     {
+                        
                         tempDist = dist;
                         sel = i;
                     }
                 }
-                m_Enemy = enemyList[sel];
+
+                m_Enemy = enemyList[sel]; //[-1]은 없으니까 stateprocess에서null로 만들기 위해서 sel=-1로 해준것?
+
 
                 break;
             case STATE.GOAL:
@@ -115,10 +130,16 @@ public class Enemy : MonoBehaviour
             case STATE.TARGET1:
                 //   NavMesh.CalculatePath(transform.position, obj.transform.position,NavMesh.AllAreas ,m_Path);
                 //  if (path == true)
+                
+                //T= 적위치-Plane80사이의 거리
                 float T = Vector3.Distance(this.transform.position, objpos);
+                //s= 적위치-장애물사이의 거리
                 float s = Vector3.Distance(this.transform.position, m_Navi.destination);
+
+                //원하는 길이 아니면(장애물이있으면?)--질문??????????????????????
                 if (!m_Navi.pathPending) //계산완료 후 이동
                 {
+                    //Target1거리 <= 적이 멈춘거리 (장애물이 없다) 
                     if (m_Navi.remainingDistance <= m_Navi.stoppingDistance)
                     {
                         if (!m_Navi.hasPath || m_Navi.velocity.sqrMagnitude == 0.0f)
@@ -127,22 +148,20 @@ public class Enemy : MonoBehaviour
                             ChangeSTATE(STATE.TAGET2);
                         }
                     }
+
+                    //전체거리- 장애물까지거리= 남은거리>1.5f (장애물이 있고, 가야할길이 남았다.)
                     else if (T - s > 1.5f)
                     {
                         ChangeSTATE(STATE.ATTACK);
                     }
-
-
+                    
                 }
-
-
-
-
-
+                                                             
                 break;
 
 
             case STATE.TAGET2:
+                //Target1과 동일
                 float T2 = Vector3.Distance(this.transform.position, objpos2);
                 float s2 = Vector3.Distance(this.transform.position, m_Navi.destination);
                 if (!m_Navi.pathPending) //계산완료 후 이동
@@ -162,32 +181,48 @@ public class Enemy : MonoBehaviour
 
                 }
                 break;
+
             case STATE.ATTACK:
+                //장애물이 있을때
                 if (m_Enemy != null)
                 {
+                    //dist= 적위치-장애물위치 
                     float dist = Vector3.Distance(this.transform.position, m_Enemy.transform.position);
 
+                    //적-장애물이 조금 멀면
                     if (dist > 5.5f)
                     {
+                        //네비 목적지= 장애물위치
                         m_Navi.SetDestination(m_Enemy.transform.position);
                     }
+                    //적-장애물이 가까우면
                     else if (dist < 5.5f)
                     {
+                        //공격
                         ChangeSTATE(STATE.BATTLE);
                     }
                     // Debug.Log(dist);
                 }
+               
+                //장에믈이없으면
                 else if (m_Enemy == null)
                 {
                     ChangeSTATE(STATE.TAGET2);
                 }
                 break;
+
+            //??????????????????
             case STATE.BATTLE:
 
+                
+                //delay깍아주고 Mathf.Epsilon(0보다작은수)
                 if (attackdelay <= Mathf.Epsilon)
                 {
                     attackdelay = 2.0f;
                     Onattack();
+                    
+                    //죽였다 싶으면 다시 target2로 이동
+                
                     if (m_Enemy == null)
                     {
                         ChangeSTATE(STATE.TAGET2);
