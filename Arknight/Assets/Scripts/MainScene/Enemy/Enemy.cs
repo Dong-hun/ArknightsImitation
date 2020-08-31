@@ -30,7 +30,10 @@ public class Enemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+<<<<<<< HEAD
         // 적생성위치= Start노드 위치
+=======
+>>>>>>> 9736bae01745b8e93e23cb396d046200919a1e23
         this.transform.position = GameObject.Find("Start").GetComponent<Transform>().position;
         
         objpos = GameObject.Find("Plane (80)").GetComponent<Transform>().position;
@@ -45,24 +48,13 @@ public class Enemy : MonoBehaviour
         //Vector3 DESTPOS = m_Navi.destination;
         m_Navi = GetComponent<NavMeshAgent>();
         m_Path = new NavMeshPath();
-
     }
 
     // Update is called once per frame
     void Update()
     {
-        //if (m_State == STATE.IDLE)
-        //{
-        //    m_Dest = GameObject.Find("Plane (89)").transform.position;
-        //    m_Navi.SetDestination(m_Dest);
-        //    ChangeState(STATE.MOVE);
-        //}
         StateProcess();
-
     }
-
-
-
 
     void ChangeSTATE(STATE s)
     {
@@ -136,7 +128,10 @@ public class Enemy : MonoBehaviour
                 //s= 적위치-장애물사이의 거리
                 float s = Vector3.Distance(this.transform.position, m_Navi.destination);
 
+<<<<<<< HEAD
                 //원하는 길이 아니면(장애물이있으면?)--질문??????????????????????
+=======
+>>>>>>> 9736bae01745b8e93e23cb396d046200919a1e23
                 if (!m_Navi.pathPending) //계산완료 후 이동
                 {
                     //Target1거리 <= 적이 멈춘거리 (장애물이 없다) 

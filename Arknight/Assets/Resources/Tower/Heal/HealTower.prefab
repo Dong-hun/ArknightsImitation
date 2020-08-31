@@ -2448,6 +2448,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Anim: {fileID: 1289438441184053219}
   m_NodeManager: {fileID: 0}
+  m_BuildManager: {fileID: 0}
+  m_AroundTowerList: []
 --- !u!1 &1289438441053429554
 GameObject:
   m_ObjectHideFlags: 0

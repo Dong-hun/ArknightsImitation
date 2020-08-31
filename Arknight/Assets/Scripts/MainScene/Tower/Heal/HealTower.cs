@@ -32,15 +32,13 @@ public class HealTower : TowerManager
     public DelDelete m_DelDeleteTower;
 
     // Start is called before the first frame update
-    void Start()
+    new void Start()
     {
-        // 매니저 가져오기
-        m_NodeManager = GameObject.Find("NodeList").GetComponent<NodeManager>();
-        m_BuildManager = GameObject.Find("BuildManager").GetComponent<BuildManager>();
-
+        base.Start();
         // Add함수 딜리게이트 추가
         m_DelAddTower = new DelAdd(AddTower);
         m_DelAddTower?.Invoke();
+
 
         // delete함수 딜리게이트 추가
         m_DelDeleteTower = new DelDelete(RemoveTower);
@@ -62,7 +60,8 @@ public class HealTower : TowerManager
             case STATE.BATTLE:
                 m_Anim.SetTrigger("Attack");
                 break;
-            case STATE.DIE:
+            case STATE.DEATH:
+
                 break;
         }
     }
@@ -77,7 +76,7 @@ public class HealTower : TowerManager
             case STATE.BATTLE:
                 Attack();
                 break;
-            case STATE.DIE:
+            case STATE.DEATH:
                 break;
         }
     }

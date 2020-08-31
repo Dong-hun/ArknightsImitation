@@ -66,7 +66,7 @@ public class BuildManager : MonoBehaviour
         m_NodeMng.GetNode(TileX, TileY).GetComponent<MeshRenderer>().material = Resources.Load("Tower/Material/Grass") as Material;
 
         // 설치가 끝나면 선택된 오브젝트 null로 초기화
-        m_NodeMng.m_PrevNode = null;
+        m_NodeMng.m_PrevObject = null;
         m_NodeMng.SelectObject = null;
 
         m_Button.BuildOffButton();
@@ -99,7 +99,7 @@ public class BuildManager : MonoBehaviour
         m_NodeMng.GetNode(TileX, TileY).GetComponent<MeshRenderer>().material = Resources.Load("Tower/Material/Grass") as Material;
 
         // 설치가 끝나면 선택된 오브젝트 null로 초기화
-        m_NodeMng.m_PrevNode = null;
+        m_NodeMng.m_PrevObject = null;
         m_NodeMng.SelectObject = null;
 
         m_Button.BuildOffButton();
@@ -135,7 +135,7 @@ public class BuildManager : MonoBehaviour
         m_NodeMng.GetNode(TileX, TileY).GetComponent<MeshRenderer>().material = Resources.Load("Tower/Material/Grass") as Material;
 
         // 설치가 끝나면 선택된 오브젝트 null로 초기화
-        m_NodeMng.m_PrevNode = null;
+        m_NodeMng.m_PrevObject = null;
         m_NodeMng.SelectObject = null;
 
         m_Button.BuildOffButton();
@@ -241,7 +241,7 @@ public class BuildManager : MonoBehaviour
         m_NodeMng.GetNode(TileX, TileY).GetComponent<MeshRenderer>().material = Resources.Load("Tower/Material/Grass") as Material;
 
         //설치가 끝나면 선택된 오브젝트와 이전 노드 null로 초기화
-        m_NodeMng.m_PrevNode = null;
+        m_NodeMng.m_PrevObject = null;
         m_NodeMng.SelectObject = null;
     }
 
