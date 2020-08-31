@@ -26,6 +26,23 @@ public class TowerManager : MonoBehaviour
     protected float m_AttackDelay;      // 공격 딜레이
     protected float m_AttackDist;       // 사거리
     
+    public int TileX
+    {
+        get
+        {
+            return m_TileX;
+        }
+    }
+
+    public int TileY
+    {
+        get
+        {
+            return m_TileY;
+        }
+    }
+
+
 
     public Animator m_Anim;             // 애니메이터 (protected로 상속중이여서 인스팩터창 링크불가능 
                                         // 이름으로 호출 or public으로 바꿔서 링크걸기)

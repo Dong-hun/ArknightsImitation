@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2159779934951600715}
   - component: {fileID: 9146882205247127423}
   - component: {fileID: 7734505939518352897}
-  m_Layer: 12
+  m_Layer: 11
   m_Name: Obstacle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -125,8 +125,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Anim: {fileID: 0}
-  m_NodeManager: {fileID: 0}
-  m_BuildManager: {fileID: 0}
   Monsterstatinfo: {fileID: 7734505939518352897}
 --- !u!114 &7734505939518352897
 MonoBehaviour:
