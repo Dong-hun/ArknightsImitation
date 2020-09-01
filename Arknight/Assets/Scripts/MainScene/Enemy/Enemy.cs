@@ -18,7 +18,7 @@ public class Enemy : MonoBehaviour
     public MonsterStat m_Monsterinfo;
     public Obstacle m_Enemy;
     float attackdelay = 3.0f;
-
+    MonsterCreater Monc; //몬스터 리스트 받아오기용 함수
     public BuildManager m_Buildmanager;
 
     Vector3 objpos;
@@ -30,9 +30,12 @@ public class Enemy : MonoBehaviour
     void Start()
     {
         this.transform.position = GameObject.Find("Start").GetComponent<Transform>().position;
+        //시작지점에 생성
         objpos = GameObject.Find("Plane (80)").GetComponent<Transform>().position;
+       //첫째 목표지
         objpos2 = GameObject.Find("End").GetComponent<Transform>().position;
-       // Goalpos = GameObject.Find("End").GetComponent<Transform>().position;
+       //둘째 목표지
+        // Goalpos = GameObject.Find("End").GetComponent<Transform>().position;
         m_STATE = STATE.CREATE;
         ChangeSTATE(STATE.TARGET1);
         m_Buildmanager = GameObject.Find("BuildManager").GetComponent<BuildManager>();
@@ -71,6 +74,7 @@ public class Enemy : MonoBehaviour
                 break;
 
             case STATE.ATTACK:
+                //가장 가까운 장애물 인식후 일정 가장 가까운 적을 공격 대상으로 인식
                 Obstacle[] enemyList = GameObject.FindObjectsOfType<Obstacle>();
 
                 float tempDist = 999f;
@@ -152,6 +156,7 @@ public class Enemy : MonoBehaviour
                 }
                 break;
             case STATE.ATTACK:
+                //적군이 존재하고 일정거리 이상이면 근처로 이동, 일정거리 이하면 공격
                 if (m_Enemy != null)
                 {
                     float dist = Vector3.Distance(this.transform.position, m_Enemy.transform.position);
@@ -172,7 +177,7 @@ public class Enemy : MonoBehaviour
                 }
                 break;
             case STATE.BATTLE:
-
+                //일정 공격속도 로 공격
                 if (attackdelay <= Mathf.Epsilon)
                 {
                     attackdelay = 2.0f;
@@ -262,5 +267,34 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    
+   //몬스터 삭제 함수, 리스트도 같이 지운다.
+    void death()
+    {
+
+        for (int i = 0; i<Monc.m_EnemyList.Count; i++)
+        { 
+            if (this.gameObject == Monc.m_EnemyList[i])
+            {
+                Monc.m_EnemyList.Remove(Monc.m_EnemyList[i]);
+            }
+
+                Destroy(this.gameObject);
+
+        }
+    }
+
+    //void Death()
+    //{
+    //    for (int i = 0; i < MonsterCreater.m_EnemyList.Count; ++i)
+    //    {            
+    //        if (this.gameObject == MonsterCreater.m_EnemyList[i])
+    //        {
+    //            MonsterCreater.m_EnemyList.Remove(MonsterCreater.m_EnemyList[i]);
+    //        }
+    //    }
+
+    //    Destroy(this.gameObject);
+    //}
+
+
 }
