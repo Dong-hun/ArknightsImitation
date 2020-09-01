@@ -18,7 +18,7 @@ public class Enemy : MonoBehaviour
     public MonsterStat m_Monsterinfo;
     public Obstacle m_Enemy;
     float attackdelay = 3.0f;
-    MonsterCreater Monc; //몬스터 리스트 받아오기용 함수
+    MonsterCreater Monc; //몬스터 리스트 받아오기용 변수
     public BuildManager m_Buildmanager;
 
     Vector3 objpos;
