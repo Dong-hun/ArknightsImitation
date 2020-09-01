@@ -97,6 +97,9 @@ public class Enemy : MonoBehaviour
             //    m_Navi.SetDestination(Goalpos);
 
                 break;
+            case STATE.DEAD:
+                death();
+                break;
         }
     }
     void StateProcess()
