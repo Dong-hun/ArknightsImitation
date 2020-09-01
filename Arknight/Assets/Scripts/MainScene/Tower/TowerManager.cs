@@ -16,13 +16,13 @@ public class TowerManager : MonoBehaviour
         IDLE, BATTLE, DEATH               // 대기, 전투, 사망
     }
     protected STATE m_State;            // 상태 받는 변수
-    protected int m_MaxHp;              // 최대 체력
-    protected int m_HP;                 // 체력
-    protected int m_MaxMp;              // 최대 마력
-    protected int m_MP;                 // 마력   
+    protected float m_MaxHp;              // 최대 체력
+    protected float m_HP;                 // 체력
+    protected float m_MaxMp;              // 최대 마력
+    protected float m_MP;                 // 마력   
     protected int m_TileX;              // 타워 X좌표
     protected int m_TileY;              // 타워 Y좌표
-    protected int m_Damage;             // 공격력
+    protected float m_Damage;             // 공격력
     protected float m_AttackDelay;      // 공격 딜레이
     protected float m_AttackDist;       // 사거리
 
@@ -44,7 +44,7 @@ public class TowerManager : MonoBehaviour
     }
 
     // 타워 세팅
-    protected void Init(int hp = 50, int mp = 0, int dmg = 0, float dist = 1.0f, float delay = 0.0f)
+    protected void Init(float hp = 50, float mp = 0, float dmg = 0, float dist = 1.0f, float delay = 0.0f)
     {
         m_State = STATE.IDLE;
         m_HP = hp;

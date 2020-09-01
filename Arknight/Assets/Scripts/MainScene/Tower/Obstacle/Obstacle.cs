@@ -1,10 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Obstacle : TowerManager
 {
     public MonsterStat Monsterstatinfo;
+
+    [Header("Unity Stuff")]
+    public Image HealthBar;
+    
     public int TileX
     {
         set
@@ -49,13 +54,21 @@ public class Obstacle : TowerManager
                 break;
         }
     }
-    public void OnDamage(int dmg)
+    public void OnDamage(float dmg)
     {
         Debug.Log("인식");
         Monsterstatinfo.BossAttack = dmg;
 
+        Debug.Log(Monsterstatinfo.CurrentHP.ToString());
+        Debug.Log(HealthBar.fillAmount.ToString());
+
+       HealthBar.fillAmount = Monsterstatinfo.CurrentHP/Monsterstatinfo.MaxHp;
+
         if (!Monsterstatinfo.UpdateHP(-dmg))
         {
+            
+
+            //HealthBar.fillAmount = Monsterstatinfo.CurrentHP/Monsterstatinfo.MaxHp;
             ChangeState(STATE.DEATH);
         }
     }

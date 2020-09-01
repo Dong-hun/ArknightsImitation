@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
+
 
 public class Enemy : MonoBehaviour
 {
@@ -30,10 +32,7 @@ public class Enemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-<<<<<<< HEAD
-        // 적생성위치= Start노드 위치
-=======
->>>>>>> 9736bae01745b8e93e23cb396d046200919a1e23
+
         this.transform.position = GameObject.Find("Start").GetComponent<Transform>().position;
         
         objpos = GameObject.Find("Plane (80)").GetComponent<Transform>().position;
@@ -128,10 +127,7 @@ public class Enemy : MonoBehaviour
                 //s= 적위치-장애물사이의 거리
                 float s = Vector3.Distance(this.transform.position, m_Navi.destination);
 
-<<<<<<< HEAD
-                //원하는 길이 아니면(장애물이있으면?)--질문??????????????????????
-=======
->>>>>>> 9736bae01745b8e93e23cb396d046200919a1e23
+
                 if (!m_Navi.pathPending) //계산완료 후 이동
                 {
                     //Target1거리 <= 적이 멈춘거리 (장애물이 없다) 
@@ -250,14 +246,14 @@ public class Enemy : MonoBehaviour
     }
 
 
-    void Onattack(Obstacle enemy)
-    {
-        //아 이런. 이걸 
-        m_Enemy.OnDamage(m_Monsterinfo.MonsterAttack);
-        //    //큐프
-        Debug.Log("공격3");
-        // //   Debug.Log(m_Monsterinfo.MonsterAttack);
-    }
+   //  void Onattack(Obstacle enemy)
+   // {
+   //     //아 이런. 이걸 
+   //     m_Enemy.OnDamage(m_Monsterinfo.MonsterAttack);
+   //     //    //큐프
+   //     Debug.Log("공격3");
+   //     // //   Debug.Log(m_Monsterinfo.MonsterAttack);
+   // }
 
 
 
@@ -282,7 +278,7 @@ public class Enemy : MonoBehaviour
         //
     }
 
-    void Onattack()
+     void Onattack()
     {
         //아 이런. 이걸 
         if (m_Enemy != null)
@@ -293,7 +289,7 @@ public class Enemy : MonoBehaviour
             Debug.Log("공격3");
         }//   Debug.Log(m_Monsterinfo.MonsterAttack);
     }
-    public void OnDamage(int dmg)
+    public void OnDamage(float dmg)
     {
 
         if (!m_Monsterinfo.UpdateHP(-dmg))
