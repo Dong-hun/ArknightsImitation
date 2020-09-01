@@ -7497,7 +7497,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameOver: 0
-  MaxMonster: 3
+  MaxMonster: 5
   TotalMonster: 0
   obj: {fileID: 0}
   m_EnemyList: []
