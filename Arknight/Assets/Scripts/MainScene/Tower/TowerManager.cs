@@ -3,7 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public delegate void DelAdd();
+public delegate void DelVoid();
+public delegate void DelAttack(Enemy enemy);
 public delegate void DelDelete(TowerManager obj);
 
 public class TowerManager : MonoBehaviour
@@ -79,7 +80,7 @@ public class TowerManager : MonoBehaviour
     }
 
     // 사망
-    protected virtual void Die()
+    protected virtual void Death()
     {
 
     }

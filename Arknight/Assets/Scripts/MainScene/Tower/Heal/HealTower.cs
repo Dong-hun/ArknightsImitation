@@ -80,7 +80,7 @@ public class HealTower : TowerManager
     }
     public List<GameObject> m_AroundTowerList;
 
-    public DelAdd m_DelAddTower;
+    public DelVoid m_DelAddTower;
     public DelDelete m_DelDeleteTower;
 
     // Start is called before the first frame update
@@ -93,7 +93,7 @@ public class HealTower : TowerManager
         Init(50, 10, 2, 0.0f, 3.0f);
 
         // Add함수 딜리게이트 추가
-        m_DelAddTower = new DelAdd(AddTower);
+        m_DelAddTower = new DelVoid(AddTower);
         m_DelAddTower?.Invoke();
 
         // delete함수 딜리게이트 추가
@@ -159,6 +159,11 @@ public class HealTower : TowerManager
             }
 
         }
+    }
+
+    protected override void Death()
+    {
+
     }
 
     // 주변에 타워가 있으면 리스트에 추가해주는 함수

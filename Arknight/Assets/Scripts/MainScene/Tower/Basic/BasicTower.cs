@@ -5,7 +5,6 @@ using UnityEngine;
 class BasicTower : TowerManager
 {
     /* 타워매니저를 상속받아서 만들어지는 각 타워들의 스크립트 */
-    // 나중에 스크립트 이름을 타워이름으로 바꿀것 (현재 임시, 바꾸면 이 주석 지울것)
     // 기본 공격 하는 타워
 
 
@@ -90,22 +89,26 @@ class BasicTower : TowerManager
     new void Start()
     {
         base.Start();
+        m_Anim.SetBool("Dead", false);
 
         m_EnemyList = new List<Enemy>();
-        Init(50, 50, 5, 5.0f);
+        Init(50, 50, 600, 5.0f);
 
         // 타겟을 null로 초기화
         m_Target = null;
 
-        StartCoroutine(Disappear(2.0f));
-
-
+        this.GetComponentInChildren<BasicTowerAnimationEvent>().m_Attack = new DelAttack(OnDamage);
     }
 
     // Update is called once per frame
     void Update()
     {
         StateProcess();
+
+        if(HP <= 0.0f)
+        {
+            ChangeState(STATE.DEATH);
+        }
     }
 
     // 상태 변경시 한번 호출될 함수
@@ -121,7 +124,8 @@ class BasicTower : TowerManager
             case STATE.BATTLE:
                 break;
             case STATE.DEATH:
-                //StartCoroutine(Disappear(1.0f));
+                m_Anim.SetBool("Dead", true);
+                StartCoroutine(Disappear(3.0f));
                 break;
         }
     }
@@ -157,34 +161,48 @@ class BasicTower : TowerManager
     // 공격
     protected override void Attack()
     {
-        // 적 방향으로 회전
-        Rotation(m_Target);
+        // 타겟이 없으면 리턴
+        if (m_Target == null) return;
 
-        // 딜레이가 0이하가 된다면
-        if (m_AttackDelay <= Mathf.Epsilon)
+        // 적과의 거리 구함
+        float dist = Vector3.Distance(this.transform.position, m_Target.transform.position);
+
+        if(dist < m_AttackDist && !m_Anim.GetBool("Dead"))
         {
-            // 제일 가까운 적이 살아있다면
-            if (m_Target != null)
-            {
-                // Attack 트리거 발동
-                m_Anim.SetTrigger("Attack");
+            // 적 방향으로 회전
+            Rotation(m_Target);
 
-                // 다시 딜레이 설정
-                m_AttackDelay = 1.0f;
-            }
-            // 적이 죽었다면
-            else
+            // 딜레이가 0이하가 된다면
+            if (m_AttackDelay <= Mathf.Epsilon)
             {
-                // 타겟을 null로 초기화
-                m_Target = null;
+                // 제일 가까운 적이 살아있다면
+                if (m_Target != null)
+                {
+                    // Attack 트리거 발동
+                    m_Anim.SetTrigger("Attack");
 
-                // IDLE상태로 바꿈
-                ChangeState(STATE.IDLE);
+                    // 다시 딜레이 설정
+                    m_AttackDelay = 1.0f;
+                }
+                // 적이 죽었다면
+                else
+                {
+                    // 타겟을 null로 초기화
+                    m_Target = null;
+
+                    // IDLE상태로 바꿈
+                    ChangeState(STATE.IDLE);
+                }
             }
+
+            // 딜레이 감소
+            m_AttackDelay -= Time.deltaTime;
         }
-
-        // 딜레이 감소
-        m_AttackDelay -= Time.deltaTime;
+        else
+        {
+            ChangeState(STATE.IDLE);
+        }    
+        
     }
 
     // 적에게 데미지 줌
@@ -193,15 +211,14 @@ class BasicTower : TowerManager
         // PlayAnimationEvent에서 공격 모션일때 이 함수 호출
         if (enemy == null) return;
 
-        enemy.GetComponent<MonsterStat>().CurrentHP -= m_Damage;
-
+        enemy.GetComponent<MonsterStat>().UpdateHP(-m_Damage);
     }
 
     // 사망
-    //protected override void Die()
-    //{
-    //    Destroy(this.gameObject);
-    //}
+    protected override void Death()
+    {
+        Destroy(this.gameObject);
+    }
 
     // 적 추가
     public void AddEnemy(Enemy enemy)
@@ -235,14 +252,19 @@ class BasicTower : TowerManager
         // 충돌체의 레이어가 Enemy면
         if (col.gameObject.layer == LayerMask.NameToLayer("Enemy"))
         {
-            // Battle로 변경
+            // 타겟(적)이 없으면 
             if(m_Target == null)
             {
+                // 타겟에 해당 충돌체를 넣어줌
                 m_Target = col.gameObject.GetComponent<Enemy>();
-                ChangeState(STATE.BATTLE);
+
+                // State를 Battle로 변경
+                ChangeState(STATE.DEATH);
             }
+            // 타겟이 있다면
             else
             {
+                // 리턴
                 return;
             }
         }
