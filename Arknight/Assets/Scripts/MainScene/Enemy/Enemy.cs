@@ -14,6 +14,7 @@ public class Enemy : MonoBehaviour
     {
          CREATE, TARGET1, TAGET2, ATTACK, BATTLE, DEAD, GOAL
     }
+<<<<<<< HEAD
     
     public NavMeshAgent m_Navi; //도착치
     public STATE m_STATE; 
@@ -22,6 +23,15 @@ public class Enemy : MonoBehaviour
     public Obstacle m_Enemy; //하이라키에 있는 장애물
     float attackdelay = 3.0f; 
 
+=======
+    public NavMeshAgent m_Navi;
+    public STATE m_STATE;
+    public NavMeshPath m_Path;
+    public MonsterStat m_Monsterinfo;
+    public Obstacle m_Enemy;
+    float attackdelay = 3.0f;
+    MonsterCreater Monc; //몬스터 리스트 받아오기용 변수
+>>>>>>> 775121bddd133339558bd17c7c3e19d9095ee10f
     public BuildManager m_Buildmanager;
 
     Vector3 objpos; //Plane80
@@ -34,10 +44,16 @@ public class Enemy : MonoBehaviour
     {
 
         this.transform.position = GameObject.Find("Start").GetComponent<Transform>().position;
+<<<<<<< HEAD
         
+=======
+        //시작지점에 생성
+>>>>>>> 775121bddd133339558bd17c7c3e19d9095ee10f
         objpos = GameObject.Find("Plane (80)").GetComponent<Transform>().position;
+       //첫째 목표지
         objpos2 = GameObject.Find("End").GetComponent<Transform>().position;
-       // Goalpos = GameObject.Find("End").GetComponent<Transform>().position;
+       //둘째 목표지
+        // Goalpos = GameObject.Find("End").GetComponent<Transform>().position;
         m_STATE = STATE.CREATE;
         //시작하자마자 상태 Target1으로 변경
         ChangeSTATE(STATE.TARGET1);
@@ -81,7 +97,11 @@ public class Enemy : MonoBehaviour
                 
                 
             case STATE.ATTACK:
+<<<<<<< HEAD
                 //하이에라키 에서 Obstacle장애물들을 enemyList에 넣는다.
+=======
+                //가장 가까운 장애물 인식후 일정 가장 가까운 적을 공격 대상으로 인식
+>>>>>>> 775121bddd133339558bd17c7c3e19d9095ee10f
                 Obstacle[] enemyList = GameObject.FindObjectsOfType<Obstacle>();
 
                 //해당 장애물과 자기의 가장 짧은 거리
@@ -110,6 +130,9 @@ public class Enemy : MonoBehaviour
             case STATE.GOAL:
             //    m_Navi.SetDestination(Goalpos);
 
+                break;
+            case STATE.DEAD:
+                death();
                 break;
         }
     }
@@ -174,7 +197,11 @@ public class Enemy : MonoBehaviour
                 break;
 
             case STATE.ATTACK:
+<<<<<<< HEAD
                 //장애물이 있을때
+=======
+                //적군이 존재하고 일정거리 이상이면 근처로 이동, 일정거리 이하면 공격
+>>>>>>> 775121bddd133339558bd17c7c3e19d9095ee10f
                 if (m_Enemy != null)
                 {
                     //dist= 적위치-장애물위치 
@@ -204,9 +231,13 @@ public class Enemy : MonoBehaviour
 
             //??????????????????
             case STATE.BATTLE:
+<<<<<<< HEAD
 
                 
                 //delay깍아주고 Mathf.Epsilon(0보다작은수)
+=======
+                //일정 공격속도 로 공격
+>>>>>>> 775121bddd133339558bd17c7c3e19d9095ee10f
                 if (attackdelay <= Mathf.Epsilon)
                 {
                     attackdelay = 2.0f;
@@ -299,5 +330,34 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    
+   //몬스터 삭제 함수, 리스트도 같이 지운다.
+    void death()
+    {
+
+        for (int i = 0; i<Monc.m_EnemyList.Count; i++)
+        { 
+            if (this.gameObject == Monc.m_EnemyList[i])
+            {
+                Monc.m_EnemyList.Remove(Monc.m_EnemyList[i]);
+            }
+
+                Destroy(this.gameObject);
+
+        }
+    }
+
+    //void Death()
+    //{
+    //    for (int i = 0; i < MonsterCreater.m_EnemyList.Count; ++i)
+    //    {            
+    //        if (this.gameObject == MonsterCreater.m_EnemyList[i])
+    //        {
+    //            MonsterCreater.m_EnemyList.Remove(MonsterCreater.m_EnemyList[i]);
+    //        }
+    //    }
+
+    //    Destroy(this.gameObject);
+    //}
+
+
 }
