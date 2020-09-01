@@ -92,12 +92,12 @@ class BasicTower : TowerManager
         base.Start();
 
         m_EnemyList = new List<Enemy>();
-        base.Init(50, 50, 5, 5.0f);
+        Init(50, 50, 5, 5.0f);
 
         // 타겟을 null로 초기화
         m_Target = null;
 
-        //StartCoroutine(Disappear(2.0f));
+        StartCoroutine(Disappear(2.0f));
 
 
     }

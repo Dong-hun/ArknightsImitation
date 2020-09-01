@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class HealTower : TowerManager
 {
+    // 프로퍼티
     public int TileX
     {
         set
@@ -26,6 +27,57 @@ public class HealTower : TowerManager
             return m_TileY;
         }
     }
+
+    public int HP
+    {
+        set
+        {
+            m_HP = value;
+        }
+        get
+        {
+            return m_HP;
+        }
+    }
+
+    public int MP
+    {
+        set
+        {
+            m_MP = value;
+        }
+        get
+        {
+            return m_MP;
+        }
+    }
+
+    public int MaxHP
+    {
+        get
+        {
+            return m_MaxHp;
+        }
+    }
+    public int MaxMP
+    {
+        get
+        {
+            return m_MaxMp;
+        }
+    }
+
+    public int Damage
+    {
+        set
+        {
+            m_Damage = value;
+        }
+        get
+        {
+            return m_Damage;
+        }
+    }
     public List<GameObject> m_AroundTowerList;
 
     public DelAdd m_DelAddTower;
@@ -34,11 +86,15 @@ public class HealTower : TowerManager
     // Start is called before the first frame update
     new void Start()
     {
+        // 컴포넌트 추가
         base.Start();
+
+        // 초기화
+        Init(50, 10, 2, 0.0f, 3.0f);
+
         // Add함수 딜리게이트 추가
         m_DelAddTower = new DelAdd(AddTower);
         m_DelAddTower?.Invoke();
-
 
         // delete함수 딜리게이트 추가
         m_DelDeleteTower = new DelDelete(RemoveTower);
@@ -72,6 +128,7 @@ public class HealTower : TowerManager
         switch (m_State)
         {
             case STATE.IDLE:
+                Idle();
                 break;
             case STATE.BATTLE:
                 Attack();
@@ -84,9 +141,22 @@ public class HealTower : TowerManager
     protected override void Idle()
     {
         if (m_AroundTowerList.Count == 0) return;
-        
+
         for(int i = 0; i < m_AroundTowerList.Count; ++i)
         {
+            int maxHp = 0;
+            int currentHp = 0;
+
+            if(m_AroundTowerList[i].layer == LayerMask.NameToLayer("BasicTower"))
+            {
+                maxHp = m_AroundTowerList[i].GetComponent<BasicTower>().MaxHP;
+                currentHp = m_AroundTowerList[i].GetComponent<BasicTower>().HP;
+            }
+            else if (m_AroundTowerList[i].layer == LayerMask.NameToLayer("HealTower"))
+            {
+                maxHp = m_AroundTowerList[i].GetComponent<HealTower>().MaxHP;
+                currentHp = m_AroundTowerList[i].GetComponent<HealTower>().HP;
+            }
 
         }
     }
@@ -97,11 +167,16 @@ public class HealTower : TowerManager
         // Y축 좌표 검사
         for (int i = TileY - 1; i < TileY + 2; ++i)
         {
+            // 타일 범위 벗어나면 넘어감 (세로)
+            if (i < 0 || i > 8)
+                continue;
+
             // X축 좌표 검사
             for (int j = TileX - 1; j < TileX + 2; ++j)
             {
-                // 해당 좌표의 노드가 없다면 다음 노드 검사
-                if (m_NodeManager.GetNode(j, i) == null) continue;
+                // 타일 범위 벗어나면 넘어감 (가로)
+                if (j < 0 || j > 9)
+                    continue;
 
                 // 해당 좌표의 노드상태가 TOWER라면 (타워가 설치됬다면)
                 if (m_NodeManager.m_TileState[i, j] == NodeManager.TILEINFO.TOWER)
