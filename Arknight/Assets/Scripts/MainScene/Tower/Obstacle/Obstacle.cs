@@ -44,8 +44,8 @@ public class Obstacle : TowerManager
             case STATE.IDLE:
                 break;
             case STATE.DEATH:
-                
 
+                Death();
                 break;
         }
     }
