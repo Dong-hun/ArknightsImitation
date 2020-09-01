@@ -29,7 +29,6 @@ public class Enemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
         this.transform.position = GameObject.Find("Start").GetComponent<Transform>().position;
         objpos = GameObject.Find("Plane (80)").GetComponent<Transform>().position;
         objpos2 = GameObject.Find("End").GetComponent<Transform>().position;
@@ -41,24 +40,13 @@ public class Enemy : MonoBehaviour
         //Vector3 DESTPOS = m_Navi.destination;
         m_Navi = GetComponent<NavMeshAgent>();
         m_Path = new NavMeshPath();
-
     }
 
     // Update is called once per frame
     void Update()
     {
-        //if (m_State == STATE.IDLE)
-        //{
-        //    m_Dest = GameObject.Find("Plane (89)").transform.position;
-        //    m_Navi.SetDestination(m_Dest);
-        //    ChangeState(STATE.MOVE);
-        //}
         StateProcess();
-
     }
-
-
-
 
     void ChangeSTATE(STATE s)
     {
@@ -117,6 +105,7 @@ public class Enemy : MonoBehaviour
                 //  if (path == true)
                 float T = Vector3.Distance(this.transform.position, objpos);
                 float s = Vector3.Distance(this.transform.position, m_Navi.destination);
+
                 if (!m_Navi.pathPending) //계산완료 후 이동
                 {
                     if (m_Navi.remainingDistance <= m_Navi.stoppingDistance)
