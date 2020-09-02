@@ -259,7 +259,7 @@ class BasicTower : TowerManager
                 m_Target = col.gameObject.GetComponent<Enemy>();
 
                 // State를 Battle로 변경
-                ChangeState(STATE.DEATH);
+                ChangeState(STATE.BATTLE);
             }
             // 타겟이 있다면
             else
