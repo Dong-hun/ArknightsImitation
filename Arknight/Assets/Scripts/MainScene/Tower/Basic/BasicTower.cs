@@ -230,23 +230,6 @@ class BasicTower : TowerManager
         m_EnemyList.Add(enemy);
     }
 
-    // 적 제거
-    //protected override void RemoveEnemy(Enemy enemy)
-    //{
-    //    if (enemy == null) return;
-    //
-    //    for (int i = 0; i < m_EnemyList.Count; ++i)
-    //    {
-    //        if (m_EnemyList[i].transform == enemy.transform)
-    //        {
-    //            m_EnemyList.Remove(m_EnemyList[i]);
-    //        }
-    //    }
-    //
-    //    if (m_EnemyList.Count == 0)
-    //        ChangeState(STATE.IDLE);
-    //}
-
     private void OnCollisionEnter(Collision col)
     {
         // 충돌체의 레이어가 Enemy면
@@ -269,43 +252,4 @@ class BasicTower : TowerManager
             }
         }
     }
-
-
-
-
-
-
-    // 가장 가까운 적 받아오기
-    //protected override Enemy GetNearestEnemy()
-    //{
-    //    // 리스트가 비었으면 리턴
-    //    if (m_EnemyList.Count == 0) return null;
-    //
-    //    // 첫 거리는 아주크게 설정
-    //    float dist = 999f;
-    //
-    //    // 가장 가까운 인덱스 저장용
-    //    int sel = -1;
-    //
-    //    // 있는 적 다 검사
-    //    for (int i = 0; i < m_EnemyList.Count; ++i)
-    //    {
-    //        // 거리 계산
-    //        float temp = Vector3.Distance(this.transform.position,
-    //            m_EnemyList[i].transform.position);
-    //
-    //        // 계산된 거리가 이전의 가장 가까운거리보다 작다면
-    //        if (temp < dist)
-    //        {
-    //            // 계산된 거리를 가장 가까운 거리로 바꿔주고
-    //            dist = temp;
-    //
-    //            // 해당 인덱스 번호 저장
-    //            sel = i;
-    //        }
-    //    }
-    //
-    //    // 해당 인덱스 번호의 적 리턴
-    //    return m_EnemyList[sel];
-    //}
 }

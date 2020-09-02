@@ -60,7 +60,7 @@ public class Obstacle : TowerManager
         }
     }
 
-    void Death()
+    protected override void Death()
     {
         for (int i = 0; i < m_BuildManager.m_ObstacleList.Count; ++i)
         {
