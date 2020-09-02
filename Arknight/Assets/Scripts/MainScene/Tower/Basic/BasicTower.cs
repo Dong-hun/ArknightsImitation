@@ -7,97 +7,18 @@ class BasicTower : TowerManager
     /* 타워매니저를 상속받아서 만들어지는 각 타워들의 스크립트 */
     // 기본 공격 하는 타워
 
-
-    // 프로퍼티
-    public int TileX
-    {
-        set
-        {
-            m_TileX = value;
-        }
-        get
-        {
-            return m_TileX;
-        }
-    }
-    public int TileY
-    {
-        set
-        {
-            m_TileY = value;
-        }
-        get
-        {
-            return m_TileY;
-        }
-    }
-
-    public int HP
-    {
-        set
-        {
-            m_HP = value;
-        }
-        get
-        {
-            return m_HP;
-        }
-    }
-
-    public int MP
-    {
-        set
-        {
-            m_MP = value;
-        }
-        get
-        {
-            return m_MP;
-        }
-    }
-
-    public int MaxHP
-    {
-        get
-        {
-            return m_MaxHp;
-        }
-    }
-    public int MaxMP
-    {
-        get
-        {
-            return m_MaxMp;
-        }
-    }
-
-    public int Damage
-    {
-        set
-        {
-            m_Damage = value;
-        }
-        get
-        {
-            return m_Damage;
-        }
-    }
-
-    public Enemy m_Target;         // 현재 타겟
-
     // Start is called before the first frame update
     new void Start()
     {
+        // 컴포넌트 추가
         base.Start();
+        this.GetComponentInChildren<TowerAnimationEvent>().m_Attack = new DelAttack(OnDamage);
+        this.GetComponentInChildren<TowerAnimationEvent>().m_Death = new DelDeath(Disappear);
         m_Anim.SetBool("Dead", false);
 
         m_EnemyList = new List<Enemy>();
         Init(50, 50, 600, 5.0f);
-
-        // 타겟을 null로 초기화
-        m_Target = null;
-
-        this.GetComponentInChildren<BasicTowerAnimationEvent>().m_Attack = new DelAttack(OnDamage);
+        m_CurrentHp = 40;
     }
 
     // Update is called once per frame
@@ -105,7 +26,7 @@ class BasicTower : TowerManager
     {
         StateProcess();
 
-        if(HP <= 0.0f)
+        if (HP <= 0.0f)
         {
             ChangeState(STATE.DEATH);
         }
@@ -120,12 +41,12 @@ class BasicTower : TowerManager
         switch (m_State)
         {
             case STATE.IDLE:
+                m_Target = null;
                 break;
             case STATE.BATTLE:
                 break;
             case STATE.DEATH:
                 m_Anim.SetBool("Dead", true);
-                StartCoroutine(Disappear(3.0f));
                 break;
         }
     }
@@ -146,7 +67,7 @@ class BasicTower : TowerManager
     }
 
     // 회전
-    void Rotation(Enemy enemy)
+    void Rotation(GameObject enemy)
     {
         if (enemy == null) return;
         // 적과의 방향 구함
@@ -187,9 +108,6 @@ class BasicTower : TowerManager
                 // 적이 죽었다면
                 else
                 {
-                    // 타겟을 null로 초기화
-                    m_Target = null;
-
                     // IDLE상태로 바꿈
                     ChangeState(STATE.IDLE);
                 }
@@ -198,7 +116,7 @@ class BasicTower : TowerManager
             // 딜레이 감소
             m_AttackDelay -= Time.deltaTime;
         }
-        else
+        else if (dist > m_AttackDist && !m_Anim.GetBool("Dead"))
         {
             ChangeState(STATE.IDLE);
         }    
@@ -206,18 +124,12 @@ class BasicTower : TowerManager
     }
 
     // 적에게 데미지 줌
-    public void OnDamage(Enemy enemy)
+    public void OnDamage(GameObject enemy)
     {
         // PlayAnimationEvent에서 공격 모션일때 이 함수 호출
         if (enemy == null) return;
 
         enemy.GetComponent<MonsterStat>().UpdateHP(-m_Damage);
-    }
-
-    // 사망
-    protected override void Death()
-    {
-        Destroy(this.gameObject);
     }
 
     // 적 추가
@@ -239,10 +151,12 @@ class BasicTower : TowerManager
             if(m_Target == null)
             {
                 // 타겟에 해당 충돌체를 넣어줌
-                m_Target = col.gameObject.GetComponent<Enemy>();
+                m_Target = col.transform.gameObject;
 
+                Debug.Log(m_Target.name);
                 // State를 Battle로 변경
-                ChangeState(STATE.DEATH);
+                ChangeState(STATE.BATTLE);
+
             }
             // 타겟이 있다면
             else
