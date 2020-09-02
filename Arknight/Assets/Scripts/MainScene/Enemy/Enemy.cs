@@ -25,8 +25,12 @@ public class Enemy : MonoBehaviour
     public MonsterStat m_Monsterinfo;
     public Obstacle m_Enemy;
     float attackdelay = 3.0f;
+<<<<<<< HEAD
     MonsterCreater Monc; //몬스터 리스트 받아오기용 변수
 
+=======
+  // public MonsterCreater MonsterCreater; //몬스터 리스트 받아오기용 변수
+>>>>>>> 68a1f7ca25405b833c3c8f54ffe943407112cad0
     public BuildManager m_Buildmanager;
 
     Vector3 objpos; //Plane80
@@ -54,12 +58,17 @@ public class Enemy : MonoBehaviour
         //Vector3 DESTPOS = m_Navi.destination;
         m_Navi = GetComponent<NavMeshAgent>();
         m_Path = new NavMeshPath();
+
     }
 
     // Update is called once per frame
     void Update()
     {
         StateProcess();
+        if (this.m_Monsterinfo.CurrentHP == 0)
+        {
+            ChangeSTATE(STATE.DEAD);
+        }
     }
 
     void ChangeSTATE(STATE s)
@@ -124,6 +133,7 @@ public class Enemy : MonoBehaviour
                 break;
             case STATE.DEAD:
                 death();
+
                 break;
         }
     }
@@ -249,6 +259,9 @@ public class Enemy : MonoBehaviour
 
                
                 break;
+            case STATE.DEAD:
+
+                break;
         }
 
     }
@@ -324,17 +337,17 @@ public class Enemy : MonoBehaviour
    //몬스터 삭제 함수, 리스트도 같이 지운다.
     void death()
     {
+        //for (int i = 0; i< MonsterCreater.m_EnemyList.Count; i++)
+        //{ 
+        //    if (this.gameObject == MonsterCreater.m_EnemyList[i])
+        //    {
+        //        MonsterCreater.m_EnemyList.Remove(MonsterCreater.m_EnemyList[i]);
+        //    }
 
-        for (int i = 0; i<Monc.m_EnemyList.Count; i++)
-        { 
-            if (this.gameObject == Monc.m_EnemyList[i])
-            {
-                Monc.m_EnemyList.Remove(Monc.m_EnemyList[i]);
-            }
+            Destroy(this.gameObject);
 
-                Destroy(this.gameObject);
+        
 
-        }
     }
 
     //void Death()
