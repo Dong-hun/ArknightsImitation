@@ -10,7 +10,6 @@ public class MonsterCreater : MonoBehaviour
     public GameObject obj;
     public List<Enemy> m_EnemyList;
     int MonsterCount = 0;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +22,7 @@ public class MonsterCreater : MonoBehaviour
     void Update()
     {
         MakingD();
+        Seeknull();
     }
 
 
@@ -106,6 +106,20 @@ public class MonsterCreater : MonoBehaviour
 
             Destroy(obj.gameObject);
         }
+    }
+    void Seeknull() //리스트 적군 없는 것 찾기
+    {
+        for (int i = 0; i < m_EnemyList.Count; i++)
+
+        {
+            if (m_EnemyList[i] == null)
+            {
+                m_EnemyList.Remove(m_EnemyList[i]);
+            }
+
+
+        }
+
     }
 
 }
