@@ -44,14 +44,12 @@ public class Obstacle : TowerManager
             case STATE.IDLE:
                 break;
             case STATE.DEATH:
-
                 Death();
                 break;
         }
     }
     public void OnDamage(int dmg)
     {
-        Debug.Log("인식");
         Monsterstatinfo.BossAttack = dmg;
 
         if (!Monsterstatinfo.UpdateHP(-dmg))

@@ -6,7 +6,80 @@ class BasicTower : TowerManager
 {
     /* 타워매니저를 상속받아서 만들어지는 각 타워들의 스크립트 */
     // 기본 공격 하는 타워
+    // 프로퍼티
+    public int TileX
+    {
+        set
+        {
+            m_TileX = value;
+        }
+        get
+        {
+            return m_TileX;
+        }
+    }
+    public int TileY
+    {
+        set
+        {
+            m_TileY = value;
+        }
+        get
+        {
+            return m_TileY;
+        }
+    }
 
+    public int CurrentHp
+    {
+        set
+        {
+            m_CurrentHp = value;
+        }
+        get
+        {
+            return m_CurrentHp;
+        }
+    }
+
+    public int CurrentMp
+    {
+        set
+        {
+            m_CurrentMp = value;
+        }
+        get
+        {
+            return m_CurrentMp;
+        }
+    }
+
+    public int MaxHp
+    {
+        get
+        {
+            return m_MaxHp;
+        }
+    }
+    public int MaxMp
+    {
+        get
+        {
+            return m_MaxMp;
+        }
+    }
+
+    public int Damage
+    {
+        set
+        {
+            m_Damage = value;
+        }
+        get
+        {
+            return m_Damage;
+        }
+    }
     // Start is called before the first frame update
     new void Start()
     {
@@ -26,7 +99,7 @@ class BasicTower : TowerManager
     {
         StateProcess();
 
-        if (HP <= 0.0f)
+        if (CurrentHp <= 0.0f)
         {
             ChangeState(STATE.DEATH);
         }
@@ -88,7 +161,7 @@ class BasicTower : TowerManager
         // 적과의 거리 구함
         float dist = Vector3.Distance(this.transform.position, m_Target.transform.position);
 
-        if(dist < m_AttackDist && !m_Anim.GetBool("Dead"))
+        if (dist < m_AttackDist && !m_Anim.GetBool("Dead"))
         {
             // 적 방향으로 회전
             Rotation(m_Target);
@@ -119,8 +192,8 @@ class BasicTower : TowerManager
         else if (dist > m_AttackDist && !m_Anim.GetBool("Dead"))
         {
             ChangeState(STATE.IDLE);
-        }    
-        
+        }
+
     }
 
     // 적에게 데미지 줌
@@ -144,11 +217,13 @@ class BasicTower : TowerManager
 
     private void OnCollisionEnter(Collision col)
     {
+
+
         // 충돌체의 레이어가 Enemy면
         if (col.gameObject.layer == LayerMask.NameToLayer("Enemy"))
         {
             // 타겟(적)이 없으면 
-            if(m_Target == null)
+            if (m_Target == null)
             {
                 // 타겟에 해당 충돌체를 넣어줌
                 m_Target = col.transform.gameObject;
