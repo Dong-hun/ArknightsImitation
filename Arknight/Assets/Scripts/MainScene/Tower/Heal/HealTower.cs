@@ -4,83 +4,13 @@ using UnityEngine;
 
 public class HealTower : TowerManager
 {
-    // 프로퍼티
-    public int TileX
-    {
-        set
-        {
-            m_TileX = value;
-        }
-        get
-        {
-            return m_TileX;
-        }
-    }
-    public int TileY
-    {
-        set
-        {
-            m_TileY = value;
-        }
-        get
-        {
-            return m_TileY;
-        }
-    }
-
-    public int HP
-    {
-        set
-        {
-            m_HP = value;
-        }
-        get
-        {
-            return m_HP;
-        }
-    }
-
-    public int MP
-    {
-        set
-        {
-            m_MP = value;
-        }
-        get
-        {
-            return m_MP;
-        }
-    }
-
-    public int MaxHP
-    {
-        get
-        {
-            return m_MaxHp;
-        }
-    }
-    public int MaxMP
-    {
-        get
-        {
-            return m_MaxMp;
-        }
-    }
-
-    public int Damage
-    {
-        set
-        {
-            m_Damage = value;
-        }
-        get
-        {
-            return m_Damage;
-        }
-    }
+    // 주변의 타워 담긴 리스트
     public List<GameObject> m_AroundTowerList;
 
+    // 주변에 타워 설치되면 주변 타워 리스트에 담아주는 함수 델리게이트
     public DelVoid m_DelAddTower;
+
+    // 주변의 타워가 제거되면 주변의 타워가 담긴 리스트에서도 제거해주는 함수 델리게이트
     public DelDelete m_DelDeleteTower;
 
     // Start is called before the first frame update
@@ -89,20 +19,32 @@ public class HealTower : TowerManager
         // 컴포넌트 추가
         base.Start();
 
-        // 초기화
-        Init(50, 10, 2, 0.0f, 3.0f);
+        this.GetComponentInChildren<TowerAnimationEvent>().m_Recovery = new DelRecovery(RecoveryTower);
+        this.GetComponentInChildren<TowerAnimationEvent>().m_Death = new DelDeath(Disappear);
 
-        // Add함수 딜리게이트 추가
+        // 초기화
+        Init(50, 10, 2, 5.0f, 3.0f);
+
+        // Add함수 델리게이트 추가
         m_DelAddTower = new DelVoid(AddTower);
         m_DelAddTower?.Invoke();
 
-        // delete함수 딜리게이트 추가
+        // delete함수 델리게이트 추가
         m_DelDeleteTower = new DelDelete(RemoveTower);
+
+        // Animation의 Dead값 false로 설정
+        m_Anim.SetBool("Dead", false);
+        m_Anim.SetBool("Attack", false);
     }
     // Update is called once per frame
     void Update()
     {
         StateProcess();
+
+        if (HP <= 0.0f)
+        {
+            ChangeState(STATE.DEATH);
+        }
     }
     protected override void ChangeState(STATE s)
     {
@@ -112,12 +54,14 @@ public class HealTower : TowerManager
         switch (m_State)
         {
             case STATE.IDLE:
+                StopCoroutine(this.GetComponentInChildren<TowerAnimationEvent>().m_Recovery());
+                m_Anim.SetBool("Attack", false);
                 break;
             case STATE.BATTLE:
-                m_Anim.SetTrigger("Attack");
+                m_Anim.SetBool("Attack", true);
                 break;
             case STATE.DEATH:
-
+                m_Anim.SetBool("Dead", true);
                 break;
         }
     }
@@ -131,22 +75,27 @@ public class HealTower : TowerManager
                 Idle();
                 break;
             case STATE.BATTLE:
-                Attack();
+                //Attack();
                 break;
             case STATE.DEATH:
                 break;
         }
     }
 
-    protected override void Idle()
+    //대기 상태일때 돌릴 업데이트
+    void Idle()
     {
+        // 주변에 타워가 없으면 리턴
         if (m_AroundTowerList.Count == 0) return;
 
+        // 주변의 타워를 전부 조사함
         for(int i = 0; i < m_AroundTowerList.Count; ++i)
         {
+            // 주변 타워의 체력 담을 변수
             int maxHp = 0;
             int currentHp = 0;
 
+            // 주변 타워의 레이어 별로 스크립트에서 체력 가져옴
             if(m_AroundTowerList[i].layer == LayerMask.NameToLayer("BasicTower"))
             {
                 maxHp = m_AroundTowerList[i].GetComponent<BasicTower>().MaxHP;
@@ -158,12 +107,34 @@ public class HealTower : TowerManager
                 currentHp = m_AroundTowerList[i].GetComponent<HealTower>().HP;
             }
 
+            // 현재 HP가 최대 HP보다 작다면
+            if(currentHp < maxHp)
+            {
+                // State를 Battle로 변경 후 함수 빠져나옴
+                m_Target = m_AroundTowerList[i];
+                ChangeState(STATE.BATTLE);
+                break;
+            }
+            // 아니라면
+            else
+            {
+                // 다음거 검사
+                continue;
+            }
         }
     }
-
-    protected override void Death()
+    
+    // 공격하는 함수 (HealTower는 힐을 해줌)
+    IEnumerator RecoveryTower()
     {
+        while (m_Target.GetComponent<BasicTower>().HP >= m_Target.GetComponent<BasicTower>().MaxHP)
+        {
+            m_Target.GetComponent<BasicTower>().HP += m_Damage;
 
+            yield return null;
+        }
+        ChangeState(STATE.IDLE);
+        yield return null;
     }
 
     // 주변에 타워가 있으면 리스트에 추가해주는 함수
@@ -238,7 +209,7 @@ public class HealTower : TowerManager
         }
     }
 
-    // 타워 제거 함수
+    // 주변에 있는 타워 제거되면 리스트에서도 지워주는 함수
     public void RemoveTower(TowerManager tower)
     {
         // 리스트가 비어있으면 리턴

@@ -63,14 +63,9 @@ public class Enemy : MonoBehaviour
         switch (m_STATE)
         {
             case STATE.CREATE:
-
-                
                 break;
             case STATE.TARGET1:
-
                 m_Navi.SetDestination(objpos);
-
-
                 break;
             case STATE.TAGET2:
                 //m_Navi.SetDestination(obj2.transform.position);
@@ -133,14 +128,7 @@ public class Enemy : MonoBehaviour
                     {
                         ChangeSTATE(STATE.ATTACK);
                     }
-
-
                 }
-
-
-
-
-
                 break;
 
 
@@ -216,8 +204,6 @@ public class Enemy : MonoBehaviour
     
 
     private void OnCollisionStay(Collision collision)
-
-
     {
 
 

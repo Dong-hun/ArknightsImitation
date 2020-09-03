@@ -74,7 +74,6 @@ public class NodeManager : MonoBehaviour
             //ui랑 ground랑 겹칠때 Build()함수가 실행 안된다.
             if (EventSystem.current.IsPointerOverGameObject() == false)
             {
-                //Build();
                 ClickCheck();
             }
         }
