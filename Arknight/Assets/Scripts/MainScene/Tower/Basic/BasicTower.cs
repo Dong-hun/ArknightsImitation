@@ -153,7 +153,6 @@ class BasicTower : TowerManager
                 // 타겟에 해당 충돌체를 넣어줌
                 m_Target = col.transform.gameObject;
 
-                Debug.Log(m_Target.name);
                 // State를 Battle로 변경
                 ChangeState(STATE.BATTLE);
 

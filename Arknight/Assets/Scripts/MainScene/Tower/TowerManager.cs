@@ -36,7 +36,7 @@ public class TowerManager : MonoBehaviour
     protected BuildManager m_BuildManager;
 
     protected List<Enemy> m_EnemyList;  // 적 리스트
-    protected GameObject m_Target;         // 현재 타겟
+    protected GameObject m_Target;      // 현재 타겟
     public GameObject Target
     {
         get
