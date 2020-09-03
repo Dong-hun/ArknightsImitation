@@ -210,8 +210,9 @@ public class Enemy : MonoBehaviour
                 if (m_Target != null)
                 {
                     if (attackdelay <= Mathf.Epsilon)
-                        attackdelay = 2.0f;
                     {
+                        attackdelay = 2.0f;
+
                         if (m_Target.layer == LayerMask.NameToLayer("BasicTower"))
                         {
 
@@ -224,13 +225,13 @@ public class Enemy : MonoBehaviour
 
                         }
                     }
-                    attackdelay -= Time.smoothDeltaTime;
 
                 }
                 else
                 {
                     ChangeSTATE(STATE.TAGET2);
                 }
+                attackdelay -= Time.smoothDeltaTime;
 
                 break;
             case STATE.DEAD:
