@@ -20,8 +20,8 @@ public class BuildManager : MonoBehaviour
     //ButtonUI 스크립트 함수,변수들 사용하기 위해 선언 (ButtonUI 스크립트에서 UI On,Off함수 호출위해 사용)
     public ButtonUI m_Button;
 
-    public List<Obstacle> m_ObstacleList;       // 장애물 리스트
-    public List<GameObject> m_TowerList;        // 설치된 타워 리스트
+    public List<Obstacle> m_ObstacleList;
+    public List<GameObject> m_TowerList;
 
     // Start is called before the first frame update
     void Start()
@@ -217,16 +217,16 @@ public class BuildManager : MonoBehaviour
             }
         }
 
-        // 리스트 다시 돌아서
         for(int i = 0; i < m_TowerList.Count; ++i)
         {
-            // 해당 리스트의 원소가 힐타워면
             if(m_TowerList[i].layer == LayerMask.NameToLayer("HealTower"))
             {
-                // 힐타워 스크립트를 가져와서 힐타워 주변의 타워를 담고있는 리스트에서도 제거해준다
-                m_TowerList[i].GetComponent<HealTower>().m_DelDeleteTower?.Invoke(m_NodeMng.SelectObject.GetComponent<TowerManager>());
+                //m_TowerList[i].GetComponent<HealTower>().RemoveTower(m_NodeMng.SelectObject);
+                m_TowerList[i].GetComponent<HealTower>().m_DelDeleteTower?.Invoke(m_NodeMng.SelectObject);
             }
         }
+
+
 
         // 타워가 삭제되면 노드 m_TileState를 NONE으로 변경
         m_NodeMng.m_TileState[TileY, TileX] = NodeManager.TILEINFO.NONE;
@@ -280,18 +280,13 @@ public class BuildManager : MonoBehaviour
         return null;
     }
 
-    // 타워가 설치 됬을 때 리스트 안의 힐타워 주변에 설치됬는지 조사하는 함수
     void CheckAroundHealTower()
     {
-        // 타워가 0이면 리턴
         if (m_TowerList.Count == 0) return;
 
-        // 타워리스트를 돌아서
         for(int i = 0; i < m_TowerList.Count; ++i)
         {
-            // 해당 원소가 힐타워면
             if (m_TowerList[i].layer == LayerMask.NameToLayer("HealTower"))
-                // 힐타워 안의 주변의 타워를 담아주는 딜리게이트가 있으면 실행
                 m_TowerList[i].GetComponent<HealTower>().m_DelAddTower?.Invoke();
         }
     }

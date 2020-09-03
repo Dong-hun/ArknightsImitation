@@ -5,8 +5,6 @@ using UnityEngine;
 public class Node : NodeManager
 {
     int m_TileX;
-    int m_TileY;
-
     public int TileX
     {
         set
@@ -18,6 +16,8 @@ public class Node : NodeManager
             return m_TileX;
         }
     }
+
+    int m_TileY;
     public int TileY
     {
         set
@@ -28,5 +28,17 @@ public class Node : NodeManager
         {
             return m_TileY;
         }
+    }
+
+    // Start is called before the first frame update
+    void Start()
+    {
+
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
     }
 }

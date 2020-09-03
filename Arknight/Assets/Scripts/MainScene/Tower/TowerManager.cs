@@ -5,8 +5,7 @@ using UnityEngine;
 
 public delegate void DelVoid();
 public delegate void DelAttack(GameObject enemy);
-public delegate void DelDelete(TowerManager obj);
-public delegate IEnumerator DelRecovery();
+public delegate void DelDelete(GameObject obj);
 public delegate IEnumerator DelDeath(float timer);
 
 public class TowerManager : MonoBehaviour
@@ -15,7 +14,7 @@ public class TowerManager : MonoBehaviour
 
     //==================== 상속해서 쓸것 (추상클래스 -> 일반클래스 전환)
     public enum STATE                // 타워 상태
-    {                               
+    {
         IDLE, BATTLE, DEATH               // 대기, 전투, 사망
     }
     public STATE m_State;            // 상태 받는 변수
@@ -36,7 +35,7 @@ public class TowerManager : MonoBehaviour
     protected BuildManager m_BuildManager;
 
     protected List<Enemy> m_EnemyList;  // 적 리스트
-    protected GameObject m_Target;      // 현재 타겟
+    public GameObject m_Target;      // 현재 타겟
     public GameObject Target
     {
         get
@@ -45,80 +44,7 @@ public class TowerManager : MonoBehaviour
         }
     }
 
-    // 프로퍼티
-    public int TileX
-    {
-        set
-        {
-            m_TileX = value;
-        }
-        get
-        {
-            return m_TileX;
-        }
-    }
-    public int TileY
-    {
-        set
-        {
-            m_TileY = value;
-        }
-        get
-        {
-            return m_TileY;
-        }
-    }
 
-    public int HP
-    {
-        set
-        {
-            m_CurrentHp = value;
-        }
-        get
-        {
-            return m_CurrentHp;
-        }
-    }
-
-    public int MP
-    {
-        set
-        {
-            m_CurrentMp = value;
-        }
-        get
-        {
-            return m_CurrentMp;
-        }
-    }
-
-    public int MaxHP
-    {
-        get
-        {
-            return m_MaxHp;
-        }
-    }
-    public int MaxMP
-    {
-        get
-        {
-            return m_MaxMp;
-        }
-    }
-
-    public int Damage
-    {
-        set
-        {
-            m_Damage = value;
-        }
-        get
-        {
-            return m_Damage;
-        }
-    }
 
     //protected DelVoid m_Attack;       // 공격 담는 딜리게이트 (딜리게이트로 한번 해볼까해서 넣어봤어여)
 
@@ -128,6 +54,7 @@ public class TowerManager : MonoBehaviour
         // 매니저 가져오기
         m_NodeManager = GameObject.Find("NodeList").GetComponent<NodeManager>();
         m_BuildManager = GameObject.Find("BuildManager").GetComponent<BuildManager>();
+
 
         // 초기화
         m_Target = null;
@@ -165,23 +92,15 @@ public class TowerManager : MonoBehaviour
 
     }
 
-    // 사망
     protected virtual void Death()
     {
 
     }
 
 
-    // 가장 가까운 적 받아오기
-    protected virtual Enemy GetNearestEnemy()
+    public void UpdateHp(int dmg)
     {
-        return null;
-    }
-    
-    // 적 제거
-    protected virtual void RemoveEnemy(Enemy enemy)
-    {
-
+        m_CurrentHp += dmg;
     }
 
     // 죽으면 사라지는 코루틴
@@ -210,7 +129,7 @@ public class TowerManager : MonoBehaviour
         // 타워리스트 안에 있는 힐타워의 어라운드리스트안의 자기 자신을 제거해줘야됨
 
         // 타워 리스트의 개수 만큼 반복문 진행
-        for(int i = 0; i < m_BuildManager.m_TowerList.Count; ++i)
+        for (int i = 0; i < m_BuildManager.m_TowerList.Count; ++i)
         {
             // 해당 원소의 레이어가 "HealTower"면
             if (m_BuildManager.m_TowerList[i].layer == LayerMask.NameToLayer("HealTower"))
@@ -222,7 +141,7 @@ public class TowerManager : MonoBehaviour
                 for (int j = 0; j < healTower.m_AroundTowerList.Count; ++j)
                 {
                     // 해당 오브젝트가 검사하는 힐 타워 리스트안에 들어가 있으면
-                    if(this.gameObject == healTower.m_AroundTowerList[j])
+                    if (this.gameObject == healTower.m_AroundTowerList[j])
                     {
                         // 그 리스트 안의 원소 제거 후 break로 빠져나옴
                         healTower.m_AroundTowerList.Remove(healTower.m_AroundTowerList[j]);
