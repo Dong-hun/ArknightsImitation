@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq.Expressions;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -10,17 +11,18 @@ public class Enemy : MonoBehaviour
     //8.레인지 시스템
     public enum STATE
     {
-         CREATE, TARGET1, TAGET2, ATTACK, BATTLE, DEAD, GOAL
+         CREATE, TARGET1, TAGET2, ATTACK, BATTLE, DEAD, TOWERATTACK
     }
     public NavMeshAgent m_Navi;
     public STATE m_STATE;
+    public GameObject m_Target;
     public NavMeshPath m_Path;
     public MonsterStat m_Monsterinfo;
     public Obstacle m_Enemy;
     float attackdelay = 3.0f;
   // public MonsterCreater MonsterCreater; //몬스터 리스트 받아오기용 변수
     public BuildManager m_Buildmanager;
-
+    
     Vector3 objpos;
     Vector3 objpos2;
     Vector3 Goalpos;
@@ -98,8 +100,12 @@ public class Enemy : MonoBehaviour
                 m_Enemy = enemyList[sel];
 
                 break;
-            case STATE.GOAL:
             //    m_Navi.SetDestination(Goalpos);
+
+            case STATE.TOWERATTACK:
+
+                m_Navi.SetDestination(m_Target.transform.position);
+
 
                 break;
             case STATE.DEAD:
@@ -154,7 +160,7 @@ public class Enemy : MonoBehaviour
                         if (!m_Navi.hasPath || m_Navi.velocity.sqrMagnitude == 0.0f)
                         {
                             //상태를 멈춤상태로 만들거나 2번째 상태로 만드는게 나을듯. ㅇㅇ 맞어
-                            ChangeSTATE(STATE.TAGET2);
+                           // ChangeSTATE(STATE.TAGET2);
                         }
                     }
                     else if (T2 - s2 > 1.5f)
@@ -200,9 +206,32 @@ public class Enemy : MonoBehaviour
 
 
                 break;
-            case STATE.GOAL:
+            case STATE.TOWERATTACK:
+                if (m_Target != null)
+                {
+                    if (attackdelay <= Mathf.Epsilon)
+                        attackdelay = 2.0f;
+                    {
+                        if (m_Target.layer == LayerMask.NameToLayer("BasicTower"))
+                        {
 
-               
+                            m_Target.GetComponent<BasicTower>().UpdateHp(-m_Monsterinfo.MonsterAttack);
+
+                        }
+                        else if (m_Target.layer == LayerMask.NameToLayer("HealTower"))
+                        {
+                            m_Target.GetComponent<HealTower>().UpdateHp(-m_Monsterinfo.MonsterAttack);
+
+                        }
+                    }
+                    attackdelay -= Time.smoothDeltaTime;
+
+                }
+                else
+                {
+                    ChangeSTATE(STATE.TAGET2);
+                }
+
                 break;
             case STATE.DEAD:
 
@@ -215,13 +244,12 @@ public class Enemy : MonoBehaviour
 
     
 
-    private void OnCollisionStay(Collision collision)
-
-
+    private void OnCollisionEnter(Collision collision)
     {
+        m_Target = collision.gameObject;//충돌한 물체가 타겟이다.
 
-
-        //   Debug.Log("충돌 중!");
+        ChangeSTATE(STATE.TOWERATTACK);
+      //  Debug.Log("충돌 중!");
 
     }
 
@@ -247,7 +275,10 @@ public class Enemy : MonoBehaviour
         //
         //
     }
+     
+
     //
+
     protected void OnBattle(Transform enemy)
     {
         m_Enemy = enemy.gameObject.GetComponentInChildren<Obstacle>();

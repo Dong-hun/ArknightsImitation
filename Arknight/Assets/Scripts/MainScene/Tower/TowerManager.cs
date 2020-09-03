@@ -18,7 +18,7 @@ public class TowerManager : MonoBehaviour
     }
     protected STATE m_State;            // 상태 받는 변수
     protected int m_MaxHp;              // 최대 체력
-    protected int m_HP;                 // 체력
+    public int m_HP;                 // 체력
     protected int m_MaxMp;              // 최대 마력
     protected int m_MP;                 // 마력   
     protected int m_TileX;              // 타워 X좌표
@@ -172,4 +172,10 @@ public class TowerManager : MonoBehaviour
 
         yield return null;
     }
+    public void UpdateHp(int dmg)
+    {
+        m_HP += dmg;
+    }
+
+
 }
