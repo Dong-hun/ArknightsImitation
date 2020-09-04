@@ -90,8 +90,8 @@ class BasicTower : TowerManager
         m_Anim.SetBool("Dead", false);
 
         m_EnemyList = new List<Enemy>();
-        Init(50, 50, 600, 5.0f);
-        m_CurrentHp = 40;
+        Init(50, 50, 600, 5.0f , 2.0f);
+        //m_CurrentHp = 40;
     }
 
     // Update is called once per frame
@@ -150,6 +150,9 @@ class BasicTower : TowerManager
         // 해당 방향으로 회전
         this.transform.rotation = Quaternion.Slerp(this.transform.rotation,
             Quaternion.LookRotation(dir), Time.smoothDeltaTime * 360.0f);
+
+        // 업벡터 고정 (캐릭터가 눕는거 방지)
+        this.transform.up = new Vector3(0, 1, 0);
     }
 
     // 공격
@@ -176,7 +179,7 @@ class BasicTower : TowerManager
                     m_Anim.SetTrigger("Attack");
 
                     // 다시 딜레이 설정
-                    m_AttackDelay = 1.0f;
+                    m_AttackDelay = 2.0f;
                 }
                 // 적이 죽었다면
                 else

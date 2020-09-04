@@ -53,23 +53,7 @@ public class Obstacle : TowerManager
                 break;
         }
     }
-    public void OnDamage(float dmg)
-    {
-        Monsterstatinfo.BossAttack = dmg;
 
-        Debug.Log(Monsterstatinfo.CurrentHP.ToString());
-        Debug.Log(HealthBar.fillAmount.ToString());
-
-       HealthBar.fillAmount = Monsterstatinfo.CurrentHP/Monsterstatinfo.MaxHp;
-
-        if (!Monsterstatinfo.UpdateHP(-dmg))
-        {
-            
-
-            //HealthBar.fillAmount = Monsterstatinfo.CurrentHP/Monsterstatinfo.MaxHp;
-            ChangeState(STATE.DEATH);
-        }
-    }
 
     protected override void Death()
     {

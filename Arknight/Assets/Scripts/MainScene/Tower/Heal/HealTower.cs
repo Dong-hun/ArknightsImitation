@@ -88,7 +88,6 @@ public class HealTower : TowerManager
     // 주변의 타워가 제거되면 주변의 타워가 담긴 리스트에서도 제거해주는 함수 델리게이트
     public DelDelete m_DelDeleteTower;
 
-    // Start is called before the first frame update
     new void Start()
     {
         // 컴포넌트 추가
@@ -178,12 +177,36 @@ public class HealTower : TowerManager
     //대기 상태일때 돌릴 업데이트
     void Idle()
     {
-        // 주변에 타워가 없으면 리턴
-        if (m_AroundTowerList.Count == 0) return;
+        for (int i = 0; i < m_AroundTowerList.Count; ++i)
+        {
+            if (m_AroundTowerList[i] == null || m_AroundTowerList[i] == false)
+            {
+                m_AroundTowerList.Remove(m_AroundTowerList[i]);
+
+                if (m_AroundTowerList.Count == 0)
+                    break;
+                else
+                    --i;
+            }
+        }
+
+            // 주변에 타워가 없으면 리턴
+            if (m_AroundTowerList.Count == 0) 
+            return;
 
         // 주변의 타워를 전부 조사함
         for (int i = 0; i < m_AroundTowerList.Count; ++i)
         {
+            //if (m_AroundTowerList[i] == null || m_AroundTowerList[i] == false)
+            //{
+            //    m_AroundTowerList.Remove(m_AroundTowerList[i]);
+            //
+            //    if (m_AroundTowerList.Count == 0)
+            //        break;
+            //    else
+            //        --i;
+            //}
+
             // 주변 타워의 체력 담을 변수
             float maxHp = 0;
             float currentHp = 0;
@@ -215,9 +238,21 @@ public class HealTower : TowerManager
                 maxHp = m_AroundTowerList[i].GetComponent<HealTower>().MaxHp;
                 currentHp = m_AroundTowerList[i].GetComponent<HealTower>().CurrentHp;
             }
+            else if (m_AroundTowerList[i] == null || m_AroundTowerList[i] == false)
+            {
+                m_AroundTowerList.Remove(m_AroundTowerList[i]);
+
+                if (m_AroundTowerList.Count == 0)
+                    break;
+                else
+                {
+                    --i;
+                    continue;
+                }
+            }
 
 
-            // 현재 HP가 최대 HP보다 작다면
+                // 현재 HP가 최대 HP보다 작다면
             if (currentHp < maxHp)
             {
                 // State를 Battle로 변경 후 함수 빠져나옴
