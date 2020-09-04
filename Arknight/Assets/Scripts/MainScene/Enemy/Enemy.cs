@@ -207,19 +207,19 @@ public class Enemy : MonoBehaviour
 
                 break;
             case STATE.TOWERATTACK:
-                if (m_Target != null)
-                {
-                    if (attackdelay <= Mathf.Epsilon)
+                if (m_Target != null) //출돌한 물체 가있다면
+                { 
+                    if (attackdelay <= Mathf.Epsilon) //일정 공속에 따라
                     {
                         attackdelay = 2.0f;
 
-                        if (m_Target.layer == LayerMask.NameToLayer("BasicTower"))
+                        if (m_Target.layer == LayerMask.NameToLayer("BasicTower")) //기본타워면
                         {
 
                             m_Target.GetComponent<BasicTower>().UpdateHp(-m_Monsterinfo.MonsterAttack);
 
                         }
-                        else if (m_Target.layer == LayerMask.NameToLayer("HealTower"))
+                        else if (m_Target.layer == LayerMask.NameToLayer("HealTower")) //힐타워면
                         {
                             m_Target.GetComponent<HealTower>().UpdateHp(-m_Monsterinfo.MonsterAttack);
 
@@ -227,7 +227,7 @@ public class Enemy : MonoBehaviour
                     }
 
                 }
-                else
+                else //충돌한 물체가 없으면 타겟 2로 이동
                 {
                     ChangeSTATE(STATE.TAGET2);
                 }
