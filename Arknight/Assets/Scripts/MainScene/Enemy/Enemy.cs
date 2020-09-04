@@ -48,6 +48,7 @@ public class Enemy : MonoBehaviour
     void Update()
     {
         StateProcess();
+        Death();
     }
 
     void ChangeSTATE(STATE s)
@@ -99,6 +100,10 @@ public class Enemy : MonoBehaviour
 
 
                 break;
+            case STATE.DEAD:
+                Destroy(this.gameObject);
+                break;
+
         }
     }
     void StateProcess()
@@ -297,5 +302,14 @@ public class Enemy : MonoBehaviour
         }
     }
 
+    void Death()
+    {
+        if (this.m_Monsterinfo.CurrentHP == 0)
+        {
+            ChangeSTATE(STATE.DEAD);
+        }
     
+    }
+
+
 }
