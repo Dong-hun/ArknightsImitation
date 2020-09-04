@@ -94,6 +94,7 @@ public class HealTower : TowerManager
         // 컴포넌트 추가
         base.Start();
 
+        // 델리게이트에 함수 추가
         this.GetComponentInChildren<TowerAnimationEvent>().m_Death = new DelDeath(Disappear);
         this.GetComponentInChildren<TowerAnimationEvent>().m_Recovery = new DelAttack(RecoveryTower);
 
@@ -114,19 +115,23 @@ public class HealTower : TowerManager
     // Update is called once per frame
     void Update()
     {
+        // FSM 업데이트
         StateProcess();
 
+        // 체력이 0이되면 DEATH로 State 변경
         if (CurrentHp <= 0.0f)
         {
             ChangeState(STATE.DEATH);
         }
 
+        // 타겟이 missing되면 Idle로 변경
         if (m_Target == null || m_Target.activeSelf == false)
         {
             m_Target = null;
             ChangeState(STATE.IDLE);
         }
 
+        // AroundList에도 missing된 오브젝트 제거
         for (int i = 0; i < m_AroundTowerList.Count; ++i)
         {
             if (m_AroundTowerList[i] == null || m_AroundTowerList[i] == false)
@@ -147,7 +152,6 @@ public class HealTower : TowerManager
                 m_Target = null;
                 break;
             case STATE.BATTLE:
-                Rotation(m_Target);
                 break;
             case STATE.DEATH:
                 m_Anim.SetBool("Dead", true);
@@ -184,24 +188,30 @@ public class HealTower : TowerManager
             int maxHp = 0;
             int currentHp = 0;
 
-            // 주변 타워의 레이어 별로 스크립트에서 체력 가져옴
+            // 해당 원소가 BasicTower라면
             if (m_AroundTowerList[i].layer == LayerMask.NameToLayer("BasicTower"))
             {
+                // 사망하면 넘어감
                 if (m_AroundTowerList[i].GetComponent<BasicTower>().m_State == STATE.DEATH)
                 {
                     continue;
                 }
 
+                // 체력 담아줌
                 maxHp = m_AroundTowerList[i].GetComponent<BasicTower>().MaxHp;
                 currentHp = m_AroundTowerList[i].GetComponent<BasicTower>().CurrentHp;
             }
+
+            // 해당 원소가 HealTower라면
             else if (m_AroundTowerList[i].layer == LayerMask.NameToLayer("HealTower"))
             {
+                // 사망하면 넘어감
                 if (m_AroundTowerList[i].GetComponent<HealTower>().m_State == STATE.DEATH)
                 {
                     continue;
-
                 }
+
+                // 체력 담아줌
                 maxHp = m_AroundTowerList[i].GetComponent<HealTower>().MaxHp;
                 currentHp = m_AroundTowerList[i].GetComponent<HealTower>().CurrentHp;
             }
@@ -223,9 +233,10 @@ public class HealTower : TowerManager
             }
         }
     }
+    
+    // 적 방향으로 회전
     void Rotation(GameObject enemy)
     {
-
         if (enemy == null) return;
 
         // 적과의 방향 구함
@@ -284,6 +295,13 @@ public class HealTower : TowerManager
 
     protected override void Attack()
     {
+        if (m_Target != null || m_Target.activeSelf == true ||
+            m_Target.GetComponent<BasicTower>().m_State != STATE.DEATH || m_Target.GetComponent<HealTower>().m_State != STATE.DEATH)
+        {
+            Rotation(m_Target);
+        }
+           
+
         // 타겟이 없으면 리턴
         if (m_Target == null) return;
 
@@ -291,7 +309,7 @@ public class HealTower : TowerManager
         if (m_AttackDelay <= Mathf.Epsilon)
         {
             // 제일 가까운 적이 살아있다면
-            if (m_Target != null)
+            if (m_Target != null || m_Target == null || m_Target.activeSelf == false)
             {
                 // Attack 트리거 발동
                 m_Anim.SetTrigger("Attack");

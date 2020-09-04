@@ -169,8 +169,8 @@ public class TowerManager : MonoBehaviour
         // 가져온 좌표의 타일정보를 NONE으로 바꿔줌
         m_NodeManager.m_TileState[TileY, TileX] = NodeManager.TILEINFO.NONE;
 
-        m_NodeManager.GetNode(TileX, TileY).GetComponent<MeshRenderer>().material = Resources.Load("Tower/Material/Grass") as Material;
-
+        m_NodeManager.ChangeMaterialNode(TileX, TileY, "Grass");
+        //m_NodeManager.GetNode(TileX, TileY).GetComponent<MeshRenderer>().material = Resources.Load("Tower/Material/Grass") as Material;
 
         // 위의 작업이 끝나면 해당 오브젝트 삭제
         Destroy(this.gameObject);

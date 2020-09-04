@@ -289,7 +289,7 @@ public class NodeManager : MonoBehaviour
     }
 
     // 노드 메터리얼 변경
-    void ChangeMaterialNode(int x, int y, string material)
+    public void ChangeMaterialNode(int x, int y, string material)
     {
         GetNode(x, y).GetComponent<MeshRenderer>().material = Resources.Load("Tower/Material/" + material) as Material;
     }
