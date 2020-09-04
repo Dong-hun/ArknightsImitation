@@ -14,8 +14,8 @@ public class MonsterCreater : MonoBehaviour
     void Start()
     {
         StartCoroutine(Monster());
-        StartCoroutine(Monster2());
-        StartCoroutine(Boss());
+        //StartCoroutine(Monster2());
+        //StartCoroutine(Boss());
     }
 
     // Update is called once per frame

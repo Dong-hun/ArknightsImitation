@@ -126,14 +126,7 @@ public class Enemy : MonoBehaviour
                     {
                         ChangeSTATE(STATE.ATTACK);
                     }
-
-
                 }
-
-
-
-
-
                 break;
 
 
@@ -197,19 +190,16 @@ public class Enemy : MonoBehaviour
                 { 
                     if (attackdelay <= Mathf.Epsilon) //일정 공속에 따라
                     {
-                        attackdelay = 2.0f;
-
                         if (m_Target.layer == LayerMask.NameToLayer("BasicTower")) //기본타워면
                         {
-
                             m_Target.GetComponent<BasicTower>().UpdateHp(-m_Monsterinfo.MonsterAttack);
-
                         }
                         else if (m_Target.layer == LayerMask.NameToLayer("HealTower")) //힐타워면
                         {
                             m_Target.GetComponent<HealTower>().UpdateHp(-m_Monsterinfo.MonsterAttack);
 
                         }
+                        attackdelay = 2.0f;
                     }
 
                 }
@@ -230,7 +220,7 @@ public class Enemy : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.layer == LayerMask.NameToLayer("BasicTower") || collision.gameObject.layer == LayerMask.NameToLayer("BasicTower"))
+        if(collision.gameObject.layer == LayerMask.NameToLayer("BasicTower") || collision.gameObject.layer == LayerMask.NameToLayer("HealTower"))
         {
             // 충돌한 물체가 타겟이다.
             m_Target = collision.gameObject;
@@ -242,7 +232,7 @@ public class Enemy : MonoBehaviour
     void Onattack(Obstacle enemy)
     {
         //아 이런. 이걸 
-        m_Enemy.OnDamage(m_Monsterinfo.MonsterAttack);
+        m_Enemy.UpdateHp(-m_Monsterinfo.MonsterAttack);
         //    //큐프
         Debug.Log("공격3");
     }
@@ -278,7 +268,7 @@ public class Enemy : MonoBehaviour
         //아 이런. 이걸 
         if (m_Enemy != null)
         {
-            m_Enemy.OnDamage(m_Monsterinfo.MonsterAttack);
+            m_Enemy.UpdateHp(-m_Monsterinfo.MonsterAttack);
 
             //큐프
             Debug.Log("공격3");

@@ -177,8 +177,21 @@ public class HealTower : TowerManager
     //대기 상태일때 돌릴 업데이트
     void Idle()
     {
-        // 주변에 타워가 없으면 리턴
-        if (m_AroundTowerList.Count == 0) 
+        for (int i = 0; i < m_AroundTowerList.Count; ++i)
+        {
+            if (m_AroundTowerList[i] == null || m_AroundTowerList[i] == false)
+            {
+                m_AroundTowerList.Remove(m_AroundTowerList[i]);
+
+                if (m_AroundTowerList.Count == 0)
+                    break;
+                else
+                    --i;
+            }
+        }
+
+            // 주변에 타워가 없으면 리턴
+            if (m_AroundTowerList.Count == 0) 
             return;
 
         // 주변의 타워를 전부 조사함
@@ -232,7 +245,10 @@ public class HealTower : TowerManager
                 if (m_AroundTowerList.Count == 0)
                     break;
                 else
+                {
                     --i;
+                    continue;
+                }
             }
 
 
