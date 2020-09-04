@@ -49,14 +49,12 @@ public class Obstacle : TowerManager
             case STATE.IDLE:
                 break;
             case STATE.DEATH:
-
                 Death();
                 break;
         }
     }
     public void OnDamage(float dmg)
     {
-        Debug.Log("인식");
         Monsterstatinfo.BossAttack = dmg;
 
         Debug.Log(Monsterstatinfo.CurrentHP.ToString());
@@ -73,7 +71,7 @@ public class Obstacle : TowerManager
         }
     }
 
-    void Death()
+    protected override void Death()
     {
         for (int i = 0; i < m_BuildManager.m_ObstacleList.Count; ++i)
         {

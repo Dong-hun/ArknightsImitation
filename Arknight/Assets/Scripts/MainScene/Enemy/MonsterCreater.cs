@@ -79,8 +79,7 @@ public class MonsterCreater : MonoBehaviour
 
             if (MonsterCount < MaxMonster)
             {
-            
-                yield return new WaitForSeconds(3.3f);
+                yield return new WaitForSeconds(2.0f);
 
                 GameObject obj = Instantiate(Resources.Load("Enemy/TURTLES")) as GameObject;
                 obj.transform.SetParent(this.transform);
@@ -116,7 +115,9 @@ public class MonsterCreater : MonoBehaviour
         {
             if (m_EnemyList[i] == null)
             {
-                m_EnemyList.Remove(m_EnemyList[i]);
+                m_EnemyList.Remove(m_EnemyList[i]); //리스트에서 삭제
+
+                MonsterCount--; //몬스터 리젠을 위한 삭제
             }
 
 

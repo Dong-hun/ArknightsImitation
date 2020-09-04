@@ -55,11 +55,13 @@ public class BuildManager : MonoBehaviour
         obj1.gameObject.GetComponent<BasicTower>().TileX = TileX;
         obj1.gameObject.GetComponent<BasicTower>().TileY = TileY;
 
+        // 타워 리스트에 저장
         m_TowerList.Add(obj1);
 
         // 해당 좌표 타워로 변경
         m_NodeMng.m_TileState[TileY, TileX] = NodeManager.TILEINFO.TOWER;
 
+        // 주변 힐타워의 AroundList(힐 할 주변 대상담는 리스트)에 담아줌
         CheckAroundHealTower();
 
         // 현재 노드의 머터리얼을 다시 Grass로 변경
@@ -70,9 +72,7 @@ public class BuildManager : MonoBehaviour
         m_NodeMng.SelectObject = null;
 
         m_Button.BuildOffButton();
-
-        //삭제되는 타워위치 보기위해 디버그 해놓음(지워도 상관없음)
-        Debug.Log("Select : " + TileY + ", " + TileX);
+        
     }
 
     //2번째 타워 생성함수 (UI클릭이 일어날때 Onclick 에서발생)
@@ -88,11 +88,13 @@ public class BuildManager : MonoBehaviour
         obj2.gameObject.GetComponent<HealTower>().TileX = TileX;
         obj2.gameObject.GetComponent<HealTower>().TileY = TileY;
 
+        //타워 리스트에 저장
         m_TowerList.Add(obj2);
 
         // 해당 좌표 타워로 변경
         m_NodeMng.m_TileState[TileY, TileX] = NodeManager.TILEINFO.TOWER;
 
+        // 주변 힐타워의 AroundList(힐 할 주변 대상담는 리스트)에 담아줌
         CheckAroundHealTower();
 
         // 현재 노드의 머터리얼을 다시 Grass로 변경
@@ -104,8 +106,6 @@ public class BuildManager : MonoBehaviour
 
         m_Button.BuildOffButton();
 
-        //삭제되는 타워위치 보기위해 디버그 해놓음(지워도 상관없음)
-        Debug.Log("Select : " + TileY + ", " + TileX);
     }
 
     //장애물타워생성함수 (UI클릭이 일어날때 Onclick 에서발생)
@@ -140,8 +140,6 @@ public class BuildManager : MonoBehaviour
 
         m_Button.BuildOffButton();
 
-        //삭제되는 타워위치 보기위해 디버그 해놓음(지워도 상관없음)
-        Debug.Log("Select : " + TileY + ", " + TileX);
     }
 
     //타워생성함수
@@ -222,7 +220,7 @@ public class BuildManager : MonoBehaviour
             if(m_TowerList[i].layer == LayerMask.NameToLayer("HealTower"))
             {
                 //m_TowerList[i].GetComponent<HealTower>().RemoveTower(m_NodeMng.SelectObject);
-                m_TowerList[i].GetComponent<HealTower>().m_DelDeleteTower?.Invoke(m_NodeMng.SelectObject.GetComponent<TowerManager>());
+                m_TowerList[i].GetComponent<HealTower>().m_DelDeleteTower?.Invoke(m_NodeMng.SelectObject);
             }
         }
 
@@ -280,12 +278,16 @@ public class BuildManager : MonoBehaviour
         return null;
     }
 
+    // 설치가 되면 주변에 힐타워가 있는지 조사하는 함수
     void CheckAroundHealTower()
     {
+        // 타워리스트가 비었다면 리턴
         if (m_TowerList.Count == 0) return;
 
+        // 타워 리스트 원소갯수만큼 돌아서
         for(int i = 0; i < m_TowerList.Count; ++i)
         {
+            // 해당 원소가 힐타워라면 힐타워의 AroundList에 더해지는 델리게이트 실행
             if (m_TowerList[i].layer == LayerMask.NameToLayer("HealTower"))
                 m_TowerList[i].GetComponent<HealTower>().m_DelAddTower?.Invoke();
         }

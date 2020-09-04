@@ -1,16 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 class BasicTower : TowerManager
 {
     /* 타워매니저를 상속받아서 만들어지는 각 타워들의 스크립트 */
     // 기본 공격 하는 타워
-
-    [Header("Unity Stuff")]
-    public Image HealthBar;
-
     // 프로퍼티
     public int TileX
     {
@@ -35,38 +30,38 @@ class BasicTower : TowerManager
         }
     }
 
-    public float HP
+    public int CurrentHp
     {
         set
         {
-            m_HP = value;
+            m_CurrentHp = value;
         }
         get
         {
-            return m_HP;
+            return m_CurrentHp;
         }
     }
 
-    public float MP
+    public int CurrentMp
     {
         set
         {
-            m_MP = value;
+            m_CurrentMp = value;
         }
         get
         {
-            return m_MP;
+            return m_CurrentMp;
         }
     }
 
-    public float MaxHP
+    public int MaxHp
     {
         get
         {
             return m_MaxHp;
         }
     }
-    public float MaxMP
+    public int MaxMp
     {
         get
         {
@@ -74,7 +69,7 @@ class BasicTower : TowerManager
         }
     }
 
-    public float Damage
+    public int Damage
     {
         set
         {
@@ -85,22 +80,18 @@ class BasicTower : TowerManager
             return m_Damage;
         }
     }
-
-    public Enemy m_Target;         // 현재 타겟
-
     // Start is called before the first frame update
     new void Start()
     {
+        // 컴포넌트 추가
         base.Start();
+        this.GetComponentInChildren<TowerAnimationEvent>().m_Attack = new DelAttack(OnDamage);
+        this.GetComponentInChildren<TowerAnimationEvent>().m_Death = new DelDeath(Disappear);
         m_Anim.SetBool("Dead", false);
 
         m_EnemyList = new List<Enemy>();
         Init(50, 50, 600, 5.0f);
-
-        // 타겟을 null로 초기화
-        m_Target = null;
-
-        this.GetComponentInChildren<BasicTowerAnimationEvent>().m_Attack = new DelAttack(OnDamage);
+        m_CurrentHp = 40;
     }
 
     // Update is called once per frame
@@ -108,7 +99,7 @@ class BasicTower : TowerManager
     {
         StateProcess();
 
-        if(HP <= 0.0f)
+        if (CurrentHp <= 0.0f)
         {
             ChangeState(STATE.DEATH);
         }
@@ -123,12 +114,12 @@ class BasicTower : TowerManager
         switch (m_State)
         {
             case STATE.IDLE:
+                m_Target = null;
                 break;
             case STATE.BATTLE:
                 break;
             case STATE.DEATH:
                 m_Anim.SetBool("Dead", true);
-                StartCoroutine(Disappear(3.0f));
                 break;
         }
     }
@@ -149,7 +140,7 @@ class BasicTower : TowerManager
     }
 
     // 회전
-    void Rotation(Enemy enemy)
+    void Rotation(GameObject enemy)
     {
         if (enemy == null) return;
         // 적과의 방향 구함
@@ -170,7 +161,7 @@ class BasicTower : TowerManager
         // 적과의 거리 구함
         float dist = Vector3.Distance(this.transform.position, m_Target.transform.position);
 
-        if(dist < m_AttackDist && !m_Anim.GetBool("Dead"))
+        if (dist < m_AttackDist && !m_Anim.GetBool("Dead"))
         {
             // 적 방향으로 회전
             Rotation(m_Target);
@@ -190,9 +181,6 @@ class BasicTower : TowerManager
                 // 적이 죽었다면
                 else
                 {
-                    // 타겟을 null로 초기화
-                    m_Target = null;
-
                     // IDLE상태로 바꿈
                     ChangeState(STATE.IDLE);
                 }
@@ -201,26 +189,20 @@ class BasicTower : TowerManager
             // 딜레이 감소
             m_AttackDelay -= Time.deltaTime;
         }
-        else
+        else if (dist > m_AttackDist && !m_Anim.GetBool("Dead"))
         {
             ChangeState(STATE.IDLE);
-        }    
-        
+        }
+
     }
 
     // 적에게 데미지 줌
-    public void OnDamage(Enemy enemy)
+    public void OnDamage(GameObject enemy)
     {
         // PlayAnimationEvent에서 공격 모션일때 이 함수 호출
         if (enemy == null) return;
 
         enemy.GetComponent<MonsterStat>().UpdateHP(-m_Damage);
-    }
-
-    // 사망
-    protected override void Death()
-    {
-        Destroy(this.gameObject);
     }
 
     // 적 추가
@@ -233,36 +215,22 @@ class BasicTower : TowerManager
         m_EnemyList.Add(enemy);
     }
 
-    // 적 제거
-    //protected override void RemoveEnemy(Enemy enemy)
-    //{
-    //    if (enemy == null) return;
-    //
-    //    for (int i = 0; i < m_EnemyList.Count; ++i)
-    //    {
-    //        if (m_EnemyList[i].transform == enemy.transform)
-    //        {
-    //            m_EnemyList.Remove(m_EnemyList[i]);
-    //        }
-    //    }
-    //
-    //    if (m_EnemyList.Count == 0)
-    //        ChangeState(STATE.IDLE);
-    //}
-
     private void OnCollisionEnter(Collision col)
     {
+
+
         // 충돌체의 레이어가 Enemy면
         if (col.gameObject.layer == LayerMask.NameToLayer("Enemy"))
         {
             // 타겟(적)이 없으면 
-            if(m_Target == null)
+            if (m_Target == null)
             {
                 // 타겟에 해당 충돌체를 넣어줌
-                m_Target = col.gameObject.GetComponent<Enemy>();
+                m_Target = col.transform.gameObject;
 
                 // State를 Battle로 변경
                 ChangeState(STATE.BATTLE);
+
             }
             // 타겟이 있다면
             else
@@ -272,43 +240,4 @@ class BasicTower : TowerManager
             }
         }
     }
-
-
-
-
-
-
-    // 가장 가까운 적 받아오기
-    //protected override Enemy GetNearestEnemy()
-    //{
-    //    // 리스트가 비었으면 리턴
-    //    if (m_EnemyList.Count == 0) return null;
-    //
-    //    // 첫 거리는 아주크게 설정
-    //    float dist = 999f;
-    //
-    //    // 가장 가까운 인덱스 저장용
-    //    int sel = -1;
-    //
-    //    // 있는 적 다 검사
-    //    for (int i = 0; i < m_EnemyList.Count; ++i)
-    //    {
-    //        // 거리 계산
-    //        float temp = Vector3.Distance(this.transform.position,
-    //            m_EnemyList[i].transform.position);
-    //
-    //        // 계산된 거리가 이전의 가장 가까운거리보다 작다면
-    //        if (temp < dist)
-    //        {
-    //            // 계산된 거리를 가장 가까운 거리로 바꿔주고
-    //            dist = temp;
-    //
-    //            // 해당 인덱스 번호 저장
-    //            sel = i;
-    //        }
-    //    }
-    //
-    //    // 해당 인덱스 번호의 적 리턴
-    //    return m_EnemyList[sel];
-    //}
 }

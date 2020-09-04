@@ -25,7 +25,6 @@ public class NodeManager : MonoBehaviour
 
     public GameObject m_SelectObject;              // 마우스 클릭시 오브젝트 담는 변수 (확인용으로 public으로함 확인 다되면 private로 변경할것)
     public GameObject m_PrevObject;                // 이전에 선택된 오브젝트
-    //public Node m_PrevNode = null;
     public GameObject SelectObject
     {
         set
@@ -74,7 +73,6 @@ public class NodeManager : MonoBehaviour
             //ui랑 ground랑 겹칠때 Build()함수가 실행 안된다.
             if (EventSystem.current.IsPointerOverGameObject() == false)
             {
-                //Build();
                 ClickCheck();
             }
         }
@@ -102,6 +100,9 @@ public class NodeManager : MonoBehaviour
                 // 해당 오보젝트의 Node컴포넌트에서 좌표 가져옴
                 TileX = m_SelectObject.GetComponent<Node>().TileX;
                 TileY = m_SelectObject.GetComponent<Node>().TileY;
+
+                if (m_TileState[TileY, TileX] == TILEINFO.TOWER) 
+                    return;
 
                 // 노드의 머터리얼을 Blue로 변경(선택됬다는 표시)
                 ChangeMaterialNode(TileX, TileY, "Blue");
@@ -288,7 +289,7 @@ public class NodeManager : MonoBehaviour
     }
 
     // 노드 메터리얼 변경
-    void ChangeMaterialNode(int x, int y, string material)
+    public void ChangeMaterialNode(int x, int y, string material)
     {
         GetNode(x, y).GetComponent<MeshRenderer>().material = Resources.Load("Tower/Material/" + material) as Material;
     }
