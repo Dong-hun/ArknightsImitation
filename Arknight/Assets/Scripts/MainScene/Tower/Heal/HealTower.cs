@@ -28,7 +28,7 @@ public class HealTower : TowerManager
         }
     }
 
-    public int CurrentHp
+    public float CurrentHp
     {
         set
         {
@@ -40,7 +40,7 @@ public class HealTower : TowerManager
         }
     }
 
-    public int CurrentMp
+    public float CurrentMp
     {
         set
         {
@@ -52,14 +52,14 @@ public class HealTower : TowerManager
         }
     }
 
-    public int MaxHp
+    public float MaxHp
     {
         get
         {
             return m_MaxHp;
         }
     }
-    public int MaxMp
+    public float MaxMp
     {
         get
         {
@@ -67,7 +67,7 @@ public class HealTower : TowerManager
         }
     }
 
-    public int Damage
+    public float Damage
     {
         set
         {
@@ -185,8 +185,8 @@ public class HealTower : TowerManager
         for (int i = 0; i < m_AroundTowerList.Count; ++i)
         {
             // 주변 타워의 체력 담을 변수
-            int maxHp = 0;
-            int currentHp = 0;
+            float maxHp = 0;
+            float currentHp = 0;
 
             // 해당 원소가 BasicTower라면
             if (m_AroundTowerList[i].layer == LayerMask.NameToLayer("BasicTower"))

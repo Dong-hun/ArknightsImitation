@@ -30,7 +30,7 @@ class BasicTower : TowerManager
         }
     }
 
-    public int CurrentHp
+    public float CurrentHp
     {
         set
         {
@@ -42,7 +42,7 @@ class BasicTower : TowerManager
         }
     }
 
-    public int CurrentMp
+    public float CurrentMp
     {
         set
         {
@@ -54,14 +54,14 @@ class BasicTower : TowerManager
         }
     }
 
-    public int MaxHp
+    public float MaxHp
     {
         get
         {
             return m_MaxHp;
         }
     }
-    public int MaxMp
+    public float MaxMp
     {
         get
         {
@@ -69,7 +69,7 @@ class BasicTower : TowerManager
         }
     }
 
-    public int Damage
+    public float Damage
     {
         set
         {
