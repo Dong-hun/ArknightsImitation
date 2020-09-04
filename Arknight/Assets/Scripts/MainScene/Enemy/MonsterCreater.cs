@@ -21,7 +21,6 @@ public class MonsterCreater : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        MakingD();
         Seeknull();
     }
 
@@ -79,7 +78,7 @@ public class MonsterCreater : MonoBehaviour
 
             if (MonsterCount < MaxMonster)
             {
-                yield return new WaitForSeconds(2.0f);
+                yield return new WaitForSeconds(2.5f);
 
                 GameObject obj = Instantiate(Resources.Load("Enemy/TURTLES")) as GameObject;
                 obj.transform.SetParent(this.transform);
@@ -94,18 +93,7 @@ public class MonsterCreater : MonoBehaviour
             }
         }
     }
-    void MakingD()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            obj = Instantiate(Resources.Load("Enemy/Cube")) as GameObject;
-        }
-        if (Input.GetKeyDown(KeyCode.F1))
-        {
-
-            Destroy(obj.gameObject);
-        }
-    }
+    
     void Seeknull() //리스트 적군 없는 것 찾기
     {
         for (int i = 0; i < m_EnemyList.Count; i++)
