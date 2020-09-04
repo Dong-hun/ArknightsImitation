@@ -200,12 +200,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 65738434}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa4eeff03b00f5a48955f3ebdb9b9271, type: 3}
+  m_Script: {fileID: 11500000, guid: 1a733426043931a428e3b7b6cbbc60ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Option: {fileID: 137970788}
-  m_OptionButton: {fileID: 1021536421}
-  m_OptionClick: {fileID: 332815357}
+  m_Option: {fileID: 1021536421}
+  m_OptionButton: {fileID: 0}
+  m_OptionClick: {fileID: 0}
 --- !u!1 &119117250
 GameObject:
   m_ObjectHideFlags: 0
@@ -614,8 +614,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebac2ff3074896b4d8dc39ecd199a4a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  musicsource: {fileID: 1899352974}
-  btnsource: {fileID: 119117251}
 --- !u!4 &236917114
 Transform:
   m_ObjectHideFlags: 0
