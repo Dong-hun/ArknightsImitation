@@ -231,9 +231,11 @@ public class Enemy : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         m_Target = collision.gameObject;//충돌한 물체가 타겟이다.
-
-        ChangeSTATE(STATE.TOWERATTACK);
-      //  Debug.Log("충돌 중!");
+        if (m_Target.layer == LayerMask.NameToLayer("BasicTower") || m_Target.layer == LayerMask.NameToLayer("HealTower"))
+            {
+            ChangeSTATE(STATE.TOWERATTACK);
+        }
+            //  Debug.Log("충돌 중!");
 
     }
 
