@@ -18,15 +18,15 @@ public class TowerManager : MonoBehaviour
         IDLE, BATTLE, DEATH               // 대기, 전투, 사망
     }
     public STATE m_State;            // 상태 받는 변수
-    public float m_MaxHp;              // 최대 체력
-    public float m_CurrentHp;                 // 체력
-    public float m_MaxMp;              // 최대 마력
-    public float m_CurrentMp;                 // 마력   
-    public int m_TileX;              // 타워 X좌표
-    public int m_TileY;              // 타워 Y좌표
-    public float m_Damage;             // 공격력
-    public float m_AttackDelay;      // 공격 딜레이
-    public float m_AttackDist;       // 사거리
+    protected float m_MaxHp;              // 최대 체력
+    protected float m_CurrentHp;                 // 체력
+    protected float m_MaxMp;              // 최대 마력
+    protected float m_CurrentMp;                 // 마력   
+    protected int m_TileX;              // 타워 X좌표
+    protected int m_TileY;              // 타워 Y좌표
+    protected float m_Damage;             // 공격력
+    protected float m_AttackDelay;      // 공격 딜레이
+    protected float m_AttackDist;       // 사거리
 
     public Animator m_Anim;             // 애니메이터 (protected로 상속중이여서 인스팩터창 링크불가능 
                                         // 이름으로 호출 or public으로 바꿔서 링크걸기)
