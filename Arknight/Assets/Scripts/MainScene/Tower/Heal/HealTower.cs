@@ -1,9 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class HealTower : TowerManager
 {
+
+    [Header("Unity Stuff")]
+    public Image HealthBar;
+
     // 프로퍼티
     public int TileX
     {
@@ -28,7 +33,7 @@ public class HealTower : TowerManager
         }
     }
 
-    public int HP
+    public float HP
     {
         set
         {
@@ -40,7 +45,7 @@ public class HealTower : TowerManager
         }
     }
 
-    public int MP
+    public float MP
     {
         set
         {
@@ -52,14 +57,14 @@ public class HealTower : TowerManager
         }
     }
 
-    public int MaxHP
+    public float MaxHP
     {
         get
         {
             return m_MaxHp;
         }
     }
-    public int MaxMP
+    public float MaxMP
     {
         get
         {
@@ -67,7 +72,7 @@ public class HealTower : TowerManager
         }
     }
 
-    public int Damage
+    public float Damage
     {
         set
         {
@@ -144,8 +149,8 @@ public class HealTower : TowerManager
 
         for(int i = 0; i < m_AroundTowerList.Count; ++i)
         {
-            int maxHp = 0;
-            int currentHp = 0;
+            float maxHp = 0;
+            float currentHp = 0;
 
             if(m_AroundTowerList[i].layer == LayerMask.NameToLayer("BasicTower"))
             {

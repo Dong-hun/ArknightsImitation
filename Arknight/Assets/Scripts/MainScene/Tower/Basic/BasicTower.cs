@@ -1,12 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 class BasicTower : TowerManager
 {
     /* 타워매니저를 상속받아서 만들어지는 각 타워들의 스크립트 */
     // 기본 공격 하는 타워
 
+    [Header("Unity Stuff")]
+    public Image HealthBar;
 
     // 프로퍼티
     public int TileX
