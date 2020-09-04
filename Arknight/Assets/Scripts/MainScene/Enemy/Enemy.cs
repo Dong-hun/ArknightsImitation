@@ -241,7 +241,7 @@ public class Enemy : MonoBehaviour
             m_Target = collision.gameObject; //충돌한 물체가 타겟이다.
             ChangeSTATE(STATE.TOWERATTACK);
         }
-              Debug.Log("충돌 중!");
+            //  Debug.Log("충돌 중!");
 
     }
 
