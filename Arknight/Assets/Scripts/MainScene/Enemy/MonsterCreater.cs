@@ -117,7 +117,6 @@ public class MonsterCreater : MonoBehaviour
                 m_EnemyList.Remove(m_EnemyList[i]); //리스트에서 삭제
 
                 MonsterCount--; //몬스터 리젠을 위한 삭제
-                TotalMonster--;
             }
 
 
