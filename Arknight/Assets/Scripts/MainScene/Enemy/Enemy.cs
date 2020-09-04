@@ -249,7 +249,7 @@ public class Enemy : MonoBehaviour
     void Onattack(Obstacle enemy)
     {
         //아 이런. 이걸 
-        m_Enemy.OnDamage(m_Monsterinfo.MonsterAttack);
+        m_Enemy.GetComponent<Obstacle>().UpdateHp(-m_Monsterinfo.MonsterAttack);
         //    //큐프
         Debug.Log("공격3");
         // //   Debug.Log(m_Monsterinfo.MonsterAttack);
@@ -286,7 +286,7 @@ public class Enemy : MonoBehaviour
         //아 이런. 이걸 
         if (m_Enemy != null)
         {
-            m_Enemy.OnDamage(m_Monsterinfo.MonsterAttack);
+            m_Enemy.GetComponent<Obstacle>().UpdateHp(-m_Monsterinfo.MonsterAttack);
 
             //큐프
             Debug.Log("공격3");
