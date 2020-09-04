@@ -150,6 +150,8 @@ class BasicTower : TowerManager
         // 해당 방향으로 회전
         this.transform.rotation = Quaternion.Slerp(this.transform.rotation,
             Quaternion.LookRotation(dir), Time.smoothDeltaTime * 360.0f);
+
+        this.transform.up = new Vector3(0, 1, 0);
     }
 
     // 공격
