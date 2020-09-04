@@ -230,11 +230,12 @@ public class Enemy : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        m_Target = collision.gameObject;//충돌한 물체가 타겟이다.
-
-        ChangeSTATE(STATE.TOWERATTACK);
-      //  Debug.Log("충돌 중!");
-
+        if(collision.gameObject.layer == LayerMask.NameToLayer("BasicTower") || collision.gameObject.layer == LayerMask.NameToLayer("BasicTower"))
+        {
+            // 충돌한 물체가 타겟이다.
+            m_Target = collision.gameObject;
+            ChangeSTATE(STATE.TOWERATTACK);
+        }
     }
 
 
@@ -244,7 +245,6 @@ public class Enemy : MonoBehaviour
         m_Enemy.OnDamage(m_Monsterinfo.MonsterAttack);
         //    //큐프
         Debug.Log("공격3");
-        // //   Debug.Log(m_Monsterinfo.MonsterAttack);
     }
 
 
