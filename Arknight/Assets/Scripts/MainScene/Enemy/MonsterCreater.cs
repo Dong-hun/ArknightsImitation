@@ -9,7 +9,7 @@ public class MonsterCreater : MonoBehaviour
     public int TotalMonster = 0;
     public GameObject obj;
     public List<Enemy> m_EnemyList;
-    int MonsterCount = 0;
+   public int MonsterCount = 0;
     // Start is called before the first frame update
     void Start()
     {
