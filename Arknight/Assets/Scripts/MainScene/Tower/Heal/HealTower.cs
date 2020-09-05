@@ -197,16 +197,6 @@ public class HealTower : TowerManager
         // 주변의 타워를 전부 조사함
         for (int i = 0; i < m_AroundTowerList.Count; ++i)
         {
-            //if (m_AroundTowerList[i] == null || m_AroundTowerList[i] == false)
-            //{
-            //    m_AroundTowerList.Remove(m_AroundTowerList[i]);
-            //
-            //    if (m_AroundTowerList.Count == 0)
-            //        break;
-            //    else
-            //        --i;
-            //}
-
             // 주변 타워의 체력 담을 변수
             float maxHp = 0;
             float currentHp = 0;

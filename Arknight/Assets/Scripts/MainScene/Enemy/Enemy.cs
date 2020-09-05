@@ -312,7 +312,7 @@ public class Enemy : MonoBehaviour
     void Death()
     {
         
-        if (this.m_Monsterinfo.CurrentHP == 0)
+        if (this.m_Monsterinfo.CurrentHP <= 0)
         {
             m_Anim.SetTrigger("Dead");
 
