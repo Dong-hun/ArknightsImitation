@@ -208,6 +208,8 @@ public class Enemy : MonoBehaviour
                 { 
                     if (attackdelay <= Mathf.Epsilon) //일정 공속에 따라
                     {
+                        m_Anim.SetTrigger("Attack");
+
                         attackdelay = 2.0f;
 
                         if (m_Target.layer == LayerMask.NameToLayer("BasicTower")) //기본타워면
