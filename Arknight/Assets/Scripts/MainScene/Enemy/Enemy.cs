@@ -20,6 +20,7 @@ public class Enemy : MonoBehaviour
     public MonsterStat m_Monsterinfo;
     public Obstacle m_Enemy;
     float attackdelay = 3.0f;
+    public Animator m_Anim;
 
     public BuildManager m_Buildmanager;
     
@@ -93,7 +94,9 @@ public class Enemy : MonoBehaviour
 
                 break;
             //    m_Navi.SetDestination(Goalpos);
+            case STATE.BATTLE:
 
+                break;
             case STATE.TOWERATTACK:
 
                 m_Navi.SetDestination(m_Target.transform.position);
@@ -101,6 +104,7 @@ public class Enemy : MonoBehaviour
 
                 break;
             case STATE.DEAD:
+
                 Destroy(this.gameObject);
                 break;
 
@@ -186,6 +190,8 @@ public class Enemy : MonoBehaviour
 
                 if (attackdelay <= Mathf.Epsilon)
                 {
+                    m_Anim.SetTrigger("Attack");
+
                     attackdelay = 2.0f;
                     Onattack();
                     if (m_Enemy == null)
@@ -303,12 +309,21 @@ public class Enemy : MonoBehaviour
 
     void Death()
     {
+        
         if (this.m_Monsterinfo.CurrentHP == 0)
         {
-            ChangeSTATE(STATE.DEAD);
+            m_Anim.SetTrigger("Dead");
+
+            StartCoroutine( MonDead());
         }
     
     }
-
+    IEnumerator MonDead()
+    {
+        yield return new WaitForSeconds(2.5f);
+        {
+            ChangeSTATE(STATE.DEAD);
+        }
+    }
 
 }

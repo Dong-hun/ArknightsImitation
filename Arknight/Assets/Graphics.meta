@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Arknight/Assets/Graphics.meta
+guid: 43b248497d8ae50438f0fe12897f23b7
+=======
 guid: d32a1e8c1dea6fe45a9350736c960f07
+>>>>>>> 505ef5f71467ab12fcbe0cb287c049ef032c5b77:Arknight/Assets/Character.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
