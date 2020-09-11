@@ -90,7 +90,7 @@ class BasicTower : TowerManager
         m_Anim.SetBool("Dead", false);
 
         m_EnemyList = new List<Enemy>();
-        Init(50, 50, 600, 5.0f , 2.0f);
+        Init(50, 50, 2, 5.0f , 0.0f);
         //m_CurrentHp = 40;
     }
 
@@ -164,7 +164,8 @@ class BasicTower : TowerManager
         // 적과의 거리 구함
         float dist = Vector3.Distance(this.transform.position, m_Target.transform.position);
 
-        if (dist < m_AttackDist && !m_Anim.GetBool("Dead"))
+        if (!m_Anim.GetBool("Dead"))
+        //if (dist < m_AttackDelay && !m_Anim.GetBool("Dead"))
         {
             // 적 방향으로 회전
             Rotation(m_Target);
@@ -220,8 +221,6 @@ class BasicTower : TowerManager
 
     private void OnCollisionEnter(Collision col)
     {
-
-
         // 충돌체의 레이어가 Enemy면
         if (col.gameObject.layer == LayerMask.NameToLayer("Enemy"))
         {
