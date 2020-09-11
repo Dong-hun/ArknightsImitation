@@ -51,7 +51,7 @@ public class MonsterCreater : MonoBehaviour
     {
         while (!GameOver)
         {
-            if (TotalMonster == 1)
+            if (TotalMonster == 2)
             {
                 yield return new WaitForSeconds(3.0f);
 
