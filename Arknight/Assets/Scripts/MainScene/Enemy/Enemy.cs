@@ -210,8 +210,6 @@ public class Enemy : MonoBehaviour
                     {
                         m_Anim.SetTrigger("Attack");
 
-                        attackdelay = 2.0f;
-
                         if (m_Target.layer == LayerMask.NameToLayer("BasicTower")) //기본타워면
                         {
 
@@ -223,6 +221,8 @@ public class Enemy : MonoBehaviour
                             m_Target.GetComponent<HealTower>().UpdateHp(-m_Monsterinfo.MonsterAttack);
 
                         }
+
+                        attackdelay = 2.0f;
                     }
 
                 }
@@ -311,7 +311,7 @@ public class Enemy : MonoBehaviour
     void Death()
     {
         
-        if (this.m_Monsterinfo.CurrentHP == 0)
+        if (this.m_Monsterinfo.CurrentHP <= 0)
         {
             m_Anim.SetTrigger("Dead");
 
