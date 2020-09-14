@@ -80,18 +80,32 @@ class BasicTower : TowerManager
             return m_Damage;
         }
     }
+
+    public bool m_SkillActive;          // 스킬이 활성화 되어있는지
+    public float m_OriginAttackDelay;    // 스킬로 영향 받는 AttackDelay
+
     // Start is called before the first frame update
     new void Start()
     {
         // 컴포넌트 추가
         base.Start();
+
+        // 딜리게이트 추가
         this.GetComponentInChildren<TowerAnimationEvent>().m_Attack = new DelAttack(OnDamage);
-        this.GetComponentInChildren<TowerAnimationEvent>().m_Death = new DelDeath(Disappear);
+        this.GetComponentInChildren<TowerAnimationEvent>().m_BasicTowerSkill = new DelCor(ActiveSkill);
+
+        // Animation설정
         m_Anim.SetBool("Dead", false);
 
+        // 리스트 추가
         m_EnemyList = new List<Enemy>();
-        Init(50, 50, 2, 5.0f , 0.0f);
-        //m_CurrentHp = 40;
+
+        // 스텟 추가
+        Init(50, 5, 2, 5.0f , 2.0f);
+
+        // 스킬 비활성화, AttackDelay 저장(스킬 사용용)
+        m_SkillActive = false;
+        m_OriginAttackDelay = m_AttackDelay;
     }
 
     // Update is called once per frame
@@ -118,6 +132,8 @@ class BasicTower : TowerManager
                 break;
             case STATE.BATTLE:
                 break;
+            case STATE.SKILL:
+                break;
             case STATE.DEATH:
                 m_Anim.SetBool("Dead", true);
                 break;
@@ -134,6 +150,8 @@ class BasicTower : TowerManager
             case STATE.BATTLE:
                 Attack();
                 break;
+            case STATE.SKILL:
+                break;
             case STATE.DEATH:
                 break;
         }
@@ -142,7 +160,9 @@ class BasicTower : TowerManager
     // 회전
     void Rotation(GameObject enemy)
     {
+        // 적이 없다면 함수 빠져나옴
         if (enemy == null) return;
+
         // 적과의 방향 구함
         Vector3 dir = enemy.transform.position -
             this.transform.position;
@@ -161,12 +181,16 @@ class BasicTower : TowerManager
         // 타겟이 없으면 리턴
         if (m_Target == null) return;
 
-        // 적과의 거리 구함
-        float dist = Vector3.Distance(this.transform.position, m_Target.transform.position);
-
         if (!m_Anim.GetBool("Dead"))
         //if (dist < m_AttackDelay && !m_Anim.GetBool("Dead"))
         {
+            if(m_CurrentMp >= m_MaxMp)
+            {
+                m_SkillActive = true;
+                m_Anim.SetTrigger("Skill");
+                m_CurrentMp = 0.0f;
+            }
+
             // 적 방향으로 회전
             Rotation(m_Target);
 
@@ -179,8 +203,15 @@ class BasicTower : TowerManager
                     // Attack 트리거 발동
                     m_Anim.SetTrigger("Attack");
 
+                    // 스킬이 활성화가 되지 않았을 때
+                    if(!m_SkillActive)
+                    {
+                        // 마나 증가
+                        m_CurrentMp += 1;
+                    }
+
                     // 다시 딜레이 설정
-                    m_AttackDelay = 2.0f;
+                    m_AttackDelay = m_OriginAttackDelay;
                 }
                 // 적이 죽었다면
                 else
@@ -193,11 +224,10 @@ class BasicTower : TowerManager
             // 딜레이 감소
             m_AttackDelay -= Time.deltaTime;
         }
-        else if (dist > m_AttackDist && !m_Anim.GetBool("Dead"))
+        else // if (dist > m_AttackDist && !m_Anim.GetBool("Dead"))
         {
             ChangeState(STATE.IDLE);
         }
-
     }
 
     // 적에게 데미지 줌
@@ -241,5 +271,21 @@ class BasicTower : TowerManager
                 return;
             }
         }
+    }
+
+    // 스킬 사용
+    public override IEnumerator ActiveSkill(float timer)
+    {
+        float originAttackDelay = m_OriginAttackDelay;
+        while (m_SkillActive)
+        {
+            // 공격 딜레이 반으로 감소
+            m_OriginAttackDelay /= 2.0f;
+
+            // 10초 뒤 반복문 빠져나옴
+            yield return new WaitForSeconds(timer);
+            m_SkillActive = false;
+        }
+        m_OriginAttackDelay = originAttackDelay;
     }
 }

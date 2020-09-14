@@ -6,7 +6,7 @@ using UnityEngine;
 public delegate void DelVoid();
 public delegate void DelAttack(GameObject enemy);
 public delegate void DelDelete(GameObject obj);
-public delegate IEnumerator DelDeath(float timer);
+public delegate IEnumerator DelCor(float timer);
 
 public class TowerManager : MonoBehaviour
 {
@@ -15,16 +15,16 @@ public class TowerManager : MonoBehaviour
     //==================== 상속해서 쓸것 (추상클래스 -> 일반클래스 전환)
     public enum STATE                // 타워 상태
     {
-        IDLE, BATTLE, DEATH               // 대기, 전투, 사망
+        IDLE, BATTLE, SKILL, DEATH               // 대기, 전투, 사망
     }
     public STATE m_State;            // 상태 받는 변수
-    public float m_MaxHp;              // 최대 체력
-    public float m_CurrentHp;                 // 체력
-    public float m_MaxMp;              // 최대 마력
-    public float m_CurrentMp;                 // 마력   
+    public float m_MaxHp;            // 최대 체력
+    public float m_CurrentHp;        // 체력
+    public float m_MaxMp;            // 최대 마력
+    public float m_CurrentMp;        // 마력   
     public int m_TileX;              // 타워 X좌표
     public int m_TileY;              // 타워 Y좌표
-    public float m_Damage;             // 공격력
+    public float m_Damage;           // 공격력
     public float m_AttackDelay;      // 공격 딜레이
     public float m_AttackDist;       // 사거리
 
@@ -55,6 +55,8 @@ public class TowerManager : MonoBehaviour
         m_NodeManager = GameObject.Find("NodeList").GetComponent<NodeManager>();
         m_BuildManager = GameObject.Find("BuildManager").GetComponent<BuildManager>();
 
+        // 사망 코루틴 딜리게이트 추가
+        this.GetComponentInChildren<TowerAnimationEvent>().m_Death = new DelCor(Disappear);
 
         // 초기화
         m_Target = null;
@@ -62,13 +64,13 @@ public class TowerManager : MonoBehaviour
     }
 
     // 타워 세팅
-    protected void Init(int hp = 50, int mp = 0, int dmg = 0, float dist = 1.0f, float delay = 0.0f)
+    protected void Init(int maxhp = 50, int maxmp = 0, int dmg = 0, float dist = 1.0f, float delay = 0.0f)
     {
         m_State = STATE.IDLE;
-        m_MaxHp = hp;
-        m_MaxMp = mp;
+        m_MaxHp = maxhp;
+        m_MaxMp = maxmp;
         m_CurrentHp = m_MaxHp;
-        m_CurrentMp = m_MaxMp;
+        m_CurrentMp = 0;
         m_Damage = dmg;
         m_AttackDist = dist;
         m_AttackDelay = delay;
@@ -175,6 +177,12 @@ public class TowerManager : MonoBehaviour
         // 위의 작업이 끝나면 해당 오브젝트 삭제
         Destroy(this.gameObject);
 
+        yield return null;
+    }
+
+    // 스킬 사용
+    public virtual IEnumerator ActiveSkill(float timer)
+    {
         yield return null;
     }
 }

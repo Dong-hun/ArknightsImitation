@@ -9,7 +9,7 @@ public class MonsterStat : MonoBehaviour
     public float MonsterAttack = 1.0f;
     public float BossAttack = 2.0f;
     public float AttackDelay = 2.0f;
-    public float MaxHp = 233.0f;
+    public float MaxHp = 10.0f;
     public float CurrentHP = 0.0f;
 
     // Start is called before the first frame update

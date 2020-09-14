@@ -94,8 +94,8 @@ public class HealTower : TowerManager
         base.Start();
 
         // 델리게이트에 함수 추가
-        this.GetComponentInChildren<TowerAnimationEvent>().m_Death = new DelDeath(Disappear);
         this.GetComponentInChildren<TowerAnimationEvent>().m_Recovery = new DelAttack(RecoveryTower);
+        this.GetComponentInChildren<TowerAnimationEvent>().m_HealTowerSkill = new DelCor(ActiveSkill);
 
         // 초기화
         Init(50, 10, 2, 5.0f, 3.0f);
@@ -276,28 +276,37 @@ public class HealTower : TowerManager
     // 공격하는 함수 (HealTower는 힐을 해줌)
     void RecoveryTower(GameObject obj)
     {
+        // 오브젝트가 사라지면 Missing object가 나오는데 missing 걸러주는 조건문
         if (obj == null || obj.activeSelf == false)
         {
             ChangeState(STATE.IDLE);
             return;
         }
 
+        // 타겟이 BasicTower라면
         if (obj.layer == LayerMask.NameToLayer("BasicTower"))
         {
+            // 타겟이 죽었다면
             if (obj.GetComponent<BasicTower>().m_State == STATE.DEATH)
             {
+                // IDLE상태로 변경 후 함수 빠져나옴
                 ChangeState(STATE.IDLE);
                 return;
             }
 
+            // hp를 회복 시켜줌
             obj.GetComponent<BasicTower>().CurrentHp += m_Damage;
 
+            // 회복시켰는데 MaxHp를 넘어섰다면
             if (obj.GetComponent<BasicTower>().CurrentHp >= obj.GetComponent<BasicTower>().MaxHp)
             {
+                // 현재 체력을 MaxHp로 변경 후 IDLE로 변경
                 obj.GetComponent<BasicTower>().CurrentHp = obj.GetComponent<BasicTower>().MaxHp;
                 ChangeState(STATE.IDLE);
             }
         }
+
+        // HealTower 라면 (함수 안 내용은 위와 동일)
         else if (obj.layer == LayerMask.NameToLayer("HealTower"))
         {
             if (obj.GetComponent<HealTower>().m_State == STATE.DEATH)
@@ -314,7 +323,8 @@ public class HealTower : TowerManager
                 ChangeState(STATE.IDLE);
             }
         }
-            if (obj == null)
+        
+        if (obj == null)
             ChangeState(STATE.IDLE);
     }
 
@@ -441,6 +451,32 @@ public class HealTower : TowerManager
             {
                 // 리스트에서 제거 후 빠져나옴 (더이상 검사할 필요 x)
                 m_AroundTowerList.Remove(m_AroundTowerList[i]);
+                break;
+            }
+        }
+    }
+
+    public override IEnumerator ActiveSkill(float timer)
+    {
+        while(true)
+        {
+            if (m_Target == null) break;
+            float originDmg = 0.0f;
+
+            if (m_Target.layer == LayerMask.NameToLayer("BasicTower"))
+            {
+                originDmg = m_Target.GetComponent<BasicTower>().Damage;
+                m_Target.GetComponent<BasicTower>().Damage *= 2.0f;
+                yield return new WaitForSeconds(timer);
+                m_Target.GetComponent<BasicTower>().Damage = originDmg;
+                break;
+            }
+            else if (m_Target.layer == LayerMask.NameToLayer("HealTower"))
+            {
+                originDmg = m_Target.GetComponent<HealTower>().Damage;
+                m_Target.GetComponent<HealTower>().Damage *= 2.0f;
+                yield return new WaitForSeconds(timer);
+                m_Target.GetComponent<HealTower>().Damage = originDmg;
                 break;
             }
         }
