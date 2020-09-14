@@ -17,16 +17,17 @@ public class TowerManager : MonoBehaviour
     {
         IDLE, BATTLE, SKILL, DEATH               // 대기, 전투, 사망
     }
-    public STATE m_State;            // 상태 받는 변수
-    public float m_MaxHp;            // 최대 체력
-    public float m_CurrentHp;        // 체력
-    public float m_MaxMp;            // 최대 마력
-    public float m_CurrentMp;        // 마력   
-    public int m_TileX;              // 타워 X좌표
-    public int m_TileY;              // 타워 Y좌표
-    public float m_Damage;           // 공격력
-    public float m_AttackDelay;      // 공격 딜레이
-    public float m_AttackDist;       // 사거리
+    public STATE m_State;                   // 상태 받는 변수
+    public float m_MaxHp;                   // 최대 체력
+    public float m_CurrentHp;               // 체력
+    public float m_MaxMp;                   // 최대 마력
+    public float m_CurrentMp;               // 마력   
+    public int m_TileX;                     // 타워 X좌표
+    public int m_TileY;                     // 타워 Y좌표
+    public float m_Damage;                  // 공격력
+    public float m_AttackDelay;             // 공격 딜레이
+    public bool m_ActiveSkill;              // 스킬이 활성화 되어있는지
+    public float m_OriginAttackDelay;       // 스킬로 영향 받는 AttackDelay
 
     public Animator m_Anim;             // 애니메이터 (protected로 상속중이여서 인스팩터창 링크불가능 
                                         // 이름으로 호출 or public으로 바꿔서 링크걸기)
@@ -61,10 +62,11 @@ public class TowerManager : MonoBehaviour
         // 초기화
         m_Target = null;
         m_State = STATE.IDLE;
+        m_ActiveSkill = false;
     }
 
     // 타워 세팅
-    protected void Init(int maxhp = 50, int maxmp = 0, int dmg = 0, float dist = 1.0f, float delay = 0.0f)
+    protected void Init(int maxhp = 50, int maxmp = 0, int dmg = 0, float delay = 0.0f)
     {
         m_State = STATE.IDLE;
         m_MaxHp = maxhp;
@@ -72,7 +74,6 @@ public class TowerManager : MonoBehaviour
         m_CurrentHp = m_MaxHp;
         m_CurrentMp = 0;
         m_Damage = dmg;
-        m_AttackDist = dist;
         m_AttackDelay = delay;
     }
 

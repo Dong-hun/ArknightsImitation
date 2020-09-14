@@ -2754,7 +2754,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BasicTowerAttackEffect: {fileID: 100000, guid: bc98890f6028f444eaa7789bde5e2eeb,
     type: 3}
-  BasicTowerSkillEffect: {fileID: 0}
+  BasicTowerSkillEffect: {fileID: 1727626132299242, guid: b0bc1b6b391734647b9bb142bafc0819,
+    type: 3}
   HealTowerAttackEffect: {fileID: 0}
   HealTowerSkillEffect: {fileID: 0}
 --- !u!1 &5299747226064272510
@@ -4724,9 +4725,11 @@ MonoBehaviour:
   m_TileY: 0
   m_Damage: 0
   m_AttackDelay: 0
-  m_AttackDist: 0
   m_Anim: {fileID: 6422979158065979515}
   m_Target: {fileID: 0}
+  m_SkillActive: 0
+  m_OriginAttackDelay: 0
+  m_BoxCollider: {fileID: 0}
 --- !u!65 &3001822135709893841
 BoxCollider:
   m_ObjectHideFlags: 0

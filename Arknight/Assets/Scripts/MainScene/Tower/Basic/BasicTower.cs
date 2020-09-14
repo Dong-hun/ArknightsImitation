@@ -81,8 +81,8 @@ class BasicTower : TowerManager
         }
     }
 
-    public bool m_SkillActive;          // 스킬이 활성화 되어있는지
-    public float m_OriginAttackDelay;    // 스킬로 영향 받는 AttackDelay
+
+    public BoxCollider m_BoxCollider;
 
     // Start is called before the first frame update
     new void Start()
@@ -93,6 +93,7 @@ class BasicTower : TowerManager
         // 딜리게이트 추가
         this.GetComponentInChildren<TowerAnimationEvent>().m_Attack = new DelAttack(OnDamage);
         this.GetComponentInChildren<TowerAnimationEvent>().m_BasicTowerSkill = new DelCor(ActiveSkill);
+        m_BoxCollider = GetComponent<BoxCollider>();
 
         // Animation설정
         m_Anim.SetBool("Dead", false);
@@ -101,11 +102,13 @@ class BasicTower : TowerManager
         m_EnemyList = new List<Enemy>();
 
         // 스텟 추가
-        Init(50, 5, 2, 5.0f , 2.0f);
+        Init(500, 5, 2, 2.0f);
 
-        // 스킬 비활성화, AttackDelay 저장(스킬 사용용)
-        m_SkillActive = false;
+        // AttackDelay 저장(스킬 사용용)
         m_OriginAttackDelay = m_AttackDelay;
+
+        // 처음 딜레이를 0으로 설정해서 바로 공격하게 설정
+        m_AttackDelay = 0.0f;
     }
 
     // Update is called once per frame
@@ -178,55 +181,63 @@ class BasicTower : TowerManager
     // 공격
     protected override void Attack()
     {
-        // 타겟이 없으면 리턴
-        if (m_Target == null) return;
+        // 타겟이 없으면 IDLE로 변경
+        if (m_Target == null) ChangeState(STATE.IDLE);
 
+        // 죽지 않았다면
         if (!m_Anim.GetBool("Dead"))
-        //if (dist < m_AttackDelay && !m_Anim.GetBool("Dead"))
         {
             if(m_CurrentMp >= m_MaxMp)
             {
-                m_SkillActive = true;
+                m_ActiveSkill = true;
                 m_Anim.SetTrigger("Skill");
                 m_CurrentMp = 0.0f;
             }
-
-            // 적 방향으로 회전
-            Rotation(m_Target);
-
-            // 딜레이가 0이하가 된다면
-            if (m_AttackDelay <= Mathf.Epsilon)
+            else
             {
-                // 제일 가까운 적이 살아있다면
-                if (m_Target != null)
-                {
-                    // Attack 트리거 발동
-                    m_Anim.SetTrigger("Attack");
+                // 적 방향으로 회전
+                Rotation(m_Target);
 
-                    // 스킬이 활성화가 되지 않았을 때
-                    if(!m_SkillActive)
+                // 딜레이가 0이하가 된다면
+                if (m_AttackDelay <= Mathf.Epsilon)
+                {
+                    // 제일 가까운 적이 살아있다면
+                    if (m_Target != null)
                     {
-                        // 마나 증가
-                        m_CurrentMp += 1;
-                    }
+                        // Attack 트리거 발동
+                        m_Anim.SetTrigger("Attack");
 
-                    // 다시 딜레이 설정
-                    m_AttackDelay = m_OriginAttackDelay;
-                }
-                // 적이 죽었다면
-                else
-                {
-                    // IDLE상태로 바꿈
-                    ChangeState(STATE.IDLE);
+                        // 스킬이 활성화가 되지 않았을 때
+                        if (!m_ActiveSkill)
+                        {
+                            // 마나 증가
+                            m_CurrentMp++;
+                        }
+
+                        // 다시 딜레이 설정
+                        m_AttackDelay = m_OriginAttackDelay;
+                    }
+                    // 적이 죽었다면
+                    else
+                    {
+                        // IDLE상태로 바꿈
+                        ChangeState(STATE.IDLE);
+
+                        // 콜라이더를 껐다가 켜서 적과의 충돌 재검사
+                        m_BoxCollider.enabled = false;
+                        m_BoxCollider.enabled = true;
+                    }
                 }
             }
 
             // 딜레이 감소
             m_AttackDelay -= Time.deltaTime;
         }
-        else // if (dist > m_AttackDist && !m_Anim.GetBool("Dead"))
+        // 죽었다면
+        else
         {
-            ChangeState(STATE.IDLE);
+            // 죽음상태로 변경
+            ChangeState(STATE.DEATH);
         }
     }
 
@@ -236,6 +247,7 @@ class BasicTower : TowerManager
         // PlayAnimationEvent에서 공격 모션일때 이 함수 호출
         if (enemy == null) return;
 
+        // 적의 현재HP를 데미지만큼 감소시킴
         enemy.GetComponent<MonsterStat>().UpdateHP(-m_Damage);
     }
 
@@ -273,19 +285,53 @@ class BasicTower : TowerManager
         }
     }
 
+    private void OnCollisionStay(Collision col)
+    {
+        // 충돌체의 레이어가 Enemy면
+        if (col.gameObject.layer == LayerMask.NameToLayer("Enemy"))
+        {
+            // 타겟(적)이 없으면 
+            if (m_Target == null)
+            {
+                // 타겟에 해당 충돌체를 넣어줌
+                m_Target = col.transform.gameObject;
+
+                // State를 Battle로 변경
+                ChangeState(STATE.BATTLE);
+
+            }
+            // 타겟이 있다면
+            else
+            {
+                // 리턴
+                return;
+            }
+        }
+    }
+
     // 스킬 사용
     public override IEnumerator ActiveSkill(float timer)
     {
+        // 원래 공격 딜레이 저장
         float originAttackDelay = m_OriginAttackDelay;
-        while (m_SkillActive)
+
+        // 스킬이 활성화 중일때
+        while (m_ActiveSkill)
         {
             // 공격 딜레이 반으로 감소
             m_OriginAttackDelay /= 2.0f;
 
-            // 10초 뒤 반복문 빠져나옴
+            // timer만큼 시간이 지나면
             yield return new WaitForSeconds(timer);
-            m_SkillActive = false;
+
+            // 저장해둔 원래 공격 딜레이로 변경
+            m_OriginAttackDelay = originAttackDelay;
+
+            // 마나 0으로 변경
+            m_CurrentMp = 0;
+
+            // 스킬 비활성화
+            m_ActiveSkill = false;
         }
-        m_OriginAttackDelay = originAttackDelay;
     }
 }

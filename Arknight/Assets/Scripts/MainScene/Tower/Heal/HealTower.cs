@@ -98,7 +98,13 @@ public class HealTower : TowerManager
         this.GetComponentInChildren<TowerAnimationEvent>().m_HealTowerSkill = new DelCor(ActiveSkill);
 
         // 초기화
-        Init(50, 10, 2, 5.0f, 3.0f);
+        Init(50, 10, 2, 3.0f);
+
+        // AttackDelay 저장(스킬 사용용)
+        m_OriginAttackDelay = m_AttackDelay;
+
+        // 처음 딜레이를 0으로 설정해서 바로 공격하게 설정
+        m_AttackDelay = 0.0f;
 
         // Add함수 델리게이트 추가
         m_DelAddTower = new DelVoid(AddTower);
@@ -148,7 +154,7 @@ public class HealTower : TowerManager
         switch (m_State)
         {
             case STATE.IDLE:
-                m_Target = null;
+                //m_Target = null;
                 break;
             case STATE.BATTLE:
                 break;
@@ -177,6 +183,7 @@ public class HealTower : TowerManager
     //대기 상태일때 돌릴 업데이트
     void Idle()
     {
+        // missing된 오브젝트 리스트에서 제거
         for (int i = 0; i < m_AroundTowerList.Count; ++i)
         {
             if (m_AroundTowerList[i] == null || m_AroundTowerList[i] == false)
@@ -190,9 +197,9 @@ public class HealTower : TowerManager
             }
         }
 
-            // 주변에 타워가 없으면 리턴
-            if (m_AroundTowerList.Count == 0) 
-            return;
+        // 주변에 타워가 없으면 리턴
+        if (m_AroundTowerList.Count == 0) 
+        return;
 
         // 주변의 타워를 전부 조사함
         for (int i = 0; i < m_AroundTowerList.Count; ++i)
@@ -228,21 +235,22 @@ public class HealTower : TowerManager
                 maxHp = m_AroundTowerList[i].GetComponent<HealTower>().MaxHp;
                 currentHp = m_AroundTowerList[i].GetComponent<HealTower>().CurrentHp;
             }
-            else if (m_AroundTowerList[i] == null || m_AroundTowerList[i] == false)
-            {
-                m_AroundTowerList.Remove(m_AroundTowerList[i]);
+            // missing된 오브젝트 리스트에서 제거
+            //else if (m_AroundTowerList[i] == null || m_AroundTowerList[i] == false)
+            //{
+            //    m_AroundTowerList.Remove(m_AroundTowerList[i]);
+            //
+            //    if (m_AroundTowerList.Count == 0)
+            //        break;
+            //    else
+            //    {
+            //        --i;
+            //        continue;
+            //    }
+            //}
 
-                if (m_AroundTowerList.Count == 0)
-                    break;
-                else
-                {
-                    --i;
-                    continue;
-                }
-            }
 
-
-                // 현재 HP가 최대 HP보다 작다면
+            // 현재 HP가 최대 HP보다 작다면
             if (currentHp < maxHp)
             {
                 // State를 Battle로 변경 후 함수 빠져나옴
@@ -297,6 +305,7 @@ public class HealTower : TowerManager
             // hp를 회복 시켜줌
             obj.GetComponent<BasicTower>().CurrentHp += m_Damage;
 
+
             // 회복시켰는데 MaxHp를 넘어섰다면
             if (obj.GetComponent<BasicTower>().CurrentHp >= obj.GetComponent<BasicTower>().MaxHp)
             {
@@ -305,7 +314,6 @@ public class HealTower : TowerManager
                 ChangeState(STATE.IDLE);
             }
         }
-
         // HealTower 라면 (함수 안 내용은 위와 동일)
         else if (obj.layer == LayerMask.NameToLayer("HealTower"))
         {
@@ -323,19 +331,19 @@ public class HealTower : TowerManager
                 ChangeState(STATE.IDLE);
             }
         }
-        
+
         if (obj == null)
             ChangeState(STATE.IDLE);
     }
 
     protected override void Attack()
     {
+        // 타겟이 missing인지 검사
         if (m_Target != null || m_Target.activeSelf == true ||
             m_Target.GetComponent<BasicTower>().m_State != STATE.DEATH || m_Target.GetComponent<HealTower>().m_State != STATE.DEATH)
         {
             Rotation(m_Target);
         }
-           
 
         // 타겟이 없으면 리턴
         if (m_Target == null) return;
@@ -346,8 +354,20 @@ public class HealTower : TowerManager
             // 제일 가까운 적이 살아있다면
             if (m_Target != null || m_Target == null || m_Target.activeSelf == false)
             {
-                // Attack 트리거 발동
-                m_Anim.SetTrigger("Attack");
+                // 현재 마나가 최대 마나 이상이 되면
+                if(m_CurrentMp >= m_MaxMp)
+                {
+                    // 스킬 활성화
+                    m_Anim.SetTrigger("Skill");
+                    m_CurrentMp = 0;
+                }
+                // 미만이라면
+                else
+                {
+                    // Attack 트리거 발동
+                    m_Anim.SetTrigger("Attack");
+                    ++m_CurrentMp;
+                }
 
                 // 다시 딜레이 설정
                 m_AttackDelay = 3.0f;
@@ -456,18 +476,31 @@ public class HealTower : TowerManager
         }
     }
 
+    // 스킬 사용
     public override IEnumerator ActiveSkill(float timer)
     {
+        // 반복문 돌아서
         while(true)
         {
+            // 타겟이 없으면 빠져나옴
             if (m_Target == null) break;
+
+            // 원래 공격력 담을 변수
             float originDmg = 0.0f;
 
+            // 타워별로 검사해서
             if (m_Target.layer == LayerMask.NameToLayer("BasicTower"))
             {
+                // 해당 타워의 데미지를 담아주고
                 originDmg = m_Target.GetComponent<BasicTower>().Damage;
+
+                // 그 타워의 데미지를 2배로 증가
                 m_Target.GetComponent<BasicTower>().Damage *= 2.0f;
+
+                // timer만큼 시간이 지나면
                 yield return new WaitForSeconds(timer);
+
+                // 데미지를 원래대로 돌려주고 반복문 빠져나옴
                 m_Target.GetComponent<BasicTower>().Damage = originDmg;
                 break;
             }
