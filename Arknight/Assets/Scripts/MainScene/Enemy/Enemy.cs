@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq.Expressions;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
+
 
 public class Enemy : MonoBehaviour
 {
@@ -23,7 +25,9 @@ public class Enemy : MonoBehaviour
     public Animator m_Anim;
 
     public BuildManager m_Buildmanager;
-    
+    [Header("Unity Stuff")]
+    public Image HealthBar3;
+
     Vector3 objpos;
     Vector3 objpos2;
     Vector3 Goalpos;
@@ -214,11 +218,14 @@ public class Enemy : MonoBehaviour
                         {
 
                             m_Target.GetComponent<BasicTower>().UpdateHp(-m_Monsterinfo.MonsterAttack);
+                            m_Target.GetComponent<BasicTower>().BasicHealth();
+                        }                            //BasicTower 체력바
 
-                        }
                         else if (m_Target.layer == LayerMask.NameToLayer("HealTower")) //힐타워면
                         {
                             m_Target.GetComponent<HealTower>().UpdateHp(-m_Monsterinfo.MonsterAttack);
+                            //HealTower 체력바
+                            m_Target.GetComponent<HealTower>().HealHealth();
 
                         }
 
@@ -319,6 +326,14 @@ public class Enemy : MonoBehaviour
         }
     
     }
+
+    //적체력바
+    public void EnemyHealthBar()
+    {
+        HealthBar3.fillAmount = m_Monsterinfo.CurrentHP / m_Monsterinfo.MaxHp;
+        //Debug.Log(HealthBar3.fillAmount.ToString());
+    }
+
     IEnumerator MonDead()
     {
         yield return new WaitForSeconds(2.0f);

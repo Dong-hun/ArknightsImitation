@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 class BasicTower : TowerManager
 {
@@ -80,6 +82,9 @@ class BasicTower : TowerManager
             return m_Damage;
         }
     }
+    [Header("Unity Stuff")]
+    public Image HealthBar1;
+    public Image MPBar;
 
     public bool m_SkillActive;          // 스킬이 활성화 되어있는지
     public float m_OriginAttackDelay;    // 스킬로 영향 받는 AttackDelay
@@ -100,8 +105,9 @@ class BasicTower : TowerManager
         // 리스트 추가
         m_EnemyList = new List<Enemy>();
 
-        // 스텟 추가
-        Init(50, 5, 2, 5.0f , 2.0f);
+        // 스텟 추가(적 데미지, MP실험위해 체력, 적데미지 높여놈)
+        Init(5000, 5, 30, 5.0f , 2.0f);
+        //m_MaxMp = 50;
 
         // 스킬 비활성화, AttackDelay 저장(스킬 사용용)
         m_SkillActive = false;
@@ -204,7 +210,7 @@ class BasicTower : TowerManager
                     m_Anim.SetTrigger("Attack");
 
                     // 스킬이 활성화가 되지 않았을 때
-                    if(!m_SkillActive)
+                    if (!m_SkillActive)
                     {
                         // 마나 증가
                         m_CurrentMp += 1;
@@ -237,6 +243,27 @@ class BasicTower : TowerManager
         if (enemy == null) return;
 
         enemy.GetComponent<MonsterStat>().UpdateHP(-m_Damage);
+
+        //적 체력바
+        enemy.GetComponent<Enemy>().EnemyHealthBar();
+        
+        //BasicTower Mp바(이때 넣어야 타이밍이 맞음)
+        MPBar.fillAmount = m_CurrentMp / m_MaxMp;
+        //mpbar 값(1= maxmp)
+        Debug.Log(MPBar.fillAmount.ToString());
+
+
+
+        
+
+
+    }
+
+    //체력바
+    public void BasicHealth()
+    {
+        HealthBar1.fillAmount = m_CurrentHp / m_MaxHp;
+        //Debug.Log(HealthBar1.fillAmount.ToString());
     }
 
     // 적 추가

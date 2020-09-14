@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 public class HealTower : TowerManager
 {
@@ -88,6 +90,9 @@ public class HealTower : TowerManager
     // 주변의 타워가 제거되면 주변의 타워가 담긴 리스트에서도 제거해주는 함수 델리게이트
     public DelDelete m_DelDeleteTower;
 
+    [Header("Unity Stuff")]
+    public Image HealthBar2;
+
     new void Start()
     {
         // 컴포넌트 추가
@@ -98,7 +103,7 @@ public class HealTower : TowerManager
         this.GetComponentInChildren<TowerAnimationEvent>().m_HealTowerSkill = new DelCor(ActiveSkill);
 
         // 초기화
-        Init(50, 10, 2, 5.0f, 3.0f);
+        Init(100, 10, 2, 5.0f, 3.0f);
 
         // Add함수 델리게이트 추가
         m_DelAddTower = new DelVoid(AddTower);
@@ -273,6 +278,14 @@ public class HealTower : TowerManager
             Quaternion.LookRotation(dir), Time.smoothDeltaTime * 360.0f);
     }
 
+    //체력바
+    public void HealHealth()
+    {
+        HealthBar2.fillAmount = m_CurrentHp / m_MaxHp;
+        //Debug.Log(HealthBar2.fillAmount.ToString());
+
+    }
+
     // 공격하는 함수 (HealTower는 힐을 해줌)
     void RecoveryTower(GameObject obj)
     {
@@ -296,12 +309,17 @@ public class HealTower : TowerManager
 
             // hp를 회복 시켜줌
             obj.GetComponent<BasicTower>().CurrentHp += m_Damage;
+            //basic tower체력바 
+            obj.GetComponent<BasicTower>().BasicHealth();
 
             // 회복시켰는데 MaxHp를 넘어섰다면
             if (obj.GetComponent<BasicTower>().CurrentHp >= obj.GetComponent<BasicTower>().MaxHp)
             {
                 // 현재 체력을 MaxHp로 변경 후 IDLE로 변경
                 obj.GetComponent<BasicTower>().CurrentHp = obj.GetComponent<BasicTower>().MaxHp;
+                //basic tower체력바
+                obj.GetComponent<BasicTower>().BasicHealth();
+
                 ChangeState(STATE.IDLE);
             }
         }
@@ -316,10 +334,15 @@ public class HealTower : TowerManager
             }
 
             obj.GetComponent<HealTower>().CurrentHp += m_Damage;
+            //힐타워 체력바
+            HealHealth();
 
             if (obj.GetComponent<HealTower>().CurrentHp >= obj.GetComponent<HealTower>().MaxHp)
             {
                 obj.GetComponent<HealTower>().CurrentHp = obj.GetComponent<HealTower>().MaxHp;
+                //힐타워 체력바
+                HealHealth();
+
                 ChangeState(STATE.IDLE);
             }
         }
