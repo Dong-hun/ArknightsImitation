@@ -588,7 +588,7 @@ GameObject:
   - component: {fileID: 287031105290555333}
   - component: {fileID: 3775108423426756499}
   - component: {fileID: 5197226089202750897}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: MPBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -979,7 +979,7 @@ GameObject:
   - component: {fileID: 6368678388035231009}
   - component: {fileID: 7638634203878925539}
   - component: {fileID: 1966632538214531714}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1078,7 +1078,7 @@ GameObject:
   - component: {fileID: 2976441464653300485}
   - component: {fileID: 7297432644848688588}
   - component: {fileID: 7102960436845531358}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: MPBG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3254,7 +3254,7 @@ GameObject:
   - component: {fileID: 2241035883413067696}
   - component: {fileID: 577774275036293246}
   - component: {fileID: 486233847860208811}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: HealthBG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4468,7 +4468,7 @@ GameObject:
   - component: {fileID: 7602104930098848832}
   - component: {fileID: 2462683276500250441}
   - component: {fileID: 842120414862151327}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: HealthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
