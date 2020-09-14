@@ -106,7 +106,7 @@ class BasicTower : TowerManager
         m_EnemyList = new List<Enemy>();
 
         // 스텟 추가(적 데미지, MP실험위해 체력, 적데미지 높여놈)
-        Init(5000, 5, 30, 5.0f , 2.0f);
+        Init(500, 5, 30, 5.0f , 2.0f);
         //m_MaxMp = 50;
 
         // 스킬 비활성화, AttackDelay 저장(스킬 사용용)
