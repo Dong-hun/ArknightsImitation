@@ -5206,7 +5206,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1007850951}
   - component: {fileID: 1007850950}
-  - component: {fileID: 1007850949}
   m_Layer: 0
   m_Name: UICamera
   m_TagString: Untagged
@@ -5214,14 +5213,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &1007850949
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1007850948}
-  m_Enabled: 1
 --- !u!20 &1007850950
 Camera:
   m_ObjectHideFlags: 0
@@ -7584,6 +7575,7 @@ MonoBehaviour:
   TotalMonster: 0
   obj: {fileID: 0}
   m_EnemyList: []
+  MonsterCount: 0
 --- !u!4 &1361680911
 Transform:
   m_ObjectHideFlags: 0

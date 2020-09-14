@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq.Expressions;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
+
 
 public class Enemy : MonoBehaviour
 {
@@ -20,9 +22,12 @@ public class Enemy : MonoBehaviour
     public MonsterStat m_Monsterinfo;
     public Obstacle m_Enemy;
     float attackdelay = 3.0f;
+    public Animator m_Anim;
 
     public BuildManager m_Buildmanager;
-    
+    [Header("Unity Stuff")]
+    public Image HealthBar3;
+
     Vector3 objpos;
     Vector3 objpos2;
     Vector3 Goalpos;
@@ -93,7 +98,9 @@ public class Enemy : MonoBehaviour
 
                 break;
             //    m_Navi.SetDestination(Goalpos);
+            case STATE.BATTLE:
 
+                break;
             case STATE.TOWERATTACK:
 
                 m_Navi.SetDestination(m_Target.transform.position);
@@ -101,6 +108,7 @@ public class Enemy : MonoBehaviour
 
                 break;
             case STATE.DEAD:
+
                 Destroy(this.gameObject);
                 break;
 
@@ -186,6 +194,8 @@ public class Enemy : MonoBehaviour
 
                 if (attackdelay <= Mathf.Epsilon)
                 {
+                    m_Anim.SetTrigger("Attack");
+
                     attackdelay = 2.0f;
                     Onattack();
                     if (m_Enemy == null)
@@ -202,19 +212,24 @@ public class Enemy : MonoBehaviour
                 { 
                     if (attackdelay <= Mathf.Epsilon) //일정 공속에 따라
                     {
-                        attackdelay = 2.0f;
+                        m_Anim.SetTrigger("Attack");
 
                         if (m_Target.layer == LayerMask.NameToLayer("BasicTower")) //기본타워면
                         {
 
                             m_Target.GetComponent<BasicTower>().UpdateHp(-m_Monsterinfo.MonsterAttack);
+                            m_Target.GetComponent<BasicTower>().BasicHealth();
+                        }                            //BasicTower 체력바
 
-                        }
                         else if (m_Target.layer == LayerMask.NameToLayer("HealTower")) //힐타워면
                         {
                             m_Target.GetComponent<HealTower>().UpdateHp(-m_Monsterinfo.MonsterAttack);
+                            //HealTower 체력바
+                            m_Target.GetComponent<HealTower>().HealHealth();
 
                         }
+
+                        attackdelay = 2.0f;
                     }
 
                 }
@@ -248,7 +263,6 @@ public class Enemy : MonoBehaviour
 
     void Onattack(Obstacle enemy)
     {
-        //아 이런. 이걸 
         m_Enemy.GetComponent<Obstacle>().UpdateHp(-m_Monsterinfo.MonsterAttack);
         //    //큐프
         Debug.Log("공격3");
@@ -304,12 +318,29 @@ public class Enemy : MonoBehaviour
 
     void Death()
     {
-        if (this.m_Monsterinfo.CurrentHP == 0)
+        
+        if (this.m_Monsterinfo.CurrentHP <= 0)
         {
-            ChangeSTATE(STATE.DEAD);
+            m_Anim.SetTrigger("Dead");
+
+            StartCoroutine( MonDead());
         }
     
     }
 
+    //적체력바
+    public void EnemyHealthBar()
+    {
+        HealthBar3.fillAmount = m_Monsterinfo.CurrentHP / m_Monsterinfo.MaxHp;
+        //Debug.Log(HealthBar3.fillAmount.ToString());
+    }
+
+    IEnumerator MonDead()
+    {
+        yield return new WaitForSeconds(2.0f);
+        {
+            ChangeSTATE(STATE.DEAD);
+        }
+    }
 
 }

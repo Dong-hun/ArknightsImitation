@@ -9,13 +9,13 @@ public class MonsterCreater : MonoBehaviour
     public int TotalMonster = 0;
     public GameObject obj;
     public List<Enemy> m_EnemyList;
-    int MonsterCount = 0;
+   public int MonsterCount = 0;
     // Start is called before the first frame update
     void Start()
     {
         StartCoroutine(Monster());
-        //StartCoroutine(Monster2());
-        //StartCoroutine(Boss());
+        StartCoroutine(Monster2());
+        StartCoroutine(Boss());
     }
 
     // Update is called once per frame
@@ -51,7 +51,7 @@ public class MonsterCreater : MonoBehaviour
     {
         while (!GameOver)
         {
-            if (TotalMonster == 1)
+            if (TotalMonster == 2)
             {
                 yield return new WaitForSeconds(3.0f);
 

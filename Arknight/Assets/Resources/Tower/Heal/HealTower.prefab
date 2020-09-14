@@ -2461,6 +2461,7 @@ MonoBehaviour:
   m_Anim: {fileID: 1289438441184053219}
   m_Target: {fileID: 0}
   m_AroundTowerList: []
+  HealthBar2: {fileID: 1873557131439529315}
 --- !u!54 &4051851519137362418
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2964,6 +2965,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8fbabf96410448499d10ad6b65ab993, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BasicTowerAttackEffect: {fileID: 0}
+  BasicTowerSkillEffect: {fileID: 0}
+  HealTowerAttackEffect: {fileID: 100004, guid: 3af6f68141914ca43ba39b2403757bd0,
+    type: 3}
+  HealTowerSkillEffect: {fileID: 0}
 --- !u!1 &1289438441196571995
 GameObject:
   m_ObjectHideFlags: 0

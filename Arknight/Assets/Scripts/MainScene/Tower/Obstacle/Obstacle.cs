@@ -5,8 +5,6 @@ using UnityEngine.UI;
 
 public class Obstacle : TowerManager
 {
-    public MonsterStat Monsterstatinfo;
-
     [Header("Unity Stuff")]
     public Image HealthBar;
     
@@ -37,6 +35,30 @@ public class Obstacle : TowerManager
     {
         base.Start();
         base.Init();
+    }
+
+    void Update()
+    {
+        StateProcess();
+
+        if(m_BuildManager.m_ObstacleList.Count > 1)
+        {
+            for (int i = 0; i < m_BuildManager.m_ObstacleList.Count; ++i)
+            {
+                if (m_BuildManager.m_ObstacleList[i] == null || m_BuildManager.m_ObstacleList[i] == false)
+                {
+                    m_BuildManager.m_ObstacleList.Remove(m_BuildManager.m_ObstacleList[i]);
+
+                    if (m_BuildManager.m_ObstacleList.Count <= 0)
+                        break;
+                    else
+                        --i;
+                }
+            }
+        }
+
+        if (m_CurrentHp <= 0.0f)
+            ChangeState(STATE.DEATH);
     }
 
     protected override void ChangeState(STATE s)
