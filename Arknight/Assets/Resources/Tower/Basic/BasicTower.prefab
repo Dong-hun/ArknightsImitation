@@ -2752,6 +2752,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8fbabf96410448499d10ad6b65ab993, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BasicTowerAttackEffect: {fileID: 100000, guid: bc98890f6028f444eaa7789bde5e2eeb,
+    type: 3}
+  BasicTowerSkillEffect: {fileID: 0}
+  HealTowerAttackEffect: {fileID: 0}
+  HealTowerSkillEffect: {fileID: 0}
 --- !u!1 &5299747226064272510
 GameObject:
   m_ObjectHideFlags: 0
