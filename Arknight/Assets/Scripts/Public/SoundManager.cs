@@ -6,7 +6,8 @@ public class SoundManager : MonoBehaviour
 {
     public AudioSource musicsource;
 
-    public AudioSource btnsource; 
+    public AudioSource btnsource;
+
 
     public void SetMusicVolume(float volume)
     {
