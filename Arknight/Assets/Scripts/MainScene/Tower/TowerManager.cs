@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public delegate void DelVoid();
 public delegate void DelAttack(GameObject enemy);
@@ -28,6 +29,9 @@ public class TowerManager : MonoBehaviour
     public float m_AttackDelay;             // 공격 딜레이
     public bool m_ActiveSkill;              // 스킬이 활성화 되어있는지
     public float m_OriginAttackDelay;       // 스킬로 영향 받는 AttackDelay
+
+    public Image m_HpBar;                   // 체력바
+    public Image m_MpBar;                   // 마력바
 
     public Animator m_Anim;             // 애니메이터 (protected로 상속중이여서 인스팩터창 링크불가능 
                                         // 이름으로 호출 or public으로 바꿔서 링크걸기)
@@ -179,6 +183,11 @@ public class TowerManager : MonoBehaviour
         Destroy(this.gameObject);
 
         yield return null;
+    }
+
+    public void UpdateHpBar()
+    {
+        m_HpBar.fillAmount = m_CurrentHp / m_MaxHp;
     }
 
     // 스킬 사용

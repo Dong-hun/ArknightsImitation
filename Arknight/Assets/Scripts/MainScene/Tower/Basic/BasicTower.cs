@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 class BasicTower : TowerManager
 {
@@ -80,6 +81,30 @@ class BasicTower : TowerManager
             return m_Damage;
         }
     }
+    public Image HpBar
+    {
+        set
+        {
+            m_HpBar = value;
+        }
+        get
+        {
+            return m_HpBar;
+        }
+    }
+    public Image MpBar
+    {
+        set
+        {
+            m_MpBar = value;
+        }
+        get
+        {
+            return m_MpBar;
+        }
+    }
+
+
 
 
     public BoxCollider m_BoxCollider;
@@ -93,6 +118,8 @@ class BasicTower : TowerManager
         // 딜리게이트 추가
         this.GetComponentInChildren<TowerAnimationEvent>().m_Attack = new DelAttack(OnDamage);
         this.GetComponentInChildren<TowerAnimationEvent>().m_BasicTowerSkill = new DelCor(ActiveSkill);
+
+        // 콜라이더 추가
         m_BoxCollider = GetComponent<BoxCollider>();
 
         // Animation설정
@@ -100,7 +127,7 @@ class BasicTower : TowerManager
 
         // 리스트 추가
         m_EnemyList = new List<Enemy>();
-
+        
         // 스텟 추가
         Init(500, 5, 2, 2.0f);
 
@@ -249,6 +276,12 @@ class BasicTower : TowerManager
 
         // 적의 현재HP를 데미지만큼 감소시킴
         enemy.GetComponent<MonsterStat>().UpdateHP(-m_Damage);
+
+        //적 체력바
+        enemy.GetComponent<Enemy>().EnemyHealthBar();
+
+        //BasicTower Mp바(이때 넣어야 타이밍이 맞음)
+        m_MpBar.fillAmount = m_CurrentMp / m_MaxMp;
     }
 
     // 적 추가

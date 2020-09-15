@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class HealTower : TowerManager
 {
@@ -76,6 +77,21 @@ public class HealTower : TowerManager
         get
         {
             return m_Damage;
+        }
+    }
+
+    public Image HpBar
+    {
+        get
+        {
+            return m_HpBar;
+        }
+    }
+    public Image MpBar
+    {
+        get
+        {
+            return m_MpBar;
         }
     }
 
@@ -305,12 +321,19 @@ public class HealTower : TowerManager
             // hp를 회복 시켜줌
             obj.GetComponent<BasicTower>().CurrentHp += m_Damage;
 
+            // 체력바 업데이트
+            obj.GetComponent<BasicTower>().UpdateHpBar();
 
             // 회복시켰는데 MaxHp를 넘어섰다면
             if (obj.GetComponent<BasicTower>().CurrentHp >= obj.GetComponent<BasicTower>().MaxHp)
             {
                 // 현재 체력을 MaxHp로 변경 후 IDLE로 변경
                 obj.GetComponent<BasicTower>().CurrentHp = obj.GetComponent<BasicTower>().MaxHp;
+
+                // 체력바 업데이트
+                obj.GetComponent<BasicTower>().UpdateHpBar();
+
+                // IDLE상태로 변경
                 ChangeState(STATE.IDLE);
             }
         }
@@ -325,9 +348,14 @@ public class HealTower : TowerManager
 
             obj.GetComponent<HealTower>().CurrentHp += m_Damage;
 
+            //힐타워 체력바
+            UpdateHpBar();
+
             if (obj.GetComponent<HealTower>().CurrentHp >= obj.GetComponent<HealTower>().MaxHp)
             {
                 obj.GetComponent<HealTower>().CurrentHp = obj.GetComponent<HealTower>().MaxHp;
+                //힐타워 체력바
+                UpdateHpBar();
                 ChangeState(STATE.IDLE);
             }
         }
@@ -367,6 +395,7 @@ public class HealTower : TowerManager
                     // Attack 트리거 발동
                     m_Anim.SetTrigger("Attack");
                     ++m_CurrentMp;
+                    m_MpBar.fillAmount = m_CurrentMp / m_MaxMp;
                 }
 
                 // 다시 딜레이 설정
@@ -475,6 +504,7 @@ public class HealTower : TowerManager
             }
         }
     }
+
 
     // 스킬 사용
     public override IEnumerator ActiveSkill(float timer)

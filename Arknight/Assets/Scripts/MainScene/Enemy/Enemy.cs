@@ -216,17 +216,15 @@ public class Enemy : MonoBehaviour
 
                         if (m_Target.layer == LayerMask.NameToLayer("BasicTower")) //기본타워면
                         {
-
                             m_Target.GetComponent<BasicTower>().UpdateHp(-m_Monsterinfo.MonsterAttack);
-                            //m_Target.GetComponent<BasicTower>().BasicHealth();
+                            m_Target.GetComponent<BasicTower>().UpdateHpBar();
                         }                            //BasicTower 체력바
 
                         else if (m_Target.layer == LayerMask.NameToLayer("HealTower")) //힐타워면
                         {
                             m_Target.GetComponent<HealTower>().UpdateHp(-m_Monsterinfo.MonsterAttack);
                             //HealTower 체력바
-                            //m_Target.GetComponent<HealTower>().HealHealth();
-
+                            m_Target.GetComponent<HealTower>().UpdateHpBar();
                         }
 
                         attackdelay = 2.0f;
