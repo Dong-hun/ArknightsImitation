@@ -23,12 +23,12 @@ public class TowerManager : MonoBehaviour
     public float m_CurrentHp;               // 체력
     public float m_MaxMp;                   // 최대 마력
     public float m_CurrentMp;               // 마력   
-    public int m_TileX;                     // 타워 X좌표
-    public int m_TileY;                     // 타워 Y좌표
+    protected int m_TileX;                     // 타워 X좌표
+    protected int m_TileY;                     // 타워 Y좌표
     public float m_Damage;                  // 공격력
-    public float m_AttackDelay;             // 공격 딜레이
-    public bool m_ActiveSkill;              // 스킬이 활성화 되어있는지
-    public float m_OriginAttackDelay;       // 스킬로 영향 받는 AttackDelay
+    protected float m_AttackDelay;             // 공격 딜레이
+    protected bool m_ActiveSkill;              // 스킬이 활성화 되어있는지
+    protected float m_OriginAttackDelay;       // 스킬로 영향 받는 AttackDelay
 
     public Image m_HpBar;                   // 체력바
     public Image m_MpBar;                   // 마력바

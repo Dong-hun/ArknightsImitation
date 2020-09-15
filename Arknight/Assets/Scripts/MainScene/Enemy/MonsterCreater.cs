@@ -49,9 +49,11 @@ public class MonsterCreater : MonoBehaviour
     }
     IEnumerator Boss()
     {
+        EnemyUI enemyUi = GameObject.Find("Enemy").GetComponent<EnemyUI>();
+
         while (!GameOver)
         {
-            if (TotalMonster == 2)
+            if (MonsterCount < MaxMonster)
             {
                 yield return new WaitForSeconds(3.0f);
 
@@ -61,6 +63,7 @@ public class MonsterCreater : MonoBehaviour
                 MonsterCount++;
                 TotalMonster++;
 
+                //yield return null;
             }
             else
             {

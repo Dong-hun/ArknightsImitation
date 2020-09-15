@@ -31,14 +31,22 @@ public class Obstacle : TowerManager
         }
     }
 
+    public Image HpBar
+    {
+        get
+        {
+            return m_HpBar;
+        }
+    }
+
     new void Start()
     {
         // 컴포넌트 추가
         m_NodeManager = GameObject.Find("NodeList").GetComponent<NodeManager>();
         m_BuildManager = GameObject.Find("BuildManager").GetComponent<BuildManager>();
-        
+
         // 스텟 세팅
-        base.Init();
+        base.Init(10, 0, 0, 0);
     }
 
     void Update()

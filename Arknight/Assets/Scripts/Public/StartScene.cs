@@ -7,6 +7,7 @@ public class StartScene : MonoBehaviour
 {
     public void PlayBtn()
     {
+        Destroy(GameObject.Find("SoundManager").gameObject);
         SceneManager.LoadScene("Start Scene");
     }
 }

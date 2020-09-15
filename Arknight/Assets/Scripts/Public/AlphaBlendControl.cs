@@ -7,6 +7,8 @@ using UnityEngine.UI;
 
 public class AlphaBlendControl : MonoBehaviour
 {
+    public SoundManager sm;
+
     public Image background;
     public Image title;
     public Image fadeOut;
@@ -124,7 +126,7 @@ public class AlphaBlendControl : MonoBehaviour
 
             yield return null;
         }
-
+        //sm.backgroundLength = sm.musicsource.time;
         SceneManager.LoadScene("Loading");
     }
 }

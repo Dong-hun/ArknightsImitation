@@ -43,7 +43,7 @@ public class Enemy : MonoBehaviour
         m_STATE = STATE.CREATE;
         ChangeSTATE(STATE.TARGET1);
         m_Buildmanager = GameObject.Find("BuildManager").GetComponent<BuildManager>();
-
+        
         //Vector3 DESTPOS = m_Navi.destination;
         m_Navi = GetComponent<NavMeshAgent>();
         m_Path = new NavMeshPath();
@@ -137,17 +137,8 @@ public class Enemy : MonoBehaviour
                     {
                         ChangeSTATE(STATE.ATTACK);
                     }
-
-
                 }
-
-
-
-
-
                 break;
-
-
             case STATE.TAGET2:
                 float T2 = Vector3.Distance(this.transform.position, objpos2);
                 float s2 = Vector3.Distance(this.transform.position, m_Navi.destination);
@@ -192,11 +183,14 @@ public class Enemy : MonoBehaviour
 
                 if (attackdelay <= Mathf.Epsilon)
                 {
-                    m_Anim.SetTrigger("Attack");
-
-                    attackdelay = 2.0f;
-                    Onattack();
-                    if (m_Enemy == null)
+                    if(m_Enemy != null)
+                    {
+                        m_Anim.SetTrigger("Attack");
+                        m_Enemy.GetComponent<Obstacle>().UpdateHpBar();
+                        attackdelay = 2.0f;
+                        Onattack();
+                    }
+                    else
                     {
                         ChangeSTATE(STATE.TAGET2);
                     }
@@ -259,8 +253,6 @@ public class Enemy : MonoBehaviour
     void Onattack(Obstacle enemy)
     {
         m_Enemy.GetComponent<Obstacle>().UpdateHp(-m_Monsterinfo.MonsterAttack);
-        //    //큐프
-        Debug.Log("공격3");
         // //   Debug.Log(m_Monsterinfo.MonsterAttack);
     }
 

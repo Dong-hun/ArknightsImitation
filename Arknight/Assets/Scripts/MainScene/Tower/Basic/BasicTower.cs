@@ -129,7 +129,7 @@ class BasicTower : TowerManager
         m_EnemyList = new List<Enemy>();
         
         // 스텟 추가
-        Init(500, 5, 2, 2.0f);
+        Init(50, 5, 2, 2.0f);
 
         // AttackDelay 저장(스킬 사용용)
         m_OriginAttackDelay = m_AttackDelay;
