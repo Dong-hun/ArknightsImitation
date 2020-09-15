@@ -99,17 +99,15 @@ public class Enemy : MonoBehaviour
                 break;
             //    m_Navi.SetDestination(Goalpos);
             case STATE.BATTLE:
-
                 break;
             case STATE.TOWERATTACK:
-
                 m_Navi.SetDestination(m_Target.transform.position);
-
-
                 break;
             case STATE.DEAD:
-
                 Destroy(this.gameObject);
+                EnemyUI obj = GameObject.Find("Enemy").GetComponent<EnemyUI>();
+                obj.m_KillCount++;
+
                 break;
 
         }

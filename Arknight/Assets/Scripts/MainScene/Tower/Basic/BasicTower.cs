@@ -214,12 +214,14 @@ class BasicTower : TowerManager
         // 죽지 않았다면
         if (!m_Anim.GetBool("Dead"))
         {
+            // 마나가 찼다면 스킬사용
             if(m_CurrentMp >= m_MaxMp)
             {
                 m_ActiveSkill = true;
                 m_Anim.SetTrigger("Skill");
                 m_CurrentMp = 0.0f;
             }
+            // 안찼다면 일반공격
             else
             {
                 // 적 방향으로 회전

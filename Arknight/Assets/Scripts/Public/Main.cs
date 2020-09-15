@@ -1,12 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+
+using UnityEngine.UI;
 
 public class Main : MonoBehaviour
 {
-    public void PlayBtn()
-    {
-        SceneManager.LoadScene("Loading");
-    }
+    public Image image;
+
+    //public void PlayBtn()
+    //{
+    //    SceneManager.LoadScene("Loading");
+    //}
+
 }

@@ -6,28 +6,18 @@ using UnityEngine.UI;
 
 public class EnemyUI : MonoBehaviour
 {
-    public MonsterCreater m_MonsterCreater;
-    public TextMeshPro m_MonsterCount;
+    public TMP_Text killText;
+    public int m_KillCount = 0;
 
     // Start is called before the first frame update
     void Start()
     {
-        m_MonsterCreater = GameObject.Find("MonsterCreater").GetComponent<MonsterCreater>();
-        //StartCoroutine(ShowMonsterCount());
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        //m_MonsterCount.text = m_MonsterCreater.m_EnemyList.Count.ToString() + " / 300";
-    }
-
-    IEnumerator ShowMonsterCount()
-    {
-        while(true)
-        {
-            m_MonsterCount.text = m_MonsterCreater.m_EnemyList.Count.ToString() + " / 300";
-            yield return null;
-        }
+        killText.text = m_KillCount + " / 300";
     }
 }
