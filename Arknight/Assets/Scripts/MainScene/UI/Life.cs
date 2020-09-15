@@ -25,7 +25,6 @@ public class Life : MonoBehaviour
         // 목숨이 깎일때마다 뒤에서 삭제
 
 
-
         print(num[3]);
     }
 
