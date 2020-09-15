@@ -162,8 +162,6 @@ class BasicTower : TowerManager
                 break;
             case STATE.BATTLE:
                 break;
-            case STATE.SKILL:
-                break;
             case STATE.DEATH:
                 m_Anim.SetBool("Dead", true);
                 break;
@@ -179,8 +177,6 @@ class BasicTower : TowerManager
                 break;
             case STATE.BATTLE:
                 Attack();
-                break;
-            case STATE.SKILL:
                 break;
             case STATE.DEATH:
                 break;

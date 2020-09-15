@@ -14,8 +14,8 @@ public class MonsterCreater : MonoBehaviour
     void Start()
     {
         StartCoroutine(Monster());
-        StartCoroutine(Monster2());
-        StartCoroutine(Boss());
+        //StartCoroutine(Monster2());
+        //StartCoroutine(Boss());
     }
 
     // Update is called once per frame
@@ -32,7 +32,7 @@ public class MonsterCreater : MonoBehaviour
         {
 
             if (MonsterCount<MaxMonster){
-                yield return new WaitForSeconds(2.0f);
+                yield return new WaitForSeconds(5.0f);
 
                 GameObject obj = Instantiate(Resources.Load("Enemy/Slime")) as GameObject;
                 obj.transform.SetParent(this.transform);

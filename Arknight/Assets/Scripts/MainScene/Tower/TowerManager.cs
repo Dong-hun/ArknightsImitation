@@ -16,7 +16,7 @@ public class TowerManager : MonoBehaviour
     //==================== 상속해서 쓸것 (추상클래스 -> 일반클래스 전환)
     public enum STATE                // 타워 상태
     {
-        IDLE, BATTLE, SKILL, DEATH               // 대기, 전투, 사망
+        IDLE, BATTLE, DEATH               // 대기, 전투, 사망
     }
     public STATE m_State;                   // 상태 받는 변수
     public float m_MaxHp;                   // 최대 체력

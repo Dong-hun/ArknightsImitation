@@ -449,7 +449,7 @@ public class HealTower : TowerManager
                         // 해당 리스트 조사해서
                         for (int k = 0; k < m_AroundTowerList.Count; ++k)
                         {
-                            // 해당 리스트의 원소와 같으면
+                            // 해당 리스트의 원소와 같으면 (중복) 
                             if (m_AroundTowerList[k] == temp)
                             {
                                 // 넘어감

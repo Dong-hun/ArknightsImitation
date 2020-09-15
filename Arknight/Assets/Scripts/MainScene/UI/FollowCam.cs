@@ -29,7 +29,7 @@ public class FollowCam : MonoBehaviour
         m_OriginDist = m_TargetDist = m_CameraDist = Vector3.Distance(m_RotBasePoint.position, transform.position);
         //m_Offset = new Vector3(0, 1.5f, 0);
         m_RotXRange = new Vector2(15, 80);
-        m_ZoomRange = new Vector2(1, 50);
+        m_ZoomRange = new Vector2(20, 50);
 
         m_Rotation = transform.rotation.eulerAngles;
     }
@@ -54,25 +54,6 @@ public class FollowCam : MonoBehaviour
             m_TargetDist = Mathf.Clamp(m_TargetDist, m_ZoomRange.x, m_ZoomRange.y);             // 줌 제한을 둠
             m_OriginDist = m_TargetDist;                                                        // 원래거리에 현재 거리 대입
         }
-
-        //Ray ray = new Ray();                    // 레이 생성
-        //ray.origin = m_RotBasePoint.position;   // 바라보는 타겟에서 시작해서
-        //ray.direction = -transform.forward;     // 뒤 방향으로 발사
-        //
-        //RaycastHit hit;
-        //
-        //// 가상의 구의 반지름만큼 더해줘서 애매한 위치까지도 피킹이 일어나게 함
-        //if (Physics.Raycast(ray, out hit, m_CameraDist + collisionOffset, m_CastLayer))
-        //{
-        //    // 피킹된 거리에서 반대 방향으로 구의 반지름 만큼 위치를 더해줌
-        //    //transform.position = hit.point - ray.direction * collisionOffset;
-        //
-        //    Vector3 pos = hit.point - ray.direction * collisionOffset;      // 충돌지점 저장
-        //    m_TargetDist = Vector3.Distance(pos, m_RotBasePoint.position);  // 충돌한 지점과 바라보는 물체의 거리를 구함
-        //}
-        //// 충돌이 되지 않았으면 보정거리를 원래 거리로 바꿔줌
-        //else
-        //    m_TargetDist = m_OriginDist;
 
         // 실제 카메라 위치를 보정된 위치로 보간시켜줌 
         m_CameraDist = Mathf.Lerp(m_CameraDist, m_TargetDist, Time.deltaTime * m_LerpSpeed);

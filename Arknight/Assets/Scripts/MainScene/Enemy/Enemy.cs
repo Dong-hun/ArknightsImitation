@@ -118,13 +118,14 @@ public class Enemy : MonoBehaviour
         switch (m_STATE)
         {
             case STATE.TARGET1:
-                //   NavMesh.CalculatePath(transform.position, obj.transform.position,NavMesh.AllAreas ,m_Path);
-                //  if (path == true)
+                // 현재 위치에서 목적지까지의 거리 (변하지 않음)
+                // 현재 위치에서 SetNavigation의 destination까지의 거리(길이 막히면 변함)를 저장함.
                 float T = Vector3.Distance(this.transform.position, objpos);
                 float s = Vector3.Distance(this.transform.position, m_Navi.destination);
 
                 if (!m_Navi.pathPending) //계산완료 후 이동
                 {
+                    // 남은 거리가 멈추는 거리보다 작거나 같으면
                     if (m_Navi.remainingDistance <= m_Navi.stoppingDistance)
                     {
                         if (!m_Navi.hasPath || m_Navi.velocity.sqrMagnitude == 0.0f)
@@ -133,6 +134,7 @@ public class Enemy : MonoBehaviour
                             ChangeSTATE(STATE.TAGET2);
                         }
                     }
+                    // 위에서 구한 두 길이의 차가 설정치 이상 난다면 (길이 막히면 Navi의 destination이 막힌지점으로 변경됨)
                     else if (T - s > 1.5f)
                     {
                         ChangeSTATE(STATE.ATTACK);

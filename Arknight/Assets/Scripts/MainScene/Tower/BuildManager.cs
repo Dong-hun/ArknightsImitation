@@ -215,11 +215,11 @@ public class BuildManager : MonoBehaviour
             }
         }
 
+        // 힐타워의 주변타워리스트에 해당 타워들이 담겼는지 조사해서 리스트에서도 삭제
         for(int i = 0; i < m_TowerList.Count; ++i)
         {
             if(m_TowerList[i].layer == LayerMask.NameToLayer("HealTower"))
             {
-                //m_TowerList[i].GetComponent<HealTower>().RemoveTower(m_NodeMng.SelectObject);
                 m_TowerList[i].GetComponent<HealTower>().m_DelDeleteTower?.Invoke(m_NodeMng.SelectObject);
             }
         }
