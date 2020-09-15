@@ -1,2 +1,0 @@
-# ArknightsImitation
-Arknights(Imitation portfolio)

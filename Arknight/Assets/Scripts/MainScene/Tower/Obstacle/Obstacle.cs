@@ -33,7 +33,11 @@ public class Obstacle : TowerManager
 
     new void Start()
     {
-        base.Start();
+        // 컴포넌트 추가
+        m_NodeManager = GameObject.Find("NodeList").GetComponent<NodeManager>();
+        m_BuildManager = GameObject.Find("BuildManager").GetComponent<BuildManager>();
+        
+        // 스텟 세팅
         base.Init();
     }
 
