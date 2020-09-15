@@ -11,11 +11,6 @@ public class TowerAnimationEvent : MonoBehaviour
     public DelCor m_HealTowerSkill;
     public DelAttack m_Recovery;
 
-    public GameObject BasicTowerAttackEffect;           // 기본타워 기본공격 이펙트
-    public GameObject BasicTowerSkillEffect;            // 기본타워 스킬공격 이펙트
-
-    public GameObject HealTowerAttackEffect;            // 힐타워 기본공격 이펙트
-    public GameObject HealTowerSkillEffect;             // 힐타워 스킬공격 이펙트
 
     // 공격
     public void OnAttack()
@@ -23,13 +18,16 @@ public class TowerAnimationEvent : MonoBehaviour
         // 해당 오브젝트의 레이어가 BasicTower면
         if (this.transform.parent.gameObject.layer == LayerMask.NameToLayer("BasicTower"))
         {
-            // 공격 함수 실행
-            m_Attack?.Invoke(this.GetComponentInParent<BasicTower>().Target);
-            
-            // BasicTower의 Effect효과 설정
-            GameObject effect = Instantiate(BasicTowerAttackEffect);
-            effect.transform.position = this.GetComponentInParent<BasicTower>().Target.transform.position;
-            effect.transform.localScale *= 3f;
+            if (this.GetComponentInParent<BasicTower>().Target != null)
+            {
+                // 공격 함수 실행
+                m_Attack?.Invoke(this.GetComponentInParent<BasicTower>().Target);
+
+                // BasicTower의 Effect효과 설정
+                GameObject effect = Instantiate(Resources.Load("Tower/Basic/Effect/Hit")) as GameObject;
+                effect.transform.position = this.GetComponentInParent<BasicTower>().Target.transform.position;
+                effect.transform.localScale *= 3f;
+            }
         }
         // 해당 오브젝트의 레이어가 HealTower면
         else if (this.transform.parent.gameObject.layer == LayerMask.NameToLayer("HealTower"))
@@ -41,7 +39,7 @@ public class TowerAnimationEvent : MonoBehaviour
                 m_Recovery?.Invoke(this.GetComponentInParent<HealTower>().Target);
 
                 // HealTower의 Effect 효과 설정
-                GameObject effect = Instantiate(HealTowerAttackEffect);
+                GameObject effect = Instantiate(Resources.Load("Tower/Heal/Effect/Recovery")) as GameObject;
                 Vector3 pos = this.GetComponentInParent<HealTower>().Target.transform.position;
                 pos.y = 1.0f;
                 effect.transform.position = pos;
@@ -58,12 +56,20 @@ public class TowerAnimationEvent : MonoBehaviour
             //StopCoroutine(this.GetComponentInParent<BasicTower>().ActiveSkill());
 
             // Effect 추가할것
+            GameObject effect = Instantiate(Resources.Load("Tower/Basic/Effect/SpeedUp")) as GameObject;
+            effect.transform.position = this.transform.position;
+            effect.transform.localScale *= 3.0f;
         }
         else if (this.transform.parent.gameObject.layer == LayerMask.NameToLayer("HealTower"))
         {
             StartCoroutine(m_HealTowerSkill?.Invoke(10.0f));
 
             // Effect 추가할것
+            GameObject effect = Instantiate(Resources.Load("Tower/Heal/Effect/DamageUp")) as GameObject;
+            Vector3 pos = this.GetComponentInParent<HealTower>().Target.transform.position;
+            pos.y = 0.5f;
+            effect.transform.position = pos;
+            effect.transform.localScale *= 5.0f;
         }
 
     }
